@@ -33,6 +33,7 @@ add_library(onvifcore STATIC
     src/soapDeviceIOBindingProxy.cpp 
     src/soapImagingBindingProxy.cpp 
     src/soapMediaBindingProxy.cpp 
+    src/soapMedia2BindingProxy.cpp 
     src/soapPTZBindingProxy.cpp 
     src/soapPullPointSubscriptionBindingProxy.cpp 
     src/soapRemoteDiscoveryBindingProxy.cpp
@@ -66,6 +67,7 @@ target_sources(onvifcore PRIVATE
     include/soapH.h 
     include/soapImagingBindingProxy.h 
     include/soapMediaBindingProxy.h 
+    include/soapMedia2BindingProxy.h 
     include/soapPTZBindingProxy.h 
     include/soapPullPointSubscriptionBindingProxy.h 
     include/soapRemoteDiscoveryBindingProxy.h 

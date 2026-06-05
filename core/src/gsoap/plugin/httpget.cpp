@@ -8,7 +8,7 @@
 gSOAP XML Web services tools
 Copyright (C) 2000-2008, Robert van Engelen, Genivia Inc., All Rights Reserved.
 This part of the software is released under ONE of the following licenses:
-GPL, the gSOAP public license, OR Genivia's license for commercial use.
+GPL or the gSOAP public license.
 --------------------------------------------------------------------------------
 gSOAP public license.
 
@@ -189,7 +189,10 @@ static int http_get_parse(struct soap *soap)
 {
 #ifndef WITH_LEAN
   time_t t;
-  struct tm T, *pT;
+#ifdef HAVE_LOCALTIME_R
+  struct tm T;
+#endif
+  struct tm *pT;
 #endif
   struct http_get_data *data = (struct http_get_data*)soap_lookup_plugin(soap, http_get_id);
   if (!data)

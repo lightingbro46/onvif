@@ -1,28 +1,17 @@
 /*
-	logging.h
 
-	Message logging plugin and message stats collector
+        cacerts.h
 
-	Register the plugin with:
-	        #include "plugin/logging.h"
-		soap_register_plugin(soap, logging);
+        Stores CA certificates in memory to replace the use of cacerts.pem
 
-	Set or change logging destinations:
-		soap_set_logging_inbound(struct soap*, FILE*);
-		soap_set_logging_outbound(struct soap*, FILE*);
-	Turn logging off by passing NULL FILE* descriptor.
+        Simply replace the call to soap_ssl_client_context() with a call to:
 
-	To obtain stats (sent and recv byte count):
-		soap_get_logging_stats(soap, size_t *sent, size_t *recv);
-        where sent and recv will be set to the number of bytes sent (outbound)
-        and received (inbound) in total, respectively.  The stats are collected
-        even when inbound and outbound logging is turned off.
+        soap_ssl_client_cacerts(soap);
 
-        To reset the stats:
-                soap_reset_loggin_stats(soap);
+        No cacerts.pem file is needed.
 
 gSOAP XML Web services tools
-Copyright (C) 2000-2008, Robert van Engelen, Genivia Inc., All Rights Reserved.
+Copyright (C) 2000-2018, Robert van Engelen, Genivia Inc., All Rights Reserved.
 This part of the software is released under one of the following licenses:
 GPL or the gSOAP public license.
 --------------------------------------------------------------------------------
@@ -37,7 +26,7 @@ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
 for the specific language governing rights and limitations under the License.
 
 The Initial Developer of the Original Code is Robert A. van Engelen.
-Copyright (C) 2000-2008, Robert van Engelen, Genivia Inc., All Rights Reserved.
+Copyright (C) 2000-2018, Robert van Engelen, Genivia Inc., All Rights Reserved.
 --------------------------------------------------------------------------------
 GPL license.
 
@@ -64,8 +53,9 @@ A commercial use license is available from Genivia, Inc., contact@genivia.com
 --------------------------------------------------------------------------------
 */
 
-#ifndef LOGGING_H
-#define LOGGING_H
+#ifndef WITH_OPENSSL
+#define WITH_OPENSSL
+#endif
 
 #include "stdsoap2.h"
 
@@ -73,27 +63,8 @@ A commercial use license is available from Genivia, Inc., contact@genivia.com
 extern "C" {
 #endif
 
-#define LOGGING_ID "SOAP-LOGGING/1.4"
-
-extern const char logging_id[];
-
-struct logging_data {
-  FILE *inbound;
-  FILE *outbound;
-  size_t stat_sent;
-  size_t stat_recv;
-  int (*fsend)(struct soap*, const char*, size_t); /* to save and use send callback */
-  size_t (*frecv)(struct soap*, char*, size_t); /* to save and use recv callback */
-};
-
-SOAP_FMAC1 int SOAP_FMAC2 logging(struct soap *soap, struct soap_plugin *plugin, void *arg);
-SOAP_FMAC1 void SOAP_FMAC2 soap_set_logging_inbound(struct soap *soap, FILE *fd);
-SOAP_FMAC1 void SOAP_FMAC2 soap_set_logging_outbound(struct soap *soap, FILE *fd);
-SOAP_FMAC1 void SOAP_FMAC2 soap_logging_stats(struct soap *soap, size_t *sent, size_t *recv);
-SOAP_FMAC1 void SOAP_FMAC2 soap_reset_logging_stats(struct soap *soap);
+int soap_ssl_client_cacerts(struct soap *soap);
 
 #ifdef __cplusplus
 }
-#endif
-
 #endif

@@ -149,17 +149,17 @@ void RemoteDiscoveryBindingProxy::soap_noheader()
 
 void RemoteDiscoveryBindingProxy::soap_header(char *wsa5__MessageID, struct wsa5__RelatesToType *wsa5__RelatesTo, struct wsa5__EndpointReferenceType *wsa5__From, struct wsa5__EndpointReferenceType *wsa5__ReplyTo, struct wsa5__EndpointReferenceType *wsa5__FaultTo, char *wsa5__To, char *wsa5__Action, struct chan__ChannelInstanceType *chan__ChannelInstance, struct wsdd__AppSequenceType *wsdd__AppSequence, struct _wsse__Security *wsse__Security)
 {
-	::soap_header(this->soap);
-	this->soap->header->wsa5__MessageID = wsa5__MessageID;
-	this->soap->header->wsa5__RelatesTo = wsa5__RelatesTo;
-	this->soap->header->wsa5__From = wsa5__From;
-	this->soap->header->wsa5__ReplyTo = wsa5__ReplyTo;
-	this->soap->header->wsa5__FaultTo = wsa5__FaultTo;
-	this->soap->header->wsa5__To = wsa5__To;
-	this->soap->header->wsa5__Action = wsa5__Action;
-	this->soap->header->chan__ChannelInstance = chan__ChannelInstance;
-	this->soap->header->wsdd__AppSequence = wsdd__AppSequence;
-	this->soap->header->wsse__Security = wsse__Security;
+	// ::soap_header(this->soap);
+	// this->soap->header->wsa5__MessageID = wsa5__MessageID;
+	// this->soap->header->wsa5__RelatesTo = wsa5__RelatesTo;
+	// this->soap->header->wsa5__From = wsa5__From;
+	// this->soap->header->wsa5__ReplyTo = wsa5__ReplyTo;
+	// this->soap->header->wsa5__FaultTo = wsa5__FaultTo;
+	// this->soap->header->wsa5__To = wsa5__To;
+	// this->soap->header->wsa5__Action = wsa5__Action;
+	// this->soap->header->chan__ChannelInstance = chan__ChannelInstance;
+	// this->soap->header->wsdd__AppSequence = wsdd__AppSequence;
+	// this->soap->header->wsse__Security = wsse__Security;
 }
 
 ::SOAP_ENV__Header *RemoteDiscoveryBindingProxy::soap_header()
@@ -206,171 +206,171 @@ char *RemoteDiscoveryBindingProxy::soap_sprint_fault(char *buf, size_t len)
 }
 #endif
 
-int RemoteDiscoveryBindingProxy::send_Hello(const char *soap_endpoint_url, const char *soap_action, const struct wsdd__HelloType& tdn__Hello)
-{
-	struct __tdn__Hello soap_tmp___tdn__Hello;
-	if (soap_endpoint_url != NULL)
-		soap_endpoint = soap_endpoint_url;
-	if (soap_action == NULL)
-		soap_action = "http://www.onvif.org/ver10/network/wsdl/Hello";
-	soap_tmp___tdn__Hello.tdn__Hello = tdn__Hello;
-	soap_begin(soap);
-	soap_set_version(soap, 2); /* use SOAP1.2 */
-	soap->encodingStyle = NULL; /* use SOAP literal style */
-	soap_serializeheader(soap);
-	soap_serialize___tdn__Hello(soap, &soap_tmp___tdn__Hello);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if ((soap->mode & SOAP_IO_LENGTH))
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___tdn__Hello(soap, &soap_tmp___tdn__Hello, "-tdn:Hello", "")
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_endpoint, soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___tdn__Hello(soap, &soap_tmp___tdn__Hello, "-tdn:Hello", "")
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	return SOAP_OK;
-}
+// int RemoteDiscoveryBindingProxy::send_Hello(const char *soap_endpoint_url, const char *soap_action, const struct wsdd__HelloType& tdn__Hello)
+// {
+// 	struct __tdn__Hello soap_tmp___tdn__Hello;
+// 	if (soap_endpoint_url != NULL)
+// 		soap_endpoint = soap_endpoint_url;
+// 	if (soap_action == NULL)
+// 		soap_action = "http://www.onvif.org/ver10/network/wsdl/Hello";
+// 	soap_tmp___tdn__Hello.tdn__Hello = tdn__Hello;
+// 	soap_begin(soap);
+// 	soap_set_version(soap, 2); /* use SOAP1.2 */
+// 	soap->encodingStyle = NULL; /* use SOAP literal style */
+// 	soap_serializeheader(soap);
+// 	soap_serialize___tdn__Hello(soap, &soap_tmp___tdn__Hello);
+// 	if (soap_begin_count(soap))
+// 		return soap->error;
+// 	if ((soap->mode & SOAP_IO_LENGTH))
+// 	{	if (soap_envelope_begin_out(soap)
+// 		 || soap_putheader(soap)
+// 		 || soap_body_begin_out(soap)
+// 		 || soap_put___tdn__Hello(soap, &soap_tmp___tdn__Hello, "-tdn:Hello", "")
+// 		 || soap_body_end_out(soap)
+// 		 || soap_envelope_end_out(soap))
+// 			 return soap->error;
+// 	}
+// 	if (soap_end_count(soap))
+// 		return soap->error;
+// 	if (soap_connect(soap, soap_endpoint, soap_action)
+// 	 || soap_envelope_begin_out(soap)
+// 	 || soap_putheader(soap)
+// 	 || soap_body_begin_out(soap)
+// 	 || soap_put___tdn__Hello(soap, &soap_tmp___tdn__Hello, "-tdn:Hello", "")
+// 	 || soap_body_end_out(soap)
+// 	 || soap_envelope_end_out(soap)
+// 	 || soap_end_send(soap))
+// 		return soap_closesock(soap);
+// 	return SOAP_OK;
+// }
 
-int RemoteDiscoveryBindingProxy::recv_Hello(struct wsdd__ResolveType &tdn__HelloResponse)
-{
-	soap_default_wsdd__ResolveType(soap, &tdn__HelloResponse);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	soap_get_wsdd__ResolveType(soap, &tdn__HelloResponse, "tdn:HelloResponse", NULL);
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
+// int RemoteDiscoveryBindingProxy::recv_Hello(struct wsdd__ResolveType &tdn__HelloResponse)
+// {
+// 	soap_default_wsdd__ResolveType(soap, &tdn__HelloResponse);
+// 	if (soap_begin_recv(soap)
+// 	 || soap_envelope_begin_in(soap)
+// 	 || soap_recv_header(soap)
+// 	 || soap_body_begin_in(soap))
+// 		return soap_closesock(soap);
+// 	soap_get_wsdd__ResolveType(soap, &tdn__HelloResponse, "tdn:HelloResponse", NULL);
+// 	if (soap->error)
+// 		return soap_recv_fault(soap, 0);
+// 	if (soap_body_end_in(soap)
+// 	 || soap_envelope_end_in(soap)
+// 	 || soap_end_recv(soap))
+// 		return soap_closesock(soap);
+// 	return soap_closesock(soap);
+// }
 
-int RemoteDiscoveryBindingProxy::send_Bye(const char *soap_endpoint_url, const char *soap_action, const struct wsdd__ByeType& tdn__Bye)
-{
-	struct __tdn__Bye soap_tmp___tdn__Bye;
-	if (soap_endpoint_url != NULL)
-		soap_endpoint = soap_endpoint_url;
-	if (soap_action == NULL)
-		soap_action = "http://www.onvif.org/ver10/network/wsdl/Bye";
-	soap_tmp___tdn__Bye.tdn__Bye = tdn__Bye;
-	soap_begin(soap);
-	soap_set_version(soap, 2); /* use SOAP1.2 */
-	soap->encodingStyle = NULL; /* use SOAP literal style */
-	soap_serializeheader(soap);
-	soap_serialize___tdn__Bye(soap, &soap_tmp___tdn__Bye);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if ((soap->mode & SOAP_IO_LENGTH))
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___tdn__Bye(soap, &soap_tmp___tdn__Bye, "-tdn:Bye", "")
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_endpoint, soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___tdn__Bye(soap, &soap_tmp___tdn__Bye, "-tdn:Bye", "")
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	return SOAP_OK;
-}
+// int RemoteDiscoveryBindingProxy::send_Bye(const char *soap_endpoint_url, const char *soap_action, const struct wsdd__ByeType& tdn__Bye)
+// {
+// 	struct __tdn__Bye soap_tmp___tdn__Bye;
+// 	if (soap_endpoint_url != NULL)
+// 		soap_endpoint = soap_endpoint_url;
+// 	if (soap_action == NULL)
+// 		soap_action = "http://www.onvif.org/ver10/network/wsdl/Bye";
+// 	soap_tmp___tdn__Bye.tdn__Bye = tdn__Bye;
+// 	soap_begin(soap);
+// 	soap_set_version(soap, 2); /* use SOAP1.2 */
+// 	soap->encodingStyle = NULL; /* use SOAP literal style */
+// 	soap_serializeheader(soap);
+// 	soap_serialize___tdn__Bye(soap, &soap_tmp___tdn__Bye);
+// 	if (soap_begin_count(soap))
+// 		return soap->error;
+// 	if ((soap->mode & SOAP_IO_LENGTH))
+// 	{	if (soap_envelope_begin_out(soap)
+// 		 || soap_putheader(soap)
+// 		 || soap_body_begin_out(soap)
+// 		 || soap_put___tdn__Bye(soap, &soap_tmp___tdn__Bye, "-tdn:Bye", "")
+// 		 || soap_body_end_out(soap)
+// 		 || soap_envelope_end_out(soap))
+// 			 return soap->error;
+// 	}
+// 	if (soap_end_count(soap))
+// 		return soap->error;
+// 	if (soap_connect(soap, soap_endpoint, soap_action)
+// 	 || soap_envelope_begin_out(soap)
+// 	 || soap_putheader(soap)
+// 	 || soap_body_begin_out(soap)
+// 	 || soap_put___tdn__Bye(soap, &soap_tmp___tdn__Bye, "-tdn:Bye", "")
+// 	 || soap_body_end_out(soap)
+// 	 || soap_envelope_end_out(soap)
+// 	 || soap_end_send(soap))
+// 		return soap_closesock(soap);
+// 	return SOAP_OK;
+// }
 
-int RemoteDiscoveryBindingProxy::recv_Bye(struct wsdd__ResolveType &tdn__ByeResponse)
-{
-	soap_default_wsdd__ResolveType(soap, &tdn__ByeResponse);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	soap_get_wsdd__ResolveType(soap, &tdn__ByeResponse, "tdn:ByeResponse", NULL);
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
+// int RemoteDiscoveryBindingProxy::recv_Bye(struct wsdd__ResolveType &tdn__ByeResponse)
+// {
+// 	soap_default_wsdd__ResolveType(soap, &tdn__ByeResponse);
+// 	if (soap_begin_recv(soap)
+// 	 || soap_envelope_begin_in(soap)
+// 	 || soap_recv_header(soap)
+// 	 || soap_body_begin_in(soap))
+// 		return soap_closesock(soap);
+// 	soap_get_wsdd__ResolveType(soap, &tdn__ByeResponse, "tdn:ByeResponse", NULL);
+// 	if (soap->error)
+// 		return soap_recv_fault(soap, 0);
+// 	if (soap_body_end_in(soap)
+// 	 || soap_envelope_end_in(soap)
+// 	 || soap_end_recv(soap))
+// 		return soap_closesock(soap);
+// 	return soap_closesock(soap);
+// }
 
-int RemoteDiscoveryBindingProxy::send_Probe(const char *soap_endpoint_url, const char *soap_action, const struct wsdd__ProbeType& tdn__Probe)
-{
-	struct __tdn__Probe soap_tmp___tdn__Probe;
-	if (soap_endpoint_url != NULL)
-		soap_endpoint = soap_endpoint_url;
-	if (soap_action == NULL)
-		soap_action = "http://www.onvif.org/ver10/network/wsdl/Probe";
-	soap_tmp___tdn__Probe.tdn__Probe = tdn__Probe;
-	soap_begin(soap);
-	soap_set_version(soap, 2); /* use SOAP1.2 */
-	soap->encodingStyle = NULL; /* use SOAP literal style */
-	soap_serializeheader(soap);
-	soap_serialize___tdn__Probe(soap, &soap_tmp___tdn__Probe);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if ((soap->mode & SOAP_IO_LENGTH))
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put___tdn__Probe(soap, &soap_tmp___tdn__Probe, "-tdn:Probe", "")
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_endpoint, soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put___tdn__Probe(soap, &soap_tmp___tdn__Probe, "-tdn:Probe", "")
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	return SOAP_OK;
-}
+// int RemoteDiscoveryBindingProxy::send_Probe(const char *soap_endpoint_url, const char *soap_action, const struct wsdd__ProbeType& tdn__Probe)
+// {
+// 	struct __tdn__Probe soap_tmp___tdn__Probe;
+// 	if (soap_endpoint_url != NULL)
+// 		soap_endpoint = soap_endpoint_url;
+// 	if (soap_action == NULL)
+// 		soap_action = "http://www.onvif.org/ver10/network/wsdl/Probe";
+// 	soap_tmp___tdn__Probe.tdn__Probe = tdn__Probe;
+// 	soap_begin(soap);
+// 	soap_set_version(soap, 2); /* use SOAP1.2 */
+// 	soap->encodingStyle = NULL; /* use SOAP literal style */
+// 	soap_serializeheader(soap);
+// 	soap_serialize___tdn__Probe(soap, &soap_tmp___tdn__Probe);
+// 	if (soap_begin_count(soap))
+// 		return soap->error;
+// 	if ((soap->mode & SOAP_IO_LENGTH))
+// 	{	if (soap_envelope_begin_out(soap)
+// 		 || soap_putheader(soap)
+// 		 || soap_body_begin_out(soap)
+// 		 || soap_put___tdn__Probe(soap, &soap_tmp___tdn__Probe, "-tdn:Probe", "")
+// 		 || soap_body_end_out(soap)
+// 		 || soap_envelope_end_out(soap))
+// 			 return soap->error;
+// 	}
+// 	if (soap_end_count(soap))
+// 		return soap->error;
+// 	if (soap_connect(soap, soap_endpoint, soap_action)
+// 	 || soap_envelope_begin_out(soap)
+// 	 || soap_putheader(soap)
+// 	 || soap_body_begin_out(soap)
+// 	 || soap_put___tdn__Probe(soap, &soap_tmp___tdn__Probe, "-tdn:Probe", "")
+// 	 || soap_body_end_out(soap)
+// 	 || soap_envelope_end_out(soap)
+// 	 || soap_end_send(soap))
+// 		return soap_closesock(soap);
+// 	return SOAP_OK;
+// }
 
-int RemoteDiscoveryBindingProxy::recv_Probe(struct wsdd__ProbeMatchesType &tdn__ProbeResponse)
-{
-	soap_default_wsdd__ProbeMatchesType(soap, &tdn__ProbeResponse);
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	soap_get_wsdd__ProbeMatchesType(soap, &tdn__ProbeResponse, "tdn:ProbeResponse", NULL);
-	if (soap->error)
-		return soap_recv_fault(soap, 0);
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	return soap_closesock(soap);
-}
+// int RemoteDiscoveryBindingProxy::recv_Probe(struct wsdd__ProbeMatchesType &tdn__ProbeResponse)
+// {
+// 	soap_default_wsdd__ProbeMatchesType(soap, &tdn__ProbeResponse);
+// 	if (soap_begin_recv(soap)
+// 	 || soap_envelope_begin_in(soap)
+// 	 || soap_recv_header(soap)
+// 	 || soap_body_begin_in(soap))
+// 		return soap_closesock(soap);
+// 	soap_get_wsdd__ProbeMatchesType(soap, &tdn__ProbeResponse, "tdn:ProbeResponse", NULL);
+// 	if (soap->error)
+// 		return soap_recv_fault(soap, 0);
+// 	if (soap_body_end_in(soap)
+// 	 || soap_envelope_end_in(soap)
+// 	 || soap_end_recv(soap))
+// 		return soap_closesock(soap);
+// 	return soap_closesock(soap);
+// }
 /* End of client proxy code */

@@ -23,7 +23,7 @@
 gSOAP XML Web services tools
 Copyright (C) 2000-2008, Robert van Engelen, Genivia Inc., All Rights Reserved.
 This part of the software is released under one of the following licenses:
-GPL, the gSOAP public license, or Genivia's license for commercial use.
+GPL or the gSOAP public license.
 --------------------------------------------------------------------------------
 gSOAP public license.
 
@@ -108,6 +108,8 @@ soap_set_logging_inbound(struct soap *soap, FILE *fd)
   struct logging_data *data = (struct logging_data*)soap_lookup_plugin(soap, logging_id);
   if (data)
     data->inbound = fd;
+  if (fd)
+    fflush(fd);
 }
 
 /* set outbound logging FD, NULL to disable */
@@ -119,6 +121,8 @@ soap_set_logging_outbound(struct soap *soap, FILE *fd)
   struct logging_data *data = (struct logging_data*)soap_lookup_plugin(soap, logging_id);
   if (data)
     data->outbound = fd;
+  if (fd)
+    fflush(fd);
 }
 
 /* get logging sent and recv octet counts */

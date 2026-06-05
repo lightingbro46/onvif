@@ -80,32 +80,32 @@ A commercial use license is available from Genivia Inc., contact@genivia.com
         /// Write fault to buffer
         virtual char *soap_sprint_fault(char *buf, size_t len);
     #endif
-        //
-        /// Web service synchronous operation 'Hello' with default endpoint and default SOAP Action header, returns SOAP_OK or error code
-        virtual int Hello(const struct wsdd__HelloType& tdn__Hello, struct wsdd__ResolveType &tdn__HelloResponse) { return this->Hello(NULL, NULL, tdn__Hello, tdn__HelloResponse); }
-        /// Web service synchronous operation 'Hello' to the specified endpoint and SOAP Action header, returns SOAP_OK or error code
-        virtual int Hello(const char *soap_endpoint_url, const char *soap_action, const struct wsdd__HelloType& tdn__Hello, struct wsdd__ResolveType &tdn__HelloResponse) { return this->send_Hello(soap_endpoint_url, soap_action, tdn__Hello) || this->recv_Hello(tdn__HelloResponse) ? this->soap->error : SOAP_OK; }
-        /// Web service asynchronous operation 'send_Hello' to send a request message to the specified endpoint and SOAP Action header, returns SOAP_OK or error code
-        virtual int send_Hello(const char *soap_endpoint_url, const char *soap_action, const struct wsdd__HelloType& tdn__Hello);
-        /// Web service asynchronous operation 'recv_Hello' to receive a response message from the connected endpoint, returns SOAP_OK or error code
-        virtual int recv_Hello(struct wsdd__ResolveType &tdn__HelloResponse);
-        //
-        /// Web service synchronous operation 'Bye' with default endpoint and default SOAP Action header, returns SOAP_OK or error code
-        virtual int Bye(const struct wsdd__ByeType& tdn__Bye, struct wsdd__ResolveType &tdn__ByeResponse) { return this->Bye(NULL, NULL, tdn__Bye, tdn__ByeResponse); }
-        /// Web service synchronous operation 'Bye' to the specified endpoint and SOAP Action header, returns SOAP_OK or error code
-        virtual int Bye(const char *soap_endpoint_url, const char *soap_action, const struct wsdd__ByeType& tdn__Bye, struct wsdd__ResolveType &tdn__ByeResponse) { return this->send_Bye(soap_endpoint_url, soap_action, tdn__Bye) || this->recv_Bye(tdn__ByeResponse) ? this->soap->error : SOAP_OK; }
-        /// Web service asynchronous operation 'send_Bye' to send a request message to the specified endpoint and SOAP Action header, returns SOAP_OK or error code
-        virtual int send_Bye(const char *soap_endpoint_url, const char *soap_action, const struct wsdd__ByeType& tdn__Bye);
-        /// Web service asynchronous operation 'recv_Bye' to receive a response message from the connected endpoint, returns SOAP_OK or error code
-        virtual int recv_Bye(struct wsdd__ResolveType &tdn__ByeResponse);
-        //
-        /// Web service synchronous operation 'Probe' with default endpoint and default SOAP Action header, returns SOAP_OK or error code
-        virtual int Probe(const struct wsdd__ProbeType& tdn__Probe, struct wsdd__ProbeMatchesType &tdn__ProbeResponse) { return this->Probe(NULL, NULL, tdn__Probe, tdn__ProbeResponse); }
-        /// Web service synchronous operation 'Probe' to the specified endpoint and SOAP Action header, returns SOAP_OK or error code
-        virtual int Probe(const char *soap_endpoint_url, const char *soap_action, const struct wsdd__ProbeType& tdn__Probe, struct wsdd__ProbeMatchesType &tdn__ProbeResponse) { return this->send_Probe(soap_endpoint_url, soap_action, tdn__Probe) || this->recv_Probe(tdn__ProbeResponse) ? this->soap->error : SOAP_OK; }
-        /// Web service asynchronous operation 'send_Probe' to send a request message to the specified endpoint and SOAP Action header, returns SOAP_OK or error code
-        virtual int send_Probe(const char *soap_endpoint_url, const char *soap_action, const struct wsdd__ProbeType& tdn__Probe);
-        /// Web service asynchronous operation 'recv_Probe' to receive a response message from the connected endpoint, returns SOAP_OK or error code
-        virtual int recv_Probe(struct wsdd__ProbeMatchesType &tdn__ProbeResponse);
+        // //
+        // /// Web service synchronous operation 'Hello' with default endpoint and default SOAP Action header, returns SOAP_OK or error code
+        // virtual int Hello(const struct wsdd__HelloType& tdn__Hello, struct wsdd__ResolveType &tdn__HelloResponse) { return this->Hello(NULL, NULL, tdn__Hello, tdn__HelloResponse); }
+        // /// Web service synchronous operation 'Hello' to the specified endpoint and SOAP Action header, returns SOAP_OK or error code
+        // virtual int Hello(const char *soap_endpoint_url, const char *soap_action, const struct wsdd__HelloType& tdn__Hello, struct wsdd__ResolveType &tdn__HelloResponse) { return this->send_Hello(soap_endpoint_url, soap_action, tdn__Hello) || this->recv_Hello(tdn__HelloResponse) ? this->soap->error : SOAP_OK; }
+        // /// Web service asynchronous operation 'send_Hello' to send a request message to the specified endpoint and SOAP Action header, returns SOAP_OK or error code
+        // virtual int send_Hello(const char *soap_endpoint_url, const char *soap_action, const struct wsdd__HelloType& tdn__Hello);
+        // /// Web service asynchronous operation 'recv_Hello' to receive a response message from the connected endpoint, returns SOAP_OK or error code
+        // virtual int recv_Hello(struct wsdd__ResolveType &tdn__HelloResponse);
+        // //
+        // /// Web service synchronous operation 'Bye' with default endpoint and default SOAP Action header, returns SOAP_OK or error code
+        // virtual int Bye(const struct wsdd__ByeType& tdn__Bye, struct wsdd__ResolveType &tdn__ByeResponse) { return this->Bye(NULL, NULL, tdn__Bye, tdn__ByeResponse); }
+        // /// Web service synchronous operation 'Bye' to the specified endpoint and SOAP Action header, returns SOAP_OK or error code
+        // virtual int Bye(const char *soap_endpoint_url, const char *soap_action, const struct wsdd__ByeType& tdn__Bye, struct wsdd__ResolveType &tdn__ByeResponse) { return this->send_Bye(soap_endpoint_url, soap_action, tdn__Bye) || this->recv_Bye(tdn__ByeResponse) ? this->soap->error : SOAP_OK; }
+        // /// Web service asynchronous operation 'send_Bye' to send a request message to the specified endpoint and SOAP Action header, returns SOAP_OK or error code
+        // virtual int send_Bye(const char *soap_endpoint_url, const char *soap_action, const struct wsdd__ByeType& tdn__Bye);
+        // /// Web service asynchronous operation 'recv_Bye' to receive a response message from the connected endpoint, returns SOAP_OK or error code
+        // virtual int recv_Bye(struct wsdd__ResolveType &tdn__ByeResponse);
+        // //
+        // /// Web service synchronous operation 'Probe' with default endpoint and default SOAP Action header, returns SOAP_OK or error code
+        // virtual int Probe(const struct wsdd__ProbeType& tdn__Probe, struct wsdd__ProbeMatchesType &tdn__ProbeResponse) { return this->Probe(NULL, NULL, tdn__Probe, tdn__ProbeResponse); }
+        // /// Web service synchronous operation 'Probe' to the specified endpoint and SOAP Action header, returns SOAP_OK or error code
+        // virtual int Probe(const char *soap_endpoint_url, const char *soap_action, const struct wsdd__ProbeType& tdn__Probe, struct wsdd__ProbeMatchesType &tdn__ProbeResponse) { return this->send_Probe(soap_endpoint_url, soap_action, tdn__Probe) || this->recv_Probe(tdn__ProbeResponse) ? this->soap->error : SOAP_OK; }
+        // /// Web service asynchronous operation 'send_Probe' to send a request message to the specified endpoint and SOAP Action header, returns SOAP_OK or error code
+        // virtual int send_Probe(const char *soap_endpoint_url, const char *soap_action, const struct wsdd__ProbeType& tdn__Probe);
+        // /// Web service asynchronous operation 'recv_Probe' to receive a response message from the connected endpoint, returns SOAP_OK or error code
+        // virtual int recv_Probe(struct wsdd__ProbeMatchesType &tdn__ProbeResponse);
     };
 #endif

@@ -105,7 +105,10 @@ void ImagingBindingProxy::ImagingBindingProxy_init(soap_mode imode, soap_mode om
         { "timg", "http://www.onvif.org/ver20/imaging/wsdl", NULL, NULL },
         { "tmd", "http://www.onvif.org/ver10/deviceIO/wsdl", NULL, NULL },
         { "tptz", "http://www.onvif.org/ver20/ptz/wsdl", NULL, NULL },
+        { "trc", "http://www.onvif.org/ver10/recording/wsdl", NULL, NULL },
+        { "trp", "http://www.onvif.org/ver10/replay/wsdl", NULL, NULL },
         { "trt", "http://www.onvif.org/ver10/media/wsdl", NULL, NULL },
+        { "tse", "http://www.onvif.org/ver10/search/wsdl", NULL, NULL },
         { NULL, NULL, NULL, NULL} /* end of namespaces[] */
     };
 	soap_set_namespaces(this->soap, namespaces);
@@ -221,6 +224,7 @@ int ImagingBindingProxy::send_GetServiceCapabilities(const char *soap_endpoint_u
 		soap_action = "http://www.onvif.org/ver20/imaging/wsdl/GetServiceCapabilities";
 	soap_tmp___timg__GetServiceCapabilities.timg__GetServiceCapabilities = timg__GetServiceCapabilities;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___timg__GetServiceCapabilities(soap, &soap_tmp___timg__GetServiceCapabilities);
@@ -276,6 +280,7 @@ int ImagingBindingProxy::send_GetImagingSettings(const char *soap_endpoint_url, 
 		soap_action = "http://www.onvif.org/ver20/imaging/wsdl/GetImagingSettings";
 	soap_tmp___timg__GetImagingSettings.timg__GetImagingSettings = timg__GetImagingSettings;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___timg__GetImagingSettings(soap, &soap_tmp___timg__GetImagingSettings);
@@ -331,6 +336,7 @@ int ImagingBindingProxy::send_SetImagingSettings(const char *soap_endpoint_url, 
 		soap_action = "http://www.onvif.org/ver20/imaging/wsdl/SetImagingSettings";
 	soap_tmp___timg__SetImagingSettings.timg__SetImagingSettings = timg__SetImagingSettings;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___timg__SetImagingSettings(soap, &soap_tmp___timg__SetImagingSettings);
@@ -386,6 +392,7 @@ int ImagingBindingProxy::send_GetOptions(const char *soap_endpoint_url, const ch
 		soap_action = "http://www.onvif.org/ver20/imaging/wsdl/GetOptions";
 	soap_tmp___timg__GetOptions.timg__GetOptions = timg__GetOptions;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___timg__GetOptions(soap, &soap_tmp___timg__GetOptions);
@@ -441,6 +448,7 @@ int ImagingBindingProxy::send_Move(const char *soap_endpoint_url, const char *so
 		soap_action = "http://www.onvif.org/ver20/imaging/wsdl/Move";
 	soap_tmp___timg__Move.timg__Move = timg__Move;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___timg__Move(soap, &soap_tmp___timg__Move);
@@ -496,6 +504,7 @@ int ImagingBindingProxy::send_Stop(const char *soap_endpoint_url, const char *so
 		soap_action = "http://www.onvif.org/ver20/imaging/wsdl/FocusStop";
 	soap_tmp___timg__Stop.timg__Stop = timg__Stop;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___timg__Stop(soap, &soap_tmp___timg__Stop);
@@ -551,6 +560,7 @@ int ImagingBindingProxy::send_GetStatus(const char *soap_endpoint_url, const cha
 		soap_action = "http://www.onvif.org/ver20/imaging/wsdl/GetStatus";
 	soap_tmp___timg__GetStatus.timg__GetStatus = timg__GetStatus;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___timg__GetStatus(soap, &soap_tmp___timg__GetStatus);
@@ -606,6 +616,7 @@ int ImagingBindingProxy::send_GetMoveOptions(const char *soap_endpoint_url, cons
 		soap_action = "http://www.onvif.org/ver20/imaging/wsdl/GetMoveOptions";
 	soap_tmp___timg__GetMoveOptions.timg__GetMoveOptions = timg__GetMoveOptions;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___timg__GetMoveOptions(soap, &soap_tmp___timg__GetMoveOptions);
@@ -661,6 +672,7 @@ int ImagingBindingProxy::send_GetPresets(const char *soap_endpoint_url, const ch
 		soap_action = "http://www.onvif.org/ver20/imaging/wsdl/GetPresets";
 	soap_tmp___timg__GetPresets.timg__GetPresets = timg__GetPresets;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___timg__GetPresets(soap, &soap_tmp___timg__GetPresets);
@@ -716,6 +728,7 @@ int ImagingBindingProxy::send_GetCurrentPreset(const char *soap_endpoint_url, co
 		soap_action = "http://www.onvif.org/ver20/imaging/wsdl/GetCurrentPreset";
 	soap_tmp___timg__GetCurrentPreset.timg__GetCurrentPreset = timg__GetCurrentPreset;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___timg__GetCurrentPreset(soap, &soap_tmp___timg__GetCurrentPreset);
@@ -771,6 +784,7 @@ int ImagingBindingProxy::send_SetCurrentPreset(const char *soap_endpoint_url, co
 		soap_action = "http://www.onvif.org/ver20/imaging/wsdl/SetCurrentPreset";
 	soap_tmp___timg__SetCurrentPreset.timg__SetCurrentPreset = timg__SetCurrentPreset;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___timg__SetCurrentPreset(soap, &soap_tmp___timg__SetCurrentPreset);

@@ -37,6 +37,9 @@ add_library(onvifcore STATIC
     src/soapPTZBindingProxy.cpp 
     src/soapPullPointSubscriptionBindingProxy.cpp 
     src/soapRemoteDiscoveryBindingProxy.cpp
+    src/soapRecordingBindingProxy.cpp
+    src/soapReplayBindingProxy.cpp
+    src/soapSearchBindingProxy.cpp
 )
 
 # Header files (not mandatory to list, but can be included for IDE support)
@@ -71,6 +74,9 @@ target_sources(onvifcore PRIVATE
     include/soapPTZBindingProxy.h 
     include/soapPullPointSubscriptionBindingProxy.h 
     include/soapRemoteDiscoveryBindingProxy.h 
+    include/soapRecordingBindingProxy.h 
+    include/soapReplayBindingProxy.h 
+    include/soapSearchBindingProxy.h 
     include/soapStub.h 
     include/wsdd.nsmap
 )

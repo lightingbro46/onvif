@@ -105,7 +105,10 @@ void DeviceIOBindingProxy::DeviceIOBindingProxy_init(soap_mode imode, soap_mode 
         { "timg", "http://www.onvif.org/ver20/imaging/wsdl", NULL, NULL },
         { "tmd", "http://www.onvif.org/ver10/deviceIO/wsdl", NULL, NULL },
         { "tptz", "http://www.onvif.org/ver20/ptz/wsdl", NULL, NULL },
+        { "trc", "http://www.onvif.org/ver10/recording/wsdl", NULL, NULL },
+        { "trp", "http://www.onvif.org/ver10/replay/wsdl", NULL, NULL },
         { "trt", "http://www.onvif.org/ver10/media/wsdl", NULL, NULL },
+        { "tse", "http://www.onvif.org/ver10/search/wsdl", NULL, NULL },
         { NULL, NULL, NULL, NULL} /* end of namespaces[] */
     };
 	soap_set_namespaces(this->soap, namespaces);
@@ -221,6 +224,7 @@ int DeviceIOBindingProxy::send_GetServiceCapabilities(const char *soap_endpoint_
 		soap_action = "http://www.onvif.org/ver10/deviceio/wsdl/GetServiceCapabilities";
 	soap_tmp___tmd__GetServiceCapabilities.tmd__GetServiceCapabilities = tmd__GetServiceCapabilities;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tmd__GetServiceCapabilities(soap, &soap_tmp___tmd__GetServiceCapabilities);
@@ -276,6 +280,7 @@ int DeviceIOBindingProxy::send_GetRelayOutputOptions(const char *soap_endpoint_u
 		soap_action = "http://www.onvif.org/ver10/deviceio/wsdl/GetRelayOutputOptions";
 	soap_tmp___tmd__GetRelayOutputOptions.tmd__GetRelayOutputOptions = tmd__GetRelayOutputOptions;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tmd__GetRelayOutputOptions(soap, &soap_tmp___tmd__GetRelayOutputOptions);
@@ -331,6 +336,7 @@ int DeviceIOBindingProxy::send_GetAudioSources(const char *soap_endpoint_url, co
 		soap_action = "http://www.onvif.org/ver10/deviceio/wsdl/GetAudioSources";
 	soap_tmp___tmd__GetAudioSources.tmd__GetAudioSources = tmd__GetAudioSources;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tmd__GetAudioSources(soap, &soap_tmp___tmd__GetAudioSources);
@@ -386,6 +392,7 @@ int DeviceIOBindingProxy::send_GetAudioOutputs(const char *soap_endpoint_url, co
 		soap_action = "http://www.onvif.org/ver10/deviceio/wsdl/GetAudioOutputs";
 	soap_tmp___tmd__GetAudioOutputs.tmd__GetAudioOutputs = tmd__GetAudioOutputs;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tmd__GetAudioOutputs(soap, &soap_tmp___tmd__GetAudioOutputs);
@@ -441,6 +448,7 @@ int DeviceIOBindingProxy::send_GetVideoSources(const char *soap_endpoint_url, co
 		soap_action = "http://www.onvif.org/ver10/deviceio/wsdl/GetVideoSources";
 	soap_tmp___tmd__GetVideoSources.tmd__GetVideoSources = tmd__GetVideoSources;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tmd__GetVideoSources(soap, &soap_tmp___tmd__GetVideoSources);
@@ -496,6 +504,7 @@ int DeviceIOBindingProxy::send_GetVideoOutputs(const char *soap_endpoint_url, co
 		soap_action = "http://www.onvif.org/ver10/deviceio/wsdl/GetVideoOutputs";
 	soap_tmp___tmd__GetVideoOutputs.tmd__GetVideoOutputs = tmd__GetVideoOutputs;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tmd__GetVideoOutputs(soap, &soap_tmp___tmd__GetVideoOutputs);
@@ -551,6 +560,7 @@ int DeviceIOBindingProxy::send_GetVideoSourceConfiguration(const char *soap_endp
 		soap_action = "http://www.onvif.org/ver10/deviceio/wsdl/GetVideoSourceConfiguration";
 	soap_tmp___tmd__GetVideoSourceConfiguration.tmd__GetVideoSourceConfiguration = tmd__GetVideoSourceConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tmd__GetVideoSourceConfiguration(soap, &soap_tmp___tmd__GetVideoSourceConfiguration);
@@ -606,6 +616,7 @@ int DeviceIOBindingProxy::send_GetVideoOutputConfiguration(const char *soap_endp
 		soap_action = "http://www.onvif.org/ver10/deviceio/wsdl/GetVideoOutputConfiguration";
 	soap_tmp___tmd__GetVideoOutputConfiguration.tmd__GetVideoOutputConfiguration = tmd__GetVideoOutputConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tmd__GetVideoOutputConfiguration(soap, &soap_tmp___tmd__GetVideoOutputConfiguration);
@@ -661,6 +672,7 @@ int DeviceIOBindingProxy::send_GetAudioSourceConfiguration(const char *soap_endp
 		soap_action = "http://www.onvif.org/ver10/deviceio/wsdl/GetAudioSourceConfiguration";
 	soap_tmp___tmd__GetAudioSourceConfiguration.tmd__GetAudioSourceConfiguration = tmd__GetAudioSourceConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tmd__GetAudioSourceConfiguration(soap, &soap_tmp___tmd__GetAudioSourceConfiguration);
@@ -716,6 +728,7 @@ int DeviceIOBindingProxy::send_GetAudioOutputConfiguration(const char *soap_endp
 		soap_action = "http://www.onvif.org/ver10/deviceio/wsdl/GetAudioOutputConfiguration";
 	soap_tmp___tmd__GetAudioOutputConfiguration.tmd__GetAudioOutputConfiguration = tmd__GetAudioOutputConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tmd__GetAudioOutputConfiguration(soap, &soap_tmp___tmd__GetAudioOutputConfiguration);
@@ -771,6 +784,7 @@ int DeviceIOBindingProxy::send_SetVideoSourceConfiguration(const char *soap_endp
 		soap_action = "http://www.onvif.org/ver10/deviceio/wsdl/SetVideoSourceConfiguration";
 	soap_tmp___tmd__SetVideoSourceConfiguration.tmd__SetVideoSourceConfiguration = tmd__SetVideoSourceConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tmd__SetVideoSourceConfiguration(soap, &soap_tmp___tmd__SetVideoSourceConfiguration);
@@ -826,6 +840,7 @@ int DeviceIOBindingProxy::send_SetVideoOutputConfiguration(const char *soap_endp
 		soap_action = "http://www.onvif.org/ver10/deviceio/wsdl/SetVideoOutputConfiguration";
 	soap_tmp___tmd__SetVideoOutputConfiguration.tmd__SetVideoOutputConfiguration = tmd__SetVideoOutputConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tmd__SetVideoOutputConfiguration(soap, &soap_tmp___tmd__SetVideoOutputConfiguration);
@@ -881,6 +896,7 @@ int DeviceIOBindingProxy::send_SetAudioSourceConfiguration(const char *soap_endp
 		soap_action = "http://www.onvif.org/ver10/deviceio/wsdl/SetAudioSourceConfiguration";
 	soap_tmp___tmd__SetAudioSourceConfiguration.tmd__SetAudioSourceConfiguration = tmd__SetAudioSourceConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tmd__SetAudioSourceConfiguration(soap, &soap_tmp___tmd__SetAudioSourceConfiguration);
@@ -936,6 +952,7 @@ int DeviceIOBindingProxy::send_SetAudioOutputConfiguration(const char *soap_endp
 		soap_action = "http://www.onvif.org/ver10/deviceio/wsdl/SetAudioOutputConfiguration";
 	soap_tmp___tmd__SetAudioOutputConfiguration.tmd__SetAudioOutputConfiguration = tmd__SetAudioOutputConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tmd__SetAudioOutputConfiguration(soap, &soap_tmp___tmd__SetAudioOutputConfiguration);
@@ -991,6 +1008,7 @@ int DeviceIOBindingProxy::send_GetVideoSourceConfigurationOptions(const char *so
 		soap_action = "http://www.onvif.org/ver10/deviceio/wsdl/GetVideoSourceConfigurationOptions";
 	soap_tmp___tmd__GetVideoSourceConfigurationOptions.tmd__GetVideoSourceConfigurationOptions = tmd__GetVideoSourceConfigurationOptions;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tmd__GetVideoSourceConfigurationOptions(soap, &soap_tmp___tmd__GetVideoSourceConfigurationOptions);
@@ -1046,6 +1064,7 @@ int DeviceIOBindingProxy::send_GetVideoOutputConfigurationOptions(const char *so
 		soap_action = "http://www.onvif.org/ver10/deviceio/wsdl/GetVideoOutputConfigurationOptions";
 	soap_tmp___tmd__GetVideoOutputConfigurationOptions.tmd__GetVideoOutputConfigurationOptions = tmd__GetVideoOutputConfigurationOptions;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tmd__GetVideoOutputConfigurationOptions(soap, &soap_tmp___tmd__GetVideoOutputConfigurationOptions);
@@ -1101,6 +1120,7 @@ int DeviceIOBindingProxy::send_GetAudioSourceConfigurationOptions(const char *so
 		soap_action = "http://www.onvif.org/ver10/deviceio/wsdl/GetAudioSourceConfigurationOptions";
 	soap_tmp___tmd__GetAudioSourceConfigurationOptions.tmd__GetAudioSourceConfigurationOptions = tmd__GetAudioSourceConfigurationOptions;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tmd__GetAudioSourceConfigurationOptions(soap, &soap_tmp___tmd__GetAudioSourceConfigurationOptions);
@@ -1156,6 +1176,7 @@ int DeviceIOBindingProxy::send_GetAudioOutputConfigurationOptions(const char *so
 		soap_action = "http://www.onvif.org/ver10/deviceio/wsdl/GetAudioOutputConfigurationOptions";
 	soap_tmp___tmd__GetAudioOutputConfigurationOptions.tmd__GetAudioOutputConfigurationOptions = tmd__GetAudioOutputConfigurationOptions;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tmd__GetAudioOutputConfigurationOptions(soap, &soap_tmp___tmd__GetAudioOutputConfigurationOptions);
@@ -1211,6 +1232,7 @@ int DeviceIOBindingProxy::send_GetRelayOutputs(const char *soap_endpoint_url, co
 		soap_action = "http://www.onvif.org/ver10/deviceio/wsdl/GetRelayOutputs";
 	soap_tmp___tmd__GetRelayOutputs.tds__GetRelayOutputs = tds__GetRelayOutputs;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tmd__GetRelayOutputs(soap, &soap_tmp___tmd__GetRelayOutputs);
@@ -1266,6 +1288,7 @@ int DeviceIOBindingProxy::send_SetRelayOutputSettings(const char *soap_endpoint_
 		soap_action = "http://www.onvif.org/ver10/deviceio/wsdl/SetRelayOutputSettings";
 	soap_tmp___tmd__SetRelayOutputSettings.tmd__SetRelayOutputSettings = tmd__SetRelayOutputSettings;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tmd__SetRelayOutputSettings(soap, &soap_tmp___tmd__SetRelayOutputSettings);
@@ -1321,6 +1344,7 @@ int DeviceIOBindingProxy::send_SetRelayOutputState(const char *soap_endpoint_url
 		soap_action = "http://www.onvif.org/ver10/deviceio/wsdl/SetRelayOutputState";
 	soap_tmp___tmd__SetRelayOutputState.tds__SetRelayOutputState = tds__SetRelayOutputState;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tmd__SetRelayOutputState(soap, &soap_tmp___tmd__SetRelayOutputState);
@@ -1376,6 +1400,7 @@ int DeviceIOBindingProxy::send_GetDigitalInputs(const char *soap_endpoint_url, c
 		soap_action = "http://www.onvif.org/ver10/deviceio/wsdl/GetDigitalInputs";
 	soap_tmp___tmd__GetDigitalInputs.tmd__GetDigitalInputs = tmd__GetDigitalInputs;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tmd__GetDigitalInputs(soap, &soap_tmp___tmd__GetDigitalInputs);
@@ -1431,6 +1456,7 @@ int DeviceIOBindingProxy::send_GetDigitalInputConfigurationOptions(const char *s
 		soap_action = "http://www.onvif.org/ver10/deviceio/wsdl/GetDigitalInputConfigurationOptions";
 	soap_tmp___tmd__GetDigitalInputConfigurationOptions.tmd__GetDigitalInputConfigurationOptions = tmd__GetDigitalInputConfigurationOptions;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tmd__GetDigitalInputConfigurationOptions(soap, &soap_tmp___tmd__GetDigitalInputConfigurationOptions);
@@ -1486,6 +1512,7 @@ int DeviceIOBindingProxy::send_SetDigitalInputConfigurations(const char *soap_en
 		soap_action = "http://www.onvif.org/ver10/deviceio/wsdl/SetDigitalInputConfigurations";
 	soap_tmp___tmd__SetDigitalInputConfigurations.tmd__SetDigitalInputConfigurations = tmd__SetDigitalInputConfigurations;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tmd__SetDigitalInputConfigurations(soap, &soap_tmp___tmd__SetDigitalInputConfigurations);
@@ -1541,6 +1568,7 @@ int DeviceIOBindingProxy::send_GetSerialPorts(const char *soap_endpoint_url, con
 		soap_action = "http://www.onvif.org/ver10/deviceio/wsdl/GetSerialPorts";
 	soap_tmp___tmd__GetSerialPorts.tmd__GetSerialPorts = tmd__GetSerialPorts;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tmd__GetSerialPorts(soap, &soap_tmp___tmd__GetSerialPorts);
@@ -1596,6 +1624,7 @@ int DeviceIOBindingProxy::send_GetSerialPortConfiguration(const char *soap_endpo
 		soap_action = "http://www.onvif.org/ver10/deviceio/wsdl/GetSerialPortConfigurations";
 	soap_tmp___tmd__GetSerialPortConfiguration.tmd__GetSerialPortConfiguration = tmd__GetSerialPortConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tmd__GetSerialPortConfiguration(soap, &soap_tmp___tmd__GetSerialPortConfiguration);
@@ -1651,6 +1680,7 @@ int DeviceIOBindingProxy::send_SetSerialPortConfiguration(const char *soap_endpo
 		soap_action = "http://www.onvif.org/ver10/deviceio/wsdl/SetSerialPortConfiguration";
 	soap_tmp___tmd__SetSerialPortConfiguration.tmd__SetSerialPortConfiguration = tmd__SetSerialPortConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tmd__SetSerialPortConfiguration(soap, &soap_tmp___tmd__SetSerialPortConfiguration);
@@ -1706,6 +1736,7 @@ int DeviceIOBindingProxy::send_GetSerialPortConfigurationOptions(const char *soa
 		soap_action = "http://www.onvif.org/ver10/deviceio/wsdl/GetSerialPortConfigurationOptions";
 	soap_tmp___tmd__GetSerialPortConfigurationOptions.tmd__GetSerialPortConfigurationOptions = tmd__GetSerialPortConfigurationOptions;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tmd__GetSerialPortConfigurationOptions(soap, &soap_tmp___tmd__GetSerialPortConfigurationOptions);
@@ -1761,6 +1792,7 @@ int DeviceIOBindingProxy::send_SendReceiveSerialCommand(const char *soap_endpoin
 		soap_action = "http://www.onvif.org/ver10/deviceio/wsdl/SendReceiveSerialCommand";
 	soap_tmp___tmd__SendReceiveSerialCommand.tmd__SendReceiveSerialCommand = tmd__SendReceiveSerialCommand;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tmd__SendReceiveSerialCommand(soap, &soap_tmp___tmd__SendReceiveSerialCommand);

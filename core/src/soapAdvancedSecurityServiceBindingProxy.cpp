@@ -105,7 +105,10 @@ void AdvancedSecurityServiceBindingProxy::AdvancedSecurityServiceBindingProxy_in
         { "timg", "http://www.onvif.org/ver20/imaging/wsdl", NULL, NULL },
         { "tmd", "http://www.onvif.org/ver10/deviceIO/wsdl", NULL, NULL },
         { "tptz", "http://www.onvif.org/ver20/ptz/wsdl", NULL, NULL },
+        { "trc", "http://www.onvif.org/ver10/recording/wsdl", NULL, NULL },
+        { "trp", "http://www.onvif.org/ver10/replay/wsdl", NULL, NULL },
         { "trt", "http://www.onvif.org/ver10/media/wsdl", NULL, NULL },
+        { "tse", "http://www.onvif.org/ver10/search/wsdl", NULL, NULL },
         { NULL, NULL, NULL, NULL} /* end of namespaces[] */
     };
 	soap_set_namespaces(this->soap, namespaces);
@@ -221,6 +224,7 @@ int AdvancedSecurityServiceBindingProxy::send_GetServiceCapabilities(const char 
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/GetServiceCapabilities";
 	soap_tmp___tas__GetServiceCapabilities.tas__GetServiceCapabilities = tas__GetServiceCapabilities;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__GetServiceCapabilities(soap, &soap_tmp___tas__GetServiceCapabilities);
@@ -276,6 +280,7 @@ int AdvancedSecurityServiceBindingProxy::send_GetJWTConfiguration(const char *so
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/GetJWTConfiguration";
 	soap_tmp___tas__GetJWTConfiguration.tas__GetJWTConfiguration = tas__GetJWTConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__GetJWTConfiguration(soap, &soap_tmp___tas__GetJWTConfiguration);
@@ -331,6 +336,7 @@ int AdvancedSecurityServiceBindingProxy::send_SetJWTConfiguration(const char *so
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/SetJWTConfiguration";
 	soap_tmp___tas__SetJWTConfiguration.tas__SetJWTConfiguration = tas__SetJWTConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__SetJWTConfiguration(soap, &soap_tmp___tas__SetJWTConfiguration);
@@ -386,6 +392,7 @@ int AdvancedSecurityServiceBindingProxy::send_CreateRSAKeyPair(const char *soap_
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/CreateRSAKeyPair";
 	soap_tmp___tas__CreateRSAKeyPair.tas__CreateRSAKeyPair = tas__CreateRSAKeyPair;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__CreateRSAKeyPair(soap, &soap_tmp___tas__CreateRSAKeyPair);
@@ -441,6 +448,7 @@ int AdvancedSecurityServiceBindingProxy::send_CreateECCKeyPair(const char *soap_
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/CreateECCKeyPair";
 	soap_tmp___tas__CreateECCKeyPair.tas__CreateECCKeyPair = tas__CreateECCKeyPair;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__CreateECCKeyPair(soap, &soap_tmp___tas__CreateECCKeyPair);
@@ -496,6 +504,7 @@ int AdvancedSecurityServiceBindingProxy::send_UploadKeyPairInPKCS8(const char *s
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/UploadKeyPairInPKCS8";
 	soap_tmp___tas__UploadKeyPairInPKCS8.tas__UploadKeyPairInPKCS8 = tas__UploadKeyPairInPKCS8;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__UploadKeyPairInPKCS8(soap, &soap_tmp___tas__UploadKeyPairInPKCS8);
@@ -551,6 +560,7 @@ int AdvancedSecurityServiceBindingProxy::send_UploadCertificateWithPrivateKeyInP
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/UploadCertificateWithPrivateKeyInPKCS12";
 	soap_tmp___tas__UploadCertificateWithPrivateKeyInPKCS12.tas__UploadCertificateWithPrivateKeyInPKCS12 = tas__UploadCertificateWithPrivateKeyInPKCS12;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__UploadCertificateWithPrivateKeyInPKCS12(soap, &soap_tmp___tas__UploadCertificateWithPrivateKeyInPKCS12);
@@ -606,6 +616,7 @@ int AdvancedSecurityServiceBindingProxy::send_GetKeyStatus(const char *soap_endp
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/GetKeyStatus";
 	soap_tmp___tas__GetKeyStatus.tas__GetKeyStatus = tas__GetKeyStatus;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__GetKeyStatus(soap, &soap_tmp___tas__GetKeyStatus);
@@ -661,6 +672,7 @@ int AdvancedSecurityServiceBindingProxy::send_GetPrivateKeyStatus(const char *so
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/GetPrivateKeyStatus";
 	soap_tmp___tas__GetPrivateKeyStatus.tas__GetPrivateKeyStatus = tas__GetPrivateKeyStatus;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__GetPrivateKeyStatus(soap, &soap_tmp___tas__GetPrivateKeyStatus);
@@ -716,6 +728,7 @@ int AdvancedSecurityServiceBindingProxy::send_GetAllKeys(const char *soap_endpoi
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/GetAllKeys";
 	soap_tmp___tas__GetAllKeys.tas__GetAllKeys = tas__GetAllKeys;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__GetAllKeys(soap, &soap_tmp___tas__GetAllKeys);
@@ -771,6 +784,7 @@ int AdvancedSecurityServiceBindingProxy::send_DeleteKey(const char *soap_endpoin
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/DeleteKey";
 	soap_tmp___tas__DeleteKey.tas__DeleteKey = tas__DeleteKey;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__DeleteKey(soap, &soap_tmp___tas__DeleteKey);
@@ -826,6 +840,7 @@ int AdvancedSecurityServiceBindingProxy::send_CreatePKCS10CSR(const char *soap_e
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/CreatePKCS10CSR";
 	soap_tmp___tas__CreatePKCS10CSR.tas__CreatePKCS10CSR = tas__CreatePKCS10CSR;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__CreatePKCS10CSR(soap, &soap_tmp___tas__CreatePKCS10CSR);
@@ -881,6 +896,7 @@ int AdvancedSecurityServiceBindingProxy::send_CreateSelfSignedCertificate(const 
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/CreateSelfSignedCertificate";
 	soap_tmp___tas__CreateSelfSignedCertificate.tas__CreateSelfSignedCertificate = tas__CreateSelfSignedCertificate;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__CreateSelfSignedCertificate(soap, &soap_tmp___tas__CreateSelfSignedCertificate);
@@ -936,6 +952,7 @@ int AdvancedSecurityServiceBindingProxy::send_UploadCertificate(const char *soap
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/UploadCertificate";
 	soap_tmp___tas__UploadCertificate.tas__UploadCertificate = tas__UploadCertificate;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__UploadCertificate(soap, &soap_tmp___tas__UploadCertificate);
@@ -991,6 +1008,7 @@ int AdvancedSecurityServiceBindingProxy::send_GetCertificate(const char *soap_en
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/GetCertificate";
 	soap_tmp___tas__GetCertificate.tas__GetCertificate = tas__GetCertificate;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__GetCertificate(soap, &soap_tmp___tas__GetCertificate);
@@ -1046,6 +1064,7 @@ int AdvancedSecurityServiceBindingProxy::send_GetAllCertificates(const char *soa
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/GetAllCertificates";
 	soap_tmp___tas__GetAllCertificates.tas__GetAllCertificates = tas__GetAllCertificates;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__GetAllCertificates(soap, &soap_tmp___tas__GetAllCertificates);
@@ -1101,6 +1120,7 @@ int AdvancedSecurityServiceBindingProxy::send_DeleteCertificate(const char *soap
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/DeleteCertificate";
 	soap_tmp___tas__DeleteCertificate.tas__DeleteCertificate = tas__DeleteCertificate;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__DeleteCertificate(soap, &soap_tmp___tas__DeleteCertificate);
@@ -1156,6 +1176,7 @@ int AdvancedSecurityServiceBindingProxy::send_CreateCertificationPath(const char
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/CreateCertificationPath";
 	soap_tmp___tas__CreateCertificationPath.tas__CreateCertificationPath = tas__CreateCertificationPath;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__CreateCertificationPath(soap, &soap_tmp___tas__CreateCertificationPath);
@@ -1211,6 +1232,7 @@ int AdvancedSecurityServiceBindingProxy::send_GetCertificationPath(const char *s
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/GetCertificationPath";
 	soap_tmp___tas__GetCertificationPath.tas__GetCertificationPath = tas__GetCertificationPath;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__GetCertificationPath(soap, &soap_tmp___tas__GetCertificationPath);
@@ -1266,6 +1288,7 @@ int AdvancedSecurityServiceBindingProxy::send_GetAllCertificationPaths(const cha
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/GetAllCertificationPaths";
 	soap_tmp___tas__GetAllCertificationPaths.tas__GetAllCertificationPaths = tas__GetAllCertificationPaths;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__GetAllCertificationPaths(soap, &soap_tmp___tas__GetAllCertificationPaths);
@@ -1321,6 +1344,7 @@ int AdvancedSecurityServiceBindingProxy::send_SetCertificationPath(const char *s
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/SetCertificationPath";
 	soap_tmp___tas__SetCertificationPath.tas__SetCertificationPath = tas__SetCertificationPath;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__SetCertificationPath(soap, &soap_tmp___tas__SetCertificationPath);
@@ -1376,6 +1400,7 @@ int AdvancedSecurityServiceBindingProxy::send_DeleteCertificationPath(const char
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/DeleteCertificationPath";
 	soap_tmp___tas__DeleteCertificationPath.tas__DeleteCertificationPath = tas__DeleteCertificationPath;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__DeleteCertificationPath(soap, &soap_tmp___tas__DeleteCertificationPath);
@@ -1431,6 +1456,7 @@ int AdvancedSecurityServiceBindingProxy::send_UploadPassphrase(const char *soap_
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/UploadPassphrase";
 	soap_tmp___tas__UploadPassphrase.tas__UploadPassphrase = tas__UploadPassphrase;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__UploadPassphrase(soap, &soap_tmp___tas__UploadPassphrase);
@@ -1486,6 +1512,7 @@ int AdvancedSecurityServiceBindingProxy::send_GetAllPassphrases(const char *soap
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/GetAllPassphrases";
 	soap_tmp___tas__GetAllPassphrases.tas__GetAllPassphrases = tas__GetAllPassphrases;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__GetAllPassphrases(soap, &soap_tmp___tas__GetAllPassphrases);
@@ -1541,6 +1568,7 @@ int AdvancedSecurityServiceBindingProxy::send_DeletePassphrase(const char *soap_
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/DeletePassphrase";
 	soap_tmp___tas__DeletePassphrase.tas__DeletePassphrase = tas__DeletePassphrase;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__DeletePassphrase(soap, &soap_tmp___tas__DeletePassphrase);
@@ -1596,6 +1624,7 @@ int AdvancedSecurityServiceBindingProxy::send_UploadCRL(const char *soap_endpoin
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/UploadCRL";
 	soap_tmp___tas__UploadCRL.tas__UploadCRL = tas__UploadCRL;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__UploadCRL(soap, &soap_tmp___tas__UploadCRL);
@@ -1651,6 +1680,7 @@ int AdvancedSecurityServiceBindingProxy::send_GetCRL(const char *soap_endpoint_u
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/GetCRL";
 	soap_tmp___tas__GetCRL.tas__GetCRL = tas__GetCRL;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__GetCRL(soap, &soap_tmp___tas__GetCRL);
@@ -1706,6 +1736,7 @@ int AdvancedSecurityServiceBindingProxy::send_GetAllCRLs(const char *soap_endpoi
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/GetAllCRLs";
 	soap_tmp___tas__GetAllCRLs.tas__GetAllCRLs = tas__GetAllCRLs;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__GetAllCRLs(soap, &soap_tmp___tas__GetAllCRLs);
@@ -1761,6 +1792,7 @@ int AdvancedSecurityServiceBindingProxy::send_DeleteCRL(const char *soap_endpoin
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/DeleteCRL";
 	soap_tmp___tas__DeleteCRL.tas__DeleteCRL = tas__DeleteCRL;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__DeleteCRL(soap, &soap_tmp___tas__DeleteCRL);
@@ -1816,6 +1848,7 @@ int AdvancedSecurityServiceBindingProxy::send_CreateCertPathValidationPolicy(con
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/CreateCertPathValidationPolicy";
 	soap_tmp___tas__CreateCertPathValidationPolicy.tas__CreateCertPathValidationPolicy = tas__CreateCertPathValidationPolicy;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__CreateCertPathValidationPolicy(soap, &soap_tmp___tas__CreateCertPathValidationPolicy);
@@ -1871,6 +1904,7 @@ int AdvancedSecurityServiceBindingProxy::send_GetCertPathValidationPolicy(const 
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/GetCertPathValidationPolicy";
 	soap_tmp___tas__GetCertPathValidationPolicy.tas__GetCertPathValidationPolicy = tas__GetCertPathValidationPolicy;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__GetCertPathValidationPolicy(soap, &soap_tmp___tas__GetCertPathValidationPolicy);
@@ -1926,6 +1960,7 @@ int AdvancedSecurityServiceBindingProxy::send_GetAllCertPathValidationPolicies(c
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/GetAllCertPathValidationPolicies";
 	soap_tmp___tas__GetAllCertPathValidationPolicies.tas__GetAllCertPathValidationPolicies = tas__GetAllCertPathValidationPolicies;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__GetAllCertPathValidationPolicies(soap, &soap_tmp___tas__GetAllCertPathValidationPolicies);
@@ -1981,6 +2016,7 @@ int AdvancedSecurityServiceBindingProxy::send_SetCertPathValidationPolicy(const 
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/SetCertPathValidationPolicy";
 	soap_tmp___tas__SetCertPathValidationPolicy.tas__SetCertPathValidationPolicy = tas__SetCertPathValidationPolicy;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__SetCertPathValidationPolicy(soap, &soap_tmp___tas__SetCertPathValidationPolicy);
@@ -2036,6 +2072,7 @@ int AdvancedSecurityServiceBindingProxy::send_DeleteCertPathValidationPolicy(con
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/DeleteCertPathValidationPolicy";
 	soap_tmp___tas__DeleteCertPathValidationPolicy.tas__DeleteCertPathValidationPolicy = tas__DeleteCertPathValidationPolicy;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__DeleteCertPathValidationPolicy(soap, &soap_tmp___tas__DeleteCertPathValidationPolicy);
@@ -2091,6 +2128,7 @@ int AdvancedSecurityServiceBindingProxy::send_AddServerCertificateAssignment(con
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/AddServerCertificateAssignment";
 	soap_tmp___tas__AddServerCertificateAssignment.tas__AddServerCertificateAssignment = tas__AddServerCertificateAssignment;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__AddServerCertificateAssignment(soap, &soap_tmp___tas__AddServerCertificateAssignment);
@@ -2146,6 +2184,7 @@ int AdvancedSecurityServiceBindingProxy::send_RemoveServerCertificateAssignment(
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/RemoveServerCertificateAssignment";
 	soap_tmp___tas__RemoveServerCertificateAssignment.tas__RemoveServerCertificateAssignment = tas__RemoveServerCertificateAssignment;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__RemoveServerCertificateAssignment(soap, &soap_tmp___tas__RemoveServerCertificateAssignment);
@@ -2201,6 +2240,7 @@ int AdvancedSecurityServiceBindingProxy::send_ReplaceServerCertificateAssignment
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/ReplaceServerCertificateAssignment";
 	soap_tmp___tas__ReplaceServerCertificateAssignment.tas__ReplaceServerCertificateAssignment = tas__ReplaceServerCertificateAssignment;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__ReplaceServerCertificateAssignment(soap, &soap_tmp___tas__ReplaceServerCertificateAssignment);
@@ -2256,6 +2296,7 @@ int AdvancedSecurityServiceBindingProxy::send_GetAssignedServerCertificates(cons
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/GetAssignedServerCertificates";
 	soap_tmp___tas__GetAssignedServerCertificates.tas__GetAssignedServerCertificates = tas__GetAssignedServerCertificates;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__GetAssignedServerCertificates(soap, &soap_tmp___tas__GetAssignedServerCertificates);
@@ -2311,6 +2352,7 @@ int AdvancedSecurityServiceBindingProxy::send_SetEnabledTLSVersions(const char *
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/SetEnabledTLSVersions";
 	soap_tmp___tas__SetEnabledTLSVersions.tas__SetEnabledTLSVersions = tas__SetEnabledTLSVersions;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__SetEnabledTLSVersions(soap, &soap_tmp___tas__SetEnabledTLSVersions);
@@ -2366,6 +2408,7 @@ int AdvancedSecurityServiceBindingProxy::send_GetEnabledTLSVersions(const char *
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/GetEnabledTLSVersions";
 	soap_tmp___tas__GetEnabledTLSVersions.tas__GetEnabledTLSVersions = tas__GetEnabledTLSVersions;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__GetEnabledTLSVersions(soap, &soap_tmp___tas__GetEnabledTLSVersions);
@@ -2421,6 +2464,7 @@ int AdvancedSecurityServiceBindingProxy::send_SetClientAuthenticationRequired(co
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/SetClientAuthenticationRequired";
 	soap_tmp___tas__SetClientAuthenticationRequired.tas__SetClientAuthenticationRequired = tas__SetClientAuthenticationRequired;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__SetClientAuthenticationRequired(soap, &soap_tmp___tas__SetClientAuthenticationRequired);
@@ -2476,6 +2520,7 @@ int AdvancedSecurityServiceBindingProxy::send_GetClientAuthenticationRequired(co
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/GetClientAuthenticationRequired";
 	soap_tmp___tas__GetClientAuthenticationRequired.tas__GetClientAuthenticationRequired = tas__GetClientAuthenticationRequired;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__GetClientAuthenticationRequired(soap, &soap_tmp___tas__GetClientAuthenticationRequired);
@@ -2531,6 +2576,7 @@ int AdvancedSecurityServiceBindingProxy::send_SetCnMapsToUser(const char *soap_e
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/SetCnMapsToUser";
 	soap_tmp___tas__SetCnMapsToUser.tas__SetCnMapsToUser = tas__SetCnMapsToUser;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__SetCnMapsToUser(soap, &soap_tmp___tas__SetCnMapsToUser);
@@ -2586,6 +2632,7 @@ int AdvancedSecurityServiceBindingProxy::send_GetCnMapsToUser(const char *soap_e
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/GetCnMapsToUser";
 	soap_tmp___tas__GetCnMapsToUser.tas__GetCnMapsToUser = tas__GetCnMapsToUser;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__GetCnMapsToUser(soap, &soap_tmp___tas__GetCnMapsToUser);
@@ -2641,6 +2688,7 @@ int AdvancedSecurityServiceBindingProxy::send_AddCertPathValidationPolicyAssignm
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/AddCertPathValidationPolicyAssignment";
 	soap_tmp___tas__AddCertPathValidationPolicyAssignment.tas__AddCertPathValidationPolicyAssignment = tas__AddCertPathValidationPolicyAssignment;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__AddCertPathValidationPolicyAssignment(soap, &soap_tmp___tas__AddCertPathValidationPolicyAssignment);
@@ -2696,6 +2744,7 @@ int AdvancedSecurityServiceBindingProxy::send_RemoveCertPathValidationPolicyAssi
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/RemoveCertPathValidationPolicyAssignment";
 	soap_tmp___tas__RemoveCertPathValidationPolicyAssignment.tas__RemoveCertPathValidationPolicyAssignment = tas__RemoveCertPathValidationPolicyAssignment;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__RemoveCertPathValidationPolicyAssignment(soap, &soap_tmp___tas__RemoveCertPathValidationPolicyAssignment);
@@ -2751,6 +2800,7 @@ int AdvancedSecurityServiceBindingProxy::send_ReplaceCertPathValidationPolicyAss
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/ReplaceCertPathValidationPolicyAssignment";
 	soap_tmp___tas__ReplaceCertPathValidationPolicyAssignment.tas__ReplaceCertPathValidationPolicyAssignment = tas__ReplaceCertPathValidationPolicyAssignment;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__ReplaceCertPathValidationPolicyAssignment(soap, &soap_tmp___tas__ReplaceCertPathValidationPolicyAssignment);
@@ -2806,6 +2856,7 @@ int AdvancedSecurityServiceBindingProxy::send_GetAssignedCertPathValidationPolic
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/GetAssignedCertPathValidationPolicies";
 	soap_tmp___tas__GetAssignedCertPathValidationPolicies.tas__GetAssignedCertPathValidationPolicies = tas__GetAssignedCertPathValidationPolicies;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__GetAssignedCertPathValidationPolicies(soap, &soap_tmp___tas__GetAssignedCertPathValidationPolicies);
@@ -2861,6 +2912,7 @@ int AdvancedSecurityServiceBindingProxy::send_AddDot1XConfiguration(const char *
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/AddDot1XConfiguration";
 	soap_tmp___tas__AddDot1XConfiguration.tas__AddDot1XConfiguration = tas__AddDot1XConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__AddDot1XConfiguration(soap, &soap_tmp___tas__AddDot1XConfiguration);
@@ -2916,6 +2968,7 @@ int AdvancedSecurityServiceBindingProxy::send_GetAllDot1XConfigurations(const ch
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/GetAllDot1XConfigurations";
 	soap_tmp___tas__GetAllDot1XConfigurations.tas__GetAllDot1XConfigurations = tas__GetAllDot1XConfigurations;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__GetAllDot1XConfigurations(soap, &soap_tmp___tas__GetAllDot1XConfigurations);
@@ -2971,6 +3024,7 @@ int AdvancedSecurityServiceBindingProxy::send_GetDot1XConfiguration(const char *
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/GetDot1XConfiguration";
 	soap_tmp___tas__GetDot1XConfiguration.tas__GetDot1XConfiguration = tas__GetDot1XConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__GetDot1XConfiguration(soap, &soap_tmp___tas__GetDot1XConfiguration);
@@ -3026,6 +3080,7 @@ int AdvancedSecurityServiceBindingProxy::send_DeleteDot1XConfiguration(const cha
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/DeleteDot1XConfiguration";
 	soap_tmp___tas__DeleteDot1XConfiguration.tas__DeleteDot1XConfiguration = tas__DeleteDot1XConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__DeleteDot1XConfiguration(soap, &soap_tmp___tas__DeleteDot1XConfiguration);
@@ -3081,6 +3136,7 @@ int AdvancedSecurityServiceBindingProxy::send_SetNetworkInterfaceDot1XConfigurat
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/SetNetworkInterfaceDot1XConfiguration";
 	soap_tmp___tas__SetNetworkInterfaceDot1XConfiguration.tas__SetNetworkInterfaceDot1XConfiguration = tas__SetNetworkInterfaceDot1XConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__SetNetworkInterfaceDot1XConfiguration(soap, &soap_tmp___tas__SetNetworkInterfaceDot1XConfiguration);
@@ -3136,6 +3192,7 @@ int AdvancedSecurityServiceBindingProxy::send_GetNetworkInterfaceDot1XConfigurat
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/GetNetworkInterfaceDot1XConfiguration";
 	soap_tmp___tas__GetNetworkInterfaceDot1XConfiguration.tas__GetNetworkInterfaceDot1XConfiguration = tas__GetNetworkInterfaceDot1XConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__GetNetworkInterfaceDot1XConfiguration(soap, &soap_tmp___tas__GetNetworkInterfaceDot1XConfiguration);
@@ -3191,6 +3248,7 @@ int AdvancedSecurityServiceBindingProxy::send_DeleteNetworkInterfaceDot1XConfigu
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/DeleteNetworkInterfaceDot1XConfiguration";
 	soap_tmp___tas__DeleteNetworkInterfaceDot1XConfiguration.tas__DeleteNetworkInterfaceDot1XConfiguration = tas__DeleteNetworkInterfaceDot1XConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__DeleteNetworkInterfaceDot1XConfiguration(soap, &soap_tmp___tas__DeleteNetworkInterfaceDot1XConfiguration);
@@ -3246,6 +3304,7 @@ int AdvancedSecurityServiceBindingProxy::send_GetAuthorizationServerConfiguratio
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/GetAuthorizationServerConfigurations";
 	soap_tmp___tas__GetAuthorizationServerConfigurations.tas__GetAuthorizationServerConfigurations = tas__GetAuthorizationServerConfigurations;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__GetAuthorizationServerConfigurations(soap, &soap_tmp___tas__GetAuthorizationServerConfigurations);
@@ -3301,6 +3360,7 @@ int AdvancedSecurityServiceBindingProxy::send_CreateAuthorizationServerConfigura
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/CreateAuthorizationServerConfiguration";
 	soap_tmp___tas__CreateAuthorizationServerConfiguration.tas__CreateAuthorizationServerConfiguration = tas__CreateAuthorizationServerConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__CreateAuthorizationServerConfiguration(soap, &soap_tmp___tas__CreateAuthorizationServerConfiguration);
@@ -3356,6 +3416,7 @@ int AdvancedSecurityServiceBindingProxy::send_SetAuthorizationServerConfiguratio
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/SetAuthorizationServerConfiguration";
 	soap_tmp___tas__SetAuthorizationServerConfiguration.tas__SetAuthorizationServerConfiguration = tas__SetAuthorizationServerConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__SetAuthorizationServerConfiguration(soap, &soap_tmp___tas__SetAuthorizationServerConfiguration);
@@ -3411,6 +3472,7 @@ int AdvancedSecurityServiceBindingProxy::send_DeleteAuthorizationServerConfigura
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/DeleteAuthorizationServerConfiguration";
 	soap_tmp___tas__DeleteAuthorizationServerConfiguration.tas__DeleteAuthorizationServerConfiguration = tas__DeleteAuthorizationServerConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__DeleteAuthorizationServerConfiguration(soap, &soap_tmp___tas__DeleteAuthorizationServerConfiguration);
@@ -3466,6 +3528,7 @@ int AdvancedSecurityServiceBindingProxy::send_AddMediaSigningCertificateAssignme
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/AddMediaSigningCertificateAssignment";
 	soap_tmp___tas__AddMediaSigningCertificateAssignment.tas__AddMediaSigningCertificateAssignment = tas__AddMediaSigningCertificateAssignment;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__AddMediaSigningCertificateAssignment(soap, &soap_tmp___tas__AddMediaSigningCertificateAssignment);
@@ -3521,6 +3584,7 @@ int AdvancedSecurityServiceBindingProxy::send_RemoveMediaSigningCertificateAssig
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/RemoveMediaSigningCertificateAssignment";
 	soap_tmp___tas__RemoveMediaSigningCertificateAssignment.tas__RemoveMediaSigningCertificateAssignment = tas__RemoveMediaSigningCertificateAssignment;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__RemoveMediaSigningCertificateAssignment(soap, &soap_tmp___tas__RemoveMediaSigningCertificateAssignment);
@@ -3576,6 +3640,7 @@ int AdvancedSecurityServiceBindingProxy::send_GetAssignedMediaSigningCertificate
 		soap_action = "http://www.onvif.org/ver10/advancedsecurity/wsdl/GetAssignedMediaSigningCertificates";
 	soap_tmp___tas__GetAssignedMediaSigningCertificates.tas__GetAssignedMediaSigningCertificates = tas__GetAssignedMediaSigningCertificates;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tas__GetAssignedMediaSigningCertificates(soap, &soap_tmp___tas__GetAssignedMediaSigningCertificates);

@@ -105,7 +105,10 @@ void DeviceBindingProxy::DeviceBindingProxy_init(soap_mode imode, soap_mode omod
         { "timg", "http://www.onvif.org/ver20/imaging/wsdl", NULL, NULL },
         { "tmd", "http://www.onvif.org/ver10/deviceIO/wsdl", NULL, NULL },
         { "tptz", "http://www.onvif.org/ver20/ptz/wsdl", NULL, NULL },
+        { "trc", "http://www.onvif.org/ver10/recording/wsdl", NULL, NULL },
+        { "trp", "http://www.onvif.org/ver10/replay/wsdl", NULL, NULL },
         { "trt", "http://www.onvif.org/ver10/media/wsdl", NULL, NULL },
+        { "tse", "http://www.onvif.org/ver10/search/wsdl", NULL, NULL },
         { NULL, NULL, NULL, NULL} /* end of namespaces[] */
     };
 	soap_set_namespaces(this->soap, namespaces);
@@ -221,6 +224,7 @@ int DeviceBindingProxy::send_GetServices(const char *soap_endpoint_url, const ch
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetServices";
 	soap_tmp___tds__GetServices.tds__GetServices = tds__GetServices;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetServices(soap, &soap_tmp___tds__GetServices);
@@ -276,6 +280,7 @@ int DeviceBindingProxy::send_GetServiceCapabilities(const char *soap_endpoint_ur
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetServiceCapabilities";
 	soap_tmp___tds__GetServiceCapabilities.tds__GetServiceCapabilities = tds__GetServiceCapabilities;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetServiceCapabilities(soap, &soap_tmp___tds__GetServiceCapabilities);
@@ -331,6 +336,7 @@ int DeviceBindingProxy::send_GetDeviceInformation(const char *soap_endpoint_url,
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetDeviceInformation";
 	soap_tmp___tds__GetDeviceInformation.tds__GetDeviceInformation = tds__GetDeviceInformation;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetDeviceInformation(soap, &soap_tmp___tds__GetDeviceInformation);
@@ -386,6 +392,7 @@ int DeviceBindingProxy::send_SetSystemDateAndTime(const char *soap_endpoint_url,
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SetSystemDateAndTime";
 	soap_tmp___tds__SetSystemDateAndTime.tds__SetSystemDateAndTime = tds__SetSystemDateAndTime;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SetSystemDateAndTime(soap, &soap_tmp___tds__SetSystemDateAndTime);
@@ -441,6 +448,7 @@ int DeviceBindingProxy::send_GetSystemDateAndTime(const char *soap_endpoint_url,
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetSystemDateAndTime";
 	soap_tmp___tds__GetSystemDateAndTime.tds__GetSystemDateAndTime = tds__GetSystemDateAndTime;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetSystemDateAndTime(soap, &soap_tmp___tds__GetSystemDateAndTime);
@@ -496,6 +504,7 @@ int DeviceBindingProxy::send_SetSystemFactoryDefault(const char *soap_endpoint_u
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SetSystemFactoryDefault";
 	soap_tmp___tds__SetSystemFactoryDefault.tds__SetSystemFactoryDefault = tds__SetSystemFactoryDefault;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SetSystemFactoryDefault(soap, &soap_tmp___tds__SetSystemFactoryDefault);
@@ -551,6 +560,7 @@ int DeviceBindingProxy::send_UpgradeSystemFirmware(const char *soap_endpoint_url
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/UpgradeSystemFirmware";
 	soap_tmp___tds__UpgradeSystemFirmware.tds__UpgradeSystemFirmware = tds__UpgradeSystemFirmware;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__UpgradeSystemFirmware(soap, &soap_tmp___tds__UpgradeSystemFirmware);
@@ -606,6 +616,7 @@ int DeviceBindingProxy::send_SystemReboot(const char *soap_endpoint_url, const c
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SystemReboot";
 	soap_tmp___tds__SystemReboot.tds__SystemReboot = tds__SystemReboot;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SystemReboot(soap, &soap_tmp___tds__SystemReboot);
@@ -661,6 +672,7 @@ int DeviceBindingProxy::send_RestoreSystem(const char *soap_endpoint_url, const 
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/RestoreSystem";
 	soap_tmp___tds__RestoreSystem.tds__RestoreSystem = tds__RestoreSystem;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__RestoreSystem(soap, &soap_tmp___tds__RestoreSystem);
@@ -716,6 +728,7 @@ int DeviceBindingProxy::send_GetSystemBackup(const char *soap_endpoint_url, cons
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetSystemBackup";
 	soap_tmp___tds__GetSystemBackup.tds__GetSystemBackup = tds__GetSystemBackup;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetSystemBackup(soap, &soap_tmp___tds__GetSystemBackup);
@@ -771,6 +784,7 @@ int DeviceBindingProxy::send_GetSystemLog(const char *soap_endpoint_url, const c
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetSystemLog";
 	soap_tmp___tds__GetSystemLog.tds__GetSystemLog = tds__GetSystemLog;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetSystemLog(soap, &soap_tmp___tds__GetSystemLog);
@@ -826,6 +840,7 @@ int DeviceBindingProxy::send_GetSystemSupportInformation(const char *soap_endpoi
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetSystemSupportInformation";
 	soap_tmp___tds__GetSystemSupportInformation.tds__GetSystemSupportInformation = tds__GetSystemSupportInformation;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetSystemSupportInformation(soap, &soap_tmp___tds__GetSystemSupportInformation);
@@ -881,6 +896,7 @@ int DeviceBindingProxy::send_GetScopes(const char *soap_endpoint_url, const char
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetScopes";
 	soap_tmp___tds__GetScopes.tds__GetScopes = tds__GetScopes;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetScopes(soap, &soap_tmp___tds__GetScopes);
@@ -936,6 +952,7 @@ int DeviceBindingProxy::send_SetScopes(const char *soap_endpoint_url, const char
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SetScopes";
 	soap_tmp___tds__SetScopes.tds__SetScopes = tds__SetScopes;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SetScopes(soap, &soap_tmp___tds__SetScopes);
@@ -991,6 +1008,7 @@ int DeviceBindingProxy::send_AddScopes(const char *soap_endpoint_url, const char
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/AddScopes";
 	soap_tmp___tds__AddScopes.tds__AddScopes = tds__AddScopes;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__AddScopes(soap, &soap_tmp___tds__AddScopes);
@@ -1046,6 +1064,7 @@ int DeviceBindingProxy::send_RemoveScopes(const char *soap_endpoint_url, const c
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/RemoveScopes";
 	soap_tmp___tds__RemoveScopes.tds__RemoveScopes = tds__RemoveScopes;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__RemoveScopes(soap, &soap_tmp___tds__RemoveScopes);
@@ -1101,6 +1120,7 @@ int DeviceBindingProxy::send_GetDiscoveryMode(const char *soap_endpoint_url, con
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetDiscoveryMode";
 	soap_tmp___tds__GetDiscoveryMode.tds__GetDiscoveryMode = tds__GetDiscoveryMode;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetDiscoveryMode(soap, &soap_tmp___tds__GetDiscoveryMode);
@@ -1156,6 +1176,7 @@ int DeviceBindingProxy::send_SetDiscoveryMode(const char *soap_endpoint_url, con
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SetDiscoveryMode";
 	soap_tmp___tds__SetDiscoveryMode.tds__SetDiscoveryMode = tds__SetDiscoveryMode;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SetDiscoveryMode(soap, &soap_tmp___tds__SetDiscoveryMode);
@@ -1211,6 +1232,7 @@ int DeviceBindingProxy::send_GetRemoteDiscoveryMode(const char *soap_endpoint_ur
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetRemoteDiscoveryMode";
 	soap_tmp___tds__GetRemoteDiscoveryMode.tds__GetRemoteDiscoveryMode = tds__GetRemoteDiscoveryMode;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetRemoteDiscoveryMode(soap, &soap_tmp___tds__GetRemoteDiscoveryMode);
@@ -1266,6 +1288,7 @@ int DeviceBindingProxy::send_SetRemoteDiscoveryMode(const char *soap_endpoint_ur
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SetRemoteDiscoveryMode";
 	soap_tmp___tds__SetRemoteDiscoveryMode.tds__SetRemoteDiscoveryMode = tds__SetRemoteDiscoveryMode;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SetRemoteDiscoveryMode(soap, &soap_tmp___tds__SetRemoteDiscoveryMode);
@@ -1321,6 +1344,7 @@ int DeviceBindingProxy::send_GetDPAddresses(const char *soap_endpoint_url, const
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetDPAddresses";
 	soap_tmp___tds__GetDPAddresses.tds__GetDPAddresses = tds__GetDPAddresses;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetDPAddresses(soap, &soap_tmp___tds__GetDPAddresses);
@@ -1376,6 +1400,7 @@ int DeviceBindingProxy::send_GetEndpointReference(const char *soap_endpoint_url,
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetEndpointReference";
 	soap_tmp___tds__GetEndpointReference.tds__GetEndpointReference = tds__GetEndpointReference;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetEndpointReference(soap, &soap_tmp___tds__GetEndpointReference);
@@ -1431,6 +1456,7 @@ int DeviceBindingProxy::send_GetRemoteUser(const char *soap_endpoint_url, const 
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetRemoteUser";
 	soap_tmp___tds__GetRemoteUser.tds__GetRemoteUser = tds__GetRemoteUser;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetRemoteUser(soap, &soap_tmp___tds__GetRemoteUser);
@@ -1486,6 +1512,7 @@ int DeviceBindingProxy::send_SetRemoteUser(const char *soap_endpoint_url, const 
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SetRemoteUser";
 	soap_tmp___tds__SetRemoteUser.tds__SetRemoteUser = tds__SetRemoteUser;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SetRemoteUser(soap, &soap_tmp___tds__SetRemoteUser);
@@ -1541,6 +1568,7 @@ int DeviceBindingProxy::send_GetUsers(const char *soap_endpoint_url, const char 
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetUsers";
 	soap_tmp___tds__GetUsers.tds__GetUsers = tds__GetUsers;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetUsers(soap, &soap_tmp___tds__GetUsers);
@@ -1596,6 +1624,7 @@ int DeviceBindingProxy::send_CreateUsers(const char *soap_endpoint_url, const ch
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/CreateUsers";
 	soap_tmp___tds__CreateUsers.tds__CreateUsers = tds__CreateUsers;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__CreateUsers(soap, &soap_tmp___tds__CreateUsers);
@@ -1651,6 +1680,7 @@ int DeviceBindingProxy::send_DeleteUsers(const char *soap_endpoint_url, const ch
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/DeleteUsers";
 	soap_tmp___tds__DeleteUsers.tds__DeleteUsers = tds__DeleteUsers;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__DeleteUsers(soap, &soap_tmp___tds__DeleteUsers);
@@ -1706,6 +1736,7 @@ int DeviceBindingProxy::send_SetUser(const char *soap_endpoint_url, const char *
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SetUser";
 	soap_tmp___tds__SetUser.tds__SetUser = tds__SetUser;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SetUser(soap, &soap_tmp___tds__SetUser);
@@ -1761,6 +1792,7 @@ int DeviceBindingProxy::send_GetUserRoles(const char *soap_endpoint_url, const c
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetUserRoles";
 	soap_tmp___tds__GetUserRoles.tds__GetUserRoles = tds__GetUserRoles;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetUserRoles(soap, &soap_tmp___tds__GetUserRoles);
@@ -1816,6 +1848,7 @@ int DeviceBindingProxy::send_SetUserRole(const char *soap_endpoint_url, const ch
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SetUserRole";
 	soap_tmp___tds__SetUserRole.tds__SetUserRole = tds__SetUserRole;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SetUserRole(soap, &soap_tmp___tds__SetUserRole);
@@ -1871,6 +1904,7 @@ int DeviceBindingProxy::send_DeleteUserRole(const char *soap_endpoint_url, const
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/DeleteUserRole";
 	soap_tmp___tds__DeleteUserRole.tds__DeleteUserRole = tds__DeleteUserRole;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__DeleteUserRole(soap, &soap_tmp___tds__DeleteUserRole);
@@ -1926,6 +1960,7 @@ int DeviceBindingProxy::send_GetWsdlUrl(const char *soap_endpoint_url, const cha
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetWsdlUrl";
 	soap_tmp___tds__GetWsdlUrl.tds__GetWsdlUrl = tds__GetWsdlUrl;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetWsdlUrl(soap, &soap_tmp___tds__GetWsdlUrl);
@@ -1981,6 +2016,7 @@ int DeviceBindingProxy::send_GetPasswordComplexityOptions(const char *soap_endpo
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetPasswordComplexityOptions";
 	soap_tmp___tds__GetPasswordComplexityOptions.tds__GetPasswordComplexityOptions = tds__GetPasswordComplexityOptions;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetPasswordComplexityOptions(soap, &soap_tmp___tds__GetPasswordComplexityOptions);
@@ -2036,6 +2072,7 @@ int DeviceBindingProxy::send_GetPasswordComplexityConfiguration(const char *soap
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetPasswordComplexityConfiguration";
 	soap_tmp___tds__GetPasswordComplexityConfiguration.tds__GetPasswordComplexityConfiguration = tds__GetPasswordComplexityConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetPasswordComplexityConfiguration(soap, &soap_tmp___tds__GetPasswordComplexityConfiguration);
@@ -2091,6 +2128,7 @@ int DeviceBindingProxy::send_SetPasswordComplexityConfiguration(const char *soap
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SetPasswordComplexityConfiguration";
 	soap_tmp___tds__SetPasswordComplexityConfiguration.tds__SetPasswordComplexityConfiguration = tds__SetPasswordComplexityConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SetPasswordComplexityConfiguration(soap, &soap_tmp___tds__SetPasswordComplexityConfiguration);
@@ -2146,6 +2184,7 @@ int DeviceBindingProxy::send_GetPasswordHistoryConfiguration(const char *soap_en
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetPasswordHistoryConfiguration";
 	soap_tmp___tds__GetPasswordHistoryConfiguration.tds__GetPasswordHistoryConfiguration = tds__GetPasswordHistoryConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetPasswordHistoryConfiguration(soap, &soap_tmp___tds__GetPasswordHistoryConfiguration);
@@ -2201,6 +2240,7 @@ int DeviceBindingProxy::send_SetPasswordHistoryConfiguration(const char *soap_en
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SetPasswordHistoryConfiguration";
 	soap_tmp___tds__SetPasswordHistoryConfiguration.tds__SetPasswordHistoryConfiguration = tds__SetPasswordHistoryConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SetPasswordHistoryConfiguration(soap, &soap_tmp___tds__SetPasswordHistoryConfiguration);
@@ -2256,6 +2296,7 @@ int DeviceBindingProxy::send_GetAuthFailureWarningOptions(const char *soap_endpo
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetAuthFailureWarningOptions";
 	soap_tmp___tds__GetAuthFailureWarningOptions.tds__GetAuthFailureWarningOptions = tds__GetAuthFailureWarningOptions;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetAuthFailureWarningOptions(soap, &soap_tmp___tds__GetAuthFailureWarningOptions);
@@ -2311,6 +2352,7 @@ int DeviceBindingProxy::send_GetAuthFailureWarningConfiguration(const char *soap
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetAuthFailureWarningConfiguration";
 	soap_tmp___tds__GetAuthFailureWarningConfiguration.tds__GetAuthFailureWarningConfiguration = tds__GetAuthFailureWarningConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetAuthFailureWarningConfiguration(soap, &soap_tmp___tds__GetAuthFailureWarningConfiguration);
@@ -2366,6 +2408,7 @@ int DeviceBindingProxy::send_SetAuthFailureWarningConfiguration(const char *soap
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SetAuthFailureWarningConfiguration";
 	soap_tmp___tds__SetAuthFailureWarningConfiguration.tds__SetAuthFailureWarningConfiguration = tds__SetAuthFailureWarningConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SetAuthFailureWarningConfiguration(soap, &soap_tmp___tds__SetAuthFailureWarningConfiguration);
@@ -2421,6 +2464,7 @@ int DeviceBindingProxy::send_GetCapabilities(const char *soap_endpoint_url, cons
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetCapabilities";
 	soap_tmp___tds__GetCapabilities.tds__GetCapabilities = tds__GetCapabilities;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetCapabilities(soap, &soap_tmp___tds__GetCapabilities);
@@ -2476,6 +2520,7 @@ int DeviceBindingProxy::send_SetDPAddresses(const char *soap_endpoint_url, const
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SetDPAddresses";
 	soap_tmp___tds__SetDPAddresses.tds__SetDPAddresses = tds__SetDPAddresses;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SetDPAddresses(soap, &soap_tmp___tds__SetDPAddresses);
@@ -2531,6 +2576,7 @@ int DeviceBindingProxy::send_GetHostname(const char *soap_endpoint_url, const ch
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetHostname";
 	soap_tmp___tds__GetHostname.tds__GetHostname = tds__GetHostname;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetHostname(soap, &soap_tmp___tds__GetHostname);
@@ -2586,6 +2632,7 @@ int DeviceBindingProxy::send_SetHostname(const char *soap_endpoint_url, const ch
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SetHostname";
 	soap_tmp___tds__SetHostname.tds__SetHostname = tds__SetHostname;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SetHostname(soap, &soap_tmp___tds__SetHostname);
@@ -2641,6 +2688,7 @@ int DeviceBindingProxy::send_SetHostnameFromDHCP(const char *soap_endpoint_url, 
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SetHostnameFromDHCP";
 	soap_tmp___tds__SetHostnameFromDHCP.tds__SetHostnameFromDHCP = tds__SetHostnameFromDHCP;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SetHostnameFromDHCP(soap, &soap_tmp___tds__SetHostnameFromDHCP);
@@ -2696,6 +2744,7 @@ int DeviceBindingProxy::send_GetDNS(const char *soap_endpoint_url, const char *s
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetDNS";
 	soap_tmp___tds__GetDNS.tds__GetDNS = tds__GetDNS;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetDNS(soap, &soap_tmp___tds__GetDNS);
@@ -2751,6 +2800,7 @@ int DeviceBindingProxy::send_SetDNS(const char *soap_endpoint_url, const char *s
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SetDNS";
 	soap_tmp___tds__SetDNS.tds__SetDNS = tds__SetDNS;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SetDNS(soap, &soap_tmp___tds__SetDNS);
@@ -2806,6 +2856,7 @@ int DeviceBindingProxy::send_GetNTP(const char *soap_endpoint_url, const char *s
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetNTP";
 	soap_tmp___tds__GetNTP.tds__GetNTP = tds__GetNTP;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetNTP(soap, &soap_tmp___tds__GetNTP);
@@ -2861,6 +2912,7 @@ int DeviceBindingProxy::send_SetNTP(const char *soap_endpoint_url, const char *s
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SetNTP";
 	soap_tmp___tds__SetNTP.tds__SetNTP = tds__SetNTP;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SetNTP(soap, &soap_tmp___tds__SetNTP);
@@ -2916,6 +2968,7 @@ int DeviceBindingProxy::send_GetDynamicDNS(const char *soap_endpoint_url, const 
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetDynamicDNS";
 	soap_tmp___tds__GetDynamicDNS.tds__GetDynamicDNS = tds__GetDynamicDNS;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetDynamicDNS(soap, &soap_tmp___tds__GetDynamicDNS);
@@ -2971,6 +3024,7 @@ int DeviceBindingProxy::send_SetDynamicDNS(const char *soap_endpoint_url, const 
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SetDynamicDNS";
 	soap_tmp___tds__SetDynamicDNS.tds__SetDynamicDNS = tds__SetDynamicDNS;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SetDynamicDNS(soap, &soap_tmp___tds__SetDynamicDNS);
@@ -3026,6 +3080,7 @@ int DeviceBindingProxy::send_GetNetworkInterfaces(const char *soap_endpoint_url,
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetNetworkInterfaces";
 	soap_tmp___tds__GetNetworkInterfaces.tds__GetNetworkInterfaces = tds__GetNetworkInterfaces;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetNetworkInterfaces(soap, &soap_tmp___tds__GetNetworkInterfaces);
@@ -3081,6 +3136,7 @@ int DeviceBindingProxy::send_SetNetworkInterfaces(const char *soap_endpoint_url,
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SetNetworkInterfaces";
 	soap_tmp___tds__SetNetworkInterfaces.tds__SetNetworkInterfaces = tds__SetNetworkInterfaces;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SetNetworkInterfaces(soap, &soap_tmp___tds__SetNetworkInterfaces);
@@ -3136,6 +3192,7 @@ int DeviceBindingProxy::send_GetNetworkProtocols(const char *soap_endpoint_url, 
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetNetworkProtocols";
 	soap_tmp___tds__GetNetworkProtocols.tds__GetNetworkProtocols = tds__GetNetworkProtocols;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetNetworkProtocols(soap, &soap_tmp___tds__GetNetworkProtocols);
@@ -3191,6 +3248,7 @@ int DeviceBindingProxy::send_SetNetworkProtocols(const char *soap_endpoint_url, 
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SetNetworkProtocols";
 	soap_tmp___tds__SetNetworkProtocols.tds__SetNetworkProtocols = tds__SetNetworkProtocols;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SetNetworkProtocols(soap, &soap_tmp___tds__SetNetworkProtocols);
@@ -3246,6 +3304,7 @@ int DeviceBindingProxy::send_GetNetworkDefaultGateway(const char *soap_endpoint_
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetNetworkDefaultGateway";
 	soap_tmp___tds__GetNetworkDefaultGateway.tds__GetNetworkDefaultGateway = tds__GetNetworkDefaultGateway;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetNetworkDefaultGateway(soap, &soap_tmp___tds__GetNetworkDefaultGateway);
@@ -3301,6 +3360,7 @@ int DeviceBindingProxy::send_SetNetworkDefaultGateway(const char *soap_endpoint_
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SetNetworkDefaultGateway";
 	soap_tmp___tds__SetNetworkDefaultGateway.tds__SetNetworkDefaultGateway = tds__SetNetworkDefaultGateway;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SetNetworkDefaultGateway(soap, &soap_tmp___tds__SetNetworkDefaultGateway);
@@ -3356,6 +3416,7 @@ int DeviceBindingProxy::send_GetZeroConfiguration(const char *soap_endpoint_url,
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetZeroConfiguration";
 	soap_tmp___tds__GetZeroConfiguration.tds__GetZeroConfiguration = tds__GetZeroConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetZeroConfiguration(soap, &soap_tmp___tds__GetZeroConfiguration);
@@ -3411,6 +3472,7 @@ int DeviceBindingProxy::send_SetZeroConfiguration(const char *soap_endpoint_url,
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SetZeroConfiguration";
 	soap_tmp___tds__SetZeroConfiguration.tds__SetZeroConfiguration = tds__SetZeroConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SetZeroConfiguration(soap, &soap_tmp___tds__SetZeroConfiguration);
@@ -3466,6 +3528,7 @@ int DeviceBindingProxy::send_GetIPAddressFilter(const char *soap_endpoint_url, c
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetIPAddressFilter";
 	soap_tmp___tds__GetIPAddressFilter.tds__GetIPAddressFilter = tds__GetIPAddressFilter;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetIPAddressFilter(soap, &soap_tmp___tds__GetIPAddressFilter);
@@ -3521,6 +3584,7 @@ int DeviceBindingProxy::send_SetIPAddressFilter(const char *soap_endpoint_url, c
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SetIPAddressFilter";
 	soap_tmp___tds__SetIPAddressFilter.tds__SetIPAddressFilter = tds__SetIPAddressFilter;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SetIPAddressFilter(soap, &soap_tmp___tds__SetIPAddressFilter);
@@ -3576,6 +3640,7 @@ int DeviceBindingProxy::send_AddIPAddressFilter(const char *soap_endpoint_url, c
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/AddIPAddressFilter";
 	soap_tmp___tds__AddIPAddressFilter.tds__AddIPAddressFilter = tds__AddIPAddressFilter;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__AddIPAddressFilter(soap, &soap_tmp___tds__AddIPAddressFilter);
@@ -3631,6 +3696,7 @@ int DeviceBindingProxy::send_RemoveIPAddressFilter(const char *soap_endpoint_url
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/RemoveIPAddressFilter";
 	soap_tmp___tds__RemoveIPAddressFilter.tds__RemoveIPAddressFilter = tds__RemoveIPAddressFilter;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__RemoveIPAddressFilter(soap, &soap_tmp___tds__RemoveIPAddressFilter);
@@ -3686,6 +3752,7 @@ int DeviceBindingProxy::send_GetAccessPolicy(const char *soap_endpoint_url, cons
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetAccessPolicy";
 	soap_tmp___tds__GetAccessPolicy.tds__GetAccessPolicy = tds__GetAccessPolicy;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetAccessPolicy(soap, &soap_tmp___tds__GetAccessPolicy);
@@ -3741,6 +3808,7 @@ int DeviceBindingProxy::send_SetAccessPolicy(const char *soap_endpoint_url, cons
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SetAccessPolicy";
 	soap_tmp___tds__SetAccessPolicy.tds__SetAccessPolicy = tds__SetAccessPolicy;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SetAccessPolicy(soap, &soap_tmp___tds__SetAccessPolicy);
@@ -3796,6 +3864,7 @@ int DeviceBindingProxy::send_CreateCertificate(const char *soap_endpoint_url, co
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/CreateCertificate";
 	soap_tmp___tds__CreateCertificate.tds__CreateCertificate = tds__CreateCertificate;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__CreateCertificate(soap, &soap_tmp___tds__CreateCertificate);
@@ -3851,6 +3920,7 @@ int DeviceBindingProxy::send_GetCertificates(const char *soap_endpoint_url, cons
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetCertificates";
 	soap_tmp___tds__GetCertificates.tds__GetCertificates = tds__GetCertificates;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetCertificates(soap, &soap_tmp___tds__GetCertificates);
@@ -3906,6 +3976,7 @@ int DeviceBindingProxy::send_GetCertificatesStatus(const char *soap_endpoint_url
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetCertificatesStatus";
 	soap_tmp___tds__GetCertificatesStatus.tds__GetCertificatesStatus = tds__GetCertificatesStatus;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetCertificatesStatus(soap, &soap_tmp___tds__GetCertificatesStatus);
@@ -3961,6 +4032,7 @@ int DeviceBindingProxy::send_SetCertificatesStatus(const char *soap_endpoint_url
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SetCertificatesStatus";
 	soap_tmp___tds__SetCertificatesStatus.tds__SetCertificatesStatus = tds__SetCertificatesStatus;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SetCertificatesStatus(soap, &soap_tmp___tds__SetCertificatesStatus);
@@ -4016,6 +4088,7 @@ int DeviceBindingProxy::send_DeleteCertificates(const char *soap_endpoint_url, c
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/DeleteCertificates";
 	soap_tmp___tds__DeleteCertificates.tds__DeleteCertificates = tds__DeleteCertificates;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__DeleteCertificates(soap, &soap_tmp___tds__DeleteCertificates);
@@ -4071,6 +4144,7 @@ int DeviceBindingProxy::send_GetPkcs10Request(const char *soap_endpoint_url, con
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetPkcs10Request";
 	soap_tmp___tds__GetPkcs10Request.tds__GetPkcs10Request = tds__GetPkcs10Request;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetPkcs10Request(soap, &soap_tmp___tds__GetPkcs10Request);
@@ -4126,6 +4200,7 @@ int DeviceBindingProxy::send_LoadCertificates(const char *soap_endpoint_url, con
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/LoadCertificates";
 	soap_tmp___tds__LoadCertificates.tds__LoadCertificates = tds__LoadCertificates;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__LoadCertificates(soap, &soap_tmp___tds__LoadCertificates);
@@ -4181,6 +4256,7 @@ int DeviceBindingProxy::send_GetClientCertificateMode(const char *soap_endpoint_
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetClientCertificateMode";
 	soap_tmp___tds__GetClientCertificateMode.tds__GetClientCertificateMode = tds__GetClientCertificateMode;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetClientCertificateMode(soap, &soap_tmp___tds__GetClientCertificateMode);
@@ -4236,6 +4312,7 @@ int DeviceBindingProxy::send_SetClientCertificateMode(const char *soap_endpoint_
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SetClientCertificateMode";
 	soap_tmp___tds__SetClientCertificateMode.tds__SetClientCertificateMode = tds__SetClientCertificateMode;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SetClientCertificateMode(soap, &soap_tmp___tds__SetClientCertificateMode);
@@ -4291,6 +4368,7 @@ int DeviceBindingProxy::send_GetRelayOutputs(const char *soap_endpoint_url, cons
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetRelayOutputs";
 	soap_tmp___tds__GetRelayOutputs.tds__GetRelayOutputs = tds__GetRelayOutputs;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetRelayOutputs(soap, &soap_tmp___tds__GetRelayOutputs);
@@ -4346,6 +4424,7 @@ int DeviceBindingProxy::send_SetRelayOutputSettings(const char *soap_endpoint_ur
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SetRelayOutputSettings";
 	soap_tmp___tds__SetRelayOutputSettings.tds__SetRelayOutputSettings = tds__SetRelayOutputSettings;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SetRelayOutputSettings(soap, &soap_tmp___tds__SetRelayOutputSettings);
@@ -4401,6 +4480,7 @@ int DeviceBindingProxy::send_SetRelayOutputState(const char *soap_endpoint_url, 
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SetRelayOutputState";
 	soap_tmp___tds__SetRelayOutputState.tds__SetRelayOutputState = tds__SetRelayOutputState;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SetRelayOutputState(soap, &soap_tmp___tds__SetRelayOutputState);
@@ -4456,6 +4536,7 @@ int DeviceBindingProxy::send_SendAuxiliaryCommand(const char *soap_endpoint_url,
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SendAuxiliaryCommand";
 	soap_tmp___tds__SendAuxiliaryCommand.tds__SendAuxiliaryCommand = tds__SendAuxiliaryCommand;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SendAuxiliaryCommand(soap, &soap_tmp___tds__SendAuxiliaryCommand);
@@ -4511,6 +4592,7 @@ int DeviceBindingProxy::send_GetCACertificates(const char *soap_endpoint_url, co
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetCACertificates";
 	soap_tmp___tds__GetCACertificates.tds__GetCACertificates = tds__GetCACertificates;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetCACertificates(soap, &soap_tmp___tds__GetCACertificates);
@@ -4566,6 +4648,7 @@ int DeviceBindingProxy::send_LoadCertificateWithPrivateKey(const char *soap_endp
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/LoadCertificateWithPrivateKey";
 	soap_tmp___tds__LoadCertificateWithPrivateKey.tds__LoadCertificateWithPrivateKey = tds__LoadCertificateWithPrivateKey;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__LoadCertificateWithPrivateKey(soap, &soap_tmp___tds__LoadCertificateWithPrivateKey);
@@ -4621,6 +4704,7 @@ int DeviceBindingProxy::send_GetCertificateInformation(const char *soap_endpoint
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetCertificateInformation";
 	soap_tmp___tds__GetCertificateInformation.tds__GetCertificateInformation = tds__GetCertificateInformation;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetCertificateInformation(soap, &soap_tmp___tds__GetCertificateInformation);
@@ -4676,6 +4760,7 @@ int DeviceBindingProxy::send_LoadCACertificates(const char *soap_endpoint_url, c
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/LoadCACertificates";
 	soap_tmp___tds__LoadCACertificates.tds__LoadCACertificates = tds__LoadCACertificates;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__LoadCACertificates(soap, &soap_tmp___tds__LoadCACertificates);
@@ -4731,6 +4816,7 @@ int DeviceBindingProxy::send_CreateDot1XConfiguration(const char *soap_endpoint_
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/CreateDot1XConfiguration";
 	soap_tmp___tds__CreateDot1XConfiguration.tds__CreateDot1XConfiguration = tds__CreateDot1XConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__CreateDot1XConfiguration(soap, &soap_tmp___tds__CreateDot1XConfiguration);
@@ -4786,6 +4872,7 @@ int DeviceBindingProxy::send_SetDot1XConfiguration(const char *soap_endpoint_url
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SetDot1XConfiguration";
 	soap_tmp___tds__SetDot1XConfiguration.tds__SetDot1XConfiguration = tds__SetDot1XConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SetDot1XConfiguration(soap, &soap_tmp___tds__SetDot1XConfiguration);
@@ -4841,6 +4928,7 @@ int DeviceBindingProxy::send_GetDot1XConfiguration(const char *soap_endpoint_url
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetDot1XConfiguration";
 	soap_tmp___tds__GetDot1XConfiguration.tds__GetDot1XConfiguration = tds__GetDot1XConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetDot1XConfiguration(soap, &soap_tmp___tds__GetDot1XConfiguration);
@@ -4896,6 +4984,7 @@ int DeviceBindingProxy::send_GetDot1XConfigurations(const char *soap_endpoint_ur
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetDot1XConfigurations";
 	soap_tmp___tds__GetDot1XConfigurations.tds__GetDot1XConfigurations = tds__GetDot1XConfigurations;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetDot1XConfigurations(soap, &soap_tmp___tds__GetDot1XConfigurations);
@@ -4951,6 +5040,7 @@ int DeviceBindingProxy::send_DeleteDot1XConfiguration(const char *soap_endpoint_
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/DeleteDot1XConfiguration";
 	soap_tmp___tds__DeleteDot1XConfiguration.tds__DeleteDot1XConfiguration = tds__DeleteDot1XConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__DeleteDot1XConfiguration(soap, &soap_tmp___tds__DeleteDot1XConfiguration);
@@ -5006,6 +5096,7 @@ int DeviceBindingProxy::send_GetDot11Capabilities(const char *soap_endpoint_url,
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetDot11Capabilities";
 	soap_tmp___tds__GetDot11Capabilities.tds__GetDot11Capabilities = tds__GetDot11Capabilities;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetDot11Capabilities(soap, &soap_tmp___tds__GetDot11Capabilities);
@@ -5061,6 +5152,7 @@ int DeviceBindingProxy::send_GetDot11Status(const char *soap_endpoint_url, const
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetDot11Status";
 	soap_tmp___tds__GetDot11Status.tds__GetDot11Status = tds__GetDot11Status;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetDot11Status(soap, &soap_tmp___tds__GetDot11Status);
@@ -5116,6 +5208,7 @@ int DeviceBindingProxy::send_ScanAvailableDot11Networks(const char *soap_endpoin
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/ScanAvailableDot11Networks";
 	soap_tmp___tds__ScanAvailableDot11Networks.tds__ScanAvailableDot11Networks = tds__ScanAvailableDot11Networks;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__ScanAvailableDot11Networks(soap, &soap_tmp___tds__ScanAvailableDot11Networks);
@@ -5171,6 +5264,7 @@ int DeviceBindingProxy::send_GetSystemUris(const char *soap_endpoint_url, const 
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetSystemUris";
 	soap_tmp___tds__GetSystemUris.tds__GetSystemUris = tds__GetSystemUris;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetSystemUris(soap, &soap_tmp___tds__GetSystemUris);
@@ -5226,6 +5320,7 @@ int DeviceBindingProxy::send_StartFirmwareUpgrade(const char *soap_endpoint_url,
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/StartFirmwareUpgrade";
 	soap_tmp___tds__StartFirmwareUpgrade.tds__StartFirmwareUpgrade = tds__StartFirmwareUpgrade;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__StartFirmwareUpgrade(soap, &soap_tmp___tds__StartFirmwareUpgrade);
@@ -5281,6 +5376,7 @@ int DeviceBindingProxy::send_UpgradeFirmware(const char *soap_endpoint_url, cons
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/UpgradeFirmware";
 	soap_tmp___tds__UpgradeFirmware.tds__UpgradeFirmware = tds__UpgradeFirmware;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__UpgradeFirmware(soap, &soap_tmp___tds__UpgradeFirmware);
@@ -5336,6 +5432,7 @@ int DeviceBindingProxy::send_StartSystemRestore(const char *soap_endpoint_url, c
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/StartSystemRestore";
 	soap_tmp___tds__StartSystemRestore.tds__StartSystemRestore = tds__StartSystemRestore;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__StartSystemRestore(soap, &soap_tmp___tds__StartSystemRestore);
@@ -5391,6 +5488,7 @@ int DeviceBindingProxy::send_GetStorageConfigurations(const char *soap_endpoint_
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetStorageConfigurations";
 	soap_tmp___tds__GetStorageConfigurations.tds__GetStorageConfigurations = tds__GetStorageConfigurations;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetStorageConfigurations(soap, &soap_tmp___tds__GetStorageConfigurations);
@@ -5446,6 +5544,7 @@ int DeviceBindingProxy::send_CreateStorageConfiguration(const char *soap_endpoin
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/CreateStorageConfiguration";
 	soap_tmp___tds__CreateStorageConfiguration.tds__CreateStorageConfiguration = tds__CreateStorageConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__CreateStorageConfiguration(soap, &soap_tmp___tds__CreateStorageConfiguration);
@@ -5501,6 +5600,7 @@ int DeviceBindingProxy::send_GetStorageConfiguration(const char *soap_endpoint_u
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetStorageConfiguration";
 	soap_tmp___tds__GetStorageConfiguration.tds__GetStorageConfiguration = tds__GetStorageConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetStorageConfiguration(soap, &soap_tmp___tds__GetStorageConfiguration);
@@ -5556,6 +5656,7 @@ int DeviceBindingProxy::send_SetStorageConfiguration(const char *soap_endpoint_u
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SetStorageConfiguration";
 	soap_tmp___tds__SetStorageConfiguration.tds__SetStorageConfiguration = tds__SetStorageConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SetStorageConfiguration(soap, &soap_tmp___tds__SetStorageConfiguration);
@@ -5611,6 +5712,7 @@ int DeviceBindingProxy::send_DeleteStorageConfiguration(const char *soap_endpoin
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/DeleteStorageConfiguration";
 	soap_tmp___tds__DeleteStorageConfiguration.tds__DeleteStorageConfiguration = tds__DeleteStorageConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__DeleteStorageConfiguration(soap, &soap_tmp___tds__DeleteStorageConfiguration);
@@ -5666,6 +5768,7 @@ int DeviceBindingProxy::send_GetGeoLocation(const char *soap_endpoint_url, const
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetGeoLocation";
 	soap_tmp___tds__GetGeoLocation.tds__GetGeoLocation = tds__GetGeoLocation;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__GetGeoLocation(soap, &soap_tmp___tds__GetGeoLocation);
@@ -5721,6 +5824,7 @@ int DeviceBindingProxy::send_SetGeoLocation(const char *soap_endpoint_url, const
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SetGeoLocation";
 	soap_tmp___tds__SetGeoLocation.tds__SetGeoLocation = tds__SetGeoLocation;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SetGeoLocation(soap, &soap_tmp___tds__SetGeoLocation);
@@ -5776,6 +5880,7 @@ int DeviceBindingProxy::send_DeleteGeoLocation(const char *soap_endpoint_url, co
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/DeleteGeoLocation";
 	soap_tmp___tds__DeleteGeoLocation.tds__DeleteGeoLocation = tds__DeleteGeoLocation;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__DeleteGeoLocation(soap, &soap_tmp___tds__DeleteGeoLocation);
@@ -5831,6 +5936,7 @@ int DeviceBindingProxy::send_SetHashingAlgorithm(const char *soap_endpoint_url, 
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/SetHashingAlgorithm";
 	soap_tmp___tds__SetHashingAlgorithm.tds__SetHashingAlgorithm = tds__SetHashingAlgorithm;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tds__SetHashingAlgorithm(soap, &soap_tmp___tds__SetHashingAlgorithm);

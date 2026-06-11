@@ -105,7 +105,10 @@ void PTZBindingProxy::PTZBindingProxy_init(soap_mode imode, soap_mode omode)
         { "timg", "http://www.onvif.org/ver20/imaging/wsdl", NULL, NULL },
         { "tmd", "http://www.onvif.org/ver10/deviceIO/wsdl", NULL, NULL },
         { "tptz", "http://www.onvif.org/ver20/ptz/wsdl", NULL, NULL },
+        { "trc", "http://www.onvif.org/ver10/recording/wsdl", NULL, NULL },
+        { "trp", "http://www.onvif.org/ver10/replay/wsdl", NULL, NULL },
         { "trt", "http://www.onvif.org/ver10/media/wsdl", NULL, NULL },
+        { "tse", "http://www.onvif.org/ver10/search/wsdl", NULL, NULL },
         { NULL, NULL, NULL, NULL} /* end of namespaces[] */
     };
 	soap_set_namespaces(this->soap, namespaces);
@@ -221,6 +224,7 @@ int PTZBindingProxy::send_GetServiceCapabilities(const char *soap_endpoint_url, 
 		soap_action = "http://www.onvif.org/ver20/ptz/wsdl/GetServiceCapabilities";
 	soap_tmp___tptz__GetServiceCapabilities.tptz__GetServiceCapabilities = tptz__GetServiceCapabilities;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tptz__GetServiceCapabilities(soap, &soap_tmp___tptz__GetServiceCapabilities);
@@ -276,6 +280,7 @@ int PTZBindingProxy::send_GetConfigurations(const char *soap_endpoint_url, const
 		soap_action = "http://www.onvif.org/ver20/ptz/wsdl/GetConfigurations";
 	soap_tmp___tptz__GetConfigurations.tptz__GetConfigurations = tptz__GetConfigurations;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tptz__GetConfigurations(soap, &soap_tmp___tptz__GetConfigurations);
@@ -331,6 +336,7 @@ int PTZBindingProxy::send_GetPresets(const char *soap_endpoint_url, const char *
 		soap_action = "http://www.onvif.org/ver20/ptz/wsdl/GetPresets";
 	soap_tmp___tptz__GetPresets.tptz__GetPresets = tptz__GetPresets;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tptz__GetPresets(soap, &soap_tmp___tptz__GetPresets);
@@ -386,6 +392,7 @@ int PTZBindingProxy::send_SetPreset(const char *soap_endpoint_url, const char *s
 		soap_action = "http://www.onvif.org/ver20/ptz/wsdl/SetPreset";
 	soap_tmp___tptz__SetPreset.tptz__SetPreset = tptz__SetPreset;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tptz__SetPreset(soap, &soap_tmp___tptz__SetPreset);
@@ -441,6 +448,7 @@ int PTZBindingProxy::send_RemovePreset(const char *soap_endpoint_url, const char
 		soap_action = "http://www.onvif.org/ver20/ptz/wsdl/RemovePreset";
 	soap_tmp___tptz__RemovePreset.tptz__RemovePreset = tptz__RemovePreset;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tptz__RemovePreset(soap, &soap_tmp___tptz__RemovePreset);
@@ -496,6 +504,7 @@ int PTZBindingProxy::send_GotoPreset(const char *soap_endpoint_url, const char *
 		soap_action = "http://www.onvif.org/ver20/ptz/wsdl/GotoPreset";
 	soap_tmp___tptz__GotoPreset.tptz__GotoPreset = tptz__GotoPreset;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tptz__GotoPreset(soap, &soap_tmp___tptz__GotoPreset);
@@ -551,6 +560,7 @@ int PTZBindingProxy::send_GetStatus(const char *soap_endpoint_url, const char *s
 		soap_action = "http://www.onvif.org/ver20/ptz/wsdl/GetStatus";
 	soap_tmp___tptz__GetStatus.tptz__GetStatus = tptz__GetStatus;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tptz__GetStatus(soap, &soap_tmp___tptz__GetStatus);
@@ -606,6 +616,7 @@ int PTZBindingProxy::send_GetConfiguration(const char *soap_endpoint_url, const 
 		soap_action = "http://www.onvif.org/ver20/ptz/wsdl/GetConfiguration";
 	soap_tmp___tptz__GetConfiguration.tptz__GetConfiguration = tptz__GetConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tptz__GetConfiguration(soap, &soap_tmp___tptz__GetConfiguration);
@@ -661,6 +672,7 @@ int PTZBindingProxy::send_GetNodes(const char *soap_endpoint_url, const char *so
 		soap_action = "http://www.onvif.org/ver20/ptz/wsdl/GetNodes";
 	soap_tmp___tptz__GetNodes.tptz__GetNodes = tptz__GetNodes;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tptz__GetNodes(soap, &soap_tmp___tptz__GetNodes);
@@ -716,6 +728,7 @@ int PTZBindingProxy::send_GetNode(const char *soap_endpoint_url, const char *soa
 		soap_action = "http://www.onvif.org/ver20/ptz/wsdl/GetNode";
 	soap_tmp___tptz__GetNode.tptz__GetNode = tptz__GetNode;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tptz__GetNode(soap, &soap_tmp___tptz__GetNode);
@@ -771,6 +784,7 @@ int PTZBindingProxy::send_SetConfiguration(const char *soap_endpoint_url, const 
 		soap_action = "http://www.onvif.org/ver20/ptz/wsdl/SetConfiguration";
 	soap_tmp___tptz__SetConfiguration.tptz__SetConfiguration = tptz__SetConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tptz__SetConfiguration(soap, &soap_tmp___tptz__SetConfiguration);
@@ -826,6 +840,7 @@ int PTZBindingProxy::send_GetConfigurationOptions(const char *soap_endpoint_url,
 		soap_action = "http://www.onvif.org/ver20/ptz/wsdl/GetConfigurationOptions";
 	soap_tmp___tptz__GetConfigurationOptions.tptz__GetConfigurationOptions = tptz__GetConfigurationOptions;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tptz__GetConfigurationOptions(soap, &soap_tmp___tptz__GetConfigurationOptions);
@@ -881,6 +896,7 @@ int PTZBindingProxy::send_GotoHomePosition(const char *soap_endpoint_url, const 
 		soap_action = "http://www.onvif.org/ver20/ptz/wsdl/GotoHomePosition";
 	soap_tmp___tptz__GotoHomePosition.tptz__GotoHomePosition = tptz__GotoHomePosition;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tptz__GotoHomePosition(soap, &soap_tmp___tptz__GotoHomePosition);
@@ -936,6 +952,7 @@ int PTZBindingProxy::send_SetHomePosition(const char *soap_endpoint_url, const c
 		soap_action = "http://www.onvif.org/ver20/ptz/wsdl/SetHomePosition";
 	soap_tmp___tptz__SetHomePosition.tptz__SetHomePosition = tptz__SetHomePosition;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tptz__SetHomePosition(soap, &soap_tmp___tptz__SetHomePosition);
@@ -991,6 +1008,7 @@ int PTZBindingProxy::send_ContinuousMove(const char *soap_endpoint_url, const ch
 		soap_action = "http://www.onvif.org/ver20/ptz/wsdl/ContinuousMove";
 	soap_tmp___tptz__ContinuousMove.tptz__ContinuousMove = tptz__ContinuousMove;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tptz__ContinuousMove(soap, &soap_tmp___tptz__ContinuousMove);
@@ -1046,6 +1064,7 @@ int PTZBindingProxy::send_RelativeMove(const char *soap_endpoint_url, const char
 		soap_action = "http://www.onvif.org/ver20/ptz/wsdl/RelativeMove";
 	soap_tmp___tptz__RelativeMove.tptz__RelativeMove = tptz__RelativeMove;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tptz__RelativeMove(soap, &soap_tmp___tptz__RelativeMove);
@@ -1101,6 +1120,7 @@ int PTZBindingProxy::send_SendAuxiliaryCommand(const char *soap_endpoint_url, co
 		soap_action = "http://www.onvif.org/ver20/ptz/wsdl/SendAuxiliaryCommand";
 	soap_tmp___tptz__SendAuxiliaryCommand.tptz__SendAuxiliaryCommand = tptz__SendAuxiliaryCommand;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tptz__SendAuxiliaryCommand(soap, &soap_tmp___tptz__SendAuxiliaryCommand);
@@ -1156,6 +1176,7 @@ int PTZBindingProxy::send_AbsoluteMove(const char *soap_endpoint_url, const char
 		soap_action = "http://www.onvif.org/ver20/ptz/wsdl/AbsoluteMove";
 	soap_tmp___tptz__AbsoluteMove.tptz__AbsoluteMove = tptz__AbsoluteMove;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tptz__AbsoluteMove(soap, &soap_tmp___tptz__AbsoluteMove);
@@ -1211,6 +1232,7 @@ int PTZBindingProxy::send_GeoMove(const char *soap_endpoint_url, const char *soa
 		soap_action = "http://www.onvif.org/ver20/ptz/wsdl/GeoMove";
 	soap_tmp___tptz__GeoMove.tptz__GeoMove = tptz__GeoMove;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tptz__GeoMove(soap, &soap_tmp___tptz__GeoMove);
@@ -1266,6 +1288,7 @@ int PTZBindingProxy::send_Stop(const char *soap_endpoint_url, const char *soap_a
 		soap_action = "http://www.onvif.org/ver20/ptz/wsdl/Stop";
 	soap_tmp___tptz__Stop.tptz__Stop = tptz__Stop;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tptz__Stop(soap, &soap_tmp___tptz__Stop);
@@ -1321,6 +1344,7 @@ int PTZBindingProxy::send_GetPresetTours(const char *soap_endpoint_url, const ch
 		soap_action = "http://www.onvif.org/ver20/ptz/wsdl/GetPresetTours";
 	soap_tmp___tptz__GetPresetTours.tptz__GetPresetTours = tptz__GetPresetTours;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tptz__GetPresetTours(soap, &soap_tmp___tptz__GetPresetTours);
@@ -1376,6 +1400,7 @@ int PTZBindingProxy::send_GetPresetTour(const char *soap_endpoint_url, const cha
 		soap_action = "http://www.onvif.org/ver20/ptz/wsdl/GetPresetTour";
 	soap_tmp___tptz__GetPresetTour.tptz__GetPresetTour = tptz__GetPresetTour;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tptz__GetPresetTour(soap, &soap_tmp___tptz__GetPresetTour);
@@ -1431,6 +1456,7 @@ int PTZBindingProxy::send_GetPresetTourOptions(const char *soap_endpoint_url, co
 		soap_action = "http://www.onvif.org/ver20/ptz/wsdl/GetPresetTourOptions";
 	soap_tmp___tptz__GetPresetTourOptions.tptz__GetPresetTourOptions = tptz__GetPresetTourOptions;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tptz__GetPresetTourOptions(soap, &soap_tmp___tptz__GetPresetTourOptions);
@@ -1486,6 +1512,7 @@ int PTZBindingProxy::send_CreatePresetTour(const char *soap_endpoint_url, const 
 		soap_action = "http://www.onvif.org/ver20/ptz/wsdl/CreatePresetTour";
 	soap_tmp___tptz__CreatePresetTour.tptz__CreatePresetTour = tptz__CreatePresetTour;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tptz__CreatePresetTour(soap, &soap_tmp___tptz__CreatePresetTour);
@@ -1541,6 +1568,7 @@ int PTZBindingProxy::send_ModifyPresetTour(const char *soap_endpoint_url, const 
 		soap_action = "http://www.onvif.org/ver20/ptz/wsdl/ModifyPresetTour";
 	soap_tmp___tptz__ModifyPresetTour.tptz__ModifyPresetTour = tptz__ModifyPresetTour;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tptz__ModifyPresetTour(soap, &soap_tmp___tptz__ModifyPresetTour);
@@ -1596,6 +1624,7 @@ int PTZBindingProxy::send_OperatePresetTour(const char *soap_endpoint_url, const
 		soap_action = "http://www.onvif.org/ver20/ptz/wsdl/OperatePresetTour";
 	soap_tmp___tptz__OperatePresetTour.tptz__OperatePresetTour = tptz__OperatePresetTour;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tptz__OperatePresetTour(soap, &soap_tmp___tptz__OperatePresetTour);
@@ -1651,6 +1680,7 @@ int PTZBindingProxy::send_RemovePresetTour(const char *soap_endpoint_url, const 
 		soap_action = "http://www.onvif.org/ver20/ptz/wsdl/RemovePresetTour";
 	soap_tmp___tptz__RemovePresetTour.tptz__RemovePresetTour = tptz__RemovePresetTour;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tptz__RemovePresetTour(soap, &soap_tmp___tptz__RemovePresetTour);
@@ -1706,6 +1736,7 @@ int PTZBindingProxy::send_GetCompatibleConfigurations(const char *soap_endpoint_
 		soap_action = "http://www.onvif.org/ver20/ptz/wsdl/GetCompatibleConfigurations";
 	soap_tmp___tptz__GetCompatibleConfigurations.tptz__GetCompatibleConfigurations = tptz__GetCompatibleConfigurations;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tptz__GetCompatibleConfigurations(soap, &soap_tmp___tptz__GetCompatibleConfigurations);
@@ -1761,6 +1792,7 @@ int PTZBindingProxy::send_MoveAndStartTracking(const char *soap_endpoint_url, co
 		soap_action = "http://www.onvif.org/ver20/ptz/wsdl/MoveAndStartTracking";
 	soap_tmp___tptz__MoveAndStartTracking.tptz__MoveAndStartTracking = tptz__MoveAndStartTracking;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___tptz__MoveAndStartTracking(soap, &soap_tmp___tptz__MoveAndStartTracking);

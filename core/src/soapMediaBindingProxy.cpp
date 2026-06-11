@@ -105,7 +105,10 @@ void MediaBindingProxy::MediaBindingProxy_init(soap_mode imode, soap_mode omode)
         { "timg", "http://www.onvif.org/ver20/imaging/wsdl", NULL, NULL },
         { "tmd", "http://www.onvif.org/ver10/deviceIO/wsdl", NULL, NULL },
         { "tptz", "http://www.onvif.org/ver20/ptz/wsdl", NULL, NULL },
+        { "trc", "http://www.onvif.org/ver10/recording/wsdl", NULL, NULL },
+        { "trp", "http://www.onvif.org/ver10/replay/wsdl", NULL, NULL },
         { "trt", "http://www.onvif.org/ver10/media/wsdl", NULL, NULL },
+        { "tse", "http://www.onvif.org/ver10/search/wsdl", NULL, NULL },
         { NULL, NULL, NULL, NULL} /* end of namespaces[] */
     };
 	soap_set_namespaces(this->soap, namespaces);
@@ -221,6 +224,7 @@ int MediaBindingProxy::send_GetServiceCapabilities(const char *soap_endpoint_url
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetServiceCapabilities";
 	soap_tmp___trt__GetServiceCapabilities.trt__GetServiceCapabilities = trt__GetServiceCapabilities;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetServiceCapabilities(soap, &soap_tmp___trt__GetServiceCapabilities);
@@ -276,6 +280,7 @@ int MediaBindingProxy::send_GetVideoSources(const char *soap_endpoint_url, const
 		soap_action = "http://www.onvif.org/ver10/media/wsdlGetVideoSources/";
 	soap_tmp___trt__GetVideoSources.trt__GetVideoSources = trt__GetVideoSources;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetVideoSources(soap, &soap_tmp___trt__GetVideoSources);
@@ -331,6 +336,7 @@ int MediaBindingProxy::send_GetAudioSources(const char *soap_endpoint_url, const
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetAudioSources";
 	soap_tmp___trt__GetAudioSources.trt__GetAudioSources = trt__GetAudioSources;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetAudioSources(soap, &soap_tmp___trt__GetAudioSources);
@@ -386,6 +392,7 @@ int MediaBindingProxy::send_GetAudioOutputs(const char *soap_endpoint_url, const
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetAudioOutputs";
 	soap_tmp___trt__GetAudioOutputs.trt__GetAudioOutputs = trt__GetAudioOutputs;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetAudioOutputs(soap, &soap_tmp___trt__GetAudioOutputs);
@@ -441,6 +448,7 @@ int MediaBindingProxy::send_CreateProfile(const char *soap_endpoint_url, const c
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/CreateProfile";
 	soap_tmp___trt__CreateProfile.trt__CreateProfile = trt__CreateProfile;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__CreateProfile(soap, &soap_tmp___trt__CreateProfile);
@@ -496,6 +504,7 @@ int MediaBindingProxy::send_GetProfile(const char *soap_endpoint_url, const char
 		soap_action = "http://www.onvif.org/ver10/media/wsdlGetProfile/";
 	soap_tmp___trt__GetProfile.trt__GetProfile = trt__GetProfile;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetProfile(soap, &soap_tmp___trt__GetProfile);
@@ -551,6 +560,7 @@ int MediaBindingProxy::send_GetProfiles(const char *soap_endpoint_url, const cha
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetProfiles";
 	soap_tmp___trt__GetProfiles.trt__GetProfiles = trt__GetProfiles;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetProfiles(soap, &soap_tmp___trt__GetProfiles);
@@ -606,6 +616,7 @@ int MediaBindingProxy::send_AddVideoEncoderConfiguration(const char *soap_endpoi
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/AddVideoEncoderConfiguration";
 	soap_tmp___trt__AddVideoEncoderConfiguration.trt__AddVideoEncoderConfiguration = trt__AddVideoEncoderConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__AddVideoEncoderConfiguration(soap, &soap_tmp___trt__AddVideoEncoderConfiguration);
@@ -661,6 +672,7 @@ int MediaBindingProxy::send_AddVideoSourceConfiguration(const char *soap_endpoin
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/AddVideoSourceConfiguration";
 	soap_tmp___trt__AddVideoSourceConfiguration.trt__AddVideoSourceConfiguration = trt__AddVideoSourceConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__AddVideoSourceConfiguration(soap, &soap_tmp___trt__AddVideoSourceConfiguration);
@@ -716,6 +728,7 @@ int MediaBindingProxy::send_AddAudioEncoderConfiguration(const char *soap_endpoi
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/AddAudioEncoderConfiguration";
 	soap_tmp___trt__AddAudioEncoderConfiguration.trt__AddAudioEncoderConfiguration = trt__AddAudioEncoderConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__AddAudioEncoderConfiguration(soap, &soap_tmp___trt__AddAudioEncoderConfiguration);
@@ -771,6 +784,7 @@ int MediaBindingProxy::send_AddAudioSourceConfiguration(const char *soap_endpoin
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/AddAudioSourceConfiguration";
 	soap_tmp___trt__AddAudioSourceConfiguration.trt__AddAudioSourceConfiguration = trt__AddAudioSourceConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__AddAudioSourceConfiguration(soap, &soap_tmp___trt__AddAudioSourceConfiguration);
@@ -826,6 +840,7 @@ int MediaBindingProxy::send_AddPTZConfiguration(const char *soap_endpoint_url, c
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/AddPTZConfiguration";
 	soap_tmp___trt__AddPTZConfiguration.trt__AddPTZConfiguration = trt__AddPTZConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__AddPTZConfiguration(soap, &soap_tmp___trt__AddPTZConfiguration);
@@ -881,6 +896,7 @@ int MediaBindingProxy::send_AddVideoAnalyticsConfiguration(const char *soap_endp
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/AddVideoAnalyticsConfiguration";
 	soap_tmp___trt__AddVideoAnalyticsConfiguration.trt__AddVideoAnalyticsConfiguration = trt__AddVideoAnalyticsConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__AddVideoAnalyticsConfiguration(soap, &soap_tmp___trt__AddVideoAnalyticsConfiguration);
@@ -936,6 +952,7 @@ int MediaBindingProxy::send_AddMetadataConfiguration(const char *soap_endpoint_u
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/AddMetadataConfiguration";
 	soap_tmp___trt__AddMetadataConfiguration.trt__AddMetadataConfiguration = trt__AddMetadataConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__AddMetadataConfiguration(soap, &soap_tmp___trt__AddMetadataConfiguration);
@@ -991,6 +1008,7 @@ int MediaBindingProxy::send_AddAudioOutputConfiguration(const char *soap_endpoin
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/AddAudioOutputConfiguration";
 	soap_tmp___trt__AddAudioOutputConfiguration.trt__AddAudioOutputConfiguration = trt__AddAudioOutputConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__AddAudioOutputConfiguration(soap, &soap_tmp___trt__AddAudioOutputConfiguration);
@@ -1046,6 +1064,7 @@ int MediaBindingProxy::send_AddAudioDecoderConfiguration(const char *soap_endpoi
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/AddAudioDecoderConfiguration";
 	soap_tmp___trt__AddAudioDecoderConfiguration.trt__AddAudioDecoderConfiguration = trt__AddAudioDecoderConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__AddAudioDecoderConfiguration(soap, &soap_tmp___trt__AddAudioDecoderConfiguration);
@@ -1101,6 +1120,7 @@ int MediaBindingProxy::send_RemoveVideoEncoderConfiguration(const char *soap_end
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/RemoveVideoEncoderConfiguration";
 	soap_tmp___trt__RemoveVideoEncoderConfiguration.trt__RemoveVideoEncoderConfiguration = trt__RemoveVideoEncoderConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__RemoveVideoEncoderConfiguration(soap, &soap_tmp___trt__RemoveVideoEncoderConfiguration);
@@ -1156,6 +1176,7 @@ int MediaBindingProxy::send_RemoveVideoSourceConfiguration(const char *soap_endp
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/RemoveVideoSourceConfiguration";
 	soap_tmp___trt__RemoveVideoSourceConfiguration.trt__RemoveVideoSourceConfiguration = trt__RemoveVideoSourceConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__RemoveVideoSourceConfiguration(soap, &soap_tmp___trt__RemoveVideoSourceConfiguration);
@@ -1211,6 +1232,7 @@ int MediaBindingProxy::send_RemoveAudioEncoderConfiguration(const char *soap_end
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/RemoveAudioEncoderConfiguration";
 	soap_tmp___trt__RemoveAudioEncoderConfiguration.trt__RemoveAudioEncoderConfiguration = trt__RemoveAudioEncoderConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__RemoveAudioEncoderConfiguration(soap, &soap_tmp___trt__RemoveAudioEncoderConfiguration);
@@ -1266,6 +1288,7 @@ int MediaBindingProxy::send_RemoveAudioSourceConfiguration(const char *soap_endp
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/RemoveAudioSourceConfiguration";
 	soap_tmp___trt__RemoveAudioSourceConfiguration.trt__RemoveAudioSourceConfiguration = trt__RemoveAudioSourceConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__RemoveAudioSourceConfiguration(soap, &soap_tmp___trt__RemoveAudioSourceConfiguration);
@@ -1321,6 +1344,7 @@ int MediaBindingProxy::send_RemovePTZConfiguration(const char *soap_endpoint_url
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/RemovePTZConfiguration";
 	soap_tmp___trt__RemovePTZConfiguration.trt__RemovePTZConfiguration = trt__RemovePTZConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__RemovePTZConfiguration(soap, &soap_tmp___trt__RemovePTZConfiguration);
@@ -1376,6 +1400,7 @@ int MediaBindingProxy::send_RemoveVideoAnalyticsConfiguration(const char *soap_e
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/RemoveVideoAnalyticsConfiguration";
 	soap_tmp___trt__RemoveVideoAnalyticsConfiguration.trt__RemoveVideoAnalyticsConfiguration = trt__RemoveVideoAnalyticsConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__RemoveVideoAnalyticsConfiguration(soap, &soap_tmp___trt__RemoveVideoAnalyticsConfiguration);
@@ -1431,6 +1456,7 @@ int MediaBindingProxy::send_RemoveMetadataConfiguration(const char *soap_endpoin
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/RemoveMetadataConfiguration";
 	soap_tmp___trt__RemoveMetadataConfiguration.trt__RemoveMetadataConfiguration = trt__RemoveMetadataConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__RemoveMetadataConfiguration(soap, &soap_tmp___trt__RemoveMetadataConfiguration);
@@ -1486,6 +1512,7 @@ int MediaBindingProxy::send_RemoveAudioOutputConfiguration(const char *soap_endp
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/RemoveAudioOutputConfiguration";
 	soap_tmp___trt__RemoveAudioOutputConfiguration.trt__RemoveAudioOutputConfiguration = trt__RemoveAudioOutputConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__RemoveAudioOutputConfiguration(soap, &soap_tmp___trt__RemoveAudioOutputConfiguration);
@@ -1541,6 +1568,7 @@ int MediaBindingProxy::send_RemoveAudioDecoderConfiguration(const char *soap_end
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/RemoveAudioDecoderConfiguration";
 	soap_tmp___trt__RemoveAudioDecoderConfiguration.trt__RemoveAudioDecoderConfiguration = trt__RemoveAudioDecoderConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__RemoveAudioDecoderConfiguration(soap, &soap_tmp___trt__RemoveAudioDecoderConfiguration);
@@ -1596,6 +1624,7 @@ int MediaBindingProxy::send_DeleteProfile(const char *soap_endpoint_url, const c
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/DeleteProfile";
 	soap_tmp___trt__DeleteProfile.trt__DeleteProfile = trt__DeleteProfile;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__DeleteProfile(soap, &soap_tmp___trt__DeleteProfile);
@@ -1651,6 +1680,7 @@ int MediaBindingProxy::send_GetVideoSourceConfigurations(const char *soap_endpoi
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetVideoSourceConfigurations";
 	soap_tmp___trt__GetVideoSourceConfigurations.trt__GetVideoSourceConfigurations = trt__GetVideoSourceConfigurations;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetVideoSourceConfigurations(soap, &soap_tmp___trt__GetVideoSourceConfigurations);
@@ -1706,6 +1736,7 @@ int MediaBindingProxy::send_GetVideoEncoderConfigurations(const char *soap_endpo
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetVideoEncoderConfigurations";
 	soap_tmp___trt__GetVideoEncoderConfigurations.trt__GetVideoEncoderConfigurations = trt__GetVideoEncoderConfigurations;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetVideoEncoderConfigurations(soap, &soap_tmp___trt__GetVideoEncoderConfigurations);
@@ -1761,6 +1792,7 @@ int MediaBindingProxy::send_GetAudioSourceConfigurations(const char *soap_endpoi
 		soap_action = "http://www.onvif.org/ver10/media/wsdlGetAudioSourceConfigurations/";
 	soap_tmp___trt__GetAudioSourceConfigurations.trt__GetAudioSourceConfigurations = trt__GetAudioSourceConfigurations;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetAudioSourceConfigurations(soap, &soap_tmp___trt__GetAudioSourceConfigurations);
@@ -1816,6 +1848,7 @@ int MediaBindingProxy::send_GetAudioEncoderConfigurations(const char *soap_endpo
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetAudioEncoderConfigurations";
 	soap_tmp___trt__GetAudioEncoderConfigurations.trt__GetAudioEncoderConfigurations = trt__GetAudioEncoderConfigurations;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetAudioEncoderConfigurations(soap, &soap_tmp___trt__GetAudioEncoderConfigurations);
@@ -1871,6 +1904,7 @@ int MediaBindingProxy::send_GetVideoAnalyticsConfigurations(const char *soap_end
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetVideoAnalyticsConfigurations";
 	soap_tmp___trt__GetVideoAnalyticsConfigurations.trt__GetVideoAnalyticsConfigurations = trt__GetVideoAnalyticsConfigurations;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetVideoAnalyticsConfigurations(soap, &soap_tmp___trt__GetVideoAnalyticsConfigurations);
@@ -1926,6 +1960,7 @@ int MediaBindingProxy::send_GetMetadataConfigurations(const char *soap_endpoint_
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetMetadataConfigurations";
 	soap_tmp___trt__GetMetadataConfigurations.trt__GetMetadataConfigurations = trt__GetMetadataConfigurations;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetMetadataConfigurations(soap, &soap_tmp___trt__GetMetadataConfigurations);
@@ -1981,6 +2016,7 @@ int MediaBindingProxy::send_GetAudioOutputConfigurations(const char *soap_endpoi
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetAudioOutputConfigurations";
 	soap_tmp___trt__GetAudioOutputConfigurations.trt__GetAudioOutputConfigurations = trt__GetAudioOutputConfigurations;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetAudioOutputConfigurations(soap, &soap_tmp___trt__GetAudioOutputConfigurations);
@@ -2036,6 +2072,7 @@ int MediaBindingProxy::send_GetAudioDecoderConfigurations(const char *soap_endpo
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetAudioDecoderConfigurations";
 	soap_tmp___trt__GetAudioDecoderConfigurations.trt__GetAudioDecoderConfigurations = trt__GetAudioDecoderConfigurations;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetAudioDecoderConfigurations(soap, &soap_tmp___trt__GetAudioDecoderConfigurations);
@@ -2091,6 +2128,7 @@ int MediaBindingProxy::send_GetVideoSourceConfiguration(const char *soap_endpoin
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetVideoSourceConfiguration";
 	soap_tmp___trt__GetVideoSourceConfiguration.trt__GetVideoSourceConfiguration = trt__GetVideoSourceConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetVideoSourceConfiguration(soap, &soap_tmp___trt__GetVideoSourceConfiguration);
@@ -2146,6 +2184,7 @@ int MediaBindingProxy::send_GetVideoEncoderConfiguration(const char *soap_endpoi
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetVideoEncoderConfiguration";
 	soap_tmp___trt__GetVideoEncoderConfiguration.trt__GetVideoEncoderConfiguration = trt__GetVideoEncoderConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetVideoEncoderConfiguration(soap, &soap_tmp___trt__GetVideoEncoderConfiguration);
@@ -2201,6 +2240,7 @@ int MediaBindingProxy::send_GetAudioSourceConfiguration(const char *soap_endpoin
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetAudioSourceConfiguration";
 	soap_tmp___trt__GetAudioSourceConfiguration.trt__GetAudioSourceConfiguration = trt__GetAudioSourceConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetAudioSourceConfiguration(soap, &soap_tmp___trt__GetAudioSourceConfiguration);
@@ -2256,6 +2296,7 @@ int MediaBindingProxy::send_GetAudioEncoderConfiguration(const char *soap_endpoi
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetAudioEncoderConfiguration";
 	soap_tmp___trt__GetAudioEncoderConfiguration.trt__GetAudioEncoderConfiguration = trt__GetAudioEncoderConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetAudioEncoderConfiguration(soap, &soap_tmp___trt__GetAudioEncoderConfiguration);
@@ -2311,6 +2352,7 @@ int MediaBindingProxy::send_GetVideoAnalyticsConfiguration(const char *soap_endp
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetVideoAnalyticsConfiguration";
 	soap_tmp___trt__GetVideoAnalyticsConfiguration.trt__GetVideoAnalyticsConfiguration = trt__GetVideoAnalyticsConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetVideoAnalyticsConfiguration(soap, &soap_tmp___trt__GetVideoAnalyticsConfiguration);
@@ -2366,6 +2408,7 @@ int MediaBindingProxy::send_GetMetadataConfiguration(const char *soap_endpoint_u
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetMetadataConfiguration";
 	soap_tmp___trt__GetMetadataConfiguration.trt__GetMetadataConfiguration = trt__GetMetadataConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetMetadataConfiguration(soap, &soap_tmp___trt__GetMetadataConfiguration);
@@ -2421,6 +2464,7 @@ int MediaBindingProxy::send_GetAudioOutputConfiguration(const char *soap_endpoin
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetAudioOutputConfiguration";
 	soap_tmp___trt__GetAudioOutputConfiguration.trt__GetAudioOutputConfiguration = trt__GetAudioOutputConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetAudioOutputConfiguration(soap, &soap_tmp___trt__GetAudioOutputConfiguration);
@@ -2476,6 +2520,7 @@ int MediaBindingProxy::send_GetAudioDecoderConfiguration(const char *soap_endpoi
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetAudioDecoderConfiguration";
 	soap_tmp___trt__GetAudioDecoderConfiguration.trt__GetAudioDecoderConfiguration = trt__GetAudioDecoderConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetAudioDecoderConfiguration(soap, &soap_tmp___trt__GetAudioDecoderConfiguration);
@@ -2531,6 +2576,7 @@ int MediaBindingProxy::send_GetCompatibleVideoEncoderConfigurations(const char *
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetCompatibleVideoEncoderConfigurations";
 	soap_tmp___trt__GetCompatibleVideoEncoderConfigurations.trt__GetCompatibleVideoEncoderConfigurations = trt__GetCompatibleVideoEncoderConfigurations;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetCompatibleVideoEncoderConfigurations(soap, &soap_tmp___trt__GetCompatibleVideoEncoderConfigurations);
@@ -2586,6 +2632,7 @@ int MediaBindingProxy::send_GetCompatibleVideoSourceConfigurations(const char *s
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetCompatibleVideoSourceConfigurations";
 	soap_tmp___trt__GetCompatibleVideoSourceConfigurations.trt__GetCompatibleVideoSourceConfigurations = trt__GetCompatibleVideoSourceConfigurations;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetCompatibleVideoSourceConfigurations(soap, &soap_tmp___trt__GetCompatibleVideoSourceConfigurations);
@@ -2641,6 +2688,7 @@ int MediaBindingProxy::send_GetCompatibleAudioEncoderConfigurations(const char *
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetCompatibleAudioEncoderConfigurations";
 	soap_tmp___trt__GetCompatibleAudioEncoderConfigurations.trt__GetCompatibleAudioEncoderConfigurations = trt__GetCompatibleAudioEncoderConfigurations;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetCompatibleAudioEncoderConfigurations(soap, &soap_tmp___trt__GetCompatibleAudioEncoderConfigurations);
@@ -2696,6 +2744,7 @@ int MediaBindingProxy::send_GetCompatibleAudioSourceConfigurations(const char *s
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetCompatibleAudioSourceConfigurations";
 	soap_tmp___trt__GetCompatibleAudioSourceConfigurations.trt__GetCompatibleAudioSourceConfigurations = trt__GetCompatibleAudioSourceConfigurations;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetCompatibleAudioSourceConfigurations(soap, &soap_tmp___trt__GetCompatibleAudioSourceConfigurations);
@@ -2751,6 +2800,7 @@ int MediaBindingProxy::send_GetCompatibleVideoAnalyticsConfigurations(const char
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetCompatibleVideoAnalyticsConfigurations";
 	soap_tmp___trt__GetCompatibleVideoAnalyticsConfigurations.trt__GetCompatibleVideoAnalyticsConfigurations = trt__GetCompatibleVideoAnalyticsConfigurations;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetCompatibleVideoAnalyticsConfigurations(soap, &soap_tmp___trt__GetCompatibleVideoAnalyticsConfigurations);
@@ -2806,6 +2856,7 @@ int MediaBindingProxy::send_GetCompatibleMetadataConfigurations(const char *soap
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetCompatibleMetadataConfigurations";
 	soap_tmp___trt__GetCompatibleMetadataConfigurations.trt__GetCompatibleMetadataConfigurations = trt__GetCompatibleMetadataConfigurations;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetCompatibleMetadataConfigurations(soap, &soap_tmp___trt__GetCompatibleMetadataConfigurations);
@@ -2861,6 +2912,7 @@ int MediaBindingProxy::send_GetCompatibleAudioOutputConfigurations(const char *s
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetCompatibleAudioOutputConfigurations";
 	soap_tmp___trt__GetCompatibleAudioOutputConfigurations.trt__GetCompatibleAudioOutputConfigurations = trt__GetCompatibleAudioOutputConfigurations;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetCompatibleAudioOutputConfigurations(soap, &soap_tmp___trt__GetCompatibleAudioOutputConfigurations);
@@ -2916,6 +2968,7 @@ int MediaBindingProxy::send_GetCompatibleAudioDecoderConfigurations(const char *
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetCompatibleAudioDecoderConfigurations";
 	soap_tmp___trt__GetCompatibleAudioDecoderConfigurations.trt__GetCompatibleAudioDecoderConfigurations = trt__GetCompatibleAudioDecoderConfigurations;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetCompatibleAudioDecoderConfigurations(soap, &soap_tmp___trt__GetCompatibleAudioDecoderConfigurations);
@@ -2971,6 +3024,7 @@ int MediaBindingProxy::send_SetVideoSourceConfiguration(const char *soap_endpoin
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/SetVideoSourceConfiguration";
 	soap_tmp___trt__SetVideoSourceConfiguration.trt__SetVideoSourceConfiguration = trt__SetVideoSourceConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__SetVideoSourceConfiguration(soap, &soap_tmp___trt__SetVideoSourceConfiguration);
@@ -3026,6 +3080,7 @@ int MediaBindingProxy::send_SetVideoEncoderConfiguration(const char *soap_endpoi
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/SetVideoEncoderConfiguration";
 	soap_tmp___trt__SetVideoEncoderConfiguration.trt__SetVideoEncoderConfiguration = trt__SetVideoEncoderConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__SetVideoEncoderConfiguration(soap, &soap_tmp___trt__SetVideoEncoderConfiguration);
@@ -3081,6 +3136,7 @@ int MediaBindingProxy::send_SetAudioSourceConfiguration(const char *soap_endpoin
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/SetAudioSourceConfiguration";
 	soap_tmp___trt__SetAudioSourceConfiguration.trt__SetAudioSourceConfiguration = trt__SetAudioSourceConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__SetAudioSourceConfiguration(soap, &soap_tmp___trt__SetAudioSourceConfiguration);
@@ -3136,6 +3192,7 @@ int MediaBindingProxy::send_SetAudioEncoderConfiguration(const char *soap_endpoi
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/SetAudioEncoderConfiguration";
 	soap_tmp___trt__SetAudioEncoderConfiguration.trt__SetAudioEncoderConfiguration = trt__SetAudioEncoderConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__SetAudioEncoderConfiguration(soap, &soap_tmp___trt__SetAudioEncoderConfiguration);
@@ -3191,6 +3248,7 @@ int MediaBindingProxy::send_SetVideoAnalyticsConfiguration(const char *soap_endp
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/SetVideoAnalyticsConfiguration";
 	soap_tmp___trt__SetVideoAnalyticsConfiguration.trt__SetVideoAnalyticsConfiguration = trt__SetVideoAnalyticsConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__SetVideoAnalyticsConfiguration(soap, &soap_tmp___trt__SetVideoAnalyticsConfiguration);
@@ -3246,6 +3304,7 @@ int MediaBindingProxy::send_SetMetadataConfiguration(const char *soap_endpoint_u
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/SetMetadataConfiguration";
 	soap_tmp___trt__SetMetadataConfiguration.trt__SetMetadataConfiguration = trt__SetMetadataConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__SetMetadataConfiguration(soap, &soap_tmp___trt__SetMetadataConfiguration);
@@ -3301,6 +3360,7 @@ int MediaBindingProxy::send_SetAudioOutputConfiguration(const char *soap_endpoin
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/SetAudioOutputConfiguration";
 	soap_tmp___trt__SetAudioOutputConfiguration.trt__SetAudioOutputConfiguration = trt__SetAudioOutputConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__SetAudioOutputConfiguration(soap, &soap_tmp___trt__SetAudioOutputConfiguration);
@@ -3356,6 +3416,7 @@ int MediaBindingProxy::send_SetAudioDecoderConfiguration(const char *soap_endpoi
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/SetAudioDecoderConfiguration";
 	soap_tmp___trt__SetAudioDecoderConfiguration.trt__SetAudioDecoderConfiguration = trt__SetAudioDecoderConfiguration;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__SetAudioDecoderConfiguration(soap, &soap_tmp___trt__SetAudioDecoderConfiguration);
@@ -3411,6 +3472,7 @@ int MediaBindingProxy::send_GetVideoSourceConfigurationOptions(const char *soap_
 		soap_action = "http://www.onvif.org/ver10/media/wsdlGetVideoSourceConfigurationOptions/";
 	soap_tmp___trt__GetVideoSourceConfigurationOptions.trt__GetVideoSourceConfigurationOptions = trt__GetVideoSourceConfigurationOptions;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetVideoSourceConfigurationOptions(soap, &soap_tmp___trt__GetVideoSourceConfigurationOptions);
@@ -3466,6 +3528,7 @@ int MediaBindingProxy::send_GetVideoEncoderConfigurationOptions(const char *soap
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetVideoEncoderConfigurationOptions";
 	soap_tmp___trt__GetVideoEncoderConfigurationOptions.trt__GetVideoEncoderConfigurationOptions = trt__GetVideoEncoderConfigurationOptions;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetVideoEncoderConfigurationOptions(soap, &soap_tmp___trt__GetVideoEncoderConfigurationOptions);
@@ -3521,6 +3584,7 @@ int MediaBindingProxy::send_GetAudioSourceConfigurationOptions(const char *soap_
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetAudioSourceConfigurationOptions";
 	soap_tmp___trt__GetAudioSourceConfigurationOptions.trt__GetAudioSourceConfigurationOptions = trt__GetAudioSourceConfigurationOptions;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetAudioSourceConfigurationOptions(soap, &soap_tmp___trt__GetAudioSourceConfigurationOptions);
@@ -3576,6 +3640,7 @@ int MediaBindingProxy::send_GetAudioEncoderConfigurationOptions(const char *soap
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetAudioEncoderConfigurationOptions";
 	soap_tmp___trt__GetAudioEncoderConfigurationOptions.trt__GetAudioEncoderConfigurationOptions = trt__GetAudioEncoderConfigurationOptions;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetAudioEncoderConfigurationOptions(soap, &soap_tmp___trt__GetAudioEncoderConfigurationOptions);
@@ -3631,6 +3696,7 @@ int MediaBindingProxy::send_GetMetadataConfigurationOptions(const char *soap_end
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetMetadataConfigurationOptions";
 	soap_tmp___trt__GetMetadataConfigurationOptions.trt__GetMetadataConfigurationOptions = trt__GetMetadataConfigurationOptions;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetMetadataConfigurationOptions(soap, &soap_tmp___trt__GetMetadataConfigurationOptions);
@@ -3686,6 +3752,7 @@ int MediaBindingProxy::send_GetAudioOutputConfigurationOptions(const char *soap_
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetAudioOutputConfigurationOptions";
 	soap_tmp___trt__GetAudioOutputConfigurationOptions.trt__GetAudioOutputConfigurationOptions = trt__GetAudioOutputConfigurationOptions;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetAudioOutputConfigurationOptions(soap, &soap_tmp___trt__GetAudioOutputConfigurationOptions);
@@ -3741,6 +3808,7 @@ int MediaBindingProxy::send_GetAudioDecoderConfigurationOptions(const char *soap
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetAudioDecoderConfigurationOptions";
 	soap_tmp___trt__GetAudioDecoderConfigurationOptions.trt__GetAudioDecoderConfigurationOptions = trt__GetAudioDecoderConfigurationOptions;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetAudioDecoderConfigurationOptions(soap, &soap_tmp___trt__GetAudioDecoderConfigurationOptions);
@@ -3796,6 +3864,7 @@ int MediaBindingProxy::send_GetGuaranteedNumberOfVideoEncoderInstances(const cha
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetGuaranteedNumberOfVideoEncoderInstances";
 	soap_tmp___trt__GetGuaranteedNumberOfVideoEncoderInstances.trt__GetGuaranteedNumberOfVideoEncoderInstances = trt__GetGuaranteedNumberOfVideoEncoderInstances;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetGuaranteedNumberOfVideoEncoderInstances(soap, &soap_tmp___trt__GetGuaranteedNumberOfVideoEncoderInstances);
@@ -3851,6 +3920,7 @@ int MediaBindingProxy::send_GetStreamUri(const char *soap_endpoint_url, const ch
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetStreamUri";
 	soap_tmp___trt__GetStreamUri.trt__GetStreamUri = trt__GetStreamUri;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetStreamUri(soap, &soap_tmp___trt__GetStreamUri);
@@ -3906,6 +3976,7 @@ int MediaBindingProxy::send_StartMulticastStreaming(const char *soap_endpoint_ur
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/StartMulticastStreaming";
 	soap_tmp___trt__StartMulticastStreaming.trt__StartMulticastStreaming = trt__StartMulticastStreaming;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__StartMulticastStreaming(soap, &soap_tmp___trt__StartMulticastStreaming);
@@ -3961,6 +4032,7 @@ int MediaBindingProxy::send_StopMulticastStreaming(const char *soap_endpoint_url
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/StopMulticastStreaming";
 	soap_tmp___trt__StopMulticastStreaming.trt__StopMulticastStreaming = trt__StopMulticastStreaming;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__StopMulticastStreaming(soap, &soap_tmp___trt__StopMulticastStreaming);
@@ -4016,6 +4088,7 @@ int MediaBindingProxy::send_SetSynchronizationPoint(const char *soap_endpoint_ur
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/SetSynchronizationPoint";
 	soap_tmp___trt__SetSynchronizationPoint.trt__SetSynchronizationPoint = trt__SetSynchronizationPoint;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__SetSynchronizationPoint(soap, &soap_tmp___trt__SetSynchronizationPoint);
@@ -4071,6 +4144,7 @@ int MediaBindingProxy::send_GetSnapshotUri(const char *soap_endpoint_url, const 
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetSnapshotUri";
 	soap_tmp___trt__GetSnapshotUri.trt__GetSnapshotUri = trt__GetSnapshotUri;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetSnapshotUri(soap, &soap_tmp___trt__GetSnapshotUri);
@@ -4126,6 +4200,7 @@ int MediaBindingProxy::send_GetVideoSourceModes(const char *soap_endpoint_url, c
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetVideoSourceModes";
 	soap_tmp___trt__GetVideoSourceModes.trt__GetVideoSourceModes = trt__GetVideoSourceModes;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetVideoSourceModes(soap, &soap_tmp___trt__GetVideoSourceModes);
@@ -4181,6 +4256,7 @@ int MediaBindingProxy::send_SetVideoSourceMode(const char *soap_endpoint_url, co
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/SetVideoSourceMode";
 	soap_tmp___trt__SetVideoSourceMode.trt__SetVideoSourceMode = trt__SetVideoSourceMode;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__SetVideoSourceMode(soap, &soap_tmp___trt__SetVideoSourceMode);
@@ -4236,6 +4312,7 @@ int MediaBindingProxy::send_GetOSDs(const char *soap_endpoint_url, const char *s
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetOSDs";
 	soap_tmp___trt__GetOSDs.trt__GetOSDs = trt__GetOSDs;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetOSDs(soap, &soap_tmp___trt__GetOSDs);
@@ -4291,6 +4368,7 @@ int MediaBindingProxy::send_GetOSD(const char *soap_endpoint_url, const char *so
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetOSD";
 	soap_tmp___trt__GetOSD.trt__GetOSD = trt__GetOSD;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetOSD(soap, &soap_tmp___trt__GetOSD);
@@ -4346,6 +4424,7 @@ int MediaBindingProxy::send_GetOSDOptions(const char *soap_endpoint_url, const c
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/GetOSDOptions";
 	soap_tmp___trt__GetOSDOptions.trt__GetOSDOptions = trt__GetOSDOptions;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__GetOSDOptions(soap, &soap_tmp___trt__GetOSDOptions);
@@ -4401,6 +4480,7 @@ int MediaBindingProxy::send_SetOSD(const char *soap_endpoint_url, const char *so
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/SetOSD";
 	soap_tmp___trt__SetOSD.trt__SetOSD = trt__SetOSD;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__SetOSD(soap, &soap_tmp___trt__SetOSD);
@@ -4456,6 +4536,7 @@ int MediaBindingProxy::send_CreateOSD(const char *soap_endpoint_url, const char 
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/CreateOSD";
 	soap_tmp___trt__CreateOSD.trt__CreateOSD = trt__CreateOSD;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__CreateOSD(soap, &soap_tmp___trt__CreateOSD);
@@ -4511,6 +4592,7 @@ int MediaBindingProxy::send_DeleteOSD(const char *soap_endpoint_url, const char 
 		soap_action = "http://www.onvif.org/ver10/media/wsdl/DeleteOSD";
 	soap_tmp___trt__DeleteOSD.trt__DeleteOSD = trt__DeleteOSD;
 	soap_begin(soap);
+	soap_set_version(soap, 2); /* use SOAP1.2 */
 	soap->encodingStyle = NULL; /* use SOAP literal style */
 	soap_serializeheader(soap);
 	soap_serialize___trt__DeleteOSD(soap, &soap_tmp___trt__DeleteOSD);

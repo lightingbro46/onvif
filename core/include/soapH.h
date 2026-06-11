@@ -8903,6 +8903,97 @@ inline int soap_POST_recv__wstop__TopicNamespaceType_Topic(struct soap *soap, _w
 }
 #endif
 
+#ifndef SOAP_TYPE__trc__ExportRecordedDataResponse_Extension_DEFINED
+#define SOAP_TYPE__trc__ExportRecordedDataResponse_Extension_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__ExportRecordedDataResponse_Extension(struct soap*, const char*, int, const _trc__ExportRecordedDataResponse_Extension *, const char*);
+SOAP_FMAC3 _trc__ExportRecordedDataResponse_Extension * SOAP_FMAC4 soap_in__trc__ExportRecordedDataResponse_Extension(struct soap*, const char*, _trc__ExportRecordedDataResponse_Extension *, const char*);
+SOAP_FMAC1 _trc__ExportRecordedDataResponse_Extension * SOAP_FMAC2 soap_instantiate__trc__ExportRecordedDataResponse_Extension(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__ExportRecordedDataResponse_Extension * soap_new__trc__ExportRecordedDataResponse_Extension(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__ExportRecordedDataResponse_Extension(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__ExportRecordedDataResponse_Extension * soap_new_req__trc__ExportRecordedDataResponse_Extension(
+	struct soap *soap)
+{
+	_trc__ExportRecordedDataResponse_Extension *_p = ::soap_new__trc__ExportRecordedDataResponse_Extension(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline _trc__ExportRecordedDataResponse_Extension * soap_new_set__trc__ExportRecordedDataResponse_Extension(
+	struct soap *soap,
+	const std::vector<char *> & __any)
+{
+	_trc__ExportRecordedDataResponse_Extension *_p = ::soap_new__trc__ExportRecordedDataResponse_Extension(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__ExportRecordedDataResponse_Extension::__any = __any;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__ExportRecordedDataResponse_Extension(struct soap *soap, _trc__ExportRecordedDataResponse_Extension const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:ExportRecordedDataResponse-Extension", p->soap_type() == SOAP_TYPE__trc__ExportRecordedDataResponse_Extension ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__ExportRecordedDataResponse_Extension(struct soap *soap, const char *URL, _trc__ExportRecordedDataResponse_Extension const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:ExportRecordedDataResponse-Extension", p->soap_type() == SOAP_TYPE__trc__ExportRecordedDataResponse_Extension ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__ExportRecordedDataResponse_Extension(struct soap *soap, const char *URL, _trc__ExportRecordedDataResponse_Extension const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:ExportRecordedDataResponse-Extension", p->soap_type() == SOAP_TYPE__trc__ExportRecordedDataResponse_Extension ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__ExportRecordedDataResponse_Extension(struct soap *soap, const char *URL, _trc__ExportRecordedDataResponse_Extension const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:ExportRecordedDataResponse-Extension", p->soap_type() == SOAP_TYPE__trc__ExportRecordedDataResponse_Extension ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__ExportRecordedDataResponse_Extension * SOAP_FMAC4 soap_get__trc__ExportRecordedDataResponse_Extension(struct soap*, _trc__ExportRecordedDataResponse_Extension *, const char*, const char*);
+
+inline int soap_read__trc__ExportRecordedDataResponse_Extension(struct soap *soap, _trc__ExportRecordedDataResponse_Extension *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__ExportRecordedDataResponse_Extension(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__ExportRecordedDataResponse_Extension(struct soap *soap, const char *URL, _trc__ExportRecordedDataResponse_Extension *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__ExportRecordedDataResponse_Extension(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__ExportRecordedDataResponse_Extension(struct soap *soap, _trc__ExportRecordedDataResponse_Extension *p)
+{
+	if (::soap_read__trc__ExportRecordedDataResponse_Extension(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
 #ifndef SOAP_TYPE__tas__CreateCertPathValidationPolicy_anyParameters_DEFINED
 #define SOAP_TYPE__tas__CreateCertPathValidationPolicy_anyParameters_DEFINED
 SOAP_FMAC3 int SOAP_FMAC4 soap_out__tas__CreateCertPathValidationPolicy_anyParameters(struct soap*, const char*, int, const _tas__CreateCertPathValidationPolicy_anyParameters *, const char*);
@@ -27259,6 +27350,8176 @@ inline int soap_GET_tt__IntList(struct soap *soap, const char *URL, std::string 
 inline int soap_POST_recv_tt__IntList(struct soap *soap, std::string *p)
 {
 	if (::soap_read_tt__IntList(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__tse__EndSearchResponse_DEFINED
+#define SOAP_TYPE__tse__EndSearchResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__tse__EndSearchResponse(struct soap*, const char*, int, const _tse__EndSearchResponse *, const char*);
+SOAP_FMAC3 _tse__EndSearchResponse * SOAP_FMAC4 soap_in__tse__EndSearchResponse(struct soap*, const char*, _tse__EndSearchResponse *, const char*);
+SOAP_FMAC1 _tse__EndSearchResponse * SOAP_FMAC2 soap_instantiate__tse__EndSearchResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _tse__EndSearchResponse * soap_new__tse__EndSearchResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__tse__EndSearchResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _tse__EndSearchResponse * soap_new_req__tse__EndSearchResponse(
+	struct soap *soap,
+	time_t Endpoint)
+{
+	_tse__EndSearchResponse *_p = ::soap_new__tse__EndSearchResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__EndSearchResponse::Endpoint = Endpoint;
+	}
+	return _p;
+}
+
+inline _tse__EndSearchResponse * soap_new_set__tse__EndSearchResponse(
+	struct soap *soap,
+	time_t Endpoint)
+{
+	_tse__EndSearchResponse *_p = ::soap_new__tse__EndSearchResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__EndSearchResponse::Endpoint = Endpoint;
+	}
+	return _p;
+}
+
+inline int soap_write__tse__EndSearchResponse(struct soap *soap, _tse__EndSearchResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:EndSearchResponse", p->soap_type() == SOAP_TYPE__tse__EndSearchResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__tse__EndSearchResponse(struct soap *soap, const char *URL, _tse__EndSearchResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:EndSearchResponse", p->soap_type() == SOAP_TYPE__tse__EndSearchResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__tse__EndSearchResponse(struct soap *soap, const char *URL, _tse__EndSearchResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:EndSearchResponse", p->soap_type() == SOAP_TYPE__tse__EndSearchResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__tse__EndSearchResponse(struct soap *soap, const char *URL, _tse__EndSearchResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:EndSearchResponse", p->soap_type() == SOAP_TYPE__tse__EndSearchResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _tse__EndSearchResponse * SOAP_FMAC4 soap_get__tse__EndSearchResponse(struct soap*, _tse__EndSearchResponse *, const char*, const char*);
+
+inline int soap_read__tse__EndSearchResponse(struct soap *soap, _tse__EndSearchResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__tse__EndSearchResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__tse__EndSearchResponse(struct soap *soap, const char *URL, _tse__EndSearchResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__tse__EndSearchResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__tse__EndSearchResponse(struct soap *soap, _tse__EndSearchResponse *p)
+{
+	if (::soap_read__tse__EndSearchResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__tse__EndSearch_DEFINED
+#define SOAP_TYPE__tse__EndSearch_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__tse__EndSearch(struct soap*, const char*, int, const _tse__EndSearch *, const char*);
+SOAP_FMAC3 _tse__EndSearch * SOAP_FMAC4 soap_in__tse__EndSearch(struct soap*, const char*, _tse__EndSearch *, const char*);
+SOAP_FMAC1 _tse__EndSearch * SOAP_FMAC2 soap_instantiate__tse__EndSearch(struct soap*, int, const char*, const char*, size_t*);
+
+inline _tse__EndSearch * soap_new__tse__EndSearch(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__tse__EndSearch(soap, n, NULL, NULL, NULL);
+}
+
+inline _tse__EndSearch * soap_new_req__tse__EndSearch(
+	struct soap *soap,
+	const std::string& SearchToken)
+{
+	_tse__EndSearch *_p = ::soap_new__tse__EndSearch(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__EndSearch::SearchToken = SearchToken;
+	}
+	return _p;
+}
+
+inline _tse__EndSearch * soap_new_set__tse__EndSearch(
+	struct soap *soap,
+	const std::string& SearchToken)
+{
+	_tse__EndSearch *_p = ::soap_new__tse__EndSearch(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__EndSearch::SearchToken = SearchToken;
+	}
+	return _p;
+}
+
+inline int soap_write__tse__EndSearch(struct soap *soap, _tse__EndSearch const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:EndSearch", p->soap_type() == SOAP_TYPE__tse__EndSearch ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__tse__EndSearch(struct soap *soap, const char *URL, _tse__EndSearch const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:EndSearch", p->soap_type() == SOAP_TYPE__tse__EndSearch ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__tse__EndSearch(struct soap *soap, const char *URL, _tse__EndSearch const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:EndSearch", p->soap_type() == SOAP_TYPE__tse__EndSearch ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__tse__EndSearch(struct soap *soap, const char *URL, _tse__EndSearch const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:EndSearch", p->soap_type() == SOAP_TYPE__tse__EndSearch ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _tse__EndSearch * SOAP_FMAC4 soap_get__tse__EndSearch(struct soap*, _tse__EndSearch *, const char*, const char*);
+
+inline int soap_read__tse__EndSearch(struct soap *soap, _tse__EndSearch *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__tse__EndSearch(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__tse__EndSearch(struct soap *soap, const char *URL, _tse__EndSearch *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__tse__EndSearch(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__tse__EndSearch(struct soap *soap, _tse__EndSearch *p)
+{
+	if (::soap_read__tse__EndSearch(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__tse__GetSearchStateResponse_DEFINED
+#define SOAP_TYPE__tse__GetSearchStateResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__tse__GetSearchStateResponse(struct soap*, const char*, int, const _tse__GetSearchStateResponse *, const char*);
+SOAP_FMAC3 _tse__GetSearchStateResponse * SOAP_FMAC4 soap_in__tse__GetSearchStateResponse(struct soap*, const char*, _tse__GetSearchStateResponse *, const char*);
+SOAP_FMAC1 _tse__GetSearchStateResponse * SOAP_FMAC2 soap_instantiate__tse__GetSearchStateResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _tse__GetSearchStateResponse * soap_new__tse__GetSearchStateResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__tse__GetSearchStateResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _tse__GetSearchStateResponse * soap_new_req__tse__GetSearchStateResponse(
+	struct soap *soap,
+	enum tt__SearchState State)
+{
+	_tse__GetSearchStateResponse *_p = ::soap_new__tse__GetSearchStateResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__GetSearchStateResponse::State = State;
+	}
+	return _p;
+}
+
+inline _tse__GetSearchStateResponse * soap_new_set__tse__GetSearchStateResponse(
+	struct soap *soap,
+	enum tt__SearchState State)
+{
+	_tse__GetSearchStateResponse *_p = ::soap_new__tse__GetSearchStateResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__GetSearchStateResponse::State = State;
+	}
+	return _p;
+}
+
+inline int soap_write__tse__GetSearchStateResponse(struct soap *soap, _tse__GetSearchStateResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetSearchStateResponse", p->soap_type() == SOAP_TYPE__tse__GetSearchStateResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__tse__GetSearchStateResponse(struct soap *soap, const char *URL, _tse__GetSearchStateResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetSearchStateResponse", p->soap_type() == SOAP_TYPE__tse__GetSearchStateResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__tse__GetSearchStateResponse(struct soap *soap, const char *URL, _tse__GetSearchStateResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetSearchStateResponse", p->soap_type() == SOAP_TYPE__tse__GetSearchStateResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__tse__GetSearchStateResponse(struct soap *soap, const char *URL, _tse__GetSearchStateResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetSearchStateResponse", p->soap_type() == SOAP_TYPE__tse__GetSearchStateResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _tse__GetSearchStateResponse * SOAP_FMAC4 soap_get__tse__GetSearchStateResponse(struct soap*, _tse__GetSearchStateResponse *, const char*, const char*);
+
+inline int soap_read__tse__GetSearchStateResponse(struct soap *soap, _tse__GetSearchStateResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__tse__GetSearchStateResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__tse__GetSearchStateResponse(struct soap *soap, const char *URL, _tse__GetSearchStateResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__tse__GetSearchStateResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__tse__GetSearchStateResponse(struct soap *soap, _tse__GetSearchStateResponse *p)
+{
+	if (::soap_read__tse__GetSearchStateResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__tse__GetSearchState_DEFINED
+#define SOAP_TYPE__tse__GetSearchState_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__tse__GetSearchState(struct soap*, const char*, int, const _tse__GetSearchState *, const char*);
+SOAP_FMAC3 _tse__GetSearchState * SOAP_FMAC4 soap_in__tse__GetSearchState(struct soap*, const char*, _tse__GetSearchState *, const char*);
+SOAP_FMAC1 _tse__GetSearchState * SOAP_FMAC2 soap_instantiate__tse__GetSearchState(struct soap*, int, const char*, const char*, size_t*);
+
+inline _tse__GetSearchState * soap_new__tse__GetSearchState(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__tse__GetSearchState(soap, n, NULL, NULL, NULL);
+}
+
+inline _tse__GetSearchState * soap_new_req__tse__GetSearchState(
+	struct soap *soap,
+	const std::string& SearchToken)
+{
+	_tse__GetSearchState *_p = ::soap_new__tse__GetSearchState(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__GetSearchState::SearchToken = SearchToken;
+	}
+	return _p;
+}
+
+inline _tse__GetSearchState * soap_new_set__tse__GetSearchState(
+	struct soap *soap,
+	const std::string& SearchToken)
+{
+	_tse__GetSearchState *_p = ::soap_new__tse__GetSearchState(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__GetSearchState::SearchToken = SearchToken;
+	}
+	return _p;
+}
+
+inline int soap_write__tse__GetSearchState(struct soap *soap, _tse__GetSearchState const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetSearchState", p->soap_type() == SOAP_TYPE__tse__GetSearchState ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__tse__GetSearchState(struct soap *soap, const char *URL, _tse__GetSearchState const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetSearchState", p->soap_type() == SOAP_TYPE__tse__GetSearchState ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__tse__GetSearchState(struct soap *soap, const char *URL, _tse__GetSearchState const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetSearchState", p->soap_type() == SOAP_TYPE__tse__GetSearchState ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__tse__GetSearchState(struct soap *soap, const char *URL, _tse__GetSearchState const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetSearchState", p->soap_type() == SOAP_TYPE__tse__GetSearchState ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _tse__GetSearchState * SOAP_FMAC4 soap_get__tse__GetSearchState(struct soap*, _tse__GetSearchState *, const char*, const char*);
+
+inline int soap_read__tse__GetSearchState(struct soap *soap, _tse__GetSearchState *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__tse__GetSearchState(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__tse__GetSearchState(struct soap *soap, const char *URL, _tse__GetSearchState *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__tse__GetSearchState(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__tse__GetSearchState(struct soap *soap, _tse__GetSearchState *p)
+{
+	if (::soap_read__tse__GetSearchState(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__tse__GetMetadataSearchResultsResponse_DEFINED
+#define SOAP_TYPE__tse__GetMetadataSearchResultsResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__tse__GetMetadataSearchResultsResponse(struct soap*, const char*, int, const _tse__GetMetadataSearchResultsResponse *, const char*);
+SOAP_FMAC3 _tse__GetMetadataSearchResultsResponse * SOAP_FMAC4 soap_in__tse__GetMetadataSearchResultsResponse(struct soap*, const char*, _tse__GetMetadataSearchResultsResponse *, const char*);
+SOAP_FMAC1 _tse__GetMetadataSearchResultsResponse * SOAP_FMAC2 soap_instantiate__tse__GetMetadataSearchResultsResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _tse__GetMetadataSearchResultsResponse * soap_new__tse__GetMetadataSearchResultsResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__tse__GetMetadataSearchResultsResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _tse__GetMetadataSearchResultsResponse * soap_new_req__tse__GetMetadataSearchResultsResponse(
+	struct soap *soap,
+	tt__FindMetadataResultList *ResultList)
+{
+	_tse__GetMetadataSearchResultsResponse *_p = ::soap_new__tse__GetMetadataSearchResultsResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__GetMetadataSearchResultsResponse::ResultList = ResultList;
+	}
+	return _p;
+}
+
+inline _tse__GetMetadataSearchResultsResponse * soap_new_set__tse__GetMetadataSearchResultsResponse(
+	struct soap *soap,
+	tt__FindMetadataResultList *ResultList)
+{
+	_tse__GetMetadataSearchResultsResponse *_p = ::soap_new__tse__GetMetadataSearchResultsResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__GetMetadataSearchResultsResponse::ResultList = ResultList;
+	}
+	return _p;
+}
+
+inline int soap_write__tse__GetMetadataSearchResultsResponse(struct soap *soap, _tse__GetMetadataSearchResultsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetMetadataSearchResultsResponse", p->soap_type() == SOAP_TYPE__tse__GetMetadataSearchResultsResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__tse__GetMetadataSearchResultsResponse(struct soap *soap, const char *URL, _tse__GetMetadataSearchResultsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetMetadataSearchResultsResponse", p->soap_type() == SOAP_TYPE__tse__GetMetadataSearchResultsResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__tse__GetMetadataSearchResultsResponse(struct soap *soap, const char *URL, _tse__GetMetadataSearchResultsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetMetadataSearchResultsResponse", p->soap_type() == SOAP_TYPE__tse__GetMetadataSearchResultsResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__tse__GetMetadataSearchResultsResponse(struct soap *soap, const char *URL, _tse__GetMetadataSearchResultsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetMetadataSearchResultsResponse", p->soap_type() == SOAP_TYPE__tse__GetMetadataSearchResultsResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _tse__GetMetadataSearchResultsResponse * SOAP_FMAC4 soap_get__tse__GetMetadataSearchResultsResponse(struct soap*, _tse__GetMetadataSearchResultsResponse *, const char*, const char*);
+
+inline int soap_read__tse__GetMetadataSearchResultsResponse(struct soap *soap, _tse__GetMetadataSearchResultsResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__tse__GetMetadataSearchResultsResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__tse__GetMetadataSearchResultsResponse(struct soap *soap, const char *URL, _tse__GetMetadataSearchResultsResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__tse__GetMetadataSearchResultsResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__tse__GetMetadataSearchResultsResponse(struct soap *soap, _tse__GetMetadataSearchResultsResponse *p)
+{
+	if (::soap_read__tse__GetMetadataSearchResultsResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__tse__GetMetadataSearchResults_DEFINED
+#define SOAP_TYPE__tse__GetMetadataSearchResults_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__tse__GetMetadataSearchResults(struct soap*, const char*, int, const _tse__GetMetadataSearchResults *, const char*);
+SOAP_FMAC3 _tse__GetMetadataSearchResults * SOAP_FMAC4 soap_in__tse__GetMetadataSearchResults(struct soap*, const char*, _tse__GetMetadataSearchResults *, const char*);
+SOAP_FMAC1 _tse__GetMetadataSearchResults * SOAP_FMAC2 soap_instantiate__tse__GetMetadataSearchResults(struct soap*, int, const char*, const char*, size_t*);
+
+inline _tse__GetMetadataSearchResults * soap_new__tse__GetMetadataSearchResults(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__tse__GetMetadataSearchResults(soap, n, NULL, NULL, NULL);
+}
+
+inline _tse__GetMetadataSearchResults * soap_new_req__tse__GetMetadataSearchResults(
+	struct soap *soap,
+	const std::string& SearchToken)
+{
+	_tse__GetMetadataSearchResults *_p = ::soap_new__tse__GetMetadataSearchResults(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__GetMetadataSearchResults::SearchToken = SearchToken;
+	}
+	return _p;
+}
+
+inline _tse__GetMetadataSearchResults * soap_new_set__tse__GetMetadataSearchResults(
+	struct soap *soap,
+	const std::string& SearchToken,
+	int *MinResults,
+	int *MaxResults,
+	std::string *WaitTime)
+{
+	_tse__GetMetadataSearchResults *_p = ::soap_new__tse__GetMetadataSearchResults(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__GetMetadataSearchResults::SearchToken = SearchToken;
+		_p->_tse__GetMetadataSearchResults::MinResults = MinResults;
+		_p->_tse__GetMetadataSearchResults::MaxResults = MaxResults;
+		_p->_tse__GetMetadataSearchResults::WaitTime = WaitTime;
+	}
+	return _p;
+}
+
+inline int soap_write__tse__GetMetadataSearchResults(struct soap *soap, _tse__GetMetadataSearchResults const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetMetadataSearchResults", p->soap_type() == SOAP_TYPE__tse__GetMetadataSearchResults ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__tse__GetMetadataSearchResults(struct soap *soap, const char *URL, _tse__GetMetadataSearchResults const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetMetadataSearchResults", p->soap_type() == SOAP_TYPE__tse__GetMetadataSearchResults ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__tse__GetMetadataSearchResults(struct soap *soap, const char *URL, _tse__GetMetadataSearchResults const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetMetadataSearchResults", p->soap_type() == SOAP_TYPE__tse__GetMetadataSearchResults ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__tse__GetMetadataSearchResults(struct soap *soap, const char *URL, _tse__GetMetadataSearchResults const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetMetadataSearchResults", p->soap_type() == SOAP_TYPE__tse__GetMetadataSearchResults ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _tse__GetMetadataSearchResults * SOAP_FMAC4 soap_get__tse__GetMetadataSearchResults(struct soap*, _tse__GetMetadataSearchResults *, const char*, const char*);
+
+inline int soap_read__tse__GetMetadataSearchResults(struct soap *soap, _tse__GetMetadataSearchResults *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__tse__GetMetadataSearchResults(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__tse__GetMetadataSearchResults(struct soap *soap, const char *URL, _tse__GetMetadataSearchResults *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__tse__GetMetadataSearchResults(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__tse__GetMetadataSearchResults(struct soap *soap, _tse__GetMetadataSearchResults *p)
+{
+	if (::soap_read__tse__GetMetadataSearchResults(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__tse__FindMetadataResponse_DEFINED
+#define SOAP_TYPE__tse__FindMetadataResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__tse__FindMetadataResponse(struct soap*, const char*, int, const _tse__FindMetadataResponse *, const char*);
+SOAP_FMAC3 _tse__FindMetadataResponse * SOAP_FMAC4 soap_in__tse__FindMetadataResponse(struct soap*, const char*, _tse__FindMetadataResponse *, const char*);
+SOAP_FMAC1 _tse__FindMetadataResponse * SOAP_FMAC2 soap_instantiate__tse__FindMetadataResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _tse__FindMetadataResponse * soap_new__tse__FindMetadataResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__tse__FindMetadataResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _tse__FindMetadataResponse * soap_new_req__tse__FindMetadataResponse(
+	struct soap *soap,
+	const std::string& SearchToken)
+{
+	_tse__FindMetadataResponse *_p = ::soap_new__tse__FindMetadataResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__FindMetadataResponse::SearchToken = SearchToken;
+	}
+	return _p;
+}
+
+inline _tse__FindMetadataResponse * soap_new_set__tse__FindMetadataResponse(
+	struct soap *soap,
+	const std::string& SearchToken)
+{
+	_tse__FindMetadataResponse *_p = ::soap_new__tse__FindMetadataResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__FindMetadataResponse::SearchToken = SearchToken;
+	}
+	return _p;
+}
+
+inline int soap_write__tse__FindMetadataResponse(struct soap *soap, _tse__FindMetadataResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:FindMetadataResponse", p->soap_type() == SOAP_TYPE__tse__FindMetadataResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__tse__FindMetadataResponse(struct soap *soap, const char *URL, _tse__FindMetadataResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:FindMetadataResponse", p->soap_type() == SOAP_TYPE__tse__FindMetadataResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__tse__FindMetadataResponse(struct soap *soap, const char *URL, _tse__FindMetadataResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:FindMetadataResponse", p->soap_type() == SOAP_TYPE__tse__FindMetadataResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__tse__FindMetadataResponse(struct soap *soap, const char *URL, _tse__FindMetadataResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:FindMetadataResponse", p->soap_type() == SOAP_TYPE__tse__FindMetadataResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _tse__FindMetadataResponse * SOAP_FMAC4 soap_get__tse__FindMetadataResponse(struct soap*, _tse__FindMetadataResponse *, const char*, const char*);
+
+inline int soap_read__tse__FindMetadataResponse(struct soap *soap, _tse__FindMetadataResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__tse__FindMetadataResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__tse__FindMetadataResponse(struct soap *soap, const char *URL, _tse__FindMetadataResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__tse__FindMetadataResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__tse__FindMetadataResponse(struct soap *soap, _tse__FindMetadataResponse *p)
+{
+	if (::soap_read__tse__FindMetadataResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__tse__FindMetadata_DEFINED
+#define SOAP_TYPE__tse__FindMetadata_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__tse__FindMetadata(struct soap*, const char*, int, const _tse__FindMetadata *, const char*);
+SOAP_FMAC3 _tse__FindMetadata * SOAP_FMAC4 soap_in__tse__FindMetadata(struct soap*, const char*, _tse__FindMetadata *, const char*);
+SOAP_FMAC1 _tse__FindMetadata * SOAP_FMAC2 soap_instantiate__tse__FindMetadata(struct soap*, int, const char*, const char*, size_t*);
+
+inline _tse__FindMetadata * soap_new__tse__FindMetadata(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__tse__FindMetadata(soap, n, NULL, NULL, NULL);
+}
+
+inline _tse__FindMetadata * soap_new_req__tse__FindMetadata(
+	struct soap *soap,
+	time_t StartPoint,
+	tt__SearchScope *Scope,
+	tt__MetadataFilter *MetadataFilter,
+	const std::string& KeepAliveTime)
+{
+	_tse__FindMetadata *_p = ::soap_new__tse__FindMetadata(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__FindMetadata::StartPoint = StartPoint;
+		_p->_tse__FindMetadata::Scope = Scope;
+		_p->_tse__FindMetadata::MetadataFilter = MetadataFilter;
+		_p->_tse__FindMetadata::KeepAliveTime = KeepAliveTime;
+	}
+	return _p;
+}
+
+inline _tse__FindMetadata * soap_new_set__tse__FindMetadata(
+	struct soap *soap,
+	time_t StartPoint,
+	time_t *EndPoint,
+	tt__SearchScope *Scope,
+	tt__MetadataFilter *MetadataFilter,
+	int *MaxMatches,
+	const std::string& KeepAliveTime)
+{
+	_tse__FindMetadata *_p = ::soap_new__tse__FindMetadata(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__FindMetadata::StartPoint = StartPoint;
+		_p->_tse__FindMetadata::EndPoint = EndPoint;
+		_p->_tse__FindMetadata::Scope = Scope;
+		_p->_tse__FindMetadata::MetadataFilter = MetadataFilter;
+		_p->_tse__FindMetadata::MaxMatches = MaxMatches;
+		_p->_tse__FindMetadata::KeepAliveTime = KeepAliveTime;
+	}
+	return _p;
+}
+
+inline int soap_write__tse__FindMetadata(struct soap *soap, _tse__FindMetadata const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:FindMetadata", p->soap_type() == SOAP_TYPE__tse__FindMetadata ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__tse__FindMetadata(struct soap *soap, const char *URL, _tse__FindMetadata const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:FindMetadata", p->soap_type() == SOAP_TYPE__tse__FindMetadata ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__tse__FindMetadata(struct soap *soap, const char *URL, _tse__FindMetadata const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:FindMetadata", p->soap_type() == SOAP_TYPE__tse__FindMetadata ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__tse__FindMetadata(struct soap *soap, const char *URL, _tse__FindMetadata const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:FindMetadata", p->soap_type() == SOAP_TYPE__tse__FindMetadata ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _tse__FindMetadata * SOAP_FMAC4 soap_get__tse__FindMetadata(struct soap*, _tse__FindMetadata *, const char*, const char*);
+
+inline int soap_read__tse__FindMetadata(struct soap *soap, _tse__FindMetadata *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__tse__FindMetadata(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__tse__FindMetadata(struct soap *soap, const char *URL, _tse__FindMetadata *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__tse__FindMetadata(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__tse__FindMetadata(struct soap *soap, _tse__FindMetadata *p)
+{
+	if (::soap_read__tse__FindMetadata(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__tse__GetPTZPositionSearchResultsResponse_DEFINED
+#define SOAP_TYPE__tse__GetPTZPositionSearchResultsResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__tse__GetPTZPositionSearchResultsResponse(struct soap*, const char*, int, const _tse__GetPTZPositionSearchResultsResponse *, const char*);
+SOAP_FMAC3 _tse__GetPTZPositionSearchResultsResponse * SOAP_FMAC4 soap_in__tse__GetPTZPositionSearchResultsResponse(struct soap*, const char*, _tse__GetPTZPositionSearchResultsResponse *, const char*);
+SOAP_FMAC1 _tse__GetPTZPositionSearchResultsResponse * SOAP_FMAC2 soap_instantiate__tse__GetPTZPositionSearchResultsResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _tse__GetPTZPositionSearchResultsResponse * soap_new__tse__GetPTZPositionSearchResultsResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__tse__GetPTZPositionSearchResultsResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _tse__GetPTZPositionSearchResultsResponse * soap_new_req__tse__GetPTZPositionSearchResultsResponse(
+	struct soap *soap,
+	tt__FindPTZPositionResultList *ResultList)
+{
+	_tse__GetPTZPositionSearchResultsResponse *_p = ::soap_new__tse__GetPTZPositionSearchResultsResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__GetPTZPositionSearchResultsResponse::ResultList = ResultList;
+	}
+	return _p;
+}
+
+inline _tse__GetPTZPositionSearchResultsResponse * soap_new_set__tse__GetPTZPositionSearchResultsResponse(
+	struct soap *soap,
+	tt__FindPTZPositionResultList *ResultList)
+{
+	_tse__GetPTZPositionSearchResultsResponse *_p = ::soap_new__tse__GetPTZPositionSearchResultsResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__GetPTZPositionSearchResultsResponse::ResultList = ResultList;
+	}
+	return _p;
+}
+
+inline int soap_write__tse__GetPTZPositionSearchResultsResponse(struct soap *soap, _tse__GetPTZPositionSearchResultsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetPTZPositionSearchResultsResponse", p->soap_type() == SOAP_TYPE__tse__GetPTZPositionSearchResultsResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__tse__GetPTZPositionSearchResultsResponse(struct soap *soap, const char *URL, _tse__GetPTZPositionSearchResultsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetPTZPositionSearchResultsResponse", p->soap_type() == SOAP_TYPE__tse__GetPTZPositionSearchResultsResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__tse__GetPTZPositionSearchResultsResponse(struct soap *soap, const char *URL, _tse__GetPTZPositionSearchResultsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetPTZPositionSearchResultsResponse", p->soap_type() == SOAP_TYPE__tse__GetPTZPositionSearchResultsResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__tse__GetPTZPositionSearchResultsResponse(struct soap *soap, const char *URL, _tse__GetPTZPositionSearchResultsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetPTZPositionSearchResultsResponse", p->soap_type() == SOAP_TYPE__tse__GetPTZPositionSearchResultsResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _tse__GetPTZPositionSearchResultsResponse * SOAP_FMAC4 soap_get__tse__GetPTZPositionSearchResultsResponse(struct soap*, _tse__GetPTZPositionSearchResultsResponse *, const char*, const char*);
+
+inline int soap_read__tse__GetPTZPositionSearchResultsResponse(struct soap *soap, _tse__GetPTZPositionSearchResultsResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__tse__GetPTZPositionSearchResultsResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__tse__GetPTZPositionSearchResultsResponse(struct soap *soap, const char *URL, _tse__GetPTZPositionSearchResultsResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__tse__GetPTZPositionSearchResultsResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__tse__GetPTZPositionSearchResultsResponse(struct soap *soap, _tse__GetPTZPositionSearchResultsResponse *p)
+{
+	if (::soap_read__tse__GetPTZPositionSearchResultsResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__tse__GetPTZPositionSearchResults_DEFINED
+#define SOAP_TYPE__tse__GetPTZPositionSearchResults_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__tse__GetPTZPositionSearchResults(struct soap*, const char*, int, const _tse__GetPTZPositionSearchResults *, const char*);
+SOAP_FMAC3 _tse__GetPTZPositionSearchResults * SOAP_FMAC4 soap_in__tse__GetPTZPositionSearchResults(struct soap*, const char*, _tse__GetPTZPositionSearchResults *, const char*);
+SOAP_FMAC1 _tse__GetPTZPositionSearchResults * SOAP_FMAC2 soap_instantiate__tse__GetPTZPositionSearchResults(struct soap*, int, const char*, const char*, size_t*);
+
+inline _tse__GetPTZPositionSearchResults * soap_new__tse__GetPTZPositionSearchResults(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__tse__GetPTZPositionSearchResults(soap, n, NULL, NULL, NULL);
+}
+
+inline _tse__GetPTZPositionSearchResults * soap_new_req__tse__GetPTZPositionSearchResults(
+	struct soap *soap,
+	const std::string& SearchToken)
+{
+	_tse__GetPTZPositionSearchResults *_p = ::soap_new__tse__GetPTZPositionSearchResults(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__GetPTZPositionSearchResults::SearchToken = SearchToken;
+	}
+	return _p;
+}
+
+inline _tse__GetPTZPositionSearchResults * soap_new_set__tse__GetPTZPositionSearchResults(
+	struct soap *soap,
+	const std::string& SearchToken,
+	int *MinResults,
+	int *MaxResults,
+	std::string *WaitTime)
+{
+	_tse__GetPTZPositionSearchResults *_p = ::soap_new__tse__GetPTZPositionSearchResults(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__GetPTZPositionSearchResults::SearchToken = SearchToken;
+		_p->_tse__GetPTZPositionSearchResults::MinResults = MinResults;
+		_p->_tse__GetPTZPositionSearchResults::MaxResults = MaxResults;
+		_p->_tse__GetPTZPositionSearchResults::WaitTime = WaitTime;
+	}
+	return _p;
+}
+
+inline int soap_write__tse__GetPTZPositionSearchResults(struct soap *soap, _tse__GetPTZPositionSearchResults const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetPTZPositionSearchResults", p->soap_type() == SOAP_TYPE__tse__GetPTZPositionSearchResults ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__tse__GetPTZPositionSearchResults(struct soap *soap, const char *URL, _tse__GetPTZPositionSearchResults const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetPTZPositionSearchResults", p->soap_type() == SOAP_TYPE__tse__GetPTZPositionSearchResults ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__tse__GetPTZPositionSearchResults(struct soap *soap, const char *URL, _tse__GetPTZPositionSearchResults const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetPTZPositionSearchResults", p->soap_type() == SOAP_TYPE__tse__GetPTZPositionSearchResults ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__tse__GetPTZPositionSearchResults(struct soap *soap, const char *URL, _tse__GetPTZPositionSearchResults const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetPTZPositionSearchResults", p->soap_type() == SOAP_TYPE__tse__GetPTZPositionSearchResults ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _tse__GetPTZPositionSearchResults * SOAP_FMAC4 soap_get__tse__GetPTZPositionSearchResults(struct soap*, _tse__GetPTZPositionSearchResults *, const char*, const char*);
+
+inline int soap_read__tse__GetPTZPositionSearchResults(struct soap *soap, _tse__GetPTZPositionSearchResults *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__tse__GetPTZPositionSearchResults(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__tse__GetPTZPositionSearchResults(struct soap *soap, const char *URL, _tse__GetPTZPositionSearchResults *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__tse__GetPTZPositionSearchResults(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__tse__GetPTZPositionSearchResults(struct soap *soap, _tse__GetPTZPositionSearchResults *p)
+{
+	if (::soap_read__tse__GetPTZPositionSearchResults(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__tse__FindPTZPositionResponse_DEFINED
+#define SOAP_TYPE__tse__FindPTZPositionResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__tse__FindPTZPositionResponse(struct soap*, const char*, int, const _tse__FindPTZPositionResponse *, const char*);
+SOAP_FMAC3 _tse__FindPTZPositionResponse * SOAP_FMAC4 soap_in__tse__FindPTZPositionResponse(struct soap*, const char*, _tse__FindPTZPositionResponse *, const char*);
+SOAP_FMAC1 _tse__FindPTZPositionResponse * SOAP_FMAC2 soap_instantiate__tse__FindPTZPositionResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _tse__FindPTZPositionResponse * soap_new__tse__FindPTZPositionResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__tse__FindPTZPositionResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _tse__FindPTZPositionResponse * soap_new_req__tse__FindPTZPositionResponse(
+	struct soap *soap,
+	const std::string& SearchToken)
+{
+	_tse__FindPTZPositionResponse *_p = ::soap_new__tse__FindPTZPositionResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__FindPTZPositionResponse::SearchToken = SearchToken;
+	}
+	return _p;
+}
+
+inline _tse__FindPTZPositionResponse * soap_new_set__tse__FindPTZPositionResponse(
+	struct soap *soap,
+	const std::string& SearchToken)
+{
+	_tse__FindPTZPositionResponse *_p = ::soap_new__tse__FindPTZPositionResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__FindPTZPositionResponse::SearchToken = SearchToken;
+	}
+	return _p;
+}
+
+inline int soap_write__tse__FindPTZPositionResponse(struct soap *soap, _tse__FindPTZPositionResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:FindPTZPositionResponse", p->soap_type() == SOAP_TYPE__tse__FindPTZPositionResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__tse__FindPTZPositionResponse(struct soap *soap, const char *URL, _tse__FindPTZPositionResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:FindPTZPositionResponse", p->soap_type() == SOAP_TYPE__tse__FindPTZPositionResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__tse__FindPTZPositionResponse(struct soap *soap, const char *URL, _tse__FindPTZPositionResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:FindPTZPositionResponse", p->soap_type() == SOAP_TYPE__tse__FindPTZPositionResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__tse__FindPTZPositionResponse(struct soap *soap, const char *URL, _tse__FindPTZPositionResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:FindPTZPositionResponse", p->soap_type() == SOAP_TYPE__tse__FindPTZPositionResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _tse__FindPTZPositionResponse * SOAP_FMAC4 soap_get__tse__FindPTZPositionResponse(struct soap*, _tse__FindPTZPositionResponse *, const char*, const char*);
+
+inline int soap_read__tse__FindPTZPositionResponse(struct soap *soap, _tse__FindPTZPositionResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__tse__FindPTZPositionResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__tse__FindPTZPositionResponse(struct soap *soap, const char *URL, _tse__FindPTZPositionResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__tse__FindPTZPositionResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__tse__FindPTZPositionResponse(struct soap *soap, _tse__FindPTZPositionResponse *p)
+{
+	if (::soap_read__tse__FindPTZPositionResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__tse__FindPTZPosition_DEFINED
+#define SOAP_TYPE__tse__FindPTZPosition_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__tse__FindPTZPosition(struct soap*, const char*, int, const _tse__FindPTZPosition *, const char*);
+SOAP_FMAC3 _tse__FindPTZPosition * SOAP_FMAC4 soap_in__tse__FindPTZPosition(struct soap*, const char*, _tse__FindPTZPosition *, const char*);
+SOAP_FMAC1 _tse__FindPTZPosition * SOAP_FMAC2 soap_instantiate__tse__FindPTZPosition(struct soap*, int, const char*, const char*, size_t*);
+
+inline _tse__FindPTZPosition * soap_new__tse__FindPTZPosition(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__tse__FindPTZPosition(soap, n, NULL, NULL, NULL);
+}
+
+inline _tse__FindPTZPosition * soap_new_req__tse__FindPTZPosition(
+	struct soap *soap,
+	time_t StartPoint,
+	tt__SearchScope *Scope,
+	tt__PTZPositionFilter *SearchFilter,
+	const std::string& KeepAliveTime)
+{
+	_tse__FindPTZPosition *_p = ::soap_new__tse__FindPTZPosition(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__FindPTZPosition::StartPoint = StartPoint;
+		_p->_tse__FindPTZPosition::Scope = Scope;
+		_p->_tse__FindPTZPosition::SearchFilter = SearchFilter;
+		_p->_tse__FindPTZPosition::KeepAliveTime = KeepAliveTime;
+	}
+	return _p;
+}
+
+inline _tse__FindPTZPosition * soap_new_set__tse__FindPTZPosition(
+	struct soap *soap,
+	time_t StartPoint,
+	time_t *EndPoint,
+	tt__SearchScope *Scope,
+	tt__PTZPositionFilter *SearchFilter,
+	int *MaxMatches,
+	const std::string& KeepAliveTime)
+{
+	_tse__FindPTZPosition *_p = ::soap_new__tse__FindPTZPosition(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__FindPTZPosition::StartPoint = StartPoint;
+		_p->_tse__FindPTZPosition::EndPoint = EndPoint;
+		_p->_tse__FindPTZPosition::Scope = Scope;
+		_p->_tse__FindPTZPosition::SearchFilter = SearchFilter;
+		_p->_tse__FindPTZPosition::MaxMatches = MaxMatches;
+		_p->_tse__FindPTZPosition::KeepAliveTime = KeepAliveTime;
+	}
+	return _p;
+}
+
+inline int soap_write__tse__FindPTZPosition(struct soap *soap, _tse__FindPTZPosition const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:FindPTZPosition", p->soap_type() == SOAP_TYPE__tse__FindPTZPosition ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__tse__FindPTZPosition(struct soap *soap, const char *URL, _tse__FindPTZPosition const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:FindPTZPosition", p->soap_type() == SOAP_TYPE__tse__FindPTZPosition ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__tse__FindPTZPosition(struct soap *soap, const char *URL, _tse__FindPTZPosition const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:FindPTZPosition", p->soap_type() == SOAP_TYPE__tse__FindPTZPosition ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__tse__FindPTZPosition(struct soap *soap, const char *URL, _tse__FindPTZPosition const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:FindPTZPosition", p->soap_type() == SOAP_TYPE__tse__FindPTZPosition ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _tse__FindPTZPosition * SOAP_FMAC4 soap_get__tse__FindPTZPosition(struct soap*, _tse__FindPTZPosition *, const char*, const char*);
+
+inline int soap_read__tse__FindPTZPosition(struct soap *soap, _tse__FindPTZPosition *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__tse__FindPTZPosition(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__tse__FindPTZPosition(struct soap *soap, const char *URL, _tse__FindPTZPosition *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__tse__FindPTZPosition(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__tse__FindPTZPosition(struct soap *soap, _tse__FindPTZPosition *p)
+{
+	if (::soap_read__tse__FindPTZPosition(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__tse__GetEventSearchResultsResponse_DEFINED
+#define SOAP_TYPE__tse__GetEventSearchResultsResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__tse__GetEventSearchResultsResponse(struct soap*, const char*, int, const _tse__GetEventSearchResultsResponse *, const char*);
+SOAP_FMAC3 _tse__GetEventSearchResultsResponse * SOAP_FMAC4 soap_in__tse__GetEventSearchResultsResponse(struct soap*, const char*, _tse__GetEventSearchResultsResponse *, const char*);
+SOAP_FMAC1 _tse__GetEventSearchResultsResponse * SOAP_FMAC2 soap_instantiate__tse__GetEventSearchResultsResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _tse__GetEventSearchResultsResponse * soap_new__tse__GetEventSearchResultsResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__tse__GetEventSearchResultsResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _tse__GetEventSearchResultsResponse * soap_new_req__tse__GetEventSearchResultsResponse(
+	struct soap *soap,
+	tt__FindEventResultList *ResultList)
+{
+	_tse__GetEventSearchResultsResponse *_p = ::soap_new__tse__GetEventSearchResultsResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__GetEventSearchResultsResponse::ResultList = ResultList;
+	}
+	return _p;
+}
+
+inline _tse__GetEventSearchResultsResponse * soap_new_set__tse__GetEventSearchResultsResponse(
+	struct soap *soap,
+	tt__FindEventResultList *ResultList)
+{
+	_tse__GetEventSearchResultsResponse *_p = ::soap_new__tse__GetEventSearchResultsResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__GetEventSearchResultsResponse::ResultList = ResultList;
+	}
+	return _p;
+}
+
+inline int soap_write__tse__GetEventSearchResultsResponse(struct soap *soap, _tse__GetEventSearchResultsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetEventSearchResultsResponse", p->soap_type() == SOAP_TYPE__tse__GetEventSearchResultsResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__tse__GetEventSearchResultsResponse(struct soap *soap, const char *URL, _tse__GetEventSearchResultsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetEventSearchResultsResponse", p->soap_type() == SOAP_TYPE__tse__GetEventSearchResultsResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__tse__GetEventSearchResultsResponse(struct soap *soap, const char *URL, _tse__GetEventSearchResultsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetEventSearchResultsResponse", p->soap_type() == SOAP_TYPE__tse__GetEventSearchResultsResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__tse__GetEventSearchResultsResponse(struct soap *soap, const char *URL, _tse__GetEventSearchResultsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetEventSearchResultsResponse", p->soap_type() == SOAP_TYPE__tse__GetEventSearchResultsResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _tse__GetEventSearchResultsResponse * SOAP_FMAC4 soap_get__tse__GetEventSearchResultsResponse(struct soap*, _tse__GetEventSearchResultsResponse *, const char*, const char*);
+
+inline int soap_read__tse__GetEventSearchResultsResponse(struct soap *soap, _tse__GetEventSearchResultsResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__tse__GetEventSearchResultsResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__tse__GetEventSearchResultsResponse(struct soap *soap, const char *URL, _tse__GetEventSearchResultsResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__tse__GetEventSearchResultsResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__tse__GetEventSearchResultsResponse(struct soap *soap, _tse__GetEventSearchResultsResponse *p)
+{
+	if (::soap_read__tse__GetEventSearchResultsResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__tse__GetEventSearchResults_DEFINED
+#define SOAP_TYPE__tse__GetEventSearchResults_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__tse__GetEventSearchResults(struct soap*, const char*, int, const _tse__GetEventSearchResults *, const char*);
+SOAP_FMAC3 _tse__GetEventSearchResults * SOAP_FMAC4 soap_in__tse__GetEventSearchResults(struct soap*, const char*, _tse__GetEventSearchResults *, const char*);
+SOAP_FMAC1 _tse__GetEventSearchResults * SOAP_FMAC2 soap_instantiate__tse__GetEventSearchResults(struct soap*, int, const char*, const char*, size_t*);
+
+inline _tse__GetEventSearchResults * soap_new__tse__GetEventSearchResults(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__tse__GetEventSearchResults(soap, n, NULL, NULL, NULL);
+}
+
+inline _tse__GetEventSearchResults * soap_new_req__tse__GetEventSearchResults(
+	struct soap *soap,
+	const std::string& SearchToken)
+{
+	_tse__GetEventSearchResults *_p = ::soap_new__tse__GetEventSearchResults(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__GetEventSearchResults::SearchToken = SearchToken;
+	}
+	return _p;
+}
+
+inline _tse__GetEventSearchResults * soap_new_set__tse__GetEventSearchResults(
+	struct soap *soap,
+	const std::string& SearchToken,
+	int *MinResults,
+	int *MaxResults,
+	std::string *WaitTime)
+{
+	_tse__GetEventSearchResults *_p = ::soap_new__tse__GetEventSearchResults(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__GetEventSearchResults::SearchToken = SearchToken;
+		_p->_tse__GetEventSearchResults::MinResults = MinResults;
+		_p->_tse__GetEventSearchResults::MaxResults = MaxResults;
+		_p->_tse__GetEventSearchResults::WaitTime = WaitTime;
+	}
+	return _p;
+}
+
+inline int soap_write__tse__GetEventSearchResults(struct soap *soap, _tse__GetEventSearchResults const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetEventSearchResults", p->soap_type() == SOAP_TYPE__tse__GetEventSearchResults ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__tse__GetEventSearchResults(struct soap *soap, const char *URL, _tse__GetEventSearchResults const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetEventSearchResults", p->soap_type() == SOAP_TYPE__tse__GetEventSearchResults ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__tse__GetEventSearchResults(struct soap *soap, const char *URL, _tse__GetEventSearchResults const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetEventSearchResults", p->soap_type() == SOAP_TYPE__tse__GetEventSearchResults ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__tse__GetEventSearchResults(struct soap *soap, const char *URL, _tse__GetEventSearchResults const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetEventSearchResults", p->soap_type() == SOAP_TYPE__tse__GetEventSearchResults ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _tse__GetEventSearchResults * SOAP_FMAC4 soap_get__tse__GetEventSearchResults(struct soap*, _tse__GetEventSearchResults *, const char*, const char*);
+
+inline int soap_read__tse__GetEventSearchResults(struct soap *soap, _tse__GetEventSearchResults *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__tse__GetEventSearchResults(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__tse__GetEventSearchResults(struct soap *soap, const char *URL, _tse__GetEventSearchResults *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__tse__GetEventSearchResults(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__tse__GetEventSearchResults(struct soap *soap, _tse__GetEventSearchResults *p)
+{
+	if (::soap_read__tse__GetEventSearchResults(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__tse__FindEventsResponse_DEFINED
+#define SOAP_TYPE__tse__FindEventsResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__tse__FindEventsResponse(struct soap*, const char*, int, const _tse__FindEventsResponse *, const char*);
+SOAP_FMAC3 _tse__FindEventsResponse * SOAP_FMAC4 soap_in__tse__FindEventsResponse(struct soap*, const char*, _tse__FindEventsResponse *, const char*);
+SOAP_FMAC1 _tse__FindEventsResponse * SOAP_FMAC2 soap_instantiate__tse__FindEventsResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _tse__FindEventsResponse * soap_new__tse__FindEventsResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__tse__FindEventsResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _tse__FindEventsResponse * soap_new_req__tse__FindEventsResponse(
+	struct soap *soap,
+	const std::string& SearchToken)
+{
+	_tse__FindEventsResponse *_p = ::soap_new__tse__FindEventsResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__FindEventsResponse::SearchToken = SearchToken;
+	}
+	return _p;
+}
+
+inline _tse__FindEventsResponse * soap_new_set__tse__FindEventsResponse(
+	struct soap *soap,
+	const std::string& SearchToken)
+{
+	_tse__FindEventsResponse *_p = ::soap_new__tse__FindEventsResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__FindEventsResponse::SearchToken = SearchToken;
+	}
+	return _p;
+}
+
+inline int soap_write__tse__FindEventsResponse(struct soap *soap, _tse__FindEventsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:FindEventsResponse", p->soap_type() == SOAP_TYPE__tse__FindEventsResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__tse__FindEventsResponse(struct soap *soap, const char *URL, _tse__FindEventsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:FindEventsResponse", p->soap_type() == SOAP_TYPE__tse__FindEventsResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__tse__FindEventsResponse(struct soap *soap, const char *URL, _tse__FindEventsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:FindEventsResponse", p->soap_type() == SOAP_TYPE__tse__FindEventsResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__tse__FindEventsResponse(struct soap *soap, const char *URL, _tse__FindEventsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:FindEventsResponse", p->soap_type() == SOAP_TYPE__tse__FindEventsResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _tse__FindEventsResponse * SOAP_FMAC4 soap_get__tse__FindEventsResponse(struct soap*, _tse__FindEventsResponse *, const char*, const char*);
+
+inline int soap_read__tse__FindEventsResponse(struct soap *soap, _tse__FindEventsResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__tse__FindEventsResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__tse__FindEventsResponse(struct soap *soap, const char *URL, _tse__FindEventsResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__tse__FindEventsResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__tse__FindEventsResponse(struct soap *soap, _tse__FindEventsResponse *p)
+{
+	if (::soap_read__tse__FindEventsResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__tse__FindEvents_DEFINED
+#define SOAP_TYPE__tse__FindEvents_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__tse__FindEvents(struct soap*, const char*, int, const _tse__FindEvents *, const char*);
+SOAP_FMAC3 _tse__FindEvents * SOAP_FMAC4 soap_in__tse__FindEvents(struct soap*, const char*, _tse__FindEvents *, const char*);
+SOAP_FMAC1 _tse__FindEvents * SOAP_FMAC2 soap_instantiate__tse__FindEvents(struct soap*, int, const char*, const char*, size_t*);
+
+inline _tse__FindEvents * soap_new__tse__FindEvents(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__tse__FindEvents(soap, n, NULL, NULL, NULL);
+}
+
+inline _tse__FindEvents * soap_new_req__tse__FindEvents(
+	struct soap *soap,
+	time_t StartPoint,
+	tt__SearchScope *Scope,
+	tt__EventFilter *SearchFilter,
+	bool IncludeStartState,
+	const std::string& KeepAliveTime)
+{
+	_tse__FindEvents *_p = ::soap_new__tse__FindEvents(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__FindEvents::StartPoint = StartPoint;
+		_p->_tse__FindEvents::Scope = Scope;
+		_p->_tse__FindEvents::SearchFilter = SearchFilter;
+		_p->_tse__FindEvents::IncludeStartState = IncludeStartState;
+		_p->_tse__FindEvents::KeepAliveTime = KeepAliveTime;
+	}
+	return _p;
+}
+
+inline _tse__FindEvents * soap_new_set__tse__FindEvents(
+	struct soap *soap,
+	time_t StartPoint,
+	time_t *EndPoint,
+	tt__SearchScope *Scope,
+	tt__EventFilter *SearchFilter,
+	bool IncludeStartState,
+	int *MaxMatches,
+	const std::string& KeepAliveTime)
+{
+	_tse__FindEvents *_p = ::soap_new__tse__FindEvents(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__FindEvents::StartPoint = StartPoint;
+		_p->_tse__FindEvents::EndPoint = EndPoint;
+		_p->_tse__FindEvents::Scope = Scope;
+		_p->_tse__FindEvents::SearchFilter = SearchFilter;
+		_p->_tse__FindEvents::IncludeStartState = IncludeStartState;
+		_p->_tse__FindEvents::MaxMatches = MaxMatches;
+		_p->_tse__FindEvents::KeepAliveTime = KeepAliveTime;
+	}
+	return _p;
+}
+
+inline int soap_write__tse__FindEvents(struct soap *soap, _tse__FindEvents const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:FindEvents", p->soap_type() == SOAP_TYPE__tse__FindEvents ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__tse__FindEvents(struct soap *soap, const char *URL, _tse__FindEvents const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:FindEvents", p->soap_type() == SOAP_TYPE__tse__FindEvents ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__tse__FindEvents(struct soap *soap, const char *URL, _tse__FindEvents const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:FindEvents", p->soap_type() == SOAP_TYPE__tse__FindEvents ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__tse__FindEvents(struct soap *soap, const char *URL, _tse__FindEvents const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:FindEvents", p->soap_type() == SOAP_TYPE__tse__FindEvents ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _tse__FindEvents * SOAP_FMAC4 soap_get__tse__FindEvents(struct soap*, _tse__FindEvents *, const char*, const char*);
+
+inline int soap_read__tse__FindEvents(struct soap *soap, _tse__FindEvents *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__tse__FindEvents(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__tse__FindEvents(struct soap *soap, const char *URL, _tse__FindEvents *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__tse__FindEvents(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__tse__FindEvents(struct soap *soap, _tse__FindEvents *p)
+{
+	if (::soap_read__tse__FindEvents(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__tse__GetRecordingSearchResultsResponse_DEFINED
+#define SOAP_TYPE__tse__GetRecordingSearchResultsResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__tse__GetRecordingSearchResultsResponse(struct soap*, const char*, int, const _tse__GetRecordingSearchResultsResponse *, const char*);
+SOAP_FMAC3 _tse__GetRecordingSearchResultsResponse * SOAP_FMAC4 soap_in__tse__GetRecordingSearchResultsResponse(struct soap*, const char*, _tse__GetRecordingSearchResultsResponse *, const char*);
+SOAP_FMAC1 _tse__GetRecordingSearchResultsResponse * SOAP_FMAC2 soap_instantiate__tse__GetRecordingSearchResultsResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _tse__GetRecordingSearchResultsResponse * soap_new__tse__GetRecordingSearchResultsResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__tse__GetRecordingSearchResultsResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _tse__GetRecordingSearchResultsResponse * soap_new_req__tse__GetRecordingSearchResultsResponse(
+	struct soap *soap,
+	tt__FindRecordingResultList *ResultList)
+{
+	_tse__GetRecordingSearchResultsResponse *_p = ::soap_new__tse__GetRecordingSearchResultsResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__GetRecordingSearchResultsResponse::ResultList = ResultList;
+	}
+	return _p;
+}
+
+inline _tse__GetRecordingSearchResultsResponse * soap_new_set__tse__GetRecordingSearchResultsResponse(
+	struct soap *soap,
+	tt__FindRecordingResultList *ResultList)
+{
+	_tse__GetRecordingSearchResultsResponse *_p = ::soap_new__tse__GetRecordingSearchResultsResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__GetRecordingSearchResultsResponse::ResultList = ResultList;
+	}
+	return _p;
+}
+
+inline int soap_write__tse__GetRecordingSearchResultsResponse(struct soap *soap, _tse__GetRecordingSearchResultsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetRecordingSearchResultsResponse", p->soap_type() == SOAP_TYPE__tse__GetRecordingSearchResultsResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__tse__GetRecordingSearchResultsResponse(struct soap *soap, const char *URL, _tse__GetRecordingSearchResultsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetRecordingSearchResultsResponse", p->soap_type() == SOAP_TYPE__tse__GetRecordingSearchResultsResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__tse__GetRecordingSearchResultsResponse(struct soap *soap, const char *URL, _tse__GetRecordingSearchResultsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetRecordingSearchResultsResponse", p->soap_type() == SOAP_TYPE__tse__GetRecordingSearchResultsResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__tse__GetRecordingSearchResultsResponse(struct soap *soap, const char *URL, _tse__GetRecordingSearchResultsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetRecordingSearchResultsResponse", p->soap_type() == SOAP_TYPE__tse__GetRecordingSearchResultsResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _tse__GetRecordingSearchResultsResponse * SOAP_FMAC4 soap_get__tse__GetRecordingSearchResultsResponse(struct soap*, _tse__GetRecordingSearchResultsResponse *, const char*, const char*);
+
+inline int soap_read__tse__GetRecordingSearchResultsResponse(struct soap *soap, _tse__GetRecordingSearchResultsResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__tse__GetRecordingSearchResultsResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__tse__GetRecordingSearchResultsResponse(struct soap *soap, const char *URL, _tse__GetRecordingSearchResultsResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__tse__GetRecordingSearchResultsResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__tse__GetRecordingSearchResultsResponse(struct soap *soap, _tse__GetRecordingSearchResultsResponse *p)
+{
+	if (::soap_read__tse__GetRecordingSearchResultsResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__tse__GetRecordingSearchResults_DEFINED
+#define SOAP_TYPE__tse__GetRecordingSearchResults_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__tse__GetRecordingSearchResults(struct soap*, const char*, int, const _tse__GetRecordingSearchResults *, const char*);
+SOAP_FMAC3 _tse__GetRecordingSearchResults * SOAP_FMAC4 soap_in__tse__GetRecordingSearchResults(struct soap*, const char*, _tse__GetRecordingSearchResults *, const char*);
+SOAP_FMAC1 _tse__GetRecordingSearchResults * SOAP_FMAC2 soap_instantiate__tse__GetRecordingSearchResults(struct soap*, int, const char*, const char*, size_t*);
+
+inline _tse__GetRecordingSearchResults * soap_new__tse__GetRecordingSearchResults(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__tse__GetRecordingSearchResults(soap, n, NULL, NULL, NULL);
+}
+
+inline _tse__GetRecordingSearchResults * soap_new_req__tse__GetRecordingSearchResults(
+	struct soap *soap,
+	const std::string& SearchToken)
+{
+	_tse__GetRecordingSearchResults *_p = ::soap_new__tse__GetRecordingSearchResults(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__GetRecordingSearchResults::SearchToken = SearchToken;
+	}
+	return _p;
+}
+
+inline _tse__GetRecordingSearchResults * soap_new_set__tse__GetRecordingSearchResults(
+	struct soap *soap,
+	const std::string& SearchToken,
+	int *MinResults,
+	int *MaxResults,
+	std::string *WaitTime)
+{
+	_tse__GetRecordingSearchResults *_p = ::soap_new__tse__GetRecordingSearchResults(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__GetRecordingSearchResults::SearchToken = SearchToken;
+		_p->_tse__GetRecordingSearchResults::MinResults = MinResults;
+		_p->_tse__GetRecordingSearchResults::MaxResults = MaxResults;
+		_p->_tse__GetRecordingSearchResults::WaitTime = WaitTime;
+	}
+	return _p;
+}
+
+inline int soap_write__tse__GetRecordingSearchResults(struct soap *soap, _tse__GetRecordingSearchResults const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetRecordingSearchResults", p->soap_type() == SOAP_TYPE__tse__GetRecordingSearchResults ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__tse__GetRecordingSearchResults(struct soap *soap, const char *URL, _tse__GetRecordingSearchResults const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetRecordingSearchResults", p->soap_type() == SOAP_TYPE__tse__GetRecordingSearchResults ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__tse__GetRecordingSearchResults(struct soap *soap, const char *URL, _tse__GetRecordingSearchResults const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetRecordingSearchResults", p->soap_type() == SOAP_TYPE__tse__GetRecordingSearchResults ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__tse__GetRecordingSearchResults(struct soap *soap, const char *URL, _tse__GetRecordingSearchResults const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetRecordingSearchResults", p->soap_type() == SOAP_TYPE__tse__GetRecordingSearchResults ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _tse__GetRecordingSearchResults * SOAP_FMAC4 soap_get__tse__GetRecordingSearchResults(struct soap*, _tse__GetRecordingSearchResults *, const char*, const char*);
+
+inline int soap_read__tse__GetRecordingSearchResults(struct soap *soap, _tse__GetRecordingSearchResults *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__tse__GetRecordingSearchResults(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__tse__GetRecordingSearchResults(struct soap *soap, const char *URL, _tse__GetRecordingSearchResults *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__tse__GetRecordingSearchResults(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__tse__GetRecordingSearchResults(struct soap *soap, _tse__GetRecordingSearchResults *p)
+{
+	if (::soap_read__tse__GetRecordingSearchResults(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__tse__FindRecordingsResponse_DEFINED
+#define SOAP_TYPE__tse__FindRecordingsResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__tse__FindRecordingsResponse(struct soap*, const char*, int, const _tse__FindRecordingsResponse *, const char*);
+SOAP_FMAC3 _tse__FindRecordingsResponse * SOAP_FMAC4 soap_in__tse__FindRecordingsResponse(struct soap*, const char*, _tse__FindRecordingsResponse *, const char*);
+SOAP_FMAC1 _tse__FindRecordingsResponse * SOAP_FMAC2 soap_instantiate__tse__FindRecordingsResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _tse__FindRecordingsResponse * soap_new__tse__FindRecordingsResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__tse__FindRecordingsResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _tse__FindRecordingsResponse * soap_new_req__tse__FindRecordingsResponse(
+	struct soap *soap,
+	const std::string& SearchToken)
+{
+	_tse__FindRecordingsResponse *_p = ::soap_new__tse__FindRecordingsResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__FindRecordingsResponse::SearchToken = SearchToken;
+	}
+	return _p;
+}
+
+inline _tse__FindRecordingsResponse * soap_new_set__tse__FindRecordingsResponse(
+	struct soap *soap,
+	const std::string& SearchToken)
+{
+	_tse__FindRecordingsResponse *_p = ::soap_new__tse__FindRecordingsResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__FindRecordingsResponse::SearchToken = SearchToken;
+	}
+	return _p;
+}
+
+inline int soap_write__tse__FindRecordingsResponse(struct soap *soap, _tse__FindRecordingsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:FindRecordingsResponse", p->soap_type() == SOAP_TYPE__tse__FindRecordingsResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__tse__FindRecordingsResponse(struct soap *soap, const char *URL, _tse__FindRecordingsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:FindRecordingsResponse", p->soap_type() == SOAP_TYPE__tse__FindRecordingsResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__tse__FindRecordingsResponse(struct soap *soap, const char *URL, _tse__FindRecordingsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:FindRecordingsResponse", p->soap_type() == SOAP_TYPE__tse__FindRecordingsResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__tse__FindRecordingsResponse(struct soap *soap, const char *URL, _tse__FindRecordingsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:FindRecordingsResponse", p->soap_type() == SOAP_TYPE__tse__FindRecordingsResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _tse__FindRecordingsResponse * SOAP_FMAC4 soap_get__tse__FindRecordingsResponse(struct soap*, _tse__FindRecordingsResponse *, const char*, const char*);
+
+inline int soap_read__tse__FindRecordingsResponse(struct soap *soap, _tse__FindRecordingsResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__tse__FindRecordingsResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__tse__FindRecordingsResponse(struct soap *soap, const char *URL, _tse__FindRecordingsResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__tse__FindRecordingsResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__tse__FindRecordingsResponse(struct soap *soap, _tse__FindRecordingsResponse *p)
+{
+	if (::soap_read__tse__FindRecordingsResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__tse__FindRecordings_DEFINED
+#define SOAP_TYPE__tse__FindRecordings_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__tse__FindRecordings(struct soap*, const char*, int, const _tse__FindRecordings *, const char*);
+SOAP_FMAC3 _tse__FindRecordings * SOAP_FMAC4 soap_in__tse__FindRecordings(struct soap*, const char*, _tse__FindRecordings *, const char*);
+SOAP_FMAC1 _tse__FindRecordings * SOAP_FMAC2 soap_instantiate__tse__FindRecordings(struct soap*, int, const char*, const char*, size_t*);
+
+inline _tse__FindRecordings * soap_new__tse__FindRecordings(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__tse__FindRecordings(soap, n, NULL, NULL, NULL);
+}
+
+inline _tse__FindRecordings * soap_new_req__tse__FindRecordings(
+	struct soap *soap,
+	tt__SearchScope *Scope,
+	const std::string& KeepAliveTime)
+{
+	_tse__FindRecordings *_p = ::soap_new__tse__FindRecordings(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__FindRecordings::Scope = Scope;
+		_p->_tse__FindRecordings::KeepAliveTime = KeepAliveTime;
+	}
+	return _p;
+}
+
+inline _tse__FindRecordings * soap_new_set__tse__FindRecordings(
+	struct soap *soap,
+	tt__SearchScope *Scope,
+	int *MaxMatches,
+	const std::string& KeepAliveTime)
+{
+	_tse__FindRecordings *_p = ::soap_new__tse__FindRecordings(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__FindRecordings::Scope = Scope;
+		_p->_tse__FindRecordings::MaxMatches = MaxMatches;
+		_p->_tse__FindRecordings::KeepAliveTime = KeepAliveTime;
+	}
+	return _p;
+}
+
+inline int soap_write__tse__FindRecordings(struct soap *soap, _tse__FindRecordings const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:FindRecordings", p->soap_type() == SOAP_TYPE__tse__FindRecordings ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__tse__FindRecordings(struct soap *soap, const char *URL, _tse__FindRecordings const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:FindRecordings", p->soap_type() == SOAP_TYPE__tse__FindRecordings ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__tse__FindRecordings(struct soap *soap, const char *URL, _tse__FindRecordings const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:FindRecordings", p->soap_type() == SOAP_TYPE__tse__FindRecordings ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__tse__FindRecordings(struct soap *soap, const char *URL, _tse__FindRecordings const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:FindRecordings", p->soap_type() == SOAP_TYPE__tse__FindRecordings ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _tse__FindRecordings * SOAP_FMAC4 soap_get__tse__FindRecordings(struct soap*, _tse__FindRecordings *, const char*, const char*);
+
+inline int soap_read__tse__FindRecordings(struct soap *soap, _tse__FindRecordings *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__tse__FindRecordings(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__tse__FindRecordings(struct soap *soap, const char *URL, _tse__FindRecordings *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__tse__FindRecordings(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__tse__FindRecordings(struct soap *soap, _tse__FindRecordings *p)
+{
+	if (::soap_read__tse__FindRecordings(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__tse__GetMediaAttributesResponse_DEFINED
+#define SOAP_TYPE__tse__GetMediaAttributesResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__tse__GetMediaAttributesResponse(struct soap*, const char*, int, const _tse__GetMediaAttributesResponse *, const char*);
+SOAP_FMAC3 _tse__GetMediaAttributesResponse * SOAP_FMAC4 soap_in__tse__GetMediaAttributesResponse(struct soap*, const char*, _tse__GetMediaAttributesResponse *, const char*);
+SOAP_FMAC1 _tse__GetMediaAttributesResponse * SOAP_FMAC2 soap_instantiate__tse__GetMediaAttributesResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _tse__GetMediaAttributesResponse * soap_new__tse__GetMediaAttributesResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__tse__GetMediaAttributesResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _tse__GetMediaAttributesResponse * soap_new_req__tse__GetMediaAttributesResponse(
+	struct soap *soap)
+{
+	_tse__GetMediaAttributesResponse *_p = ::soap_new__tse__GetMediaAttributesResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline _tse__GetMediaAttributesResponse * soap_new_set__tse__GetMediaAttributesResponse(
+	struct soap *soap,
+	const std::vector<tt__MediaAttributes *> & MediaAttributes)
+{
+	_tse__GetMediaAttributesResponse *_p = ::soap_new__tse__GetMediaAttributesResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__GetMediaAttributesResponse::MediaAttributes = MediaAttributes;
+	}
+	return _p;
+}
+
+inline int soap_write__tse__GetMediaAttributesResponse(struct soap *soap, _tse__GetMediaAttributesResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetMediaAttributesResponse", p->soap_type() == SOAP_TYPE__tse__GetMediaAttributesResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__tse__GetMediaAttributesResponse(struct soap *soap, const char *URL, _tse__GetMediaAttributesResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetMediaAttributesResponse", p->soap_type() == SOAP_TYPE__tse__GetMediaAttributesResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__tse__GetMediaAttributesResponse(struct soap *soap, const char *URL, _tse__GetMediaAttributesResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetMediaAttributesResponse", p->soap_type() == SOAP_TYPE__tse__GetMediaAttributesResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__tse__GetMediaAttributesResponse(struct soap *soap, const char *URL, _tse__GetMediaAttributesResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetMediaAttributesResponse", p->soap_type() == SOAP_TYPE__tse__GetMediaAttributesResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _tse__GetMediaAttributesResponse * SOAP_FMAC4 soap_get__tse__GetMediaAttributesResponse(struct soap*, _tse__GetMediaAttributesResponse *, const char*, const char*);
+
+inline int soap_read__tse__GetMediaAttributesResponse(struct soap *soap, _tse__GetMediaAttributesResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__tse__GetMediaAttributesResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__tse__GetMediaAttributesResponse(struct soap *soap, const char *URL, _tse__GetMediaAttributesResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__tse__GetMediaAttributesResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__tse__GetMediaAttributesResponse(struct soap *soap, _tse__GetMediaAttributesResponse *p)
+{
+	if (::soap_read__tse__GetMediaAttributesResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__tse__GetMediaAttributes_DEFINED
+#define SOAP_TYPE__tse__GetMediaAttributes_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__tse__GetMediaAttributes(struct soap*, const char*, int, const _tse__GetMediaAttributes *, const char*);
+SOAP_FMAC3 _tse__GetMediaAttributes * SOAP_FMAC4 soap_in__tse__GetMediaAttributes(struct soap*, const char*, _tse__GetMediaAttributes *, const char*);
+SOAP_FMAC1 _tse__GetMediaAttributes * SOAP_FMAC2 soap_instantiate__tse__GetMediaAttributes(struct soap*, int, const char*, const char*, size_t*);
+
+inline _tse__GetMediaAttributes * soap_new__tse__GetMediaAttributes(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__tse__GetMediaAttributes(soap, n, NULL, NULL, NULL);
+}
+
+inline _tse__GetMediaAttributes * soap_new_req__tse__GetMediaAttributes(
+	struct soap *soap,
+	time_t Time)
+{
+	_tse__GetMediaAttributes *_p = ::soap_new__tse__GetMediaAttributes(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__GetMediaAttributes::Time = Time;
+	}
+	return _p;
+}
+
+inline _tse__GetMediaAttributes * soap_new_set__tse__GetMediaAttributes(
+	struct soap *soap,
+	const std::vector<std::string> & RecordingTokens,
+	time_t Time)
+{
+	_tse__GetMediaAttributes *_p = ::soap_new__tse__GetMediaAttributes(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__GetMediaAttributes::RecordingTokens = RecordingTokens;
+		_p->_tse__GetMediaAttributes::Time = Time;
+	}
+	return _p;
+}
+
+inline int soap_write__tse__GetMediaAttributes(struct soap *soap, _tse__GetMediaAttributes const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetMediaAttributes", p->soap_type() == SOAP_TYPE__tse__GetMediaAttributes ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__tse__GetMediaAttributes(struct soap *soap, const char *URL, _tse__GetMediaAttributes const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetMediaAttributes", p->soap_type() == SOAP_TYPE__tse__GetMediaAttributes ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__tse__GetMediaAttributes(struct soap *soap, const char *URL, _tse__GetMediaAttributes const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetMediaAttributes", p->soap_type() == SOAP_TYPE__tse__GetMediaAttributes ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__tse__GetMediaAttributes(struct soap *soap, const char *URL, _tse__GetMediaAttributes const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetMediaAttributes", p->soap_type() == SOAP_TYPE__tse__GetMediaAttributes ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _tse__GetMediaAttributes * SOAP_FMAC4 soap_get__tse__GetMediaAttributes(struct soap*, _tse__GetMediaAttributes *, const char*, const char*);
+
+inline int soap_read__tse__GetMediaAttributes(struct soap *soap, _tse__GetMediaAttributes *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__tse__GetMediaAttributes(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__tse__GetMediaAttributes(struct soap *soap, const char *URL, _tse__GetMediaAttributes *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__tse__GetMediaAttributes(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__tse__GetMediaAttributes(struct soap *soap, _tse__GetMediaAttributes *p)
+{
+	if (::soap_read__tse__GetMediaAttributes(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__tse__GetRecordingInformationResponse_DEFINED
+#define SOAP_TYPE__tse__GetRecordingInformationResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__tse__GetRecordingInformationResponse(struct soap*, const char*, int, const _tse__GetRecordingInformationResponse *, const char*);
+SOAP_FMAC3 _tse__GetRecordingInformationResponse * SOAP_FMAC4 soap_in__tse__GetRecordingInformationResponse(struct soap*, const char*, _tse__GetRecordingInformationResponse *, const char*);
+SOAP_FMAC1 _tse__GetRecordingInformationResponse * SOAP_FMAC2 soap_instantiate__tse__GetRecordingInformationResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _tse__GetRecordingInformationResponse * soap_new__tse__GetRecordingInformationResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__tse__GetRecordingInformationResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _tse__GetRecordingInformationResponse * soap_new_req__tse__GetRecordingInformationResponse(
+	struct soap *soap,
+	tt__RecordingInformation *RecordingInformation)
+{
+	_tse__GetRecordingInformationResponse *_p = ::soap_new__tse__GetRecordingInformationResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__GetRecordingInformationResponse::RecordingInformation = RecordingInformation;
+	}
+	return _p;
+}
+
+inline _tse__GetRecordingInformationResponse * soap_new_set__tse__GetRecordingInformationResponse(
+	struct soap *soap,
+	tt__RecordingInformation *RecordingInformation)
+{
+	_tse__GetRecordingInformationResponse *_p = ::soap_new__tse__GetRecordingInformationResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__GetRecordingInformationResponse::RecordingInformation = RecordingInformation;
+	}
+	return _p;
+}
+
+inline int soap_write__tse__GetRecordingInformationResponse(struct soap *soap, _tse__GetRecordingInformationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetRecordingInformationResponse", p->soap_type() == SOAP_TYPE__tse__GetRecordingInformationResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__tse__GetRecordingInformationResponse(struct soap *soap, const char *URL, _tse__GetRecordingInformationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetRecordingInformationResponse", p->soap_type() == SOAP_TYPE__tse__GetRecordingInformationResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__tse__GetRecordingInformationResponse(struct soap *soap, const char *URL, _tse__GetRecordingInformationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetRecordingInformationResponse", p->soap_type() == SOAP_TYPE__tse__GetRecordingInformationResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__tse__GetRecordingInformationResponse(struct soap *soap, const char *URL, _tse__GetRecordingInformationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetRecordingInformationResponse", p->soap_type() == SOAP_TYPE__tse__GetRecordingInformationResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _tse__GetRecordingInformationResponse * SOAP_FMAC4 soap_get__tse__GetRecordingInformationResponse(struct soap*, _tse__GetRecordingInformationResponse *, const char*, const char*);
+
+inline int soap_read__tse__GetRecordingInformationResponse(struct soap *soap, _tse__GetRecordingInformationResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__tse__GetRecordingInformationResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__tse__GetRecordingInformationResponse(struct soap *soap, const char *URL, _tse__GetRecordingInformationResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__tse__GetRecordingInformationResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__tse__GetRecordingInformationResponse(struct soap *soap, _tse__GetRecordingInformationResponse *p)
+{
+	if (::soap_read__tse__GetRecordingInformationResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__tse__GetRecordingInformation_DEFINED
+#define SOAP_TYPE__tse__GetRecordingInformation_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__tse__GetRecordingInformation(struct soap*, const char*, int, const _tse__GetRecordingInformation *, const char*);
+SOAP_FMAC3 _tse__GetRecordingInformation * SOAP_FMAC4 soap_in__tse__GetRecordingInformation(struct soap*, const char*, _tse__GetRecordingInformation *, const char*);
+SOAP_FMAC1 _tse__GetRecordingInformation * SOAP_FMAC2 soap_instantiate__tse__GetRecordingInformation(struct soap*, int, const char*, const char*, size_t*);
+
+inline _tse__GetRecordingInformation * soap_new__tse__GetRecordingInformation(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__tse__GetRecordingInformation(soap, n, NULL, NULL, NULL);
+}
+
+inline _tse__GetRecordingInformation * soap_new_req__tse__GetRecordingInformation(
+	struct soap *soap,
+	const std::string& RecordingToken)
+{
+	_tse__GetRecordingInformation *_p = ::soap_new__tse__GetRecordingInformation(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__GetRecordingInformation::RecordingToken = RecordingToken;
+	}
+	return _p;
+}
+
+inline _tse__GetRecordingInformation * soap_new_set__tse__GetRecordingInformation(
+	struct soap *soap,
+	const std::string& RecordingToken)
+{
+	_tse__GetRecordingInformation *_p = ::soap_new__tse__GetRecordingInformation(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__GetRecordingInformation::RecordingToken = RecordingToken;
+	}
+	return _p;
+}
+
+inline int soap_write__tse__GetRecordingInformation(struct soap *soap, _tse__GetRecordingInformation const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetRecordingInformation", p->soap_type() == SOAP_TYPE__tse__GetRecordingInformation ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__tse__GetRecordingInformation(struct soap *soap, const char *URL, _tse__GetRecordingInformation const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetRecordingInformation", p->soap_type() == SOAP_TYPE__tse__GetRecordingInformation ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__tse__GetRecordingInformation(struct soap *soap, const char *URL, _tse__GetRecordingInformation const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetRecordingInformation", p->soap_type() == SOAP_TYPE__tse__GetRecordingInformation ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__tse__GetRecordingInformation(struct soap *soap, const char *URL, _tse__GetRecordingInformation const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetRecordingInformation", p->soap_type() == SOAP_TYPE__tse__GetRecordingInformation ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _tse__GetRecordingInformation * SOAP_FMAC4 soap_get__tse__GetRecordingInformation(struct soap*, _tse__GetRecordingInformation *, const char*, const char*);
+
+inline int soap_read__tse__GetRecordingInformation(struct soap *soap, _tse__GetRecordingInformation *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__tse__GetRecordingInformation(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__tse__GetRecordingInformation(struct soap *soap, const char *URL, _tse__GetRecordingInformation *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__tse__GetRecordingInformation(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__tse__GetRecordingInformation(struct soap *soap, _tse__GetRecordingInformation *p)
+{
+	if (::soap_read__tse__GetRecordingInformation(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__tse__GetRecordingSummaryResponse_DEFINED
+#define SOAP_TYPE__tse__GetRecordingSummaryResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__tse__GetRecordingSummaryResponse(struct soap*, const char*, int, const _tse__GetRecordingSummaryResponse *, const char*);
+SOAP_FMAC3 _tse__GetRecordingSummaryResponse * SOAP_FMAC4 soap_in__tse__GetRecordingSummaryResponse(struct soap*, const char*, _tse__GetRecordingSummaryResponse *, const char*);
+SOAP_FMAC1 _tse__GetRecordingSummaryResponse * SOAP_FMAC2 soap_instantiate__tse__GetRecordingSummaryResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _tse__GetRecordingSummaryResponse * soap_new__tse__GetRecordingSummaryResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__tse__GetRecordingSummaryResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _tse__GetRecordingSummaryResponse * soap_new_req__tse__GetRecordingSummaryResponse(
+	struct soap *soap,
+	tt__RecordingSummary *Summary)
+{
+	_tse__GetRecordingSummaryResponse *_p = ::soap_new__tse__GetRecordingSummaryResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__GetRecordingSummaryResponse::Summary = Summary;
+	}
+	return _p;
+}
+
+inline _tse__GetRecordingSummaryResponse * soap_new_set__tse__GetRecordingSummaryResponse(
+	struct soap *soap,
+	tt__RecordingSummary *Summary)
+{
+	_tse__GetRecordingSummaryResponse *_p = ::soap_new__tse__GetRecordingSummaryResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__GetRecordingSummaryResponse::Summary = Summary;
+	}
+	return _p;
+}
+
+inline int soap_write__tse__GetRecordingSummaryResponse(struct soap *soap, _tse__GetRecordingSummaryResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetRecordingSummaryResponse", p->soap_type() == SOAP_TYPE__tse__GetRecordingSummaryResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__tse__GetRecordingSummaryResponse(struct soap *soap, const char *URL, _tse__GetRecordingSummaryResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetRecordingSummaryResponse", p->soap_type() == SOAP_TYPE__tse__GetRecordingSummaryResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__tse__GetRecordingSummaryResponse(struct soap *soap, const char *URL, _tse__GetRecordingSummaryResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetRecordingSummaryResponse", p->soap_type() == SOAP_TYPE__tse__GetRecordingSummaryResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__tse__GetRecordingSummaryResponse(struct soap *soap, const char *URL, _tse__GetRecordingSummaryResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetRecordingSummaryResponse", p->soap_type() == SOAP_TYPE__tse__GetRecordingSummaryResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _tse__GetRecordingSummaryResponse * SOAP_FMAC4 soap_get__tse__GetRecordingSummaryResponse(struct soap*, _tse__GetRecordingSummaryResponse *, const char*, const char*);
+
+inline int soap_read__tse__GetRecordingSummaryResponse(struct soap *soap, _tse__GetRecordingSummaryResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__tse__GetRecordingSummaryResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__tse__GetRecordingSummaryResponse(struct soap *soap, const char *URL, _tse__GetRecordingSummaryResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__tse__GetRecordingSummaryResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__tse__GetRecordingSummaryResponse(struct soap *soap, _tse__GetRecordingSummaryResponse *p)
+{
+	if (::soap_read__tse__GetRecordingSummaryResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__tse__GetRecordingSummary_DEFINED
+#define SOAP_TYPE__tse__GetRecordingSummary_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__tse__GetRecordingSummary(struct soap*, const char*, int, const _tse__GetRecordingSummary *, const char*);
+SOAP_FMAC3 _tse__GetRecordingSummary * SOAP_FMAC4 soap_in__tse__GetRecordingSummary(struct soap*, const char*, _tse__GetRecordingSummary *, const char*);
+SOAP_FMAC1 _tse__GetRecordingSummary * SOAP_FMAC2 soap_instantiate__tse__GetRecordingSummary(struct soap*, int, const char*, const char*, size_t*);
+
+inline _tse__GetRecordingSummary * soap_new__tse__GetRecordingSummary(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__tse__GetRecordingSummary(soap, n, NULL, NULL, NULL);
+}
+
+inline _tse__GetRecordingSummary * soap_new_req__tse__GetRecordingSummary(
+	struct soap *soap)
+{
+	_tse__GetRecordingSummary *_p = ::soap_new__tse__GetRecordingSummary(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline _tse__GetRecordingSummary * soap_new_set__tse__GetRecordingSummary(
+	struct soap *soap)
+{
+	_tse__GetRecordingSummary *_p = ::soap_new__tse__GetRecordingSummary(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline int soap_write__tse__GetRecordingSummary(struct soap *soap, _tse__GetRecordingSummary const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetRecordingSummary", p->soap_type() == SOAP_TYPE__tse__GetRecordingSummary ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__tse__GetRecordingSummary(struct soap *soap, const char *URL, _tse__GetRecordingSummary const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetRecordingSummary", p->soap_type() == SOAP_TYPE__tse__GetRecordingSummary ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__tse__GetRecordingSummary(struct soap *soap, const char *URL, _tse__GetRecordingSummary const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetRecordingSummary", p->soap_type() == SOAP_TYPE__tse__GetRecordingSummary ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__tse__GetRecordingSummary(struct soap *soap, const char *URL, _tse__GetRecordingSummary const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetRecordingSummary", p->soap_type() == SOAP_TYPE__tse__GetRecordingSummary ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _tse__GetRecordingSummary * SOAP_FMAC4 soap_get__tse__GetRecordingSummary(struct soap*, _tse__GetRecordingSummary *, const char*, const char*);
+
+inline int soap_read__tse__GetRecordingSummary(struct soap *soap, _tse__GetRecordingSummary *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__tse__GetRecordingSummary(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__tse__GetRecordingSummary(struct soap *soap, const char *URL, _tse__GetRecordingSummary *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__tse__GetRecordingSummary(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__tse__GetRecordingSummary(struct soap *soap, _tse__GetRecordingSummary *p)
+{
+	if (::soap_read__tse__GetRecordingSummary(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__tse__GetServiceCapabilitiesResponse_DEFINED
+#define SOAP_TYPE__tse__GetServiceCapabilitiesResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__tse__GetServiceCapabilitiesResponse(struct soap*, const char*, int, const _tse__GetServiceCapabilitiesResponse *, const char*);
+SOAP_FMAC3 _tse__GetServiceCapabilitiesResponse * SOAP_FMAC4 soap_in__tse__GetServiceCapabilitiesResponse(struct soap*, const char*, _tse__GetServiceCapabilitiesResponse *, const char*);
+SOAP_FMAC1 _tse__GetServiceCapabilitiesResponse * SOAP_FMAC2 soap_instantiate__tse__GetServiceCapabilitiesResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _tse__GetServiceCapabilitiesResponse * soap_new__tse__GetServiceCapabilitiesResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__tse__GetServiceCapabilitiesResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _tse__GetServiceCapabilitiesResponse * soap_new_req__tse__GetServiceCapabilitiesResponse(
+	struct soap *soap,
+	tse__Capabilities *Capabilities)
+{
+	_tse__GetServiceCapabilitiesResponse *_p = ::soap_new__tse__GetServiceCapabilitiesResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__GetServiceCapabilitiesResponse::Capabilities = Capabilities;
+	}
+	return _p;
+}
+
+inline _tse__GetServiceCapabilitiesResponse * soap_new_set__tse__GetServiceCapabilitiesResponse(
+	struct soap *soap,
+	tse__Capabilities *Capabilities)
+{
+	_tse__GetServiceCapabilitiesResponse *_p = ::soap_new__tse__GetServiceCapabilitiesResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_tse__GetServiceCapabilitiesResponse::Capabilities = Capabilities;
+	}
+	return _p;
+}
+
+inline int soap_write__tse__GetServiceCapabilitiesResponse(struct soap *soap, _tse__GetServiceCapabilitiesResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetServiceCapabilitiesResponse", p->soap_type() == SOAP_TYPE__tse__GetServiceCapabilitiesResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__tse__GetServiceCapabilitiesResponse(struct soap *soap, const char *URL, _tse__GetServiceCapabilitiesResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetServiceCapabilitiesResponse", p->soap_type() == SOAP_TYPE__tse__GetServiceCapabilitiesResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__tse__GetServiceCapabilitiesResponse(struct soap *soap, const char *URL, _tse__GetServiceCapabilitiesResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetServiceCapabilitiesResponse", p->soap_type() == SOAP_TYPE__tse__GetServiceCapabilitiesResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__tse__GetServiceCapabilitiesResponse(struct soap *soap, const char *URL, _tse__GetServiceCapabilitiesResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetServiceCapabilitiesResponse", p->soap_type() == SOAP_TYPE__tse__GetServiceCapabilitiesResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _tse__GetServiceCapabilitiesResponse * SOAP_FMAC4 soap_get__tse__GetServiceCapabilitiesResponse(struct soap*, _tse__GetServiceCapabilitiesResponse *, const char*, const char*);
+
+inline int soap_read__tse__GetServiceCapabilitiesResponse(struct soap *soap, _tse__GetServiceCapabilitiesResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__tse__GetServiceCapabilitiesResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__tse__GetServiceCapabilitiesResponse(struct soap *soap, const char *URL, _tse__GetServiceCapabilitiesResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__tse__GetServiceCapabilitiesResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__tse__GetServiceCapabilitiesResponse(struct soap *soap, _tse__GetServiceCapabilitiesResponse *p)
+{
+	if (::soap_read__tse__GetServiceCapabilitiesResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__tse__GetServiceCapabilities_DEFINED
+#define SOAP_TYPE__tse__GetServiceCapabilities_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__tse__GetServiceCapabilities(struct soap*, const char*, int, const _tse__GetServiceCapabilities *, const char*);
+SOAP_FMAC3 _tse__GetServiceCapabilities * SOAP_FMAC4 soap_in__tse__GetServiceCapabilities(struct soap*, const char*, _tse__GetServiceCapabilities *, const char*);
+SOAP_FMAC1 _tse__GetServiceCapabilities * SOAP_FMAC2 soap_instantiate__tse__GetServiceCapabilities(struct soap*, int, const char*, const char*, size_t*);
+
+inline _tse__GetServiceCapabilities * soap_new__tse__GetServiceCapabilities(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__tse__GetServiceCapabilities(soap, n, NULL, NULL, NULL);
+}
+
+inline _tse__GetServiceCapabilities * soap_new_req__tse__GetServiceCapabilities(
+	struct soap *soap)
+{
+	_tse__GetServiceCapabilities *_p = ::soap_new__tse__GetServiceCapabilities(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline _tse__GetServiceCapabilities * soap_new_set__tse__GetServiceCapabilities(
+	struct soap *soap)
+{
+	_tse__GetServiceCapabilities *_p = ::soap_new__tse__GetServiceCapabilities(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline int soap_write__tse__GetServiceCapabilities(struct soap *soap, _tse__GetServiceCapabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetServiceCapabilities", p->soap_type() == SOAP_TYPE__tse__GetServiceCapabilities ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__tse__GetServiceCapabilities(struct soap *soap, const char *URL, _tse__GetServiceCapabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetServiceCapabilities", p->soap_type() == SOAP_TYPE__tse__GetServiceCapabilities ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__tse__GetServiceCapabilities(struct soap *soap, const char *URL, _tse__GetServiceCapabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetServiceCapabilities", p->soap_type() == SOAP_TYPE__tse__GetServiceCapabilities ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__tse__GetServiceCapabilities(struct soap *soap, const char *URL, _tse__GetServiceCapabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:GetServiceCapabilities", p->soap_type() == SOAP_TYPE__tse__GetServiceCapabilities ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _tse__GetServiceCapabilities * SOAP_FMAC4 soap_get__tse__GetServiceCapabilities(struct soap*, _tse__GetServiceCapabilities *, const char*, const char*);
+
+inline int soap_read__tse__GetServiceCapabilities(struct soap *soap, _tse__GetServiceCapabilities *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__tse__GetServiceCapabilities(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__tse__GetServiceCapabilities(struct soap *soap, const char *URL, _tse__GetServiceCapabilities *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__tse__GetServiceCapabilities(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__tse__GetServiceCapabilities(struct soap *soap, _tse__GetServiceCapabilities *p)
+{
+	if (::soap_read__tse__GetServiceCapabilities(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE_tse__Capabilities_DEFINED
+#define SOAP_TYPE_tse__Capabilities_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_tse__Capabilities(struct soap*, const char*, int, const tse__Capabilities *, const char*);
+SOAP_FMAC3 tse__Capabilities * SOAP_FMAC4 soap_in_tse__Capabilities(struct soap*, const char*, tse__Capabilities *, const char*);
+SOAP_FMAC1 tse__Capabilities * SOAP_FMAC2 soap_instantiate_tse__Capabilities(struct soap*, int, const char*, const char*, size_t*);
+
+inline tse__Capabilities * soap_new_tse__Capabilities(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_tse__Capabilities(soap, n, NULL, NULL, NULL);
+}
+
+inline tse__Capabilities * soap_new_req_tse__Capabilities(
+	struct soap *soap)
+{
+	tse__Capabilities *_p = ::soap_new_tse__Capabilities(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline tse__Capabilities * soap_new_set_tse__Capabilities(
+	struct soap *soap,
+	const std::vector<char *> & __any,
+	bool *MetadataSearch,
+	bool *GeneralStartEvents,
+	char *__anyAttribute,
+	char *__item__1)
+{
+	tse__Capabilities *_p = ::soap_new_tse__Capabilities(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->tse__Capabilities::__any = __any;
+		_p->tse__Capabilities::MetadataSearch = MetadataSearch;
+		_p->tse__Capabilities::GeneralStartEvents = GeneralStartEvents;
+		_p->tse__Capabilities::__anyAttribute = __anyAttribute;
+		_p->xsd__anyType::__item = __item__1;
+	}
+	return _p;
+}
+
+inline int soap_write_tse__Capabilities(struct soap *soap, tse__Capabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:Capabilities", p->soap_type() == SOAP_TYPE_tse__Capabilities ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT_tse__Capabilities(struct soap *soap, const char *URL, tse__Capabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:Capabilities", p->soap_type() == SOAP_TYPE_tse__Capabilities ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH_tse__Capabilities(struct soap *soap, const char *URL, tse__Capabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:Capabilities", p->soap_type() == SOAP_TYPE_tse__Capabilities ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send_tse__Capabilities(struct soap *soap, const char *URL, tse__Capabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "tse:Capabilities", p->soap_type() == SOAP_TYPE_tse__Capabilities ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 tse__Capabilities * SOAP_FMAC4 soap_get_tse__Capabilities(struct soap*, tse__Capabilities *, const char*, const char*);
+
+inline int soap_read_tse__Capabilities(struct soap *soap, tse__Capabilities *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get_tse__Capabilities(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET_tse__Capabilities(struct soap *soap, const char *URL, tse__Capabilities *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read_tse__Capabilities(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv_tse__Capabilities(struct soap *soap, tse__Capabilities *p)
+{
+	if (::soap_read_tse__Capabilities(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trp__GetReplayConfigurationResponse_DEFINED
+#define SOAP_TYPE__trp__GetReplayConfigurationResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trp__GetReplayConfigurationResponse(struct soap*, const char*, int, const _trp__GetReplayConfigurationResponse *, const char*);
+SOAP_FMAC3 _trp__GetReplayConfigurationResponse * SOAP_FMAC4 soap_in__trp__GetReplayConfigurationResponse(struct soap*, const char*, _trp__GetReplayConfigurationResponse *, const char*);
+SOAP_FMAC1 _trp__GetReplayConfigurationResponse * SOAP_FMAC2 soap_instantiate__trp__GetReplayConfigurationResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trp__GetReplayConfigurationResponse * soap_new__trp__GetReplayConfigurationResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trp__GetReplayConfigurationResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _trp__GetReplayConfigurationResponse * soap_new_req__trp__GetReplayConfigurationResponse(
+	struct soap *soap,
+	tt__ReplayConfiguration *Configuration)
+{
+	_trp__GetReplayConfigurationResponse *_p = ::soap_new__trp__GetReplayConfigurationResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trp__GetReplayConfigurationResponse::Configuration = Configuration;
+	}
+	return _p;
+}
+
+inline _trp__GetReplayConfigurationResponse * soap_new_set__trp__GetReplayConfigurationResponse(
+	struct soap *soap,
+	tt__ReplayConfiguration *Configuration)
+{
+	_trp__GetReplayConfigurationResponse *_p = ::soap_new__trp__GetReplayConfigurationResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trp__GetReplayConfigurationResponse::Configuration = Configuration;
+	}
+	return _p;
+}
+
+inline int soap_write__trp__GetReplayConfigurationResponse(struct soap *soap, _trp__GetReplayConfigurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:GetReplayConfigurationResponse", p->soap_type() == SOAP_TYPE__trp__GetReplayConfigurationResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trp__GetReplayConfigurationResponse(struct soap *soap, const char *URL, _trp__GetReplayConfigurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:GetReplayConfigurationResponse", p->soap_type() == SOAP_TYPE__trp__GetReplayConfigurationResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trp__GetReplayConfigurationResponse(struct soap *soap, const char *URL, _trp__GetReplayConfigurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:GetReplayConfigurationResponse", p->soap_type() == SOAP_TYPE__trp__GetReplayConfigurationResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trp__GetReplayConfigurationResponse(struct soap *soap, const char *URL, _trp__GetReplayConfigurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:GetReplayConfigurationResponse", p->soap_type() == SOAP_TYPE__trp__GetReplayConfigurationResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trp__GetReplayConfigurationResponse * SOAP_FMAC4 soap_get__trp__GetReplayConfigurationResponse(struct soap*, _trp__GetReplayConfigurationResponse *, const char*, const char*);
+
+inline int soap_read__trp__GetReplayConfigurationResponse(struct soap *soap, _trp__GetReplayConfigurationResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trp__GetReplayConfigurationResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trp__GetReplayConfigurationResponse(struct soap *soap, const char *URL, _trp__GetReplayConfigurationResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trp__GetReplayConfigurationResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trp__GetReplayConfigurationResponse(struct soap *soap, _trp__GetReplayConfigurationResponse *p)
+{
+	if (::soap_read__trp__GetReplayConfigurationResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trp__GetReplayConfiguration_DEFINED
+#define SOAP_TYPE__trp__GetReplayConfiguration_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trp__GetReplayConfiguration(struct soap*, const char*, int, const _trp__GetReplayConfiguration *, const char*);
+SOAP_FMAC3 _trp__GetReplayConfiguration * SOAP_FMAC4 soap_in__trp__GetReplayConfiguration(struct soap*, const char*, _trp__GetReplayConfiguration *, const char*);
+SOAP_FMAC1 _trp__GetReplayConfiguration * SOAP_FMAC2 soap_instantiate__trp__GetReplayConfiguration(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trp__GetReplayConfiguration * soap_new__trp__GetReplayConfiguration(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trp__GetReplayConfiguration(soap, n, NULL, NULL, NULL);
+}
+
+inline _trp__GetReplayConfiguration * soap_new_req__trp__GetReplayConfiguration(
+	struct soap *soap)
+{
+	_trp__GetReplayConfiguration *_p = ::soap_new__trp__GetReplayConfiguration(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline _trp__GetReplayConfiguration * soap_new_set__trp__GetReplayConfiguration(
+	struct soap *soap)
+{
+	_trp__GetReplayConfiguration *_p = ::soap_new__trp__GetReplayConfiguration(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline int soap_write__trp__GetReplayConfiguration(struct soap *soap, _trp__GetReplayConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:GetReplayConfiguration", p->soap_type() == SOAP_TYPE__trp__GetReplayConfiguration ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trp__GetReplayConfiguration(struct soap *soap, const char *URL, _trp__GetReplayConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:GetReplayConfiguration", p->soap_type() == SOAP_TYPE__trp__GetReplayConfiguration ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trp__GetReplayConfiguration(struct soap *soap, const char *URL, _trp__GetReplayConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:GetReplayConfiguration", p->soap_type() == SOAP_TYPE__trp__GetReplayConfiguration ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trp__GetReplayConfiguration(struct soap *soap, const char *URL, _trp__GetReplayConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:GetReplayConfiguration", p->soap_type() == SOAP_TYPE__trp__GetReplayConfiguration ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trp__GetReplayConfiguration * SOAP_FMAC4 soap_get__trp__GetReplayConfiguration(struct soap*, _trp__GetReplayConfiguration *, const char*, const char*);
+
+inline int soap_read__trp__GetReplayConfiguration(struct soap *soap, _trp__GetReplayConfiguration *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trp__GetReplayConfiguration(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trp__GetReplayConfiguration(struct soap *soap, const char *URL, _trp__GetReplayConfiguration *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trp__GetReplayConfiguration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trp__GetReplayConfiguration(struct soap *soap, _trp__GetReplayConfiguration *p)
+{
+	if (::soap_read__trp__GetReplayConfiguration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trp__SetReplayConfigurationResponse_DEFINED
+#define SOAP_TYPE__trp__SetReplayConfigurationResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trp__SetReplayConfigurationResponse(struct soap*, const char*, int, const _trp__SetReplayConfigurationResponse *, const char*);
+SOAP_FMAC3 _trp__SetReplayConfigurationResponse * SOAP_FMAC4 soap_in__trp__SetReplayConfigurationResponse(struct soap*, const char*, _trp__SetReplayConfigurationResponse *, const char*);
+SOAP_FMAC1 _trp__SetReplayConfigurationResponse * SOAP_FMAC2 soap_instantiate__trp__SetReplayConfigurationResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trp__SetReplayConfigurationResponse * soap_new__trp__SetReplayConfigurationResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trp__SetReplayConfigurationResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _trp__SetReplayConfigurationResponse * soap_new_req__trp__SetReplayConfigurationResponse(
+	struct soap *soap)
+{
+	_trp__SetReplayConfigurationResponse *_p = ::soap_new__trp__SetReplayConfigurationResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline _trp__SetReplayConfigurationResponse * soap_new_set__trp__SetReplayConfigurationResponse(
+	struct soap *soap)
+{
+	_trp__SetReplayConfigurationResponse *_p = ::soap_new__trp__SetReplayConfigurationResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline int soap_write__trp__SetReplayConfigurationResponse(struct soap *soap, _trp__SetReplayConfigurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:SetReplayConfigurationResponse", p->soap_type() == SOAP_TYPE__trp__SetReplayConfigurationResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trp__SetReplayConfigurationResponse(struct soap *soap, const char *URL, _trp__SetReplayConfigurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:SetReplayConfigurationResponse", p->soap_type() == SOAP_TYPE__trp__SetReplayConfigurationResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trp__SetReplayConfigurationResponse(struct soap *soap, const char *URL, _trp__SetReplayConfigurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:SetReplayConfigurationResponse", p->soap_type() == SOAP_TYPE__trp__SetReplayConfigurationResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trp__SetReplayConfigurationResponse(struct soap *soap, const char *URL, _trp__SetReplayConfigurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:SetReplayConfigurationResponse", p->soap_type() == SOAP_TYPE__trp__SetReplayConfigurationResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trp__SetReplayConfigurationResponse * SOAP_FMAC4 soap_get__trp__SetReplayConfigurationResponse(struct soap*, _trp__SetReplayConfigurationResponse *, const char*, const char*);
+
+inline int soap_read__trp__SetReplayConfigurationResponse(struct soap *soap, _trp__SetReplayConfigurationResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trp__SetReplayConfigurationResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trp__SetReplayConfigurationResponse(struct soap *soap, const char *URL, _trp__SetReplayConfigurationResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trp__SetReplayConfigurationResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trp__SetReplayConfigurationResponse(struct soap *soap, _trp__SetReplayConfigurationResponse *p)
+{
+	if (::soap_read__trp__SetReplayConfigurationResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trp__SetReplayConfiguration_DEFINED
+#define SOAP_TYPE__trp__SetReplayConfiguration_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trp__SetReplayConfiguration(struct soap*, const char*, int, const _trp__SetReplayConfiguration *, const char*);
+SOAP_FMAC3 _trp__SetReplayConfiguration * SOAP_FMAC4 soap_in__trp__SetReplayConfiguration(struct soap*, const char*, _trp__SetReplayConfiguration *, const char*);
+SOAP_FMAC1 _trp__SetReplayConfiguration * SOAP_FMAC2 soap_instantiate__trp__SetReplayConfiguration(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trp__SetReplayConfiguration * soap_new__trp__SetReplayConfiguration(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trp__SetReplayConfiguration(soap, n, NULL, NULL, NULL);
+}
+
+inline _trp__SetReplayConfiguration * soap_new_req__trp__SetReplayConfiguration(
+	struct soap *soap,
+	tt__ReplayConfiguration *Configuration)
+{
+	_trp__SetReplayConfiguration *_p = ::soap_new__trp__SetReplayConfiguration(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trp__SetReplayConfiguration::Configuration = Configuration;
+	}
+	return _p;
+}
+
+inline _trp__SetReplayConfiguration * soap_new_set__trp__SetReplayConfiguration(
+	struct soap *soap,
+	tt__ReplayConfiguration *Configuration)
+{
+	_trp__SetReplayConfiguration *_p = ::soap_new__trp__SetReplayConfiguration(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trp__SetReplayConfiguration::Configuration = Configuration;
+	}
+	return _p;
+}
+
+inline int soap_write__trp__SetReplayConfiguration(struct soap *soap, _trp__SetReplayConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:SetReplayConfiguration", p->soap_type() == SOAP_TYPE__trp__SetReplayConfiguration ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trp__SetReplayConfiguration(struct soap *soap, const char *URL, _trp__SetReplayConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:SetReplayConfiguration", p->soap_type() == SOAP_TYPE__trp__SetReplayConfiguration ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trp__SetReplayConfiguration(struct soap *soap, const char *URL, _trp__SetReplayConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:SetReplayConfiguration", p->soap_type() == SOAP_TYPE__trp__SetReplayConfiguration ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trp__SetReplayConfiguration(struct soap *soap, const char *URL, _trp__SetReplayConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:SetReplayConfiguration", p->soap_type() == SOAP_TYPE__trp__SetReplayConfiguration ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trp__SetReplayConfiguration * SOAP_FMAC4 soap_get__trp__SetReplayConfiguration(struct soap*, _trp__SetReplayConfiguration *, const char*, const char*);
+
+inline int soap_read__trp__SetReplayConfiguration(struct soap *soap, _trp__SetReplayConfiguration *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trp__SetReplayConfiguration(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trp__SetReplayConfiguration(struct soap *soap, const char *URL, _trp__SetReplayConfiguration *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trp__SetReplayConfiguration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trp__SetReplayConfiguration(struct soap *soap, _trp__SetReplayConfiguration *p)
+{
+	if (::soap_read__trp__SetReplayConfiguration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trp__GetReplayUriResponse_DEFINED
+#define SOAP_TYPE__trp__GetReplayUriResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trp__GetReplayUriResponse(struct soap*, const char*, int, const _trp__GetReplayUriResponse *, const char*);
+SOAP_FMAC3 _trp__GetReplayUriResponse * SOAP_FMAC4 soap_in__trp__GetReplayUriResponse(struct soap*, const char*, _trp__GetReplayUriResponse *, const char*);
+SOAP_FMAC1 _trp__GetReplayUriResponse * SOAP_FMAC2 soap_instantiate__trp__GetReplayUriResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trp__GetReplayUriResponse * soap_new__trp__GetReplayUriResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trp__GetReplayUriResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _trp__GetReplayUriResponse * soap_new_req__trp__GetReplayUriResponse(
+	struct soap *soap,
+	const std::string& Uri)
+{
+	_trp__GetReplayUriResponse *_p = ::soap_new__trp__GetReplayUriResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trp__GetReplayUriResponse::Uri = Uri;
+	}
+	return _p;
+}
+
+inline _trp__GetReplayUriResponse * soap_new_set__trp__GetReplayUriResponse(
+	struct soap *soap,
+	const std::string& Uri)
+{
+	_trp__GetReplayUriResponse *_p = ::soap_new__trp__GetReplayUriResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trp__GetReplayUriResponse::Uri = Uri;
+	}
+	return _p;
+}
+
+inline int soap_write__trp__GetReplayUriResponse(struct soap *soap, _trp__GetReplayUriResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:GetReplayUriResponse", p->soap_type() == SOAP_TYPE__trp__GetReplayUriResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trp__GetReplayUriResponse(struct soap *soap, const char *URL, _trp__GetReplayUriResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:GetReplayUriResponse", p->soap_type() == SOAP_TYPE__trp__GetReplayUriResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trp__GetReplayUriResponse(struct soap *soap, const char *URL, _trp__GetReplayUriResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:GetReplayUriResponse", p->soap_type() == SOAP_TYPE__trp__GetReplayUriResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trp__GetReplayUriResponse(struct soap *soap, const char *URL, _trp__GetReplayUriResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:GetReplayUriResponse", p->soap_type() == SOAP_TYPE__trp__GetReplayUriResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trp__GetReplayUriResponse * SOAP_FMAC4 soap_get__trp__GetReplayUriResponse(struct soap*, _trp__GetReplayUriResponse *, const char*, const char*);
+
+inline int soap_read__trp__GetReplayUriResponse(struct soap *soap, _trp__GetReplayUriResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trp__GetReplayUriResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trp__GetReplayUriResponse(struct soap *soap, const char *URL, _trp__GetReplayUriResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trp__GetReplayUriResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trp__GetReplayUriResponse(struct soap *soap, _trp__GetReplayUriResponse *p)
+{
+	if (::soap_read__trp__GetReplayUriResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trp__GetReplayUri_DEFINED
+#define SOAP_TYPE__trp__GetReplayUri_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trp__GetReplayUri(struct soap*, const char*, int, const _trp__GetReplayUri *, const char*);
+SOAP_FMAC3 _trp__GetReplayUri * SOAP_FMAC4 soap_in__trp__GetReplayUri(struct soap*, const char*, _trp__GetReplayUri *, const char*);
+SOAP_FMAC1 _trp__GetReplayUri * SOAP_FMAC2 soap_instantiate__trp__GetReplayUri(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trp__GetReplayUri * soap_new__trp__GetReplayUri(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trp__GetReplayUri(soap, n, NULL, NULL, NULL);
+}
+
+inline _trp__GetReplayUri * soap_new_req__trp__GetReplayUri(
+	struct soap *soap,
+	tt__StreamSetup *StreamSetup,
+	const std::string& RecordingToken)
+{
+	_trp__GetReplayUri *_p = ::soap_new__trp__GetReplayUri(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trp__GetReplayUri::StreamSetup = StreamSetup;
+		_p->_trp__GetReplayUri::RecordingToken = RecordingToken;
+	}
+	return _p;
+}
+
+inline _trp__GetReplayUri * soap_new_set__trp__GetReplayUri(
+	struct soap *soap,
+	tt__StreamSetup *StreamSetup,
+	const std::string& RecordingToken)
+{
+	_trp__GetReplayUri *_p = ::soap_new__trp__GetReplayUri(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trp__GetReplayUri::StreamSetup = StreamSetup;
+		_p->_trp__GetReplayUri::RecordingToken = RecordingToken;
+	}
+	return _p;
+}
+
+inline int soap_write__trp__GetReplayUri(struct soap *soap, _trp__GetReplayUri const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:GetReplayUri", p->soap_type() == SOAP_TYPE__trp__GetReplayUri ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trp__GetReplayUri(struct soap *soap, const char *URL, _trp__GetReplayUri const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:GetReplayUri", p->soap_type() == SOAP_TYPE__trp__GetReplayUri ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trp__GetReplayUri(struct soap *soap, const char *URL, _trp__GetReplayUri const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:GetReplayUri", p->soap_type() == SOAP_TYPE__trp__GetReplayUri ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trp__GetReplayUri(struct soap *soap, const char *URL, _trp__GetReplayUri const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:GetReplayUri", p->soap_type() == SOAP_TYPE__trp__GetReplayUri ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trp__GetReplayUri * SOAP_FMAC4 soap_get__trp__GetReplayUri(struct soap*, _trp__GetReplayUri *, const char*, const char*);
+
+inline int soap_read__trp__GetReplayUri(struct soap *soap, _trp__GetReplayUri *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trp__GetReplayUri(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trp__GetReplayUri(struct soap *soap, const char *URL, _trp__GetReplayUri *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trp__GetReplayUri(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trp__GetReplayUri(struct soap *soap, _trp__GetReplayUri *p)
+{
+	if (::soap_read__trp__GetReplayUri(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trp__GetServiceCapabilitiesResponse_DEFINED
+#define SOAP_TYPE__trp__GetServiceCapabilitiesResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trp__GetServiceCapabilitiesResponse(struct soap*, const char*, int, const _trp__GetServiceCapabilitiesResponse *, const char*);
+SOAP_FMAC3 _trp__GetServiceCapabilitiesResponse * SOAP_FMAC4 soap_in__trp__GetServiceCapabilitiesResponse(struct soap*, const char*, _trp__GetServiceCapabilitiesResponse *, const char*);
+SOAP_FMAC1 _trp__GetServiceCapabilitiesResponse * SOAP_FMAC2 soap_instantiate__trp__GetServiceCapabilitiesResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trp__GetServiceCapabilitiesResponse * soap_new__trp__GetServiceCapabilitiesResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trp__GetServiceCapabilitiesResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _trp__GetServiceCapabilitiesResponse * soap_new_req__trp__GetServiceCapabilitiesResponse(
+	struct soap *soap,
+	trp__Capabilities *Capabilities)
+{
+	_trp__GetServiceCapabilitiesResponse *_p = ::soap_new__trp__GetServiceCapabilitiesResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trp__GetServiceCapabilitiesResponse::Capabilities = Capabilities;
+	}
+	return _p;
+}
+
+inline _trp__GetServiceCapabilitiesResponse * soap_new_set__trp__GetServiceCapabilitiesResponse(
+	struct soap *soap,
+	trp__Capabilities *Capabilities)
+{
+	_trp__GetServiceCapabilitiesResponse *_p = ::soap_new__trp__GetServiceCapabilitiesResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trp__GetServiceCapabilitiesResponse::Capabilities = Capabilities;
+	}
+	return _p;
+}
+
+inline int soap_write__trp__GetServiceCapabilitiesResponse(struct soap *soap, _trp__GetServiceCapabilitiesResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:GetServiceCapabilitiesResponse", p->soap_type() == SOAP_TYPE__trp__GetServiceCapabilitiesResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trp__GetServiceCapabilitiesResponse(struct soap *soap, const char *URL, _trp__GetServiceCapabilitiesResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:GetServiceCapabilitiesResponse", p->soap_type() == SOAP_TYPE__trp__GetServiceCapabilitiesResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trp__GetServiceCapabilitiesResponse(struct soap *soap, const char *URL, _trp__GetServiceCapabilitiesResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:GetServiceCapabilitiesResponse", p->soap_type() == SOAP_TYPE__trp__GetServiceCapabilitiesResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trp__GetServiceCapabilitiesResponse(struct soap *soap, const char *URL, _trp__GetServiceCapabilitiesResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:GetServiceCapabilitiesResponse", p->soap_type() == SOAP_TYPE__trp__GetServiceCapabilitiesResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trp__GetServiceCapabilitiesResponse * SOAP_FMAC4 soap_get__trp__GetServiceCapabilitiesResponse(struct soap*, _trp__GetServiceCapabilitiesResponse *, const char*, const char*);
+
+inline int soap_read__trp__GetServiceCapabilitiesResponse(struct soap *soap, _trp__GetServiceCapabilitiesResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trp__GetServiceCapabilitiesResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trp__GetServiceCapabilitiesResponse(struct soap *soap, const char *URL, _trp__GetServiceCapabilitiesResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trp__GetServiceCapabilitiesResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trp__GetServiceCapabilitiesResponse(struct soap *soap, _trp__GetServiceCapabilitiesResponse *p)
+{
+	if (::soap_read__trp__GetServiceCapabilitiesResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trp__GetServiceCapabilities_DEFINED
+#define SOAP_TYPE__trp__GetServiceCapabilities_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trp__GetServiceCapabilities(struct soap*, const char*, int, const _trp__GetServiceCapabilities *, const char*);
+SOAP_FMAC3 _trp__GetServiceCapabilities * SOAP_FMAC4 soap_in__trp__GetServiceCapabilities(struct soap*, const char*, _trp__GetServiceCapabilities *, const char*);
+SOAP_FMAC1 _trp__GetServiceCapabilities * SOAP_FMAC2 soap_instantiate__trp__GetServiceCapabilities(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trp__GetServiceCapabilities * soap_new__trp__GetServiceCapabilities(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trp__GetServiceCapabilities(soap, n, NULL, NULL, NULL);
+}
+
+inline _trp__GetServiceCapabilities * soap_new_req__trp__GetServiceCapabilities(
+	struct soap *soap)
+{
+	_trp__GetServiceCapabilities *_p = ::soap_new__trp__GetServiceCapabilities(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline _trp__GetServiceCapabilities * soap_new_set__trp__GetServiceCapabilities(
+	struct soap *soap)
+{
+	_trp__GetServiceCapabilities *_p = ::soap_new__trp__GetServiceCapabilities(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline int soap_write__trp__GetServiceCapabilities(struct soap *soap, _trp__GetServiceCapabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:GetServiceCapabilities", p->soap_type() == SOAP_TYPE__trp__GetServiceCapabilities ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trp__GetServiceCapabilities(struct soap *soap, const char *URL, _trp__GetServiceCapabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:GetServiceCapabilities", p->soap_type() == SOAP_TYPE__trp__GetServiceCapabilities ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trp__GetServiceCapabilities(struct soap *soap, const char *URL, _trp__GetServiceCapabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:GetServiceCapabilities", p->soap_type() == SOAP_TYPE__trp__GetServiceCapabilities ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trp__GetServiceCapabilities(struct soap *soap, const char *URL, _trp__GetServiceCapabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:GetServiceCapabilities", p->soap_type() == SOAP_TYPE__trp__GetServiceCapabilities ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trp__GetServiceCapabilities * SOAP_FMAC4 soap_get__trp__GetServiceCapabilities(struct soap*, _trp__GetServiceCapabilities *, const char*, const char*);
+
+inline int soap_read__trp__GetServiceCapabilities(struct soap *soap, _trp__GetServiceCapabilities *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trp__GetServiceCapabilities(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trp__GetServiceCapabilities(struct soap *soap, const char *URL, _trp__GetServiceCapabilities *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trp__GetServiceCapabilities(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trp__GetServiceCapabilities(struct soap *soap, _trp__GetServiceCapabilities *p)
+{
+	if (::soap_read__trp__GetServiceCapabilities(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE_trp__Capabilities_DEFINED
+#define SOAP_TYPE_trp__Capabilities_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_trp__Capabilities(struct soap*, const char*, int, const trp__Capabilities *, const char*);
+SOAP_FMAC3 trp__Capabilities * SOAP_FMAC4 soap_in_trp__Capabilities(struct soap*, const char*, trp__Capabilities *, const char*);
+SOAP_FMAC1 trp__Capabilities * SOAP_FMAC2 soap_instantiate_trp__Capabilities(struct soap*, int, const char*, const char*, size_t*);
+
+inline trp__Capabilities * soap_new_trp__Capabilities(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_trp__Capabilities(soap, n, NULL, NULL, NULL);
+}
+
+inline trp__Capabilities * soap_new_req_trp__Capabilities(
+	struct soap *soap)
+{
+	trp__Capabilities *_p = ::soap_new_trp__Capabilities(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline trp__Capabilities * soap_new_set_trp__Capabilities(
+	struct soap *soap,
+	const std::vector<char *> & __any,
+	bool *ReversePlayback,
+	std::string *SessionTimeoutRange,
+	bool *RTP_USCORERTSP_USCORETCP,
+	std::string *RTSPWebSocketUri,
+	char *__anyAttribute,
+	char *__item__1)
+{
+	trp__Capabilities *_p = ::soap_new_trp__Capabilities(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->trp__Capabilities::__any = __any;
+		_p->trp__Capabilities::ReversePlayback = ReversePlayback;
+		_p->trp__Capabilities::SessionTimeoutRange = SessionTimeoutRange;
+		_p->trp__Capabilities::RTP_USCORERTSP_USCORETCP = RTP_USCORERTSP_USCORETCP;
+		_p->trp__Capabilities::RTSPWebSocketUri = RTSPWebSocketUri;
+		_p->trp__Capabilities::__anyAttribute = __anyAttribute;
+		_p->xsd__anyType::__item = __item__1;
+	}
+	return _p;
+}
+
+inline int soap_write_trp__Capabilities(struct soap *soap, trp__Capabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:Capabilities", p->soap_type() == SOAP_TYPE_trp__Capabilities ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT_trp__Capabilities(struct soap *soap, const char *URL, trp__Capabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:Capabilities", p->soap_type() == SOAP_TYPE_trp__Capabilities ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH_trp__Capabilities(struct soap *soap, const char *URL, trp__Capabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:Capabilities", p->soap_type() == SOAP_TYPE_trp__Capabilities ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send_trp__Capabilities(struct soap *soap, const char *URL, trp__Capabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trp:Capabilities", p->soap_type() == SOAP_TYPE_trp__Capabilities ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 trp__Capabilities * SOAP_FMAC4 soap_get_trp__Capabilities(struct soap*, trp__Capabilities *, const char*, const char*);
+
+inline int soap_read_trp__Capabilities(struct soap *soap, trp__Capabilities *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get_trp__Capabilities(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET_trp__Capabilities(struct soap *soap, const char *URL, trp__Capabilities *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read_trp__Capabilities(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv_trp__Capabilities(struct soap *soap, trp__Capabilities *p)
+{
+	if (::soap_read_trp__Capabilities(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__OverrideSegmentDurationResponse_DEFINED
+#define SOAP_TYPE__trc__OverrideSegmentDurationResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__OverrideSegmentDurationResponse(struct soap*, const char*, int, const _trc__OverrideSegmentDurationResponse *, const char*);
+SOAP_FMAC3 _trc__OverrideSegmentDurationResponse * SOAP_FMAC4 soap_in__trc__OverrideSegmentDurationResponse(struct soap*, const char*, _trc__OverrideSegmentDurationResponse *, const char*);
+SOAP_FMAC1 _trc__OverrideSegmentDurationResponse * SOAP_FMAC2 soap_instantiate__trc__OverrideSegmentDurationResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__OverrideSegmentDurationResponse * soap_new__trc__OverrideSegmentDurationResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__OverrideSegmentDurationResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__OverrideSegmentDurationResponse * soap_new_req__trc__OverrideSegmentDurationResponse(
+	struct soap *soap)
+{
+	_trc__OverrideSegmentDurationResponse *_p = ::soap_new__trc__OverrideSegmentDurationResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline _trc__OverrideSegmentDurationResponse * soap_new_set__trc__OverrideSegmentDurationResponse(
+	struct soap *soap)
+{
+	_trc__OverrideSegmentDurationResponse *_p = ::soap_new__trc__OverrideSegmentDurationResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline int soap_write__trc__OverrideSegmentDurationResponse(struct soap *soap, _trc__OverrideSegmentDurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:OverrideSegmentDurationResponse", p->soap_type() == SOAP_TYPE__trc__OverrideSegmentDurationResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__OverrideSegmentDurationResponse(struct soap *soap, const char *URL, _trc__OverrideSegmentDurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:OverrideSegmentDurationResponse", p->soap_type() == SOAP_TYPE__trc__OverrideSegmentDurationResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__OverrideSegmentDurationResponse(struct soap *soap, const char *URL, _trc__OverrideSegmentDurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:OverrideSegmentDurationResponse", p->soap_type() == SOAP_TYPE__trc__OverrideSegmentDurationResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__OverrideSegmentDurationResponse(struct soap *soap, const char *URL, _trc__OverrideSegmentDurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:OverrideSegmentDurationResponse", p->soap_type() == SOAP_TYPE__trc__OverrideSegmentDurationResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__OverrideSegmentDurationResponse * SOAP_FMAC4 soap_get__trc__OverrideSegmentDurationResponse(struct soap*, _trc__OverrideSegmentDurationResponse *, const char*, const char*);
+
+inline int soap_read__trc__OverrideSegmentDurationResponse(struct soap *soap, _trc__OverrideSegmentDurationResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__OverrideSegmentDurationResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__OverrideSegmentDurationResponse(struct soap *soap, const char *URL, _trc__OverrideSegmentDurationResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__OverrideSegmentDurationResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__OverrideSegmentDurationResponse(struct soap *soap, _trc__OverrideSegmentDurationResponse *p)
+{
+	if (::soap_read__trc__OverrideSegmentDurationResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__OverrideSegmentDuration_DEFINED
+#define SOAP_TYPE__trc__OverrideSegmentDuration_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__OverrideSegmentDuration(struct soap*, const char*, int, const _trc__OverrideSegmentDuration *, const char*);
+SOAP_FMAC3 _trc__OverrideSegmentDuration * SOAP_FMAC4 soap_in__trc__OverrideSegmentDuration(struct soap*, const char*, _trc__OverrideSegmentDuration *, const char*);
+SOAP_FMAC1 _trc__OverrideSegmentDuration * SOAP_FMAC2 soap_instantiate__trc__OverrideSegmentDuration(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__OverrideSegmentDuration * soap_new__trc__OverrideSegmentDuration(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__OverrideSegmentDuration(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__OverrideSegmentDuration * soap_new_req__trc__OverrideSegmentDuration(
+	struct soap *soap,
+	const std::string& TargetSegmentDuration,
+	const std::string& Expiration,
+	const std::string& RecordingConfiguration)
+{
+	_trc__OverrideSegmentDuration *_p = ::soap_new__trc__OverrideSegmentDuration(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__OverrideSegmentDuration::TargetSegmentDuration = TargetSegmentDuration;
+		_p->_trc__OverrideSegmentDuration::Expiration = Expiration;
+		_p->_trc__OverrideSegmentDuration::RecordingConfiguration = RecordingConfiguration;
+	}
+	return _p;
+}
+
+inline _trc__OverrideSegmentDuration * soap_new_set__trc__OverrideSegmentDuration(
+	struct soap *soap,
+	const std::string& TargetSegmentDuration,
+	const std::string& Expiration,
+	const std::string& RecordingConfiguration)
+{
+	_trc__OverrideSegmentDuration *_p = ::soap_new__trc__OverrideSegmentDuration(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__OverrideSegmentDuration::TargetSegmentDuration = TargetSegmentDuration;
+		_p->_trc__OverrideSegmentDuration::Expiration = Expiration;
+		_p->_trc__OverrideSegmentDuration::RecordingConfiguration = RecordingConfiguration;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__OverrideSegmentDuration(struct soap *soap, _trc__OverrideSegmentDuration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:OverrideSegmentDuration", p->soap_type() == SOAP_TYPE__trc__OverrideSegmentDuration ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__OverrideSegmentDuration(struct soap *soap, const char *URL, _trc__OverrideSegmentDuration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:OverrideSegmentDuration", p->soap_type() == SOAP_TYPE__trc__OverrideSegmentDuration ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__OverrideSegmentDuration(struct soap *soap, const char *URL, _trc__OverrideSegmentDuration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:OverrideSegmentDuration", p->soap_type() == SOAP_TYPE__trc__OverrideSegmentDuration ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__OverrideSegmentDuration(struct soap *soap, const char *URL, _trc__OverrideSegmentDuration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:OverrideSegmentDuration", p->soap_type() == SOAP_TYPE__trc__OverrideSegmentDuration ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__OverrideSegmentDuration * SOAP_FMAC4 soap_get__trc__OverrideSegmentDuration(struct soap*, _trc__OverrideSegmentDuration *, const char*, const char*);
+
+inline int soap_read__trc__OverrideSegmentDuration(struct soap *soap, _trc__OverrideSegmentDuration *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__OverrideSegmentDuration(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__OverrideSegmentDuration(struct soap *soap, const char *URL, _trc__OverrideSegmentDuration *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__OverrideSegmentDuration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__OverrideSegmentDuration(struct soap *soap, _trc__OverrideSegmentDuration *p)
+{
+	if (::soap_read__trc__OverrideSegmentDuration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__GetExportRecordedDataStateResponse_DEFINED
+#define SOAP_TYPE__trc__GetExportRecordedDataStateResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__GetExportRecordedDataStateResponse(struct soap*, const char*, int, const _trc__GetExportRecordedDataStateResponse *, const char*);
+SOAP_FMAC3 _trc__GetExportRecordedDataStateResponse * SOAP_FMAC4 soap_in__trc__GetExportRecordedDataStateResponse(struct soap*, const char*, _trc__GetExportRecordedDataStateResponse *, const char*);
+SOAP_FMAC1 _trc__GetExportRecordedDataStateResponse * SOAP_FMAC2 soap_instantiate__trc__GetExportRecordedDataStateResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__GetExportRecordedDataStateResponse * soap_new__trc__GetExportRecordedDataStateResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__GetExportRecordedDataStateResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__GetExportRecordedDataStateResponse * soap_new_req__trc__GetExportRecordedDataStateResponse(
+	struct soap *soap,
+	float Progress,
+	tt__ArrayOfFileProgress *FileProgressStatus)
+{
+	_trc__GetExportRecordedDataStateResponse *_p = ::soap_new__trc__GetExportRecordedDataStateResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__GetExportRecordedDataStateResponse::Progress = Progress;
+		_p->_trc__GetExportRecordedDataStateResponse::FileProgressStatus = FileProgressStatus;
+	}
+	return _p;
+}
+
+inline _trc__GetExportRecordedDataStateResponse * soap_new_set__trc__GetExportRecordedDataStateResponse(
+	struct soap *soap,
+	float Progress,
+	tt__ArrayOfFileProgress *FileProgressStatus,
+	const std::vector<char *> & __any)
+{
+	_trc__GetExportRecordedDataStateResponse *_p = ::soap_new__trc__GetExportRecordedDataStateResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__GetExportRecordedDataStateResponse::Progress = Progress;
+		_p->_trc__GetExportRecordedDataStateResponse::FileProgressStatus = FileProgressStatus;
+		_p->_trc__GetExportRecordedDataStateResponse::__any = __any;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__GetExportRecordedDataStateResponse(struct soap *soap, _trc__GetExportRecordedDataStateResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetExportRecordedDataStateResponse", p->soap_type() == SOAP_TYPE__trc__GetExportRecordedDataStateResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__GetExportRecordedDataStateResponse(struct soap *soap, const char *URL, _trc__GetExportRecordedDataStateResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetExportRecordedDataStateResponse", p->soap_type() == SOAP_TYPE__trc__GetExportRecordedDataStateResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__GetExportRecordedDataStateResponse(struct soap *soap, const char *URL, _trc__GetExportRecordedDataStateResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetExportRecordedDataStateResponse", p->soap_type() == SOAP_TYPE__trc__GetExportRecordedDataStateResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__GetExportRecordedDataStateResponse(struct soap *soap, const char *URL, _trc__GetExportRecordedDataStateResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetExportRecordedDataStateResponse", p->soap_type() == SOAP_TYPE__trc__GetExportRecordedDataStateResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__GetExportRecordedDataStateResponse * SOAP_FMAC4 soap_get__trc__GetExportRecordedDataStateResponse(struct soap*, _trc__GetExportRecordedDataStateResponse *, const char*, const char*);
+
+inline int soap_read__trc__GetExportRecordedDataStateResponse(struct soap *soap, _trc__GetExportRecordedDataStateResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__GetExportRecordedDataStateResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__GetExportRecordedDataStateResponse(struct soap *soap, const char *URL, _trc__GetExportRecordedDataStateResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__GetExportRecordedDataStateResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__GetExportRecordedDataStateResponse(struct soap *soap, _trc__GetExportRecordedDataStateResponse *p)
+{
+	if (::soap_read__trc__GetExportRecordedDataStateResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__GetExportRecordedDataState_DEFINED
+#define SOAP_TYPE__trc__GetExportRecordedDataState_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__GetExportRecordedDataState(struct soap*, const char*, int, const _trc__GetExportRecordedDataState *, const char*);
+SOAP_FMAC3 _trc__GetExportRecordedDataState * SOAP_FMAC4 soap_in__trc__GetExportRecordedDataState(struct soap*, const char*, _trc__GetExportRecordedDataState *, const char*);
+SOAP_FMAC1 _trc__GetExportRecordedDataState * SOAP_FMAC2 soap_instantiate__trc__GetExportRecordedDataState(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__GetExportRecordedDataState * soap_new__trc__GetExportRecordedDataState(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__GetExportRecordedDataState(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__GetExportRecordedDataState * soap_new_req__trc__GetExportRecordedDataState(
+	struct soap *soap,
+	const std::string& OperationToken)
+{
+	_trc__GetExportRecordedDataState *_p = ::soap_new__trc__GetExportRecordedDataState(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__GetExportRecordedDataState::OperationToken = OperationToken;
+	}
+	return _p;
+}
+
+inline _trc__GetExportRecordedDataState * soap_new_set__trc__GetExportRecordedDataState(
+	struct soap *soap,
+	const std::string& OperationToken)
+{
+	_trc__GetExportRecordedDataState *_p = ::soap_new__trc__GetExportRecordedDataState(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__GetExportRecordedDataState::OperationToken = OperationToken;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__GetExportRecordedDataState(struct soap *soap, _trc__GetExportRecordedDataState const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetExportRecordedDataState", p->soap_type() == SOAP_TYPE__trc__GetExportRecordedDataState ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__GetExportRecordedDataState(struct soap *soap, const char *URL, _trc__GetExportRecordedDataState const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetExportRecordedDataState", p->soap_type() == SOAP_TYPE__trc__GetExportRecordedDataState ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__GetExportRecordedDataState(struct soap *soap, const char *URL, _trc__GetExportRecordedDataState const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetExportRecordedDataState", p->soap_type() == SOAP_TYPE__trc__GetExportRecordedDataState ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__GetExportRecordedDataState(struct soap *soap, const char *URL, _trc__GetExportRecordedDataState const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetExportRecordedDataState", p->soap_type() == SOAP_TYPE__trc__GetExportRecordedDataState ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__GetExportRecordedDataState * SOAP_FMAC4 soap_get__trc__GetExportRecordedDataState(struct soap*, _trc__GetExportRecordedDataState *, const char*, const char*);
+
+inline int soap_read__trc__GetExportRecordedDataState(struct soap *soap, _trc__GetExportRecordedDataState *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__GetExportRecordedDataState(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__GetExportRecordedDataState(struct soap *soap, const char *URL, _trc__GetExportRecordedDataState *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__GetExportRecordedDataState(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__GetExportRecordedDataState(struct soap *soap, _trc__GetExportRecordedDataState *p)
+{
+	if (::soap_read__trc__GetExportRecordedDataState(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__StopExportRecordedDataResponse_DEFINED
+#define SOAP_TYPE__trc__StopExportRecordedDataResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__StopExportRecordedDataResponse(struct soap*, const char*, int, const _trc__StopExportRecordedDataResponse *, const char*);
+SOAP_FMAC3 _trc__StopExportRecordedDataResponse * SOAP_FMAC4 soap_in__trc__StopExportRecordedDataResponse(struct soap*, const char*, _trc__StopExportRecordedDataResponse *, const char*);
+SOAP_FMAC1 _trc__StopExportRecordedDataResponse * SOAP_FMAC2 soap_instantiate__trc__StopExportRecordedDataResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__StopExportRecordedDataResponse * soap_new__trc__StopExportRecordedDataResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__StopExportRecordedDataResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__StopExportRecordedDataResponse * soap_new_req__trc__StopExportRecordedDataResponse(
+	struct soap *soap,
+	float Progress,
+	tt__ArrayOfFileProgress *FileProgressStatus)
+{
+	_trc__StopExportRecordedDataResponse *_p = ::soap_new__trc__StopExportRecordedDataResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__StopExportRecordedDataResponse::Progress = Progress;
+		_p->_trc__StopExportRecordedDataResponse::FileProgressStatus = FileProgressStatus;
+	}
+	return _p;
+}
+
+inline _trc__StopExportRecordedDataResponse * soap_new_set__trc__StopExportRecordedDataResponse(
+	struct soap *soap,
+	float Progress,
+	tt__ArrayOfFileProgress *FileProgressStatus,
+	const std::vector<char *> & __any)
+{
+	_trc__StopExportRecordedDataResponse *_p = ::soap_new__trc__StopExportRecordedDataResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__StopExportRecordedDataResponse::Progress = Progress;
+		_p->_trc__StopExportRecordedDataResponse::FileProgressStatus = FileProgressStatus;
+		_p->_trc__StopExportRecordedDataResponse::__any = __any;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__StopExportRecordedDataResponse(struct soap *soap, _trc__StopExportRecordedDataResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:StopExportRecordedDataResponse", p->soap_type() == SOAP_TYPE__trc__StopExportRecordedDataResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__StopExportRecordedDataResponse(struct soap *soap, const char *URL, _trc__StopExportRecordedDataResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:StopExportRecordedDataResponse", p->soap_type() == SOAP_TYPE__trc__StopExportRecordedDataResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__StopExportRecordedDataResponse(struct soap *soap, const char *URL, _trc__StopExportRecordedDataResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:StopExportRecordedDataResponse", p->soap_type() == SOAP_TYPE__trc__StopExportRecordedDataResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__StopExportRecordedDataResponse(struct soap *soap, const char *URL, _trc__StopExportRecordedDataResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:StopExportRecordedDataResponse", p->soap_type() == SOAP_TYPE__trc__StopExportRecordedDataResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__StopExportRecordedDataResponse * SOAP_FMAC4 soap_get__trc__StopExportRecordedDataResponse(struct soap*, _trc__StopExportRecordedDataResponse *, const char*, const char*);
+
+inline int soap_read__trc__StopExportRecordedDataResponse(struct soap *soap, _trc__StopExportRecordedDataResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__StopExportRecordedDataResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__StopExportRecordedDataResponse(struct soap *soap, const char *URL, _trc__StopExportRecordedDataResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__StopExportRecordedDataResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__StopExportRecordedDataResponse(struct soap *soap, _trc__StopExportRecordedDataResponse *p)
+{
+	if (::soap_read__trc__StopExportRecordedDataResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__StopExportRecordedData_DEFINED
+#define SOAP_TYPE__trc__StopExportRecordedData_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__StopExportRecordedData(struct soap*, const char*, int, const _trc__StopExportRecordedData *, const char*);
+SOAP_FMAC3 _trc__StopExportRecordedData * SOAP_FMAC4 soap_in__trc__StopExportRecordedData(struct soap*, const char*, _trc__StopExportRecordedData *, const char*);
+SOAP_FMAC1 _trc__StopExportRecordedData * SOAP_FMAC2 soap_instantiate__trc__StopExportRecordedData(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__StopExportRecordedData * soap_new__trc__StopExportRecordedData(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__StopExportRecordedData(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__StopExportRecordedData * soap_new_req__trc__StopExportRecordedData(
+	struct soap *soap,
+	const std::string& OperationToken)
+{
+	_trc__StopExportRecordedData *_p = ::soap_new__trc__StopExportRecordedData(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__StopExportRecordedData::OperationToken = OperationToken;
+	}
+	return _p;
+}
+
+inline _trc__StopExportRecordedData * soap_new_set__trc__StopExportRecordedData(
+	struct soap *soap,
+	const std::string& OperationToken)
+{
+	_trc__StopExportRecordedData *_p = ::soap_new__trc__StopExportRecordedData(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__StopExportRecordedData::OperationToken = OperationToken;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__StopExportRecordedData(struct soap *soap, _trc__StopExportRecordedData const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:StopExportRecordedData", p->soap_type() == SOAP_TYPE__trc__StopExportRecordedData ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__StopExportRecordedData(struct soap *soap, const char *URL, _trc__StopExportRecordedData const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:StopExportRecordedData", p->soap_type() == SOAP_TYPE__trc__StopExportRecordedData ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__StopExportRecordedData(struct soap *soap, const char *URL, _trc__StopExportRecordedData const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:StopExportRecordedData", p->soap_type() == SOAP_TYPE__trc__StopExportRecordedData ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__StopExportRecordedData(struct soap *soap, const char *URL, _trc__StopExportRecordedData const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:StopExportRecordedData", p->soap_type() == SOAP_TYPE__trc__StopExportRecordedData ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__StopExportRecordedData * SOAP_FMAC4 soap_get__trc__StopExportRecordedData(struct soap*, _trc__StopExportRecordedData *, const char*, const char*);
+
+inline int soap_read__trc__StopExportRecordedData(struct soap *soap, _trc__StopExportRecordedData *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__StopExportRecordedData(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__StopExportRecordedData(struct soap *soap, const char *URL, _trc__StopExportRecordedData *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__StopExportRecordedData(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__StopExportRecordedData(struct soap *soap, _trc__StopExportRecordedData *p)
+{
+	if (::soap_read__trc__StopExportRecordedData(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__ExportRecordedDataResponse_DEFINED
+#define SOAP_TYPE__trc__ExportRecordedDataResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__ExportRecordedDataResponse(struct soap*, const char*, int, const _trc__ExportRecordedDataResponse *, const char*);
+SOAP_FMAC3 _trc__ExportRecordedDataResponse * SOAP_FMAC4 soap_in__trc__ExportRecordedDataResponse(struct soap*, const char*, _trc__ExportRecordedDataResponse *, const char*);
+SOAP_FMAC1 _trc__ExportRecordedDataResponse * SOAP_FMAC2 soap_instantiate__trc__ExportRecordedDataResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__ExportRecordedDataResponse * soap_new__trc__ExportRecordedDataResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__ExportRecordedDataResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__ExportRecordedDataResponse * soap_new_req__trc__ExportRecordedDataResponse(
+	struct soap *soap,
+	const std::string& OperationToken)
+{
+	_trc__ExportRecordedDataResponse *_p = ::soap_new__trc__ExportRecordedDataResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__ExportRecordedDataResponse::OperationToken = OperationToken;
+	}
+	return _p;
+}
+
+inline _trc__ExportRecordedDataResponse * soap_new_set__trc__ExportRecordedDataResponse(
+	struct soap *soap,
+	const std::string& OperationToken,
+	const std::vector<std::string> & FileNames,
+	_trc__ExportRecordedDataResponse_Extension *Extension)
+{
+	_trc__ExportRecordedDataResponse *_p = ::soap_new__trc__ExportRecordedDataResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__ExportRecordedDataResponse::OperationToken = OperationToken;
+		_p->_trc__ExportRecordedDataResponse::FileNames = FileNames;
+		_p->_trc__ExportRecordedDataResponse::Extension = Extension;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__ExportRecordedDataResponse(struct soap *soap, _trc__ExportRecordedDataResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:ExportRecordedDataResponse", p->soap_type() == SOAP_TYPE__trc__ExportRecordedDataResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__ExportRecordedDataResponse(struct soap *soap, const char *URL, _trc__ExportRecordedDataResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:ExportRecordedDataResponse", p->soap_type() == SOAP_TYPE__trc__ExportRecordedDataResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__ExportRecordedDataResponse(struct soap *soap, const char *URL, _trc__ExportRecordedDataResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:ExportRecordedDataResponse", p->soap_type() == SOAP_TYPE__trc__ExportRecordedDataResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__ExportRecordedDataResponse(struct soap *soap, const char *URL, _trc__ExportRecordedDataResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:ExportRecordedDataResponse", p->soap_type() == SOAP_TYPE__trc__ExportRecordedDataResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__ExportRecordedDataResponse * SOAP_FMAC4 soap_get__trc__ExportRecordedDataResponse(struct soap*, _trc__ExportRecordedDataResponse *, const char*, const char*);
+
+inline int soap_read__trc__ExportRecordedDataResponse(struct soap *soap, _trc__ExportRecordedDataResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__ExportRecordedDataResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__ExportRecordedDataResponse(struct soap *soap, const char *URL, _trc__ExportRecordedDataResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__ExportRecordedDataResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__ExportRecordedDataResponse(struct soap *soap, _trc__ExportRecordedDataResponse *p)
+{
+	if (::soap_read__trc__ExportRecordedDataResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__ExportRecordedData_DEFINED
+#define SOAP_TYPE__trc__ExportRecordedData_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__ExportRecordedData(struct soap*, const char*, int, const _trc__ExportRecordedData *, const char*);
+SOAP_FMAC3 _trc__ExportRecordedData * SOAP_FMAC4 soap_in__trc__ExportRecordedData(struct soap*, const char*, _trc__ExportRecordedData *, const char*);
+SOAP_FMAC1 _trc__ExportRecordedData * SOAP_FMAC2 soap_instantiate__trc__ExportRecordedData(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__ExportRecordedData * soap_new__trc__ExportRecordedData(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__ExportRecordedData(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__ExportRecordedData * soap_new_req__trc__ExportRecordedData(
+	struct soap *soap,
+	tt__SearchScope *SearchScope,
+	const std::string& FileFormat,
+	tt__StorageReferencePath *StorageDestination)
+{
+	_trc__ExportRecordedData *_p = ::soap_new__trc__ExportRecordedData(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__ExportRecordedData::SearchScope = SearchScope;
+		_p->_trc__ExportRecordedData::FileFormat = FileFormat;
+		_p->_trc__ExportRecordedData::StorageDestination = StorageDestination;
+	}
+	return _p;
+}
+
+inline _trc__ExportRecordedData * soap_new_set__trc__ExportRecordedData(
+	struct soap *soap,
+	time_t *StartPoint,
+	time_t *EndPoint,
+	tt__SearchScope *SearchScope,
+	const std::string& FileFormat,
+	tt__StorageReferencePath *StorageDestination)
+{
+	_trc__ExportRecordedData *_p = ::soap_new__trc__ExportRecordedData(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__ExportRecordedData::StartPoint = StartPoint;
+		_p->_trc__ExportRecordedData::EndPoint = EndPoint;
+		_p->_trc__ExportRecordedData::SearchScope = SearchScope;
+		_p->_trc__ExportRecordedData::FileFormat = FileFormat;
+		_p->_trc__ExportRecordedData::StorageDestination = StorageDestination;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__ExportRecordedData(struct soap *soap, _trc__ExportRecordedData const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:ExportRecordedData", p->soap_type() == SOAP_TYPE__trc__ExportRecordedData ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__ExportRecordedData(struct soap *soap, const char *URL, _trc__ExportRecordedData const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:ExportRecordedData", p->soap_type() == SOAP_TYPE__trc__ExportRecordedData ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__ExportRecordedData(struct soap *soap, const char *URL, _trc__ExportRecordedData const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:ExportRecordedData", p->soap_type() == SOAP_TYPE__trc__ExportRecordedData ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__ExportRecordedData(struct soap *soap, const char *URL, _trc__ExportRecordedData const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:ExportRecordedData", p->soap_type() == SOAP_TYPE__trc__ExportRecordedData ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__ExportRecordedData * SOAP_FMAC4 soap_get__trc__ExportRecordedData(struct soap*, _trc__ExportRecordedData *, const char*, const char*);
+
+inline int soap_read__trc__ExportRecordedData(struct soap *soap, _trc__ExportRecordedData *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__ExportRecordedData(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__ExportRecordedData(struct soap *soap, const char *URL, _trc__ExportRecordedData *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__ExportRecordedData(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__ExportRecordedData(struct soap *soap, _trc__ExportRecordedData *p)
+{
+	if (::soap_read__trc__ExportRecordedData(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__GetRecordingOptionsResponse_DEFINED
+#define SOAP_TYPE__trc__GetRecordingOptionsResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__GetRecordingOptionsResponse(struct soap*, const char*, int, const _trc__GetRecordingOptionsResponse *, const char*);
+SOAP_FMAC3 _trc__GetRecordingOptionsResponse * SOAP_FMAC4 soap_in__trc__GetRecordingOptionsResponse(struct soap*, const char*, _trc__GetRecordingOptionsResponse *, const char*);
+SOAP_FMAC1 _trc__GetRecordingOptionsResponse * SOAP_FMAC2 soap_instantiate__trc__GetRecordingOptionsResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__GetRecordingOptionsResponse * soap_new__trc__GetRecordingOptionsResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__GetRecordingOptionsResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__GetRecordingOptionsResponse * soap_new_req__trc__GetRecordingOptionsResponse(
+	struct soap *soap,
+	trc__RecordingOptions *Options)
+{
+	_trc__GetRecordingOptionsResponse *_p = ::soap_new__trc__GetRecordingOptionsResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__GetRecordingOptionsResponse::Options = Options;
+	}
+	return _p;
+}
+
+inline _trc__GetRecordingOptionsResponse * soap_new_set__trc__GetRecordingOptionsResponse(
+	struct soap *soap,
+	trc__RecordingOptions *Options)
+{
+	_trc__GetRecordingOptionsResponse *_p = ::soap_new__trc__GetRecordingOptionsResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__GetRecordingOptionsResponse::Options = Options;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__GetRecordingOptionsResponse(struct soap *soap, _trc__GetRecordingOptionsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingOptionsResponse", p->soap_type() == SOAP_TYPE__trc__GetRecordingOptionsResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__GetRecordingOptionsResponse(struct soap *soap, const char *URL, _trc__GetRecordingOptionsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingOptionsResponse", p->soap_type() == SOAP_TYPE__trc__GetRecordingOptionsResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__GetRecordingOptionsResponse(struct soap *soap, const char *URL, _trc__GetRecordingOptionsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingOptionsResponse", p->soap_type() == SOAP_TYPE__trc__GetRecordingOptionsResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__GetRecordingOptionsResponse(struct soap *soap, const char *URL, _trc__GetRecordingOptionsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingOptionsResponse", p->soap_type() == SOAP_TYPE__trc__GetRecordingOptionsResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__GetRecordingOptionsResponse * SOAP_FMAC4 soap_get__trc__GetRecordingOptionsResponse(struct soap*, _trc__GetRecordingOptionsResponse *, const char*, const char*);
+
+inline int soap_read__trc__GetRecordingOptionsResponse(struct soap *soap, _trc__GetRecordingOptionsResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__GetRecordingOptionsResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__GetRecordingOptionsResponse(struct soap *soap, const char *URL, _trc__GetRecordingOptionsResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__GetRecordingOptionsResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__GetRecordingOptionsResponse(struct soap *soap, _trc__GetRecordingOptionsResponse *p)
+{
+	if (::soap_read__trc__GetRecordingOptionsResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__GetRecordingOptions_DEFINED
+#define SOAP_TYPE__trc__GetRecordingOptions_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__GetRecordingOptions(struct soap*, const char*, int, const _trc__GetRecordingOptions *, const char*);
+SOAP_FMAC3 _trc__GetRecordingOptions * SOAP_FMAC4 soap_in__trc__GetRecordingOptions(struct soap*, const char*, _trc__GetRecordingOptions *, const char*);
+SOAP_FMAC1 _trc__GetRecordingOptions * SOAP_FMAC2 soap_instantiate__trc__GetRecordingOptions(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__GetRecordingOptions * soap_new__trc__GetRecordingOptions(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__GetRecordingOptions(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__GetRecordingOptions * soap_new_req__trc__GetRecordingOptions(
+	struct soap *soap,
+	const std::string& RecordingToken)
+{
+	_trc__GetRecordingOptions *_p = ::soap_new__trc__GetRecordingOptions(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__GetRecordingOptions::RecordingToken = RecordingToken;
+	}
+	return _p;
+}
+
+inline _trc__GetRecordingOptions * soap_new_set__trc__GetRecordingOptions(
+	struct soap *soap,
+	const std::string& RecordingToken)
+{
+	_trc__GetRecordingOptions *_p = ::soap_new__trc__GetRecordingOptions(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__GetRecordingOptions::RecordingToken = RecordingToken;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__GetRecordingOptions(struct soap *soap, _trc__GetRecordingOptions const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingOptions", p->soap_type() == SOAP_TYPE__trc__GetRecordingOptions ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__GetRecordingOptions(struct soap *soap, const char *URL, _trc__GetRecordingOptions const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingOptions", p->soap_type() == SOAP_TYPE__trc__GetRecordingOptions ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__GetRecordingOptions(struct soap *soap, const char *URL, _trc__GetRecordingOptions const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingOptions", p->soap_type() == SOAP_TYPE__trc__GetRecordingOptions ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__GetRecordingOptions(struct soap *soap, const char *URL, _trc__GetRecordingOptions const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingOptions", p->soap_type() == SOAP_TYPE__trc__GetRecordingOptions ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__GetRecordingOptions * SOAP_FMAC4 soap_get__trc__GetRecordingOptions(struct soap*, _trc__GetRecordingOptions *, const char*, const char*);
+
+inline int soap_read__trc__GetRecordingOptions(struct soap *soap, _trc__GetRecordingOptions *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__GetRecordingOptions(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__GetRecordingOptions(struct soap *soap, const char *URL, _trc__GetRecordingOptions *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__GetRecordingOptions(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__GetRecordingOptions(struct soap *soap, _trc__GetRecordingOptions *p)
+{
+	if (::soap_read__trc__GetRecordingOptions(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__GetRecordingJobStateResponse_DEFINED
+#define SOAP_TYPE__trc__GetRecordingJobStateResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__GetRecordingJobStateResponse(struct soap*, const char*, int, const _trc__GetRecordingJobStateResponse *, const char*);
+SOAP_FMAC3 _trc__GetRecordingJobStateResponse * SOAP_FMAC4 soap_in__trc__GetRecordingJobStateResponse(struct soap*, const char*, _trc__GetRecordingJobStateResponse *, const char*);
+SOAP_FMAC1 _trc__GetRecordingJobStateResponse * SOAP_FMAC2 soap_instantiate__trc__GetRecordingJobStateResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__GetRecordingJobStateResponse * soap_new__trc__GetRecordingJobStateResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__GetRecordingJobStateResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__GetRecordingJobStateResponse * soap_new_req__trc__GetRecordingJobStateResponse(
+	struct soap *soap,
+	tt__RecordingJobStateInformation *State)
+{
+	_trc__GetRecordingJobStateResponse *_p = ::soap_new__trc__GetRecordingJobStateResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__GetRecordingJobStateResponse::State = State;
+	}
+	return _p;
+}
+
+inline _trc__GetRecordingJobStateResponse * soap_new_set__trc__GetRecordingJobStateResponse(
+	struct soap *soap,
+	tt__RecordingJobStateInformation *State)
+{
+	_trc__GetRecordingJobStateResponse *_p = ::soap_new__trc__GetRecordingJobStateResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__GetRecordingJobStateResponse::State = State;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__GetRecordingJobStateResponse(struct soap *soap, _trc__GetRecordingJobStateResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingJobStateResponse", p->soap_type() == SOAP_TYPE__trc__GetRecordingJobStateResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__GetRecordingJobStateResponse(struct soap *soap, const char *URL, _trc__GetRecordingJobStateResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingJobStateResponse", p->soap_type() == SOAP_TYPE__trc__GetRecordingJobStateResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__GetRecordingJobStateResponse(struct soap *soap, const char *URL, _trc__GetRecordingJobStateResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingJobStateResponse", p->soap_type() == SOAP_TYPE__trc__GetRecordingJobStateResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__GetRecordingJobStateResponse(struct soap *soap, const char *URL, _trc__GetRecordingJobStateResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingJobStateResponse", p->soap_type() == SOAP_TYPE__trc__GetRecordingJobStateResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__GetRecordingJobStateResponse * SOAP_FMAC4 soap_get__trc__GetRecordingJobStateResponse(struct soap*, _trc__GetRecordingJobStateResponse *, const char*, const char*);
+
+inline int soap_read__trc__GetRecordingJobStateResponse(struct soap *soap, _trc__GetRecordingJobStateResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__GetRecordingJobStateResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__GetRecordingJobStateResponse(struct soap *soap, const char *URL, _trc__GetRecordingJobStateResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__GetRecordingJobStateResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__GetRecordingJobStateResponse(struct soap *soap, _trc__GetRecordingJobStateResponse *p)
+{
+	if (::soap_read__trc__GetRecordingJobStateResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__GetRecordingJobState_DEFINED
+#define SOAP_TYPE__trc__GetRecordingJobState_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__GetRecordingJobState(struct soap*, const char*, int, const _trc__GetRecordingJobState *, const char*);
+SOAP_FMAC3 _trc__GetRecordingJobState * SOAP_FMAC4 soap_in__trc__GetRecordingJobState(struct soap*, const char*, _trc__GetRecordingJobState *, const char*);
+SOAP_FMAC1 _trc__GetRecordingJobState * SOAP_FMAC2 soap_instantiate__trc__GetRecordingJobState(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__GetRecordingJobState * soap_new__trc__GetRecordingJobState(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__GetRecordingJobState(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__GetRecordingJobState * soap_new_req__trc__GetRecordingJobState(
+	struct soap *soap,
+	const std::string& JobToken)
+{
+	_trc__GetRecordingJobState *_p = ::soap_new__trc__GetRecordingJobState(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__GetRecordingJobState::JobToken = JobToken;
+	}
+	return _p;
+}
+
+inline _trc__GetRecordingJobState * soap_new_set__trc__GetRecordingJobState(
+	struct soap *soap,
+	const std::string& JobToken)
+{
+	_trc__GetRecordingJobState *_p = ::soap_new__trc__GetRecordingJobState(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__GetRecordingJobState::JobToken = JobToken;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__GetRecordingJobState(struct soap *soap, _trc__GetRecordingJobState const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingJobState", p->soap_type() == SOAP_TYPE__trc__GetRecordingJobState ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__GetRecordingJobState(struct soap *soap, const char *URL, _trc__GetRecordingJobState const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingJobState", p->soap_type() == SOAP_TYPE__trc__GetRecordingJobState ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__GetRecordingJobState(struct soap *soap, const char *URL, _trc__GetRecordingJobState const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingJobState", p->soap_type() == SOAP_TYPE__trc__GetRecordingJobState ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__GetRecordingJobState(struct soap *soap, const char *URL, _trc__GetRecordingJobState const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingJobState", p->soap_type() == SOAP_TYPE__trc__GetRecordingJobState ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__GetRecordingJobState * SOAP_FMAC4 soap_get__trc__GetRecordingJobState(struct soap*, _trc__GetRecordingJobState *, const char*, const char*);
+
+inline int soap_read__trc__GetRecordingJobState(struct soap *soap, _trc__GetRecordingJobState *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__GetRecordingJobState(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__GetRecordingJobState(struct soap *soap, const char *URL, _trc__GetRecordingJobState *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__GetRecordingJobState(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__GetRecordingJobState(struct soap *soap, _trc__GetRecordingJobState *p)
+{
+	if (::soap_read__trc__GetRecordingJobState(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__SetRecordingJobModeResponse_DEFINED
+#define SOAP_TYPE__trc__SetRecordingJobModeResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__SetRecordingJobModeResponse(struct soap*, const char*, int, const _trc__SetRecordingJobModeResponse *, const char*);
+SOAP_FMAC3 _trc__SetRecordingJobModeResponse * SOAP_FMAC4 soap_in__trc__SetRecordingJobModeResponse(struct soap*, const char*, _trc__SetRecordingJobModeResponse *, const char*);
+SOAP_FMAC1 _trc__SetRecordingJobModeResponse * SOAP_FMAC2 soap_instantiate__trc__SetRecordingJobModeResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__SetRecordingJobModeResponse * soap_new__trc__SetRecordingJobModeResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__SetRecordingJobModeResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__SetRecordingJobModeResponse * soap_new_req__trc__SetRecordingJobModeResponse(
+	struct soap *soap)
+{
+	_trc__SetRecordingJobModeResponse *_p = ::soap_new__trc__SetRecordingJobModeResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline _trc__SetRecordingJobModeResponse * soap_new_set__trc__SetRecordingJobModeResponse(
+	struct soap *soap)
+{
+	_trc__SetRecordingJobModeResponse *_p = ::soap_new__trc__SetRecordingJobModeResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline int soap_write__trc__SetRecordingJobModeResponse(struct soap *soap, _trc__SetRecordingJobModeResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:SetRecordingJobModeResponse", p->soap_type() == SOAP_TYPE__trc__SetRecordingJobModeResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__SetRecordingJobModeResponse(struct soap *soap, const char *URL, _trc__SetRecordingJobModeResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:SetRecordingJobModeResponse", p->soap_type() == SOAP_TYPE__trc__SetRecordingJobModeResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__SetRecordingJobModeResponse(struct soap *soap, const char *URL, _trc__SetRecordingJobModeResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:SetRecordingJobModeResponse", p->soap_type() == SOAP_TYPE__trc__SetRecordingJobModeResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__SetRecordingJobModeResponse(struct soap *soap, const char *URL, _trc__SetRecordingJobModeResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:SetRecordingJobModeResponse", p->soap_type() == SOAP_TYPE__trc__SetRecordingJobModeResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__SetRecordingJobModeResponse * SOAP_FMAC4 soap_get__trc__SetRecordingJobModeResponse(struct soap*, _trc__SetRecordingJobModeResponse *, const char*, const char*);
+
+inline int soap_read__trc__SetRecordingJobModeResponse(struct soap *soap, _trc__SetRecordingJobModeResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__SetRecordingJobModeResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__SetRecordingJobModeResponse(struct soap *soap, const char *URL, _trc__SetRecordingJobModeResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__SetRecordingJobModeResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__SetRecordingJobModeResponse(struct soap *soap, _trc__SetRecordingJobModeResponse *p)
+{
+	if (::soap_read__trc__SetRecordingJobModeResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__SetRecordingJobMode_DEFINED
+#define SOAP_TYPE__trc__SetRecordingJobMode_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__SetRecordingJobMode(struct soap*, const char*, int, const _trc__SetRecordingJobMode *, const char*);
+SOAP_FMAC3 _trc__SetRecordingJobMode * SOAP_FMAC4 soap_in__trc__SetRecordingJobMode(struct soap*, const char*, _trc__SetRecordingJobMode *, const char*);
+SOAP_FMAC1 _trc__SetRecordingJobMode * SOAP_FMAC2 soap_instantiate__trc__SetRecordingJobMode(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__SetRecordingJobMode * soap_new__trc__SetRecordingJobMode(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__SetRecordingJobMode(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__SetRecordingJobMode * soap_new_req__trc__SetRecordingJobMode(
+	struct soap *soap,
+	const std::string& JobToken,
+	const std::string& Mode)
+{
+	_trc__SetRecordingJobMode *_p = ::soap_new__trc__SetRecordingJobMode(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__SetRecordingJobMode::JobToken = JobToken;
+		_p->_trc__SetRecordingJobMode::Mode = Mode;
+	}
+	return _p;
+}
+
+inline _trc__SetRecordingJobMode * soap_new_set__trc__SetRecordingJobMode(
+	struct soap *soap,
+	const std::string& JobToken,
+	const std::string& Mode)
+{
+	_trc__SetRecordingJobMode *_p = ::soap_new__trc__SetRecordingJobMode(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__SetRecordingJobMode::JobToken = JobToken;
+		_p->_trc__SetRecordingJobMode::Mode = Mode;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__SetRecordingJobMode(struct soap *soap, _trc__SetRecordingJobMode const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:SetRecordingJobMode", p->soap_type() == SOAP_TYPE__trc__SetRecordingJobMode ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__SetRecordingJobMode(struct soap *soap, const char *URL, _trc__SetRecordingJobMode const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:SetRecordingJobMode", p->soap_type() == SOAP_TYPE__trc__SetRecordingJobMode ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__SetRecordingJobMode(struct soap *soap, const char *URL, _trc__SetRecordingJobMode const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:SetRecordingJobMode", p->soap_type() == SOAP_TYPE__trc__SetRecordingJobMode ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__SetRecordingJobMode(struct soap *soap, const char *URL, _trc__SetRecordingJobMode const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:SetRecordingJobMode", p->soap_type() == SOAP_TYPE__trc__SetRecordingJobMode ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__SetRecordingJobMode * SOAP_FMAC4 soap_get__trc__SetRecordingJobMode(struct soap*, _trc__SetRecordingJobMode *, const char*, const char*);
+
+inline int soap_read__trc__SetRecordingJobMode(struct soap *soap, _trc__SetRecordingJobMode *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__SetRecordingJobMode(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__SetRecordingJobMode(struct soap *soap, const char *URL, _trc__SetRecordingJobMode *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__SetRecordingJobMode(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__SetRecordingJobMode(struct soap *soap, _trc__SetRecordingJobMode *p)
+{
+	if (::soap_read__trc__SetRecordingJobMode(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__GetRecordingJobConfigurationResponse_DEFINED
+#define SOAP_TYPE__trc__GetRecordingJobConfigurationResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__GetRecordingJobConfigurationResponse(struct soap*, const char*, int, const _trc__GetRecordingJobConfigurationResponse *, const char*);
+SOAP_FMAC3 _trc__GetRecordingJobConfigurationResponse * SOAP_FMAC4 soap_in__trc__GetRecordingJobConfigurationResponse(struct soap*, const char*, _trc__GetRecordingJobConfigurationResponse *, const char*);
+SOAP_FMAC1 _trc__GetRecordingJobConfigurationResponse * SOAP_FMAC2 soap_instantiate__trc__GetRecordingJobConfigurationResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__GetRecordingJobConfigurationResponse * soap_new__trc__GetRecordingJobConfigurationResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__GetRecordingJobConfigurationResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__GetRecordingJobConfigurationResponse * soap_new_req__trc__GetRecordingJobConfigurationResponse(
+	struct soap *soap,
+	tt__RecordingJobConfiguration *JobConfiguration)
+{
+	_trc__GetRecordingJobConfigurationResponse *_p = ::soap_new__trc__GetRecordingJobConfigurationResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__GetRecordingJobConfigurationResponse::JobConfiguration = JobConfiguration;
+	}
+	return _p;
+}
+
+inline _trc__GetRecordingJobConfigurationResponse * soap_new_set__trc__GetRecordingJobConfigurationResponse(
+	struct soap *soap,
+	tt__RecordingJobConfiguration *JobConfiguration)
+{
+	_trc__GetRecordingJobConfigurationResponse *_p = ::soap_new__trc__GetRecordingJobConfigurationResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__GetRecordingJobConfigurationResponse::JobConfiguration = JobConfiguration;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__GetRecordingJobConfigurationResponse(struct soap *soap, _trc__GetRecordingJobConfigurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingJobConfigurationResponse", p->soap_type() == SOAP_TYPE__trc__GetRecordingJobConfigurationResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__GetRecordingJobConfigurationResponse(struct soap *soap, const char *URL, _trc__GetRecordingJobConfigurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingJobConfigurationResponse", p->soap_type() == SOAP_TYPE__trc__GetRecordingJobConfigurationResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__GetRecordingJobConfigurationResponse(struct soap *soap, const char *URL, _trc__GetRecordingJobConfigurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingJobConfigurationResponse", p->soap_type() == SOAP_TYPE__trc__GetRecordingJobConfigurationResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__GetRecordingJobConfigurationResponse(struct soap *soap, const char *URL, _trc__GetRecordingJobConfigurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingJobConfigurationResponse", p->soap_type() == SOAP_TYPE__trc__GetRecordingJobConfigurationResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__GetRecordingJobConfigurationResponse * SOAP_FMAC4 soap_get__trc__GetRecordingJobConfigurationResponse(struct soap*, _trc__GetRecordingJobConfigurationResponse *, const char*, const char*);
+
+inline int soap_read__trc__GetRecordingJobConfigurationResponse(struct soap *soap, _trc__GetRecordingJobConfigurationResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__GetRecordingJobConfigurationResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__GetRecordingJobConfigurationResponse(struct soap *soap, const char *URL, _trc__GetRecordingJobConfigurationResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__GetRecordingJobConfigurationResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__GetRecordingJobConfigurationResponse(struct soap *soap, _trc__GetRecordingJobConfigurationResponse *p)
+{
+	if (::soap_read__trc__GetRecordingJobConfigurationResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__GetRecordingJobConfiguration_DEFINED
+#define SOAP_TYPE__trc__GetRecordingJobConfiguration_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__GetRecordingJobConfiguration(struct soap*, const char*, int, const _trc__GetRecordingJobConfiguration *, const char*);
+SOAP_FMAC3 _trc__GetRecordingJobConfiguration * SOAP_FMAC4 soap_in__trc__GetRecordingJobConfiguration(struct soap*, const char*, _trc__GetRecordingJobConfiguration *, const char*);
+SOAP_FMAC1 _trc__GetRecordingJobConfiguration * SOAP_FMAC2 soap_instantiate__trc__GetRecordingJobConfiguration(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__GetRecordingJobConfiguration * soap_new__trc__GetRecordingJobConfiguration(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__GetRecordingJobConfiguration(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__GetRecordingJobConfiguration * soap_new_req__trc__GetRecordingJobConfiguration(
+	struct soap *soap,
+	const std::string& JobToken)
+{
+	_trc__GetRecordingJobConfiguration *_p = ::soap_new__trc__GetRecordingJobConfiguration(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__GetRecordingJobConfiguration::JobToken = JobToken;
+	}
+	return _p;
+}
+
+inline _trc__GetRecordingJobConfiguration * soap_new_set__trc__GetRecordingJobConfiguration(
+	struct soap *soap,
+	const std::string& JobToken)
+{
+	_trc__GetRecordingJobConfiguration *_p = ::soap_new__trc__GetRecordingJobConfiguration(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__GetRecordingJobConfiguration::JobToken = JobToken;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__GetRecordingJobConfiguration(struct soap *soap, _trc__GetRecordingJobConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingJobConfiguration", p->soap_type() == SOAP_TYPE__trc__GetRecordingJobConfiguration ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__GetRecordingJobConfiguration(struct soap *soap, const char *URL, _trc__GetRecordingJobConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingJobConfiguration", p->soap_type() == SOAP_TYPE__trc__GetRecordingJobConfiguration ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__GetRecordingJobConfiguration(struct soap *soap, const char *URL, _trc__GetRecordingJobConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingJobConfiguration", p->soap_type() == SOAP_TYPE__trc__GetRecordingJobConfiguration ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__GetRecordingJobConfiguration(struct soap *soap, const char *URL, _trc__GetRecordingJobConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingJobConfiguration", p->soap_type() == SOAP_TYPE__trc__GetRecordingJobConfiguration ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__GetRecordingJobConfiguration * SOAP_FMAC4 soap_get__trc__GetRecordingJobConfiguration(struct soap*, _trc__GetRecordingJobConfiguration *, const char*, const char*);
+
+inline int soap_read__trc__GetRecordingJobConfiguration(struct soap *soap, _trc__GetRecordingJobConfiguration *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__GetRecordingJobConfiguration(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__GetRecordingJobConfiguration(struct soap *soap, const char *URL, _trc__GetRecordingJobConfiguration *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__GetRecordingJobConfiguration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__GetRecordingJobConfiguration(struct soap *soap, _trc__GetRecordingJobConfiguration *p)
+{
+	if (::soap_read__trc__GetRecordingJobConfiguration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__SetRecordingJobConfigurationResponse_DEFINED
+#define SOAP_TYPE__trc__SetRecordingJobConfigurationResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__SetRecordingJobConfigurationResponse(struct soap*, const char*, int, const _trc__SetRecordingJobConfigurationResponse *, const char*);
+SOAP_FMAC3 _trc__SetRecordingJobConfigurationResponse * SOAP_FMAC4 soap_in__trc__SetRecordingJobConfigurationResponse(struct soap*, const char*, _trc__SetRecordingJobConfigurationResponse *, const char*);
+SOAP_FMAC1 _trc__SetRecordingJobConfigurationResponse * SOAP_FMAC2 soap_instantiate__trc__SetRecordingJobConfigurationResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__SetRecordingJobConfigurationResponse * soap_new__trc__SetRecordingJobConfigurationResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__SetRecordingJobConfigurationResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__SetRecordingJobConfigurationResponse * soap_new_req__trc__SetRecordingJobConfigurationResponse(
+	struct soap *soap,
+	tt__RecordingJobConfiguration *JobConfiguration)
+{
+	_trc__SetRecordingJobConfigurationResponse *_p = ::soap_new__trc__SetRecordingJobConfigurationResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__SetRecordingJobConfigurationResponse::JobConfiguration = JobConfiguration;
+	}
+	return _p;
+}
+
+inline _trc__SetRecordingJobConfigurationResponse * soap_new_set__trc__SetRecordingJobConfigurationResponse(
+	struct soap *soap,
+	tt__RecordingJobConfiguration *JobConfiguration)
+{
+	_trc__SetRecordingJobConfigurationResponse *_p = ::soap_new__trc__SetRecordingJobConfigurationResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__SetRecordingJobConfigurationResponse::JobConfiguration = JobConfiguration;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__SetRecordingJobConfigurationResponse(struct soap *soap, _trc__SetRecordingJobConfigurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:SetRecordingJobConfigurationResponse", p->soap_type() == SOAP_TYPE__trc__SetRecordingJobConfigurationResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__SetRecordingJobConfigurationResponse(struct soap *soap, const char *URL, _trc__SetRecordingJobConfigurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:SetRecordingJobConfigurationResponse", p->soap_type() == SOAP_TYPE__trc__SetRecordingJobConfigurationResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__SetRecordingJobConfigurationResponse(struct soap *soap, const char *URL, _trc__SetRecordingJobConfigurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:SetRecordingJobConfigurationResponse", p->soap_type() == SOAP_TYPE__trc__SetRecordingJobConfigurationResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__SetRecordingJobConfigurationResponse(struct soap *soap, const char *URL, _trc__SetRecordingJobConfigurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:SetRecordingJobConfigurationResponse", p->soap_type() == SOAP_TYPE__trc__SetRecordingJobConfigurationResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__SetRecordingJobConfigurationResponse * SOAP_FMAC4 soap_get__trc__SetRecordingJobConfigurationResponse(struct soap*, _trc__SetRecordingJobConfigurationResponse *, const char*, const char*);
+
+inline int soap_read__trc__SetRecordingJobConfigurationResponse(struct soap *soap, _trc__SetRecordingJobConfigurationResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__SetRecordingJobConfigurationResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__SetRecordingJobConfigurationResponse(struct soap *soap, const char *URL, _trc__SetRecordingJobConfigurationResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__SetRecordingJobConfigurationResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__SetRecordingJobConfigurationResponse(struct soap *soap, _trc__SetRecordingJobConfigurationResponse *p)
+{
+	if (::soap_read__trc__SetRecordingJobConfigurationResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__SetRecordingJobConfiguration_DEFINED
+#define SOAP_TYPE__trc__SetRecordingJobConfiguration_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__SetRecordingJobConfiguration(struct soap*, const char*, int, const _trc__SetRecordingJobConfiguration *, const char*);
+SOAP_FMAC3 _trc__SetRecordingJobConfiguration * SOAP_FMAC4 soap_in__trc__SetRecordingJobConfiguration(struct soap*, const char*, _trc__SetRecordingJobConfiguration *, const char*);
+SOAP_FMAC1 _trc__SetRecordingJobConfiguration * SOAP_FMAC2 soap_instantiate__trc__SetRecordingJobConfiguration(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__SetRecordingJobConfiguration * soap_new__trc__SetRecordingJobConfiguration(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__SetRecordingJobConfiguration(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__SetRecordingJobConfiguration * soap_new_req__trc__SetRecordingJobConfiguration(
+	struct soap *soap,
+	const std::string& JobToken,
+	tt__RecordingJobConfiguration *JobConfiguration)
+{
+	_trc__SetRecordingJobConfiguration *_p = ::soap_new__trc__SetRecordingJobConfiguration(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__SetRecordingJobConfiguration::JobToken = JobToken;
+		_p->_trc__SetRecordingJobConfiguration::JobConfiguration = JobConfiguration;
+	}
+	return _p;
+}
+
+inline _trc__SetRecordingJobConfiguration * soap_new_set__trc__SetRecordingJobConfiguration(
+	struct soap *soap,
+	const std::string& JobToken,
+	tt__RecordingJobConfiguration *JobConfiguration)
+{
+	_trc__SetRecordingJobConfiguration *_p = ::soap_new__trc__SetRecordingJobConfiguration(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__SetRecordingJobConfiguration::JobToken = JobToken;
+		_p->_trc__SetRecordingJobConfiguration::JobConfiguration = JobConfiguration;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__SetRecordingJobConfiguration(struct soap *soap, _trc__SetRecordingJobConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:SetRecordingJobConfiguration", p->soap_type() == SOAP_TYPE__trc__SetRecordingJobConfiguration ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__SetRecordingJobConfiguration(struct soap *soap, const char *URL, _trc__SetRecordingJobConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:SetRecordingJobConfiguration", p->soap_type() == SOAP_TYPE__trc__SetRecordingJobConfiguration ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__SetRecordingJobConfiguration(struct soap *soap, const char *URL, _trc__SetRecordingJobConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:SetRecordingJobConfiguration", p->soap_type() == SOAP_TYPE__trc__SetRecordingJobConfiguration ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__SetRecordingJobConfiguration(struct soap *soap, const char *URL, _trc__SetRecordingJobConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:SetRecordingJobConfiguration", p->soap_type() == SOAP_TYPE__trc__SetRecordingJobConfiguration ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__SetRecordingJobConfiguration * SOAP_FMAC4 soap_get__trc__SetRecordingJobConfiguration(struct soap*, _trc__SetRecordingJobConfiguration *, const char*, const char*);
+
+inline int soap_read__trc__SetRecordingJobConfiguration(struct soap *soap, _trc__SetRecordingJobConfiguration *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__SetRecordingJobConfiguration(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__SetRecordingJobConfiguration(struct soap *soap, const char *URL, _trc__SetRecordingJobConfiguration *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__SetRecordingJobConfiguration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__SetRecordingJobConfiguration(struct soap *soap, _trc__SetRecordingJobConfiguration *p)
+{
+	if (::soap_read__trc__SetRecordingJobConfiguration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__GetRecordingJobsResponse_DEFINED
+#define SOAP_TYPE__trc__GetRecordingJobsResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__GetRecordingJobsResponse(struct soap*, const char*, int, const _trc__GetRecordingJobsResponse *, const char*);
+SOAP_FMAC3 _trc__GetRecordingJobsResponse * SOAP_FMAC4 soap_in__trc__GetRecordingJobsResponse(struct soap*, const char*, _trc__GetRecordingJobsResponse *, const char*);
+SOAP_FMAC1 _trc__GetRecordingJobsResponse * SOAP_FMAC2 soap_instantiate__trc__GetRecordingJobsResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__GetRecordingJobsResponse * soap_new__trc__GetRecordingJobsResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__GetRecordingJobsResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__GetRecordingJobsResponse * soap_new_req__trc__GetRecordingJobsResponse(
+	struct soap *soap)
+{
+	_trc__GetRecordingJobsResponse *_p = ::soap_new__trc__GetRecordingJobsResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline _trc__GetRecordingJobsResponse * soap_new_set__trc__GetRecordingJobsResponse(
+	struct soap *soap,
+	const std::vector<tt__GetRecordingJobsResponseItem *> & JobItem)
+{
+	_trc__GetRecordingJobsResponse *_p = ::soap_new__trc__GetRecordingJobsResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__GetRecordingJobsResponse::JobItem = JobItem;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__GetRecordingJobsResponse(struct soap *soap, _trc__GetRecordingJobsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingJobsResponse", p->soap_type() == SOAP_TYPE__trc__GetRecordingJobsResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__GetRecordingJobsResponse(struct soap *soap, const char *URL, _trc__GetRecordingJobsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingJobsResponse", p->soap_type() == SOAP_TYPE__trc__GetRecordingJobsResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__GetRecordingJobsResponse(struct soap *soap, const char *URL, _trc__GetRecordingJobsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingJobsResponse", p->soap_type() == SOAP_TYPE__trc__GetRecordingJobsResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__GetRecordingJobsResponse(struct soap *soap, const char *URL, _trc__GetRecordingJobsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingJobsResponse", p->soap_type() == SOAP_TYPE__trc__GetRecordingJobsResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__GetRecordingJobsResponse * SOAP_FMAC4 soap_get__trc__GetRecordingJobsResponse(struct soap*, _trc__GetRecordingJobsResponse *, const char*, const char*);
+
+inline int soap_read__trc__GetRecordingJobsResponse(struct soap *soap, _trc__GetRecordingJobsResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__GetRecordingJobsResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__GetRecordingJobsResponse(struct soap *soap, const char *URL, _trc__GetRecordingJobsResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__GetRecordingJobsResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__GetRecordingJobsResponse(struct soap *soap, _trc__GetRecordingJobsResponse *p)
+{
+	if (::soap_read__trc__GetRecordingJobsResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__GetRecordingJobs_DEFINED
+#define SOAP_TYPE__trc__GetRecordingJobs_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__GetRecordingJobs(struct soap*, const char*, int, const _trc__GetRecordingJobs *, const char*);
+SOAP_FMAC3 _trc__GetRecordingJobs * SOAP_FMAC4 soap_in__trc__GetRecordingJobs(struct soap*, const char*, _trc__GetRecordingJobs *, const char*);
+SOAP_FMAC1 _trc__GetRecordingJobs * SOAP_FMAC2 soap_instantiate__trc__GetRecordingJobs(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__GetRecordingJobs * soap_new__trc__GetRecordingJobs(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__GetRecordingJobs(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__GetRecordingJobs * soap_new_req__trc__GetRecordingJobs(
+	struct soap *soap)
+{
+	_trc__GetRecordingJobs *_p = ::soap_new__trc__GetRecordingJobs(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline _trc__GetRecordingJobs * soap_new_set__trc__GetRecordingJobs(
+	struct soap *soap)
+{
+	_trc__GetRecordingJobs *_p = ::soap_new__trc__GetRecordingJobs(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline int soap_write__trc__GetRecordingJobs(struct soap *soap, _trc__GetRecordingJobs const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingJobs", p->soap_type() == SOAP_TYPE__trc__GetRecordingJobs ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__GetRecordingJobs(struct soap *soap, const char *URL, _trc__GetRecordingJobs const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingJobs", p->soap_type() == SOAP_TYPE__trc__GetRecordingJobs ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__GetRecordingJobs(struct soap *soap, const char *URL, _trc__GetRecordingJobs const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingJobs", p->soap_type() == SOAP_TYPE__trc__GetRecordingJobs ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__GetRecordingJobs(struct soap *soap, const char *URL, _trc__GetRecordingJobs const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingJobs", p->soap_type() == SOAP_TYPE__trc__GetRecordingJobs ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__GetRecordingJobs * SOAP_FMAC4 soap_get__trc__GetRecordingJobs(struct soap*, _trc__GetRecordingJobs *, const char*, const char*);
+
+inline int soap_read__trc__GetRecordingJobs(struct soap *soap, _trc__GetRecordingJobs *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__GetRecordingJobs(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__GetRecordingJobs(struct soap *soap, const char *URL, _trc__GetRecordingJobs *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__GetRecordingJobs(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__GetRecordingJobs(struct soap *soap, _trc__GetRecordingJobs *p)
+{
+	if (::soap_read__trc__GetRecordingJobs(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__DeleteRecordingJobResponse_DEFINED
+#define SOAP_TYPE__trc__DeleteRecordingJobResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__DeleteRecordingJobResponse(struct soap*, const char*, int, const _trc__DeleteRecordingJobResponse *, const char*);
+SOAP_FMAC3 _trc__DeleteRecordingJobResponse * SOAP_FMAC4 soap_in__trc__DeleteRecordingJobResponse(struct soap*, const char*, _trc__DeleteRecordingJobResponse *, const char*);
+SOAP_FMAC1 _trc__DeleteRecordingJobResponse * SOAP_FMAC2 soap_instantiate__trc__DeleteRecordingJobResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__DeleteRecordingJobResponse * soap_new__trc__DeleteRecordingJobResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__DeleteRecordingJobResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__DeleteRecordingJobResponse * soap_new_req__trc__DeleteRecordingJobResponse(
+	struct soap *soap)
+{
+	_trc__DeleteRecordingJobResponse *_p = ::soap_new__trc__DeleteRecordingJobResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline _trc__DeleteRecordingJobResponse * soap_new_set__trc__DeleteRecordingJobResponse(
+	struct soap *soap)
+{
+	_trc__DeleteRecordingJobResponse *_p = ::soap_new__trc__DeleteRecordingJobResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline int soap_write__trc__DeleteRecordingJobResponse(struct soap *soap, _trc__DeleteRecordingJobResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:DeleteRecordingJobResponse", p->soap_type() == SOAP_TYPE__trc__DeleteRecordingJobResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__DeleteRecordingJobResponse(struct soap *soap, const char *URL, _trc__DeleteRecordingJobResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:DeleteRecordingJobResponse", p->soap_type() == SOAP_TYPE__trc__DeleteRecordingJobResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__DeleteRecordingJobResponse(struct soap *soap, const char *URL, _trc__DeleteRecordingJobResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:DeleteRecordingJobResponse", p->soap_type() == SOAP_TYPE__trc__DeleteRecordingJobResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__DeleteRecordingJobResponse(struct soap *soap, const char *URL, _trc__DeleteRecordingJobResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:DeleteRecordingJobResponse", p->soap_type() == SOAP_TYPE__trc__DeleteRecordingJobResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__DeleteRecordingJobResponse * SOAP_FMAC4 soap_get__trc__DeleteRecordingJobResponse(struct soap*, _trc__DeleteRecordingJobResponse *, const char*, const char*);
+
+inline int soap_read__trc__DeleteRecordingJobResponse(struct soap *soap, _trc__DeleteRecordingJobResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__DeleteRecordingJobResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__DeleteRecordingJobResponse(struct soap *soap, const char *URL, _trc__DeleteRecordingJobResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__DeleteRecordingJobResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__DeleteRecordingJobResponse(struct soap *soap, _trc__DeleteRecordingJobResponse *p)
+{
+	if (::soap_read__trc__DeleteRecordingJobResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__DeleteRecordingJob_DEFINED
+#define SOAP_TYPE__trc__DeleteRecordingJob_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__DeleteRecordingJob(struct soap*, const char*, int, const _trc__DeleteRecordingJob *, const char*);
+SOAP_FMAC3 _trc__DeleteRecordingJob * SOAP_FMAC4 soap_in__trc__DeleteRecordingJob(struct soap*, const char*, _trc__DeleteRecordingJob *, const char*);
+SOAP_FMAC1 _trc__DeleteRecordingJob * SOAP_FMAC2 soap_instantiate__trc__DeleteRecordingJob(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__DeleteRecordingJob * soap_new__trc__DeleteRecordingJob(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__DeleteRecordingJob(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__DeleteRecordingJob * soap_new_req__trc__DeleteRecordingJob(
+	struct soap *soap,
+	const std::string& JobToken)
+{
+	_trc__DeleteRecordingJob *_p = ::soap_new__trc__DeleteRecordingJob(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__DeleteRecordingJob::JobToken = JobToken;
+	}
+	return _p;
+}
+
+inline _trc__DeleteRecordingJob * soap_new_set__trc__DeleteRecordingJob(
+	struct soap *soap,
+	const std::string& JobToken)
+{
+	_trc__DeleteRecordingJob *_p = ::soap_new__trc__DeleteRecordingJob(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__DeleteRecordingJob::JobToken = JobToken;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__DeleteRecordingJob(struct soap *soap, _trc__DeleteRecordingJob const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:DeleteRecordingJob", p->soap_type() == SOAP_TYPE__trc__DeleteRecordingJob ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__DeleteRecordingJob(struct soap *soap, const char *URL, _trc__DeleteRecordingJob const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:DeleteRecordingJob", p->soap_type() == SOAP_TYPE__trc__DeleteRecordingJob ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__DeleteRecordingJob(struct soap *soap, const char *URL, _trc__DeleteRecordingJob const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:DeleteRecordingJob", p->soap_type() == SOAP_TYPE__trc__DeleteRecordingJob ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__DeleteRecordingJob(struct soap *soap, const char *URL, _trc__DeleteRecordingJob const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:DeleteRecordingJob", p->soap_type() == SOAP_TYPE__trc__DeleteRecordingJob ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__DeleteRecordingJob * SOAP_FMAC4 soap_get__trc__DeleteRecordingJob(struct soap*, _trc__DeleteRecordingJob *, const char*, const char*);
+
+inline int soap_read__trc__DeleteRecordingJob(struct soap *soap, _trc__DeleteRecordingJob *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__DeleteRecordingJob(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__DeleteRecordingJob(struct soap *soap, const char *URL, _trc__DeleteRecordingJob *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__DeleteRecordingJob(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__DeleteRecordingJob(struct soap *soap, _trc__DeleteRecordingJob *p)
+{
+	if (::soap_read__trc__DeleteRecordingJob(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__CreateRecordingJobResponse_DEFINED
+#define SOAP_TYPE__trc__CreateRecordingJobResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__CreateRecordingJobResponse(struct soap*, const char*, int, const _trc__CreateRecordingJobResponse *, const char*);
+SOAP_FMAC3 _trc__CreateRecordingJobResponse * SOAP_FMAC4 soap_in__trc__CreateRecordingJobResponse(struct soap*, const char*, _trc__CreateRecordingJobResponse *, const char*);
+SOAP_FMAC1 _trc__CreateRecordingJobResponse * SOAP_FMAC2 soap_instantiate__trc__CreateRecordingJobResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__CreateRecordingJobResponse * soap_new__trc__CreateRecordingJobResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__CreateRecordingJobResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__CreateRecordingJobResponse * soap_new_req__trc__CreateRecordingJobResponse(
+	struct soap *soap,
+	const std::string& JobToken,
+	tt__RecordingJobConfiguration *JobConfiguration)
+{
+	_trc__CreateRecordingJobResponse *_p = ::soap_new__trc__CreateRecordingJobResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__CreateRecordingJobResponse::JobToken = JobToken;
+		_p->_trc__CreateRecordingJobResponse::JobConfiguration = JobConfiguration;
+	}
+	return _p;
+}
+
+inline _trc__CreateRecordingJobResponse * soap_new_set__trc__CreateRecordingJobResponse(
+	struct soap *soap,
+	const std::string& JobToken,
+	tt__RecordingJobConfiguration *JobConfiguration)
+{
+	_trc__CreateRecordingJobResponse *_p = ::soap_new__trc__CreateRecordingJobResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__CreateRecordingJobResponse::JobToken = JobToken;
+		_p->_trc__CreateRecordingJobResponse::JobConfiguration = JobConfiguration;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__CreateRecordingJobResponse(struct soap *soap, _trc__CreateRecordingJobResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:CreateRecordingJobResponse", p->soap_type() == SOAP_TYPE__trc__CreateRecordingJobResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__CreateRecordingJobResponse(struct soap *soap, const char *URL, _trc__CreateRecordingJobResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:CreateRecordingJobResponse", p->soap_type() == SOAP_TYPE__trc__CreateRecordingJobResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__CreateRecordingJobResponse(struct soap *soap, const char *URL, _trc__CreateRecordingJobResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:CreateRecordingJobResponse", p->soap_type() == SOAP_TYPE__trc__CreateRecordingJobResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__CreateRecordingJobResponse(struct soap *soap, const char *URL, _trc__CreateRecordingJobResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:CreateRecordingJobResponse", p->soap_type() == SOAP_TYPE__trc__CreateRecordingJobResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__CreateRecordingJobResponse * SOAP_FMAC4 soap_get__trc__CreateRecordingJobResponse(struct soap*, _trc__CreateRecordingJobResponse *, const char*, const char*);
+
+inline int soap_read__trc__CreateRecordingJobResponse(struct soap *soap, _trc__CreateRecordingJobResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__CreateRecordingJobResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__CreateRecordingJobResponse(struct soap *soap, const char *URL, _trc__CreateRecordingJobResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__CreateRecordingJobResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__CreateRecordingJobResponse(struct soap *soap, _trc__CreateRecordingJobResponse *p)
+{
+	if (::soap_read__trc__CreateRecordingJobResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__CreateRecordingJob_DEFINED
+#define SOAP_TYPE__trc__CreateRecordingJob_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__CreateRecordingJob(struct soap*, const char*, int, const _trc__CreateRecordingJob *, const char*);
+SOAP_FMAC3 _trc__CreateRecordingJob * SOAP_FMAC4 soap_in__trc__CreateRecordingJob(struct soap*, const char*, _trc__CreateRecordingJob *, const char*);
+SOAP_FMAC1 _trc__CreateRecordingJob * SOAP_FMAC2 soap_instantiate__trc__CreateRecordingJob(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__CreateRecordingJob * soap_new__trc__CreateRecordingJob(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__CreateRecordingJob(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__CreateRecordingJob * soap_new_req__trc__CreateRecordingJob(
+	struct soap *soap,
+	tt__RecordingJobConfiguration *JobConfiguration)
+{
+	_trc__CreateRecordingJob *_p = ::soap_new__trc__CreateRecordingJob(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__CreateRecordingJob::JobConfiguration = JobConfiguration;
+	}
+	return _p;
+}
+
+inline _trc__CreateRecordingJob * soap_new_set__trc__CreateRecordingJob(
+	struct soap *soap,
+	tt__RecordingJobConfiguration *JobConfiguration)
+{
+	_trc__CreateRecordingJob *_p = ::soap_new__trc__CreateRecordingJob(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__CreateRecordingJob::JobConfiguration = JobConfiguration;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__CreateRecordingJob(struct soap *soap, _trc__CreateRecordingJob const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:CreateRecordingJob", p->soap_type() == SOAP_TYPE__trc__CreateRecordingJob ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__CreateRecordingJob(struct soap *soap, const char *URL, _trc__CreateRecordingJob const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:CreateRecordingJob", p->soap_type() == SOAP_TYPE__trc__CreateRecordingJob ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__CreateRecordingJob(struct soap *soap, const char *URL, _trc__CreateRecordingJob const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:CreateRecordingJob", p->soap_type() == SOAP_TYPE__trc__CreateRecordingJob ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__CreateRecordingJob(struct soap *soap, const char *URL, _trc__CreateRecordingJob const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:CreateRecordingJob", p->soap_type() == SOAP_TYPE__trc__CreateRecordingJob ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__CreateRecordingJob * SOAP_FMAC4 soap_get__trc__CreateRecordingJob(struct soap*, _trc__CreateRecordingJob *, const char*, const char*);
+
+inline int soap_read__trc__CreateRecordingJob(struct soap *soap, _trc__CreateRecordingJob *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__CreateRecordingJob(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__CreateRecordingJob(struct soap *soap, const char *URL, _trc__CreateRecordingJob *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__CreateRecordingJob(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__CreateRecordingJob(struct soap *soap, _trc__CreateRecordingJob *p)
+{
+	if (::soap_read__trc__CreateRecordingJob(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__SetTrackConfigurationResponse_DEFINED
+#define SOAP_TYPE__trc__SetTrackConfigurationResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__SetTrackConfigurationResponse(struct soap*, const char*, int, const _trc__SetTrackConfigurationResponse *, const char*);
+SOAP_FMAC3 _trc__SetTrackConfigurationResponse * SOAP_FMAC4 soap_in__trc__SetTrackConfigurationResponse(struct soap*, const char*, _trc__SetTrackConfigurationResponse *, const char*);
+SOAP_FMAC1 _trc__SetTrackConfigurationResponse * SOAP_FMAC2 soap_instantiate__trc__SetTrackConfigurationResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__SetTrackConfigurationResponse * soap_new__trc__SetTrackConfigurationResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__SetTrackConfigurationResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__SetTrackConfigurationResponse * soap_new_req__trc__SetTrackConfigurationResponse(
+	struct soap *soap)
+{
+	_trc__SetTrackConfigurationResponse *_p = ::soap_new__trc__SetTrackConfigurationResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline _trc__SetTrackConfigurationResponse * soap_new_set__trc__SetTrackConfigurationResponse(
+	struct soap *soap)
+{
+	_trc__SetTrackConfigurationResponse *_p = ::soap_new__trc__SetTrackConfigurationResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline int soap_write__trc__SetTrackConfigurationResponse(struct soap *soap, _trc__SetTrackConfigurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:SetTrackConfigurationResponse", p->soap_type() == SOAP_TYPE__trc__SetTrackConfigurationResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__SetTrackConfigurationResponse(struct soap *soap, const char *URL, _trc__SetTrackConfigurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:SetTrackConfigurationResponse", p->soap_type() == SOAP_TYPE__trc__SetTrackConfigurationResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__SetTrackConfigurationResponse(struct soap *soap, const char *URL, _trc__SetTrackConfigurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:SetTrackConfigurationResponse", p->soap_type() == SOAP_TYPE__trc__SetTrackConfigurationResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__SetTrackConfigurationResponse(struct soap *soap, const char *URL, _trc__SetTrackConfigurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:SetTrackConfigurationResponse", p->soap_type() == SOAP_TYPE__trc__SetTrackConfigurationResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__SetTrackConfigurationResponse * SOAP_FMAC4 soap_get__trc__SetTrackConfigurationResponse(struct soap*, _trc__SetTrackConfigurationResponse *, const char*, const char*);
+
+inline int soap_read__trc__SetTrackConfigurationResponse(struct soap *soap, _trc__SetTrackConfigurationResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__SetTrackConfigurationResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__SetTrackConfigurationResponse(struct soap *soap, const char *URL, _trc__SetTrackConfigurationResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__SetTrackConfigurationResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__SetTrackConfigurationResponse(struct soap *soap, _trc__SetTrackConfigurationResponse *p)
+{
+	if (::soap_read__trc__SetTrackConfigurationResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__SetTrackConfiguration_DEFINED
+#define SOAP_TYPE__trc__SetTrackConfiguration_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__SetTrackConfiguration(struct soap*, const char*, int, const _trc__SetTrackConfiguration *, const char*);
+SOAP_FMAC3 _trc__SetTrackConfiguration * SOAP_FMAC4 soap_in__trc__SetTrackConfiguration(struct soap*, const char*, _trc__SetTrackConfiguration *, const char*);
+SOAP_FMAC1 _trc__SetTrackConfiguration * SOAP_FMAC2 soap_instantiate__trc__SetTrackConfiguration(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__SetTrackConfiguration * soap_new__trc__SetTrackConfiguration(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__SetTrackConfiguration(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__SetTrackConfiguration * soap_new_req__trc__SetTrackConfiguration(
+	struct soap *soap,
+	const std::string& RecordingToken,
+	const std::string& TrackToken,
+	tt__TrackConfiguration *TrackConfiguration)
+{
+	_trc__SetTrackConfiguration *_p = ::soap_new__trc__SetTrackConfiguration(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__SetTrackConfiguration::RecordingToken = RecordingToken;
+		_p->_trc__SetTrackConfiguration::TrackToken = TrackToken;
+		_p->_trc__SetTrackConfiguration::TrackConfiguration = TrackConfiguration;
+	}
+	return _p;
+}
+
+inline _trc__SetTrackConfiguration * soap_new_set__trc__SetTrackConfiguration(
+	struct soap *soap,
+	const std::string& RecordingToken,
+	const std::string& TrackToken,
+	tt__TrackConfiguration *TrackConfiguration)
+{
+	_trc__SetTrackConfiguration *_p = ::soap_new__trc__SetTrackConfiguration(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__SetTrackConfiguration::RecordingToken = RecordingToken;
+		_p->_trc__SetTrackConfiguration::TrackToken = TrackToken;
+		_p->_trc__SetTrackConfiguration::TrackConfiguration = TrackConfiguration;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__SetTrackConfiguration(struct soap *soap, _trc__SetTrackConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:SetTrackConfiguration", p->soap_type() == SOAP_TYPE__trc__SetTrackConfiguration ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__SetTrackConfiguration(struct soap *soap, const char *URL, _trc__SetTrackConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:SetTrackConfiguration", p->soap_type() == SOAP_TYPE__trc__SetTrackConfiguration ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__SetTrackConfiguration(struct soap *soap, const char *URL, _trc__SetTrackConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:SetTrackConfiguration", p->soap_type() == SOAP_TYPE__trc__SetTrackConfiguration ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__SetTrackConfiguration(struct soap *soap, const char *URL, _trc__SetTrackConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:SetTrackConfiguration", p->soap_type() == SOAP_TYPE__trc__SetTrackConfiguration ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__SetTrackConfiguration * SOAP_FMAC4 soap_get__trc__SetTrackConfiguration(struct soap*, _trc__SetTrackConfiguration *, const char*, const char*);
+
+inline int soap_read__trc__SetTrackConfiguration(struct soap *soap, _trc__SetTrackConfiguration *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__SetTrackConfiguration(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__SetTrackConfiguration(struct soap *soap, const char *URL, _trc__SetTrackConfiguration *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__SetTrackConfiguration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__SetTrackConfiguration(struct soap *soap, _trc__SetTrackConfiguration *p)
+{
+	if (::soap_read__trc__SetTrackConfiguration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__GetTrackConfigurationResponse_DEFINED
+#define SOAP_TYPE__trc__GetTrackConfigurationResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__GetTrackConfigurationResponse(struct soap*, const char*, int, const _trc__GetTrackConfigurationResponse *, const char*);
+SOAP_FMAC3 _trc__GetTrackConfigurationResponse * SOAP_FMAC4 soap_in__trc__GetTrackConfigurationResponse(struct soap*, const char*, _trc__GetTrackConfigurationResponse *, const char*);
+SOAP_FMAC1 _trc__GetTrackConfigurationResponse * SOAP_FMAC2 soap_instantiate__trc__GetTrackConfigurationResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__GetTrackConfigurationResponse * soap_new__trc__GetTrackConfigurationResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__GetTrackConfigurationResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__GetTrackConfigurationResponse * soap_new_req__trc__GetTrackConfigurationResponse(
+	struct soap *soap,
+	tt__TrackConfiguration *TrackConfiguration)
+{
+	_trc__GetTrackConfigurationResponse *_p = ::soap_new__trc__GetTrackConfigurationResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__GetTrackConfigurationResponse::TrackConfiguration = TrackConfiguration;
+	}
+	return _p;
+}
+
+inline _trc__GetTrackConfigurationResponse * soap_new_set__trc__GetTrackConfigurationResponse(
+	struct soap *soap,
+	tt__TrackConfiguration *TrackConfiguration)
+{
+	_trc__GetTrackConfigurationResponse *_p = ::soap_new__trc__GetTrackConfigurationResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__GetTrackConfigurationResponse::TrackConfiguration = TrackConfiguration;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__GetTrackConfigurationResponse(struct soap *soap, _trc__GetTrackConfigurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetTrackConfigurationResponse", p->soap_type() == SOAP_TYPE__trc__GetTrackConfigurationResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__GetTrackConfigurationResponse(struct soap *soap, const char *URL, _trc__GetTrackConfigurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetTrackConfigurationResponse", p->soap_type() == SOAP_TYPE__trc__GetTrackConfigurationResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__GetTrackConfigurationResponse(struct soap *soap, const char *URL, _trc__GetTrackConfigurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetTrackConfigurationResponse", p->soap_type() == SOAP_TYPE__trc__GetTrackConfigurationResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__GetTrackConfigurationResponse(struct soap *soap, const char *URL, _trc__GetTrackConfigurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetTrackConfigurationResponse", p->soap_type() == SOAP_TYPE__trc__GetTrackConfigurationResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__GetTrackConfigurationResponse * SOAP_FMAC4 soap_get__trc__GetTrackConfigurationResponse(struct soap*, _trc__GetTrackConfigurationResponse *, const char*, const char*);
+
+inline int soap_read__trc__GetTrackConfigurationResponse(struct soap *soap, _trc__GetTrackConfigurationResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__GetTrackConfigurationResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__GetTrackConfigurationResponse(struct soap *soap, const char *URL, _trc__GetTrackConfigurationResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__GetTrackConfigurationResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__GetTrackConfigurationResponse(struct soap *soap, _trc__GetTrackConfigurationResponse *p)
+{
+	if (::soap_read__trc__GetTrackConfigurationResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__GetTrackConfiguration_DEFINED
+#define SOAP_TYPE__trc__GetTrackConfiguration_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__GetTrackConfiguration(struct soap*, const char*, int, const _trc__GetTrackConfiguration *, const char*);
+SOAP_FMAC3 _trc__GetTrackConfiguration * SOAP_FMAC4 soap_in__trc__GetTrackConfiguration(struct soap*, const char*, _trc__GetTrackConfiguration *, const char*);
+SOAP_FMAC1 _trc__GetTrackConfiguration * SOAP_FMAC2 soap_instantiate__trc__GetTrackConfiguration(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__GetTrackConfiguration * soap_new__trc__GetTrackConfiguration(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__GetTrackConfiguration(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__GetTrackConfiguration * soap_new_req__trc__GetTrackConfiguration(
+	struct soap *soap,
+	const std::string& RecordingToken,
+	const std::string& TrackToken)
+{
+	_trc__GetTrackConfiguration *_p = ::soap_new__trc__GetTrackConfiguration(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__GetTrackConfiguration::RecordingToken = RecordingToken;
+		_p->_trc__GetTrackConfiguration::TrackToken = TrackToken;
+	}
+	return _p;
+}
+
+inline _trc__GetTrackConfiguration * soap_new_set__trc__GetTrackConfiguration(
+	struct soap *soap,
+	const std::string& RecordingToken,
+	const std::string& TrackToken)
+{
+	_trc__GetTrackConfiguration *_p = ::soap_new__trc__GetTrackConfiguration(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__GetTrackConfiguration::RecordingToken = RecordingToken;
+		_p->_trc__GetTrackConfiguration::TrackToken = TrackToken;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__GetTrackConfiguration(struct soap *soap, _trc__GetTrackConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetTrackConfiguration", p->soap_type() == SOAP_TYPE__trc__GetTrackConfiguration ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__GetTrackConfiguration(struct soap *soap, const char *URL, _trc__GetTrackConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetTrackConfiguration", p->soap_type() == SOAP_TYPE__trc__GetTrackConfiguration ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__GetTrackConfiguration(struct soap *soap, const char *URL, _trc__GetTrackConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetTrackConfiguration", p->soap_type() == SOAP_TYPE__trc__GetTrackConfiguration ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__GetTrackConfiguration(struct soap *soap, const char *URL, _trc__GetTrackConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetTrackConfiguration", p->soap_type() == SOAP_TYPE__trc__GetTrackConfiguration ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__GetTrackConfiguration * SOAP_FMAC4 soap_get__trc__GetTrackConfiguration(struct soap*, _trc__GetTrackConfiguration *, const char*, const char*);
+
+inline int soap_read__trc__GetTrackConfiguration(struct soap *soap, _trc__GetTrackConfiguration *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__GetTrackConfiguration(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__GetTrackConfiguration(struct soap *soap, const char *URL, _trc__GetTrackConfiguration *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__GetTrackConfiguration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__GetTrackConfiguration(struct soap *soap, _trc__GetTrackConfiguration *p)
+{
+	if (::soap_read__trc__GetTrackConfiguration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__DeleteTrackResponse_DEFINED
+#define SOAP_TYPE__trc__DeleteTrackResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__DeleteTrackResponse(struct soap*, const char*, int, const _trc__DeleteTrackResponse *, const char*);
+SOAP_FMAC3 _trc__DeleteTrackResponse * SOAP_FMAC4 soap_in__trc__DeleteTrackResponse(struct soap*, const char*, _trc__DeleteTrackResponse *, const char*);
+SOAP_FMAC1 _trc__DeleteTrackResponse * SOAP_FMAC2 soap_instantiate__trc__DeleteTrackResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__DeleteTrackResponse * soap_new__trc__DeleteTrackResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__DeleteTrackResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__DeleteTrackResponse * soap_new_req__trc__DeleteTrackResponse(
+	struct soap *soap)
+{
+	_trc__DeleteTrackResponse *_p = ::soap_new__trc__DeleteTrackResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline _trc__DeleteTrackResponse * soap_new_set__trc__DeleteTrackResponse(
+	struct soap *soap)
+{
+	_trc__DeleteTrackResponse *_p = ::soap_new__trc__DeleteTrackResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline int soap_write__trc__DeleteTrackResponse(struct soap *soap, _trc__DeleteTrackResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:DeleteTrackResponse", p->soap_type() == SOAP_TYPE__trc__DeleteTrackResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__DeleteTrackResponse(struct soap *soap, const char *URL, _trc__DeleteTrackResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:DeleteTrackResponse", p->soap_type() == SOAP_TYPE__trc__DeleteTrackResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__DeleteTrackResponse(struct soap *soap, const char *URL, _trc__DeleteTrackResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:DeleteTrackResponse", p->soap_type() == SOAP_TYPE__trc__DeleteTrackResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__DeleteTrackResponse(struct soap *soap, const char *URL, _trc__DeleteTrackResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:DeleteTrackResponse", p->soap_type() == SOAP_TYPE__trc__DeleteTrackResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__DeleteTrackResponse * SOAP_FMAC4 soap_get__trc__DeleteTrackResponse(struct soap*, _trc__DeleteTrackResponse *, const char*, const char*);
+
+inline int soap_read__trc__DeleteTrackResponse(struct soap *soap, _trc__DeleteTrackResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__DeleteTrackResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__DeleteTrackResponse(struct soap *soap, const char *URL, _trc__DeleteTrackResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__DeleteTrackResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__DeleteTrackResponse(struct soap *soap, _trc__DeleteTrackResponse *p)
+{
+	if (::soap_read__trc__DeleteTrackResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__DeleteTrack_DEFINED
+#define SOAP_TYPE__trc__DeleteTrack_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__DeleteTrack(struct soap*, const char*, int, const _trc__DeleteTrack *, const char*);
+SOAP_FMAC3 _trc__DeleteTrack * SOAP_FMAC4 soap_in__trc__DeleteTrack(struct soap*, const char*, _trc__DeleteTrack *, const char*);
+SOAP_FMAC1 _trc__DeleteTrack * SOAP_FMAC2 soap_instantiate__trc__DeleteTrack(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__DeleteTrack * soap_new__trc__DeleteTrack(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__DeleteTrack(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__DeleteTrack * soap_new_req__trc__DeleteTrack(
+	struct soap *soap,
+	const std::string& RecordingToken,
+	const std::string& TrackToken)
+{
+	_trc__DeleteTrack *_p = ::soap_new__trc__DeleteTrack(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__DeleteTrack::RecordingToken = RecordingToken;
+		_p->_trc__DeleteTrack::TrackToken = TrackToken;
+	}
+	return _p;
+}
+
+inline _trc__DeleteTrack * soap_new_set__trc__DeleteTrack(
+	struct soap *soap,
+	const std::string& RecordingToken,
+	const std::string& TrackToken)
+{
+	_trc__DeleteTrack *_p = ::soap_new__trc__DeleteTrack(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__DeleteTrack::RecordingToken = RecordingToken;
+		_p->_trc__DeleteTrack::TrackToken = TrackToken;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__DeleteTrack(struct soap *soap, _trc__DeleteTrack const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:DeleteTrack", p->soap_type() == SOAP_TYPE__trc__DeleteTrack ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__DeleteTrack(struct soap *soap, const char *URL, _trc__DeleteTrack const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:DeleteTrack", p->soap_type() == SOAP_TYPE__trc__DeleteTrack ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__DeleteTrack(struct soap *soap, const char *URL, _trc__DeleteTrack const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:DeleteTrack", p->soap_type() == SOAP_TYPE__trc__DeleteTrack ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__DeleteTrack(struct soap *soap, const char *URL, _trc__DeleteTrack const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:DeleteTrack", p->soap_type() == SOAP_TYPE__trc__DeleteTrack ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__DeleteTrack * SOAP_FMAC4 soap_get__trc__DeleteTrack(struct soap*, _trc__DeleteTrack *, const char*, const char*);
+
+inline int soap_read__trc__DeleteTrack(struct soap *soap, _trc__DeleteTrack *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__DeleteTrack(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__DeleteTrack(struct soap *soap, const char *URL, _trc__DeleteTrack *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__DeleteTrack(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__DeleteTrack(struct soap *soap, _trc__DeleteTrack *p)
+{
+	if (::soap_read__trc__DeleteTrack(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__CreateTrackResponse_DEFINED
+#define SOAP_TYPE__trc__CreateTrackResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__CreateTrackResponse(struct soap*, const char*, int, const _trc__CreateTrackResponse *, const char*);
+SOAP_FMAC3 _trc__CreateTrackResponse * SOAP_FMAC4 soap_in__trc__CreateTrackResponse(struct soap*, const char*, _trc__CreateTrackResponse *, const char*);
+SOAP_FMAC1 _trc__CreateTrackResponse * SOAP_FMAC2 soap_instantiate__trc__CreateTrackResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__CreateTrackResponse * soap_new__trc__CreateTrackResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__CreateTrackResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__CreateTrackResponse * soap_new_req__trc__CreateTrackResponse(
+	struct soap *soap,
+	const std::string& TrackToken)
+{
+	_trc__CreateTrackResponse *_p = ::soap_new__trc__CreateTrackResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__CreateTrackResponse::TrackToken = TrackToken;
+	}
+	return _p;
+}
+
+inline _trc__CreateTrackResponse * soap_new_set__trc__CreateTrackResponse(
+	struct soap *soap,
+	const std::string& TrackToken)
+{
+	_trc__CreateTrackResponse *_p = ::soap_new__trc__CreateTrackResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__CreateTrackResponse::TrackToken = TrackToken;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__CreateTrackResponse(struct soap *soap, _trc__CreateTrackResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:CreateTrackResponse", p->soap_type() == SOAP_TYPE__trc__CreateTrackResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__CreateTrackResponse(struct soap *soap, const char *URL, _trc__CreateTrackResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:CreateTrackResponse", p->soap_type() == SOAP_TYPE__trc__CreateTrackResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__CreateTrackResponse(struct soap *soap, const char *URL, _trc__CreateTrackResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:CreateTrackResponse", p->soap_type() == SOAP_TYPE__trc__CreateTrackResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__CreateTrackResponse(struct soap *soap, const char *URL, _trc__CreateTrackResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:CreateTrackResponse", p->soap_type() == SOAP_TYPE__trc__CreateTrackResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__CreateTrackResponse * SOAP_FMAC4 soap_get__trc__CreateTrackResponse(struct soap*, _trc__CreateTrackResponse *, const char*, const char*);
+
+inline int soap_read__trc__CreateTrackResponse(struct soap *soap, _trc__CreateTrackResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__CreateTrackResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__CreateTrackResponse(struct soap *soap, const char *URL, _trc__CreateTrackResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__CreateTrackResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__CreateTrackResponse(struct soap *soap, _trc__CreateTrackResponse *p)
+{
+	if (::soap_read__trc__CreateTrackResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__CreateTrack_DEFINED
+#define SOAP_TYPE__trc__CreateTrack_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__CreateTrack(struct soap*, const char*, int, const _trc__CreateTrack *, const char*);
+SOAP_FMAC3 _trc__CreateTrack * SOAP_FMAC4 soap_in__trc__CreateTrack(struct soap*, const char*, _trc__CreateTrack *, const char*);
+SOAP_FMAC1 _trc__CreateTrack * SOAP_FMAC2 soap_instantiate__trc__CreateTrack(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__CreateTrack * soap_new__trc__CreateTrack(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__CreateTrack(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__CreateTrack * soap_new_req__trc__CreateTrack(
+	struct soap *soap,
+	const std::string& RecordingToken,
+	tt__TrackConfiguration *TrackConfiguration)
+{
+	_trc__CreateTrack *_p = ::soap_new__trc__CreateTrack(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__CreateTrack::RecordingToken = RecordingToken;
+		_p->_trc__CreateTrack::TrackConfiguration = TrackConfiguration;
+	}
+	return _p;
+}
+
+inline _trc__CreateTrack * soap_new_set__trc__CreateTrack(
+	struct soap *soap,
+	const std::string& RecordingToken,
+	tt__TrackConfiguration *TrackConfiguration)
+{
+	_trc__CreateTrack *_p = ::soap_new__trc__CreateTrack(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__CreateTrack::RecordingToken = RecordingToken;
+		_p->_trc__CreateTrack::TrackConfiguration = TrackConfiguration;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__CreateTrack(struct soap *soap, _trc__CreateTrack const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:CreateTrack", p->soap_type() == SOAP_TYPE__trc__CreateTrack ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__CreateTrack(struct soap *soap, const char *URL, _trc__CreateTrack const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:CreateTrack", p->soap_type() == SOAP_TYPE__trc__CreateTrack ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__CreateTrack(struct soap *soap, const char *URL, _trc__CreateTrack const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:CreateTrack", p->soap_type() == SOAP_TYPE__trc__CreateTrack ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__CreateTrack(struct soap *soap, const char *URL, _trc__CreateTrack const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:CreateTrack", p->soap_type() == SOAP_TYPE__trc__CreateTrack ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__CreateTrack * SOAP_FMAC4 soap_get__trc__CreateTrack(struct soap*, _trc__CreateTrack *, const char*, const char*);
+
+inline int soap_read__trc__CreateTrack(struct soap *soap, _trc__CreateTrack *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__CreateTrack(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__CreateTrack(struct soap *soap, const char *URL, _trc__CreateTrack *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__CreateTrack(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__CreateTrack(struct soap *soap, _trc__CreateTrack *p)
+{
+	if (::soap_read__trc__CreateTrack(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__GetRecordingConfigurationResponse_DEFINED
+#define SOAP_TYPE__trc__GetRecordingConfigurationResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__GetRecordingConfigurationResponse(struct soap*, const char*, int, const _trc__GetRecordingConfigurationResponse *, const char*);
+SOAP_FMAC3 _trc__GetRecordingConfigurationResponse * SOAP_FMAC4 soap_in__trc__GetRecordingConfigurationResponse(struct soap*, const char*, _trc__GetRecordingConfigurationResponse *, const char*);
+SOAP_FMAC1 _trc__GetRecordingConfigurationResponse * SOAP_FMAC2 soap_instantiate__trc__GetRecordingConfigurationResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__GetRecordingConfigurationResponse * soap_new__trc__GetRecordingConfigurationResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__GetRecordingConfigurationResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__GetRecordingConfigurationResponse * soap_new_req__trc__GetRecordingConfigurationResponse(
+	struct soap *soap,
+	tt__RecordingConfiguration *RecordingConfiguration)
+{
+	_trc__GetRecordingConfigurationResponse *_p = ::soap_new__trc__GetRecordingConfigurationResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__GetRecordingConfigurationResponse::RecordingConfiguration = RecordingConfiguration;
+	}
+	return _p;
+}
+
+inline _trc__GetRecordingConfigurationResponse * soap_new_set__trc__GetRecordingConfigurationResponse(
+	struct soap *soap,
+	tt__RecordingConfiguration *RecordingConfiguration)
+{
+	_trc__GetRecordingConfigurationResponse *_p = ::soap_new__trc__GetRecordingConfigurationResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__GetRecordingConfigurationResponse::RecordingConfiguration = RecordingConfiguration;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__GetRecordingConfigurationResponse(struct soap *soap, _trc__GetRecordingConfigurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingConfigurationResponse", p->soap_type() == SOAP_TYPE__trc__GetRecordingConfigurationResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__GetRecordingConfigurationResponse(struct soap *soap, const char *URL, _trc__GetRecordingConfigurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingConfigurationResponse", p->soap_type() == SOAP_TYPE__trc__GetRecordingConfigurationResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__GetRecordingConfigurationResponse(struct soap *soap, const char *URL, _trc__GetRecordingConfigurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingConfigurationResponse", p->soap_type() == SOAP_TYPE__trc__GetRecordingConfigurationResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__GetRecordingConfigurationResponse(struct soap *soap, const char *URL, _trc__GetRecordingConfigurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingConfigurationResponse", p->soap_type() == SOAP_TYPE__trc__GetRecordingConfigurationResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__GetRecordingConfigurationResponse * SOAP_FMAC4 soap_get__trc__GetRecordingConfigurationResponse(struct soap*, _trc__GetRecordingConfigurationResponse *, const char*, const char*);
+
+inline int soap_read__trc__GetRecordingConfigurationResponse(struct soap *soap, _trc__GetRecordingConfigurationResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__GetRecordingConfigurationResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__GetRecordingConfigurationResponse(struct soap *soap, const char *URL, _trc__GetRecordingConfigurationResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__GetRecordingConfigurationResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__GetRecordingConfigurationResponse(struct soap *soap, _trc__GetRecordingConfigurationResponse *p)
+{
+	if (::soap_read__trc__GetRecordingConfigurationResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__GetRecordingConfiguration_DEFINED
+#define SOAP_TYPE__trc__GetRecordingConfiguration_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__GetRecordingConfiguration(struct soap*, const char*, int, const _trc__GetRecordingConfiguration *, const char*);
+SOAP_FMAC3 _trc__GetRecordingConfiguration * SOAP_FMAC4 soap_in__trc__GetRecordingConfiguration(struct soap*, const char*, _trc__GetRecordingConfiguration *, const char*);
+SOAP_FMAC1 _trc__GetRecordingConfiguration * SOAP_FMAC2 soap_instantiate__trc__GetRecordingConfiguration(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__GetRecordingConfiguration * soap_new__trc__GetRecordingConfiguration(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__GetRecordingConfiguration(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__GetRecordingConfiguration * soap_new_req__trc__GetRecordingConfiguration(
+	struct soap *soap,
+	const std::string& RecordingToken)
+{
+	_trc__GetRecordingConfiguration *_p = ::soap_new__trc__GetRecordingConfiguration(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__GetRecordingConfiguration::RecordingToken = RecordingToken;
+	}
+	return _p;
+}
+
+inline _trc__GetRecordingConfiguration * soap_new_set__trc__GetRecordingConfiguration(
+	struct soap *soap,
+	const std::string& RecordingToken)
+{
+	_trc__GetRecordingConfiguration *_p = ::soap_new__trc__GetRecordingConfiguration(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__GetRecordingConfiguration::RecordingToken = RecordingToken;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__GetRecordingConfiguration(struct soap *soap, _trc__GetRecordingConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingConfiguration", p->soap_type() == SOAP_TYPE__trc__GetRecordingConfiguration ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__GetRecordingConfiguration(struct soap *soap, const char *URL, _trc__GetRecordingConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingConfiguration", p->soap_type() == SOAP_TYPE__trc__GetRecordingConfiguration ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__GetRecordingConfiguration(struct soap *soap, const char *URL, _trc__GetRecordingConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingConfiguration", p->soap_type() == SOAP_TYPE__trc__GetRecordingConfiguration ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__GetRecordingConfiguration(struct soap *soap, const char *URL, _trc__GetRecordingConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingConfiguration", p->soap_type() == SOAP_TYPE__trc__GetRecordingConfiguration ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__GetRecordingConfiguration * SOAP_FMAC4 soap_get__trc__GetRecordingConfiguration(struct soap*, _trc__GetRecordingConfiguration *, const char*, const char*);
+
+inline int soap_read__trc__GetRecordingConfiguration(struct soap *soap, _trc__GetRecordingConfiguration *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__GetRecordingConfiguration(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__GetRecordingConfiguration(struct soap *soap, const char *URL, _trc__GetRecordingConfiguration *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__GetRecordingConfiguration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__GetRecordingConfiguration(struct soap *soap, _trc__GetRecordingConfiguration *p)
+{
+	if (::soap_read__trc__GetRecordingConfiguration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__SetRecordingConfigurationResponse_DEFINED
+#define SOAP_TYPE__trc__SetRecordingConfigurationResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__SetRecordingConfigurationResponse(struct soap*, const char*, int, const _trc__SetRecordingConfigurationResponse *, const char*);
+SOAP_FMAC3 _trc__SetRecordingConfigurationResponse * SOAP_FMAC4 soap_in__trc__SetRecordingConfigurationResponse(struct soap*, const char*, _trc__SetRecordingConfigurationResponse *, const char*);
+SOAP_FMAC1 _trc__SetRecordingConfigurationResponse * SOAP_FMAC2 soap_instantiate__trc__SetRecordingConfigurationResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__SetRecordingConfigurationResponse * soap_new__trc__SetRecordingConfigurationResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__SetRecordingConfigurationResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__SetRecordingConfigurationResponse * soap_new_req__trc__SetRecordingConfigurationResponse(
+	struct soap *soap)
+{
+	_trc__SetRecordingConfigurationResponse *_p = ::soap_new__trc__SetRecordingConfigurationResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline _trc__SetRecordingConfigurationResponse * soap_new_set__trc__SetRecordingConfigurationResponse(
+	struct soap *soap)
+{
+	_trc__SetRecordingConfigurationResponse *_p = ::soap_new__trc__SetRecordingConfigurationResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline int soap_write__trc__SetRecordingConfigurationResponse(struct soap *soap, _trc__SetRecordingConfigurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:SetRecordingConfigurationResponse", p->soap_type() == SOAP_TYPE__trc__SetRecordingConfigurationResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__SetRecordingConfigurationResponse(struct soap *soap, const char *URL, _trc__SetRecordingConfigurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:SetRecordingConfigurationResponse", p->soap_type() == SOAP_TYPE__trc__SetRecordingConfigurationResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__SetRecordingConfigurationResponse(struct soap *soap, const char *URL, _trc__SetRecordingConfigurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:SetRecordingConfigurationResponse", p->soap_type() == SOAP_TYPE__trc__SetRecordingConfigurationResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__SetRecordingConfigurationResponse(struct soap *soap, const char *URL, _trc__SetRecordingConfigurationResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:SetRecordingConfigurationResponse", p->soap_type() == SOAP_TYPE__trc__SetRecordingConfigurationResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__SetRecordingConfigurationResponse * SOAP_FMAC4 soap_get__trc__SetRecordingConfigurationResponse(struct soap*, _trc__SetRecordingConfigurationResponse *, const char*, const char*);
+
+inline int soap_read__trc__SetRecordingConfigurationResponse(struct soap *soap, _trc__SetRecordingConfigurationResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__SetRecordingConfigurationResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__SetRecordingConfigurationResponse(struct soap *soap, const char *URL, _trc__SetRecordingConfigurationResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__SetRecordingConfigurationResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__SetRecordingConfigurationResponse(struct soap *soap, _trc__SetRecordingConfigurationResponse *p)
+{
+	if (::soap_read__trc__SetRecordingConfigurationResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__SetRecordingConfiguration_DEFINED
+#define SOAP_TYPE__trc__SetRecordingConfiguration_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__SetRecordingConfiguration(struct soap*, const char*, int, const _trc__SetRecordingConfiguration *, const char*);
+SOAP_FMAC3 _trc__SetRecordingConfiguration * SOAP_FMAC4 soap_in__trc__SetRecordingConfiguration(struct soap*, const char*, _trc__SetRecordingConfiguration *, const char*);
+SOAP_FMAC1 _trc__SetRecordingConfiguration * SOAP_FMAC2 soap_instantiate__trc__SetRecordingConfiguration(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__SetRecordingConfiguration * soap_new__trc__SetRecordingConfiguration(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__SetRecordingConfiguration(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__SetRecordingConfiguration * soap_new_req__trc__SetRecordingConfiguration(
+	struct soap *soap,
+	const std::string& RecordingToken,
+	tt__RecordingConfiguration *RecordingConfiguration)
+{
+	_trc__SetRecordingConfiguration *_p = ::soap_new__trc__SetRecordingConfiguration(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__SetRecordingConfiguration::RecordingToken = RecordingToken;
+		_p->_trc__SetRecordingConfiguration::RecordingConfiguration = RecordingConfiguration;
+	}
+	return _p;
+}
+
+inline _trc__SetRecordingConfiguration * soap_new_set__trc__SetRecordingConfiguration(
+	struct soap *soap,
+	const std::string& RecordingToken,
+	tt__RecordingConfiguration *RecordingConfiguration)
+{
+	_trc__SetRecordingConfiguration *_p = ::soap_new__trc__SetRecordingConfiguration(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__SetRecordingConfiguration::RecordingToken = RecordingToken;
+		_p->_trc__SetRecordingConfiguration::RecordingConfiguration = RecordingConfiguration;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__SetRecordingConfiguration(struct soap *soap, _trc__SetRecordingConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:SetRecordingConfiguration", p->soap_type() == SOAP_TYPE__trc__SetRecordingConfiguration ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__SetRecordingConfiguration(struct soap *soap, const char *URL, _trc__SetRecordingConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:SetRecordingConfiguration", p->soap_type() == SOAP_TYPE__trc__SetRecordingConfiguration ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__SetRecordingConfiguration(struct soap *soap, const char *URL, _trc__SetRecordingConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:SetRecordingConfiguration", p->soap_type() == SOAP_TYPE__trc__SetRecordingConfiguration ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__SetRecordingConfiguration(struct soap *soap, const char *URL, _trc__SetRecordingConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:SetRecordingConfiguration", p->soap_type() == SOAP_TYPE__trc__SetRecordingConfiguration ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__SetRecordingConfiguration * SOAP_FMAC4 soap_get__trc__SetRecordingConfiguration(struct soap*, _trc__SetRecordingConfiguration *, const char*, const char*);
+
+inline int soap_read__trc__SetRecordingConfiguration(struct soap *soap, _trc__SetRecordingConfiguration *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__SetRecordingConfiguration(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__SetRecordingConfiguration(struct soap *soap, const char *URL, _trc__SetRecordingConfiguration *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__SetRecordingConfiguration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__SetRecordingConfiguration(struct soap *soap, _trc__SetRecordingConfiguration *p)
+{
+	if (::soap_read__trc__SetRecordingConfiguration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__GetRecordingsResponse_DEFINED
+#define SOAP_TYPE__trc__GetRecordingsResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__GetRecordingsResponse(struct soap*, const char*, int, const _trc__GetRecordingsResponse *, const char*);
+SOAP_FMAC3 _trc__GetRecordingsResponse * SOAP_FMAC4 soap_in__trc__GetRecordingsResponse(struct soap*, const char*, _trc__GetRecordingsResponse *, const char*);
+SOAP_FMAC1 _trc__GetRecordingsResponse * SOAP_FMAC2 soap_instantiate__trc__GetRecordingsResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__GetRecordingsResponse * soap_new__trc__GetRecordingsResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__GetRecordingsResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__GetRecordingsResponse * soap_new_req__trc__GetRecordingsResponse(
+	struct soap *soap)
+{
+	_trc__GetRecordingsResponse *_p = ::soap_new__trc__GetRecordingsResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline _trc__GetRecordingsResponse * soap_new_set__trc__GetRecordingsResponse(
+	struct soap *soap,
+	const std::vector<tt__GetRecordingsResponseItem *> & RecordingItem)
+{
+	_trc__GetRecordingsResponse *_p = ::soap_new__trc__GetRecordingsResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__GetRecordingsResponse::RecordingItem = RecordingItem;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__GetRecordingsResponse(struct soap *soap, _trc__GetRecordingsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingsResponse", p->soap_type() == SOAP_TYPE__trc__GetRecordingsResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__GetRecordingsResponse(struct soap *soap, const char *URL, _trc__GetRecordingsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingsResponse", p->soap_type() == SOAP_TYPE__trc__GetRecordingsResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__GetRecordingsResponse(struct soap *soap, const char *URL, _trc__GetRecordingsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingsResponse", p->soap_type() == SOAP_TYPE__trc__GetRecordingsResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__GetRecordingsResponse(struct soap *soap, const char *URL, _trc__GetRecordingsResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordingsResponse", p->soap_type() == SOAP_TYPE__trc__GetRecordingsResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__GetRecordingsResponse * SOAP_FMAC4 soap_get__trc__GetRecordingsResponse(struct soap*, _trc__GetRecordingsResponse *, const char*, const char*);
+
+inline int soap_read__trc__GetRecordingsResponse(struct soap *soap, _trc__GetRecordingsResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__GetRecordingsResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__GetRecordingsResponse(struct soap *soap, const char *URL, _trc__GetRecordingsResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__GetRecordingsResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__GetRecordingsResponse(struct soap *soap, _trc__GetRecordingsResponse *p)
+{
+	if (::soap_read__trc__GetRecordingsResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__GetRecordings_DEFINED
+#define SOAP_TYPE__trc__GetRecordings_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__GetRecordings(struct soap*, const char*, int, const _trc__GetRecordings *, const char*);
+SOAP_FMAC3 _trc__GetRecordings * SOAP_FMAC4 soap_in__trc__GetRecordings(struct soap*, const char*, _trc__GetRecordings *, const char*);
+SOAP_FMAC1 _trc__GetRecordings * SOAP_FMAC2 soap_instantiate__trc__GetRecordings(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__GetRecordings * soap_new__trc__GetRecordings(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__GetRecordings(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__GetRecordings * soap_new_req__trc__GetRecordings(
+	struct soap *soap)
+{
+	_trc__GetRecordings *_p = ::soap_new__trc__GetRecordings(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline _trc__GetRecordings * soap_new_set__trc__GetRecordings(
+	struct soap *soap)
+{
+	_trc__GetRecordings *_p = ::soap_new__trc__GetRecordings(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline int soap_write__trc__GetRecordings(struct soap *soap, _trc__GetRecordings const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordings", p->soap_type() == SOAP_TYPE__trc__GetRecordings ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__GetRecordings(struct soap *soap, const char *URL, _trc__GetRecordings const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordings", p->soap_type() == SOAP_TYPE__trc__GetRecordings ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__GetRecordings(struct soap *soap, const char *URL, _trc__GetRecordings const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordings", p->soap_type() == SOAP_TYPE__trc__GetRecordings ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__GetRecordings(struct soap *soap, const char *URL, _trc__GetRecordings const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetRecordings", p->soap_type() == SOAP_TYPE__trc__GetRecordings ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__GetRecordings * SOAP_FMAC4 soap_get__trc__GetRecordings(struct soap*, _trc__GetRecordings *, const char*, const char*);
+
+inline int soap_read__trc__GetRecordings(struct soap *soap, _trc__GetRecordings *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__GetRecordings(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__GetRecordings(struct soap *soap, const char *URL, _trc__GetRecordings *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__GetRecordings(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__GetRecordings(struct soap *soap, _trc__GetRecordings *p)
+{
+	if (::soap_read__trc__GetRecordings(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__DeleteRecordingResponse_DEFINED
+#define SOAP_TYPE__trc__DeleteRecordingResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__DeleteRecordingResponse(struct soap*, const char*, int, const _trc__DeleteRecordingResponse *, const char*);
+SOAP_FMAC3 _trc__DeleteRecordingResponse * SOAP_FMAC4 soap_in__trc__DeleteRecordingResponse(struct soap*, const char*, _trc__DeleteRecordingResponse *, const char*);
+SOAP_FMAC1 _trc__DeleteRecordingResponse * SOAP_FMAC2 soap_instantiate__trc__DeleteRecordingResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__DeleteRecordingResponse * soap_new__trc__DeleteRecordingResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__DeleteRecordingResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__DeleteRecordingResponse * soap_new_req__trc__DeleteRecordingResponse(
+	struct soap *soap)
+{
+	_trc__DeleteRecordingResponse *_p = ::soap_new__trc__DeleteRecordingResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline _trc__DeleteRecordingResponse * soap_new_set__trc__DeleteRecordingResponse(
+	struct soap *soap)
+{
+	_trc__DeleteRecordingResponse *_p = ::soap_new__trc__DeleteRecordingResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline int soap_write__trc__DeleteRecordingResponse(struct soap *soap, _trc__DeleteRecordingResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:DeleteRecordingResponse", p->soap_type() == SOAP_TYPE__trc__DeleteRecordingResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__DeleteRecordingResponse(struct soap *soap, const char *URL, _trc__DeleteRecordingResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:DeleteRecordingResponse", p->soap_type() == SOAP_TYPE__trc__DeleteRecordingResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__DeleteRecordingResponse(struct soap *soap, const char *URL, _trc__DeleteRecordingResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:DeleteRecordingResponse", p->soap_type() == SOAP_TYPE__trc__DeleteRecordingResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__DeleteRecordingResponse(struct soap *soap, const char *URL, _trc__DeleteRecordingResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:DeleteRecordingResponse", p->soap_type() == SOAP_TYPE__trc__DeleteRecordingResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__DeleteRecordingResponse * SOAP_FMAC4 soap_get__trc__DeleteRecordingResponse(struct soap*, _trc__DeleteRecordingResponse *, const char*, const char*);
+
+inline int soap_read__trc__DeleteRecordingResponse(struct soap *soap, _trc__DeleteRecordingResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__DeleteRecordingResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__DeleteRecordingResponse(struct soap *soap, const char *URL, _trc__DeleteRecordingResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__DeleteRecordingResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__DeleteRecordingResponse(struct soap *soap, _trc__DeleteRecordingResponse *p)
+{
+	if (::soap_read__trc__DeleteRecordingResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__DeleteRecording_DEFINED
+#define SOAP_TYPE__trc__DeleteRecording_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__DeleteRecording(struct soap*, const char*, int, const _trc__DeleteRecording *, const char*);
+SOAP_FMAC3 _trc__DeleteRecording * SOAP_FMAC4 soap_in__trc__DeleteRecording(struct soap*, const char*, _trc__DeleteRecording *, const char*);
+SOAP_FMAC1 _trc__DeleteRecording * SOAP_FMAC2 soap_instantiate__trc__DeleteRecording(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__DeleteRecording * soap_new__trc__DeleteRecording(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__DeleteRecording(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__DeleteRecording * soap_new_req__trc__DeleteRecording(
+	struct soap *soap,
+	const std::string& RecordingToken)
+{
+	_trc__DeleteRecording *_p = ::soap_new__trc__DeleteRecording(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__DeleteRecording::RecordingToken = RecordingToken;
+	}
+	return _p;
+}
+
+inline _trc__DeleteRecording * soap_new_set__trc__DeleteRecording(
+	struct soap *soap,
+	const std::string& RecordingToken)
+{
+	_trc__DeleteRecording *_p = ::soap_new__trc__DeleteRecording(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__DeleteRecording::RecordingToken = RecordingToken;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__DeleteRecording(struct soap *soap, _trc__DeleteRecording const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:DeleteRecording", p->soap_type() == SOAP_TYPE__trc__DeleteRecording ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__DeleteRecording(struct soap *soap, const char *URL, _trc__DeleteRecording const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:DeleteRecording", p->soap_type() == SOAP_TYPE__trc__DeleteRecording ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__DeleteRecording(struct soap *soap, const char *URL, _trc__DeleteRecording const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:DeleteRecording", p->soap_type() == SOAP_TYPE__trc__DeleteRecording ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__DeleteRecording(struct soap *soap, const char *URL, _trc__DeleteRecording const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:DeleteRecording", p->soap_type() == SOAP_TYPE__trc__DeleteRecording ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__DeleteRecording * SOAP_FMAC4 soap_get__trc__DeleteRecording(struct soap*, _trc__DeleteRecording *, const char*, const char*);
+
+inline int soap_read__trc__DeleteRecording(struct soap *soap, _trc__DeleteRecording *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__DeleteRecording(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__DeleteRecording(struct soap *soap, const char *URL, _trc__DeleteRecording *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__DeleteRecording(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__DeleteRecording(struct soap *soap, _trc__DeleteRecording *p)
+{
+	if (::soap_read__trc__DeleteRecording(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__CreateRecordingResponse_DEFINED
+#define SOAP_TYPE__trc__CreateRecordingResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__CreateRecordingResponse(struct soap*, const char*, int, const _trc__CreateRecordingResponse *, const char*);
+SOAP_FMAC3 _trc__CreateRecordingResponse * SOAP_FMAC4 soap_in__trc__CreateRecordingResponse(struct soap*, const char*, _trc__CreateRecordingResponse *, const char*);
+SOAP_FMAC1 _trc__CreateRecordingResponse * SOAP_FMAC2 soap_instantiate__trc__CreateRecordingResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__CreateRecordingResponse * soap_new__trc__CreateRecordingResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__CreateRecordingResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__CreateRecordingResponse * soap_new_req__trc__CreateRecordingResponse(
+	struct soap *soap,
+	const std::string& RecordingToken)
+{
+	_trc__CreateRecordingResponse *_p = ::soap_new__trc__CreateRecordingResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__CreateRecordingResponse::RecordingToken = RecordingToken;
+	}
+	return _p;
+}
+
+inline _trc__CreateRecordingResponse * soap_new_set__trc__CreateRecordingResponse(
+	struct soap *soap,
+	const std::string& RecordingToken)
+{
+	_trc__CreateRecordingResponse *_p = ::soap_new__trc__CreateRecordingResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__CreateRecordingResponse::RecordingToken = RecordingToken;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__CreateRecordingResponse(struct soap *soap, _trc__CreateRecordingResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:CreateRecordingResponse", p->soap_type() == SOAP_TYPE__trc__CreateRecordingResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__CreateRecordingResponse(struct soap *soap, const char *URL, _trc__CreateRecordingResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:CreateRecordingResponse", p->soap_type() == SOAP_TYPE__trc__CreateRecordingResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__CreateRecordingResponse(struct soap *soap, const char *URL, _trc__CreateRecordingResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:CreateRecordingResponse", p->soap_type() == SOAP_TYPE__trc__CreateRecordingResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__CreateRecordingResponse(struct soap *soap, const char *URL, _trc__CreateRecordingResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:CreateRecordingResponse", p->soap_type() == SOAP_TYPE__trc__CreateRecordingResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__CreateRecordingResponse * SOAP_FMAC4 soap_get__trc__CreateRecordingResponse(struct soap*, _trc__CreateRecordingResponse *, const char*, const char*);
+
+inline int soap_read__trc__CreateRecordingResponse(struct soap *soap, _trc__CreateRecordingResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__CreateRecordingResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__CreateRecordingResponse(struct soap *soap, const char *URL, _trc__CreateRecordingResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__CreateRecordingResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__CreateRecordingResponse(struct soap *soap, _trc__CreateRecordingResponse *p)
+{
+	if (::soap_read__trc__CreateRecordingResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__CreateRecording_DEFINED
+#define SOAP_TYPE__trc__CreateRecording_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__CreateRecording(struct soap*, const char*, int, const _trc__CreateRecording *, const char*);
+SOAP_FMAC3 _trc__CreateRecording * SOAP_FMAC4 soap_in__trc__CreateRecording(struct soap*, const char*, _trc__CreateRecording *, const char*);
+SOAP_FMAC1 _trc__CreateRecording * SOAP_FMAC2 soap_instantiate__trc__CreateRecording(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__CreateRecording * soap_new__trc__CreateRecording(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__CreateRecording(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__CreateRecording * soap_new_req__trc__CreateRecording(
+	struct soap *soap,
+	tt__RecordingConfiguration *RecordingConfiguration)
+{
+	_trc__CreateRecording *_p = ::soap_new__trc__CreateRecording(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__CreateRecording::RecordingConfiguration = RecordingConfiguration;
+	}
+	return _p;
+}
+
+inline _trc__CreateRecording * soap_new_set__trc__CreateRecording(
+	struct soap *soap,
+	tt__RecordingConfiguration *RecordingConfiguration)
+{
+	_trc__CreateRecording *_p = ::soap_new__trc__CreateRecording(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__CreateRecording::RecordingConfiguration = RecordingConfiguration;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__CreateRecording(struct soap *soap, _trc__CreateRecording const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:CreateRecording", p->soap_type() == SOAP_TYPE__trc__CreateRecording ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__CreateRecording(struct soap *soap, const char *URL, _trc__CreateRecording const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:CreateRecording", p->soap_type() == SOAP_TYPE__trc__CreateRecording ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__CreateRecording(struct soap *soap, const char *URL, _trc__CreateRecording const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:CreateRecording", p->soap_type() == SOAP_TYPE__trc__CreateRecording ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__CreateRecording(struct soap *soap, const char *URL, _trc__CreateRecording const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:CreateRecording", p->soap_type() == SOAP_TYPE__trc__CreateRecording ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__CreateRecording * SOAP_FMAC4 soap_get__trc__CreateRecording(struct soap*, _trc__CreateRecording *, const char*, const char*);
+
+inline int soap_read__trc__CreateRecording(struct soap *soap, _trc__CreateRecording *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__CreateRecording(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__CreateRecording(struct soap *soap, const char *URL, _trc__CreateRecording *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__CreateRecording(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__CreateRecording(struct soap *soap, _trc__CreateRecording *p)
+{
+	if (::soap_read__trc__CreateRecording(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__GetServiceCapabilitiesResponse_DEFINED
+#define SOAP_TYPE__trc__GetServiceCapabilitiesResponse_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__GetServiceCapabilitiesResponse(struct soap*, const char*, int, const _trc__GetServiceCapabilitiesResponse *, const char*);
+SOAP_FMAC3 _trc__GetServiceCapabilitiesResponse * SOAP_FMAC4 soap_in__trc__GetServiceCapabilitiesResponse(struct soap*, const char*, _trc__GetServiceCapabilitiesResponse *, const char*);
+SOAP_FMAC1 _trc__GetServiceCapabilitiesResponse * SOAP_FMAC2 soap_instantiate__trc__GetServiceCapabilitiesResponse(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__GetServiceCapabilitiesResponse * soap_new__trc__GetServiceCapabilitiesResponse(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__GetServiceCapabilitiesResponse(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__GetServiceCapabilitiesResponse * soap_new_req__trc__GetServiceCapabilitiesResponse(
+	struct soap *soap,
+	trc__Capabilities *Capabilities)
+{
+	_trc__GetServiceCapabilitiesResponse *_p = ::soap_new__trc__GetServiceCapabilitiesResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__GetServiceCapabilitiesResponse::Capabilities = Capabilities;
+	}
+	return _p;
+}
+
+inline _trc__GetServiceCapabilitiesResponse * soap_new_set__trc__GetServiceCapabilitiesResponse(
+	struct soap *soap,
+	trc__Capabilities *Capabilities)
+{
+	_trc__GetServiceCapabilitiesResponse *_p = ::soap_new__trc__GetServiceCapabilitiesResponse(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->_trc__GetServiceCapabilitiesResponse::Capabilities = Capabilities;
+	}
+	return _p;
+}
+
+inline int soap_write__trc__GetServiceCapabilitiesResponse(struct soap *soap, _trc__GetServiceCapabilitiesResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetServiceCapabilitiesResponse", p->soap_type() == SOAP_TYPE__trc__GetServiceCapabilitiesResponse ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__GetServiceCapabilitiesResponse(struct soap *soap, const char *URL, _trc__GetServiceCapabilitiesResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetServiceCapabilitiesResponse", p->soap_type() == SOAP_TYPE__trc__GetServiceCapabilitiesResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__GetServiceCapabilitiesResponse(struct soap *soap, const char *URL, _trc__GetServiceCapabilitiesResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetServiceCapabilitiesResponse", p->soap_type() == SOAP_TYPE__trc__GetServiceCapabilitiesResponse ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__GetServiceCapabilitiesResponse(struct soap *soap, const char *URL, _trc__GetServiceCapabilitiesResponse const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetServiceCapabilitiesResponse", p->soap_type() == SOAP_TYPE__trc__GetServiceCapabilitiesResponse ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__GetServiceCapabilitiesResponse * SOAP_FMAC4 soap_get__trc__GetServiceCapabilitiesResponse(struct soap*, _trc__GetServiceCapabilitiesResponse *, const char*, const char*);
+
+inline int soap_read__trc__GetServiceCapabilitiesResponse(struct soap *soap, _trc__GetServiceCapabilitiesResponse *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__GetServiceCapabilitiesResponse(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__GetServiceCapabilitiesResponse(struct soap *soap, const char *URL, _trc__GetServiceCapabilitiesResponse *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__GetServiceCapabilitiesResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__GetServiceCapabilitiesResponse(struct soap *soap, _trc__GetServiceCapabilitiesResponse *p)
+{
+	if (::soap_read__trc__GetServiceCapabilitiesResponse(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE__trc__GetServiceCapabilities_DEFINED
+#define SOAP_TYPE__trc__GetServiceCapabilities_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__trc__GetServiceCapabilities(struct soap*, const char*, int, const _trc__GetServiceCapabilities *, const char*);
+SOAP_FMAC3 _trc__GetServiceCapabilities * SOAP_FMAC4 soap_in__trc__GetServiceCapabilities(struct soap*, const char*, _trc__GetServiceCapabilities *, const char*);
+SOAP_FMAC1 _trc__GetServiceCapabilities * SOAP_FMAC2 soap_instantiate__trc__GetServiceCapabilities(struct soap*, int, const char*, const char*, size_t*);
+
+inline _trc__GetServiceCapabilities * soap_new__trc__GetServiceCapabilities(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__trc__GetServiceCapabilities(soap, n, NULL, NULL, NULL);
+}
+
+inline _trc__GetServiceCapabilities * soap_new_req__trc__GetServiceCapabilities(
+	struct soap *soap)
+{
+	_trc__GetServiceCapabilities *_p = ::soap_new__trc__GetServiceCapabilities(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline _trc__GetServiceCapabilities * soap_new_set__trc__GetServiceCapabilities(
+	struct soap *soap)
+{
+	_trc__GetServiceCapabilities *_p = ::soap_new__trc__GetServiceCapabilities(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline int soap_write__trc__GetServiceCapabilities(struct soap *soap, _trc__GetServiceCapabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetServiceCapabilities", p->soap_type() == SOAP_TYPE__trc__GetServiceCapabilities ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT__trc__GetServiceCapabilities(struct soap *soap, const char *URL, _trc__GetServiceCapabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetServiceCapabilities", p->soap_type() == SOAP_TYPE__trc__GetServiceCapabilities ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH__trc__GetServiceCapabilities(struct soap *soap, const char *URL, _trc__GetServiceCapabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetServiceCapabilities", p->soap_type() == SOAP_TYPE__trc__GetServiceCapabilities ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send__trc__GetServiceCapabilities(struct soap *soap, const char *URL, _trc__GetServiceCapabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:GetServiceCapabilities", p->soap_type() == SOAP_TYPE__trc__GetServiceCapabilities ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 _trc__GetServiceCapabilities * SOAP_FMAC4 soap_get__trc__GetServiceCapabilities(struct soap*, _trc__GetServiceCapabilities *, const char*, const char*);
+
+inline int soap_read__trc__GetServiceCapabilities(struct soap *soap, _trc__GetServiceCapabilities *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get__trc__GetServiceCapabilities(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET__trc__GetServiceCapabilities(struct soap *soap, const char *URL, _trc__GetServiceCapabilities *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read__trc__GetServiceCapabilities(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv__trc__GetServiceCapabilities(struct soap *soap, _trc__GetServiceCapabilities *p)
+{
+	if (::soap_read__trc__GetServiceCapabilities(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE_trc__TrackOptions_DEFINED
+#define SOAP_TYPE_trc__TrackOptions_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_trc__TrackOptions(struct soap*, const char*, int, const trc__TrackOptions *, const char*);
+SOAP_FMAC3 trc__TrackOptions * SOAP_FMAC4 soap_in_trc__TrackOptions(struct soap*, const char*, trc__TrackOptions *, const char*);
+SOAP_FMAC1 trc__TrackOptions * SOAP_FMAC2 soap_instantiate_trc__TrackOptions(struct soap*, int, const char*, const char*, size_t*);
+
+inline trc__TrackOptions * soap_new_trc__TrackOptions(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_trc__TrackOptions(soap, n, NULL, NULL, NULL);
+}
+
+inline trc__TrackOptions * soap_new_req_trc__TrackOptions(
+	struct soap *soap)
+{
+	trc__TrackOptions *_p = ::soap_new_trc__TrackOptions(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline trc__TrackOptions * soap_new_set_trc__TrackOptions(
+	struct soap *soap,
+	int *SpareTotal,
+	int *SpareVideo,
+	int *SpareAudio,
+	int *SpareMetadata,
+	char *__anyAttribute,
+	char *__item__1)
+{
+	trc__TrackOptions *_p = ::soap_new_trc__TrackOptions(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->trc__TrackOptions::SpareTotal = SpareTotal;
+		_p->trc__TrackOptions::SpareVideo = SpareVideo;
+		_p->trc__TrackOptions::SpareAudio = SpareAudio;
+		_p->trc__TrackOptions::SpareMetadata = SpareMetadata;
+		_p->trc__TrackOptions::__anyAttribute = __anyAttribute;
+		_p->xsd__anyType::__item = __item__1;
+	}
+	return _p;
+}
+
+inline int soap_write_trc__TrackOptions(struct soap *soap, trc__TrackOptions const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:TrackOptions", p->soap_type() == SOAP_TYPE_trc__TrackOptions ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT_trc__TrackOptions(struct soap *soap, const char *URL, trc__TrackOptions const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:TrackOptions", p->soap_type() == SOAP_TYPE_trc__TrackOptions ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH_trc__TrackOptions(struct soap *soap, const char *URL, trc__TrackOptions const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:TrackOptions", p->soap_type() == SOAP_TYPE_trc__TrackOptions ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send_trc__TrackOptions(struct soap *soap, const char *URL, trc__TrackOptions const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:TrackOptions", p->soap_type() == SOAP_TYPE_trc__TrackOptions ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 trc__TrackOptions * SOAP_FMAC4 soap_get_trc__TrackOptions(struct soap*, trc__TrackOptions *, const char*, const char*);
+
+inline int soap_read_trc__TrackOptions(struct soap *soap, trc__TrackOptions *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get_trc__TrackOptions(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET_trc__TrackOptions(struct soap *soap, const char *URL, trc__TrackOptions *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read_trc__TrackOptions(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv_trc__TrackOptions(struct soap *soap, trc__TrackOptions *p)
+{
+	if (::soap_read_trc__TrackOptions(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE_trc__JobOptions_DEFINED
+#define SOAP_TYPE_trc__JobOptions_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_trc__JobOptions(struct soap*, const char*, int, const trc__JobOptions *, const char*);
+SOAP_FMAC3 trc__JobOptions * SOAP_FMAC4 soap_in_trc__JobOptions(struct soap*, const char*, trc__JobOptions *, const char*);
+SOAP_FMAC1 trc__JobOptions * SOAP_FMAC2 soap_instantiate_trc__JobOptions(struct soap*, int, const char*, const char*, size_t*);
+
+inline trc__JobOptions * soap_new_trc__JobOptions(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_trc__JobOptions(soap, n, NULL, NULL, NULL);
+}
+
+inline trc__JobOptions * soap_new_req_trc__JobOptions(
+	struct soap *soap)
+{
+	trc__JobOptions *_p = ::soap_new_trc__JobOptions(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline trc__JobOptions * soap_new_set_trc__JobOptions(
+	struct soap *soap,
+	int *Spare,
+	std::string *CompatibleSources,
+	char *__anyAttribute,
+	char *__item__1)
+{
+	trc__JobOptions *_p = ::soap_new_trc__JobOptions(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->trc__JobOptions::Spare = Spare;
+		_p->trc__JobOptions::CompatibleSources = CompatibleSources;
+		_p->trc__JobOptions::__anyAttribute = __anyAttribute;
+		_p->xsd__anyType::__item = __item__1;
+	}
+	return _p;
+}
+
+inline int soap_write_trc__JobOptions(struct soap *soap, trc__JobOptions const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:JobOptions", p->soap_type() == SOAP_TYPE_trc__JobOptions ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT_trc__JobOptions(struct soap *soap, const char *URL, trc__JobOptions const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:JobOptions", p->soap_type() == SOAP_TYPE_trc__JobOptions ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH_trc__JobOptions(struct soap *soap, const char *URL, trc__JobOptions const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:JobOptions", p->soap_type() == SOAP_TYPE_trc__JobOptions ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send_trc__JobOptions(struct soap *soap, const char *URL, trc__JobOptions const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:JobOptions", p->soap_type() == SOAP_TYPE_trc__JobOptions ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 trc__JobOptions * SOAP_FMAC4 soap_get_trc__JobOptions(struct soap*, trc__JobOptions *, const char*, const char*);
+
+inline int soap_read_trc__JobOptions(struct soap *soap, trc__JobOptions *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get_trc__JobOptions(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET_trc__JobOptions(struct soap *soap, const char *URL, trc__JobOptions *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read_trc__JobOptions(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv_trc__JobOptions(struct soap *soap, trc__JobOptions *p)
+{
+	if (::soap_read_trc__JobOptions(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE_trc__RecordingOptions_DEFINED
+#define SOAP_TYPE_trc__RecordingOptions_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_trc__RecordingOptions(struct soap*, const char*, int, const trc__RecordingOptions *, const char*);
+SOAP_FMAC3 trc__RecordingOptions * SOAP_FMAC4 soap_in_trc__RecordingOptions(struct soap*, const char*, trc__RecordingOptions *, const char*);
+SOAP_FMAC1 trc__RecordingOptions * SOAP_FMAC2 soap_instantiate_trc__RecordingOptions(struct soap*, int, const char*, const char*, size_t*);
+
+inline trc__RecordingOptions * soap_new_trc__RecordingOptions(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_trc__RecordingOptions(soap, n, NULL, NULL, NULL);
+}
+
+inline trc__RecordingOptions * soap_new_req_trc__RecordingOptions(
+	struct soap *soap,
+	trc__JobOptions *Job,
+	trc__TrackOptions *Track)
+{
+	trc__RecordingOptions *_p = ::soap_new_trc__RecordingOptions(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->trc__RecordingOptions::Job = Job;
+		_p->trc__RecordingOptions::Track = Track;
+	}
+	return _p;
+}
+
+inline trc__RecordingOptions * soap_new_set_trc__RecordingOptions(
+	struct soap *soap,
+	trc__JobOptions *Job,
+	trc__TrackOptions *Track,
+	const std::vector<char *> & __any,
+	char *__item__1)
+{
+	trc__RecordingOptions *_p = ::soap_new_trc__RecordingOptions(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->trc__RecordingOptions::Job = Job;
+		_p->trc__RecordingOptions::Track = Track;
+		_p->trc__RecordingOptions::__any = __any;
+		_p->xsd__anyType::__item = __item__1;
+	}
+	return _p;
+}
+
+inline int soap_write_trc__RecordingOptions(struct soap *soap, trc__RecordingOptions const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:RecordingOptions", p->soap_type() == SOAP_TYPE_trc__RecordingOptions ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT_trc__RecordingOptions(struct soap *soap, const char *URL, trc__RecordingOptions const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:RecordingOptions", p->soap_type() == SOAP_TYPE_trc__RecordingOptions ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH_trc__RecordingOptions(struct soap *soap, const char *URL, trc__RecordingOptions const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:RecordingOptions", p->soap_type() == SOAP_TYPE_trc__RecordingOptions ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send_trc__RecordingOptions(struct soap *soap, const char *URL, trc__RecordingOptions const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:RecordingOptions", p->soap_type() == SOAP_TYPE_trc__RecordingOptions ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 trc__RecordingOptions * SOAP_FMAC4 soap_get_trc__RecordingOptions(struct soap*, trc__RecordingOptions *, const char*, const char*);
+
+inline int soap_read_trc__RecordingOptions(struct soap *soap, trc__RecordingOptions *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get_trc__RecordingOptions(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET_trc__RecordingOptions(struct soap *soap, const char *URL, trc__RecordingOptions *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read_trc__RecordingOptions(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv_trc__RecordingOptions(struct soap *soap, trc__RecordingOptions *p)
+{
+	if (::soap_read_trc__RecordingOptions(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE_trc__Capabilities_DEFINED
+#define SOAP_TYPE_trc__Capabilities_DEFINED
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_trc__Capabilities(struct soap*, const char*, int, const trc__Capabilities *, const char*);
+SOAP_FMAC3 trc__Capabilities * SOAP_FMAC4 soap_in_trc__Capabilities(struct soap*, const char*, trc__Capabilities *, const char*);
+SOAP_FMAC1 trc__Capabilities * SOAP_FMAC2 soap_instantiate_trc__Capabilities(struct soap*, int, const char*, const char*, size_t*);
+
+inline trc__Capabilities * soap_new_trc__Capabilities(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_trc__Capabilities(soap, n, NULL, NULL, NULL);
+}
+
+inline trc__Capabilities * soap_new_req_trc__Capabilities(
+	struct soap *soap)
+{
+	trc__Capabilities *_p = ::soap_new_trc__Capabilities(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+	}
+	return _p;
+}
+
+inline trc__Capabilities * soap_new_set_trc__Capabilities(
+	struct soap *soap,
+	const std::vector<char *> & __any,
+	bool *DynamicRecordings,
+	bool *DynamicTracks,
+	std::string *Encoding,
+	float *MaxRate,
+	float *MaxTotalRate,
+	float *MaxRecordings,
+	int *MaxRecordingJobs,
+	bool *Options,
+	bool *MetadataRecording,
+	std::string *SupportedExportFileFormats,
+	bool *EventRecording,
+	std::string *BeforeEventLimit,
+	std::string *AfterEventLimit,
+	std::string *SupportedTargetFormats,
+	int *EncryptionEntryLimit,
+	std::string *SupportedEncryptionModes,
+	bool *OverrideSegmentDuration,
+	bool *AsymmetricEncryptionSupported,
+	bool *ScheduledRecording,
+	bool OnboardStorage,
+	char *__anyAttribute,
+	char *__item__1)
+{
+	trc__Capabilities *_p = ::soap_new_trc__Capabilities(soap);
+	if (_p)
+	{	_p->soap_default(soap);
+		_p->trc__Capabilities::__any = __any;
+		_p->trc__Capabilities::DynamicRecordings = DynamicRecordings;
+		_p->trc__Capabilities::DynamicTracks = DynamicTracks;
+		_p->trc__Capabilities::Encoding = Encoding;
+		_p->trc__Capabilities::MaxRate = MaxRate;
+		_p->trc__Capabilities::MaxTotalRate = MaxTotalRate;
+		_p->trc__Capabilities::MaxRecordings = MaxRecordings;
+		_p->trc__Capabilities::MaxRecordingJobs = MaxRecordingJobs;
+		_p->trc__Capabilities::Options = Options;
+		_p->trc__Capabilities::MetadataRecording = MetadataRecording;
+		_p->trc__Capabilities::SupportedExportFileFormats = SupportedExportFileFormats;
+		_p->trc__Capabilities::EventRecording = EventRecording;
+		_p->trc__Capabilities::BeforeEventLimit = BeforeEventLimit;
+		_p->trc__Capabilities::AfterEventLimit = AfterEventLimit;
+		_p->trc__Capabilities::SupportedTargetFormats = SupportedTargetFormats;
+		_p->trc__Capabilities::EncryptionEntryLimit = EncryptionEntryLimit;
+		_p->trc__Capabilities::SupportedEncryptionModes = SupportedEncryptionModes;
+		_p->trc__Capabilities::OverrideSegmentDuration = OverrideSegmentDuration;
+		_p->trc__Capabilities::AsymmetricEncryptionSupported = AsymmetricEncryptionSupported;
+		_p->trc__Capabilities::ScheduledRecording = ScheduledRecording;
+		_p->trc__Capabilities::OnboardStorage = OnboardStorage;
+		_p->trc__Capabilities::__anyAttribute = __anyAttribute;
+		_p->xsd__anyType::__item = __item__1;
+	}
+	return _p;
+}
+
+inline int soap_write_trc__Capabilities(struct soap *soap, trc__Capabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:Capabilities", p->soap_type() == SOAP_TYPE_trc__Capabilities ? "" : NULL) || soap_end_send(soap))
+		return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT_trc__Capabilities(struct soap *soap, const char *URL, trc__Capabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:Capabilities", p->soap_type() == SOAP_TYPE_trc__Capabilities ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH_trc__Capabilities(struct soap *soap, const char *URL, trc__Capabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:Capabilities", p->soap_type() == SOAP_TYPE_trc__Capabilities ? "" : NULL) || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send_trc__Capabilities(struct soap *soap, const char *URL, trc__Capabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (p->soap_serialize(soap), 0) || p->soap_put(soap, "trc:Capabilities", p->soap_type() == SOAP_TYPE_trc__Capabilities ? "" : NULL) || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 trc__Capabilities * SOAP_FMAC4 soap_get_trc__Capabilities(struct soap*, trc__Capabilities *, const char*, const char*);
+
+inline int soap_read_trc__Capabilities(struct soap *soap, trc__Capabilities *p)
+{
+	if (p)
+	{	p->soap_default(soap);
+		if (soap_begin_recv(soap) || ::soap_get_trc__Capabilities(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET_trc__Capabilities(struct soap *soap, const char *URL, trc__Capabilities *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read_trc__Capabilities(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv_trc__Capabilities(struct soap *soap, trc__Capabilities *p)
+{
+	if (::soap_read_trc__Capabilities(soap, p))
 		return soap_closesock(soap);
 	return soap_closesock(soap);
 }
@@ -159459,6 +167720,1322 @@ inline int soap_POST_recv_xsd__anyType(struct soap *soap, xsd__anyType *p)
 }
 #endif
 
+#ifndef SOAP_TYPE___tse__GetMetadataSearchResults_DEFINED
+#define SOAP_TYPE___tse__GetMetadataSearchResults_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___tse__GetMetadataSearchResults(struct soap*, struct __tse__GetMetadataSearchResults *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___tse__GetMetadataSearchResults(struct soap*, const struct __tse__GetMetadataSearchResults *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___tse__GetMetadataSearchResults(struct soap*, const char*, int, const struct __tse__GetMetadataSearchResults *, const char*);
+SOAP_FMAC3 struct __tse__GetMetadataSearchResults * SOAP_FMAC4 soap_in___tse__GetMetadataSearchResults(struct soap*, const char*, struct __tse__GetMetadataSearchResults *, const char*);
+SOAP_FMAC1 struct __tse__GetMetadataSearchResults * SOAP_FMAC2 soap_instantiate___tse__GetMetadataSearchResults(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __tse__GetMetadataSearchResults * soap_new___tse__GetMetadataSearchResults(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___tse__GetMetadataSearchResults(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __tse__GetMetadataSearchResults * soap_new_req___tse__GetMetadataSearchResults(
+	struct soap *soap)
+{
+	struct __tse__GetMetadataSearchResults *_p = ::soap_new___tse__GetMetadataSearchResults(soap);
+	if (_p)
+	{	::soap_default___tse__GetMetadataSearchResults(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __tse__GetMetadataSearchResults * soap_new_set___tse__GetMetadataSearchResults(
+	struct soap *soap,
+	_tse__GetMetadataSearchResults *tse__GetMetadataSearchResults)
+{
+	struct __tse__GetMetadataSearchResults *_p = ::soap_new___tse__GetMetadataSearchResults(soap);
+	if (_p)
+	{	::soap_default___tse__GetMetadataSearchResults(soap, _p);
+		_p->tse__GetMetadataSearchResults = tse__GetMetadataSearchResults;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___tse__GetMetadataSearchResults(struct soap*, const struct __tse__GetMetadataSearchResults *, const char*, const char*);
+
+inline int soap_write___tse__GetMetadataSearchResults(struct soap *soap, struct __tse__GetMetadataSearchResults const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___tse__GetMetadataSearchResults(soap, p), 0) || ::soap_put___tse__GetMetadataSearchResults(soap, p, "-tse:GetMetadataSearchResults", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___tse__GetMetadataSearchResults(struct soap *soap, const char *URL, struct __tse__GetMetadataSearchResults const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__GetMetadataSearchResults(soap, p), 0) || ::soap_put___tse__GetMetadataSearchResults(soap, p, "-tse:GetMetadataSearchResults", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___tse__GetMetadataSearchResults(struct soap *soap, const char *URL, struct __tse__GetMetadataSearchResults const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__GetMetadataSearchResults(soap, p), 0) || ::soap_put___tse__GetMetadataSearchResults(soap, p, "-tse:GetMetadataSearchResults", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___tse__GetMetadataSearchResults(struct soap *soap, const char *URL, struct __tse__GetMetadataSearchResults const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__GetMetadataSearchResults(soap, p), 0) || ::soap_put___tse__GetMetadataSearchResults(soap, p, "-tse:GetMetadataSearchResults", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __tse__GetMetadataSearchResults * SOAP_FMAC4 soap_get___tse__GetMetadataSearchResults(struct soap*, struct __tse__GetMetadataSearchResults *, const char*, const char*);
+
+inline int soap_read___tse__GetMetadataSearchResults(struct soap *soap, struct __tse__GetMetadataSearchResults *p)
+{
+	if (p)
+	{	::soap_default___tse__GetMetadataSearchResults(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___tse__GetMetadataSearchResults(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___tse__GetMetadataSearchResults(struct soap *soap, const char *URL, struct __tse__GetMetadataSearchResults *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___tse__GetMetadataSearchResults(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___tse__GetMetadataSearchResults(struct soap *soap, struct __tse__GetMetadataSearchResults *p)
+{
+	if (::soap_read___tse__GetMetadataSearchResults(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___tse__FindMetadata_DEFINED
+#define SOAP_TYPE___tse__FindMetadata_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___tse__FindMetadata(struct soap*, struct __tse__FindMetadata *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___tse__FindMetadata(struct soap*, const struct __tse__FindMetadata *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___tse__FindMetadata(struct soap*, const char*, int, const struct __tse__FindMetadata *, const char*);
+SOAP_FMAC3 struct __tse__FindMetadata * SOAP_FMAC4 soap_in___tse__FindMetadata(struct soap*, const char*, struct __tse__FindMetadata *, const char*);
+SOAP_FMAC1 struct __tse__FindMetadata * SOAP_FMAC2 soap_instantiate___tse__FindMetadata(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __tse__FindMetadata * soap_new___tse__FindMetadata(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___tse__FindMetadata(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __tse__FindMetadata * soap_new_req___tse__FindMetadata(
+	struct soap *soap)
+{
+	struct __tse__FindMetadata *_p = ::soap_new___tse__FindMetadata(soap);
+	if (_p)
+	{	::soap_default___tse__FindMetadata(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __tse__FindMetadata * soap_new_set___tse__FindMetadata(
+	struct soap *soap,
+	_tse__FindMetadata *tse__FindMetadata)
+{
+	struct __tse__FindMetadata *_p = ::soap_new___tse__FindMetadata(soap);
+	if (_p)
+	{	::soap_default___tse__FindMetadata(soap, _p);
+		_p->tse__FindMetadata = tse__FindMetadata;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___tse__FindMetadata(struct soap*, const struct __tse__FindMetadata *, const char*, const char*);
+
+inline int soap_write___tse__FindMetadata(struct soap *soap, struct __tse__FindMetadata const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___tse__FindMetadata(soap, p), 0) || ::soap_put___tse__FindMetadata(soap, p, "-tse:FindMetadata", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___tse__FindMetadata(struct soap *soap, const char *URL, struct __tse__FindMetadata const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__FindMetadata(soap, p), 0) || ::soap_put___tse__FindMetadata(soap, p, "-tse:FindMetadata", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___tse__FindMetadata(struct soap *soap, const char *URL, struct __tse__FindMetadata const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__FindMetadata(soap, p), 0) || ::soap_put___tse__FindMetadata(soap, p, "-tse:FindMetadata", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___tse__FindMetadata(struct soap *soap, const char *URL, struct __tse__FindMetadata const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__FindMetadata(soap, p), 0) || ::soap_put___tse__FindMetadata(soap, p, "-tse:FindMetadata", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __tse__FindMetadata * SOAP_FMAC4 soap_get___tse__FindMetadata(struct soap*, struct __tse__FindMetadata *, const char*, const char*);
+
+inline int soap_read___tse__FindMetadata(struct soap *soap, struct __tse__FindMetadata *p)
+{
+	if (p)
+	{	::soap_default___tse__FindMetadata(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___tse__FindMetadata(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___tse__FindMetadata(struct soap *soap, const char *URL, struct __tse__FindMetadata *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___tse__FindMetadata(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___tse__FindMetadata(struct soap *soap, struct __tse__FindMetadata *p)
+{
+	if (::soap_read___tse__FindMetadata(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___tse__EndSearch_DEFINED
+#define SOAP_TYPE___tse__EndSearch_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___tse__EndSearch(struct soap*, struct __tse__EndSearch *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___tse__EndSearch(struct soap*, const struct __tse__EndSearch *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___tse__EndSearch(struct soap*, const char*, int, const struct __tse__EndSearch *, const char*);
+SOAP_FMAC3 struct __tse__EndSearch * SOAP_FMAC4 soap_in___tse__EndSearch(struct soap*, const char*, struct __tse__EndSearch *, const char*);
+SOAP_FMAC1 struct __tse__EndSearch * SOAP_FMAC2 soap_instantiate___tse__EndSearch(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __tse__EndSearch * soap_new___tse__EndSearch(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___tse__EndSearch(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __tse__EndSearch * soap_new_req___tse__EndSearch(
+	struct soap *soap)
+{
+	struct __tse__EndSearch *_p = ::soap_new___tse__EndSearch(soap);
+	if (_p)
+	{	::soap_default___tse__EndSearch(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __tse__EndSearch * soap_new_set___tse__EndSearch(
+	struct soap *soap,
+	_tse__EndSearch *tse__EndSearch)
+{
+	struct __tse__EndSearch *_p = ::soap_new___tse__EndSearch(soap);
+	if (_p)
+	{	::soap_default___tse__EndSearch(soap, _p);
+		_p->tse__EndSearch = tse__EndSearch;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___tse__EndSearch(struct soap*, const struct __tse__EndSearch *, const char*, const char*);
+
+inline int soap_write___tse__EndSearch(struct soap *soap, struct __tse__EndSearch const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___tse__EndSearch(soap, p), 0) || ::soap_put___tse__EndSearch(soap, p, "-tse:EndSearch", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___tse__EndSearch(struct soap *soap, const char *URL, struct __tse__EndSearch const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__EndSearch(soap, p), 0) || ::soap_put___tse__EndSearch(soap, p, "-tse:EndSearch", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___tse__EndSearch(struct soap *soap, const char *URL, struct __tse__EndSearch const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__EndSearch(soap, p), 0) || ::soap_put___tse__EndSearch(soap, p, "-tse:EndSearch", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___tse__EndSearch(struct soap *soap, const char *URL, struct __tse__EndSearch const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__EndSearch(soap, p), 0) || ::soap_put___tse__EndSearch(soap, p, "-tse:EndSearch", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __tse__EndSearch * SOAP_FMAC4 soap_get___tse__EndSearch(struct soap*, struct __tse__EndSearch *, const char*, const char*);
+
+inline int soap_read___tse__EndSearch(struct soap *soap, struct __tse__EndSearch *p)
+{
+	if (p)
+	{	::soap_default___tse__EndSearch(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___tse__EndSearch(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___tse__EndSearch(struct soap *soap, const char *URL, struct __tse__EndSearch *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___tse__EndSearch(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___tse__EndSearch(struct soap *soap, struct __tse__EndSearch *p)
+{
+	if (::soap_read___tse__EndSearch(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___tse__GetSearchState_DEFINED
+#define SOAP_TYPE___tse__GetSearchState_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___tse__GetSearchState(struct soap*, struct __tse__GetSearchState *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___tse__GetSearchState(struct soap*, const struct __tse__GetSearchState *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___tse__GetSearchState(struct soap*, const char*, int, const struct __tse__GetSearchState *, const char*);
+SOAP_FMAC3 struct __tse__GetSearchState * SOAP_FMAC4 soap_in___tse__GetSearchState(struct soap*, const char*, struct __tse__GetSearchState *, const char*);
+SOAP_FMAC1 struct __tse__GetSearchState * SOAP_FMAC2 soap_instantiate___tse__GetSearchState(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __tse__GetSearchState * soap_new___tse__GetSearchState(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___tse__GetSearchState(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __tse__GetSearchState * soap_new_req___tse__GetSearchState(
+	struct soap *soap)
+{
+	struct __tse__GetSearchState *_p = ::soap_new___tse__GetSearchState(soap);
+	if (_p)
+	{	::soap_default___tse__GetSearchState(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __tse__GetSearchState * soap_new_set___tse__GetSearchState(
+	struct soap *soap,
+	_tse__GetSearchState *tse__GetSearchState)
+{
+	struct __tse__GetSearchState *_p = ::soap_new___tse__GetSearchState(soap);
+	if (_p)
+	{	::soap_default___tse__GetSearchState(soap, _p);
+		_p->tse__GetSearchState = tse__GetSearchState;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___tse__GetSearchState(struct soap*, const struct __tse__GetSearchState *, const char*, const char*);
+
+inline int soap_write___tse__GetSearchState(struct soap *soap, struct __tse__GetSearchState const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___tse__GetSearchState(soap, p), 0) || ::soap_put___tse__GetSearchState(soap, p, "-tse:GetSearchState", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___tse__GetSearchState(struct soap *soap, const char *URL, struct __tse__GetSearchState const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__GetSearchState(soap, p), 0) || ::soap_put___tse__GetSearchState(soap, p, "-tse:GetSearchState", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___tse__GetSearchState(struct soap *soap, const char *URL, struct __tse__GetSearchState const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__GetSearchState(soap, p), 0) || ::soap_put___tse__GetSearchState(soap, p, "-tse:GetSearchState", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___tse__GetSearchState(struct soap *soap, const char *URL, struct __tse__GetSearchState const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__GetSearchState(soap, p), 0) || ::soap_put___tse__GetSearchState(soap, p, "-tse:GetSearchState", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __tse__GetSearchState * SOAP_FMAC4 soap_get___tse__GetSearchState(struct soap*, struct __tse__GetSearchState *, const char*, const char*);
+
+inline int soap_read___tse__GetSearchState(struct soap *soap, struct __tse__GetSearchState *p)
+{
+	if (p)
+	{	::soap_default___tse__GetSearchState(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___tse__GetSearchState(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___tse__GetSearchState(struct soap *soap, const char *URL, struct __tse__GetSearchState *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___tse__GetSearchState(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___tse__GetSearchState(struct soap *soap, struct __tse__GetSearchState *p)
+{
+	if (::soap_read___tse__GetSearchState(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___tse__GetPTZPositionSearchResults_DEFINED
+#define SOAP_TYPE___tse__GetPTZPositionSearchResults_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___tse__GetPTZPositionSearchResults(struct soap*, struct __tse__GetPTZPositionSearchResults *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___tse__GetPTZPositionSearchResults(struct soap*, const struct __tse__GetPTZPositionSearchResults *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___tse__GetPTZPositionSearchResults(struct soap*, const char*, int, const struct __tse__GetPTZPositionSearchResults *, const char*);
+SOAP_FMAC3 struct __tse__GetPTZPositionSearchResults * SOAP_FMAC4 soap_in___tse__GetPTZPositionSearchResults(struct soap*, const char*, struct __tse__GetPTZPositionSearchResults *, const char*);
+SOAP_FMAC1 struct __tse__GetPTZPositionSearchResults * SOAP_FMAC2 soap_instantiate___tse__GetPTZPositionSearchResults(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __tse__GetPTZPositionSearchResults * soap_new___tse__GetPTZPositionSearchResults(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___tse__GetPTZPositionSearchResults(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __tse__GetPTZPositionSearchResults * soap_new_req___tse__GetPTZPositionSearchResults(
+	struct soap *soap)
+{
+	struct __tse__GetPTZPositionSearchResults *_p = ::soap_new___tse__GetPTZPositionSearchResults(soap);
+	if (_p)
+	{	::soap_default___tse__GetPTZPositionSearchResults(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __tse__GetPTZPositionSearchResults * soap_new_set___tse__GetPTZPositionSearchResults(
+	struct soap *soap,
+	_tse__GetPTZPositionSearchResults *tse__GetPTZPositionSearchResults)
+{
+	struct __tse__GetPTZPositionSearchResults *_p = ::soap_new___tse__GetPTZPositionSearchResults(soap);
+	if (_p)
+	{	::soap_default___tse__GetPTZPositionSearchResults(soap, _p);
+		_p->tse__GetPTZPositionSearchResults = tse__GetPTZPositionSearchResults;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___tse__GetPTZPositionSearchResults(struct soap*, const struct __tse__GetPTZPositionSearchResults *, const char*, const char*);
+
+inline int soap_write___tse__GetPTZPositionSearchResults(struct soap *soap, struct __tse__GetPTZPositionSearchResults const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___tse__GetPTZPositionSearchResults(soap, p), 0) || ::soap_put___tse__GetPTZPositionSearchResults(soap, p, "-tse:GetPTZPositionSearchResults", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___tse__GetPTZPositionSearchResults(struct soap *soap, const char *URL, struct __tse__GetPTZPositionSearchResults const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__GetPTZPositionSearchResults(soap, p), 0) || ::soap_put___tse__GetPTZPositionSearchResults(soap, p, "-tse:GetPTZPositionSearchResults", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___tse__GetPTZPositionSearchResults(struct soap *soap, const char *URL, struct __tse__GetPTZPositionSearchResults const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__GetPTZPositionSearchResults(soap, p), 0) || ::soap_put___tse__GetPTZPositionSearchResults(soap, p, "-tse:GetPTZPositionSearchResults", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___tse__GetPTZPositionSearchResults(struct soap *soap, const char *URL, struct __tse__GetPTZPositionSearchResults const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__GetPTZPositionSearchResults(soap, p), 0) || ::soap_put___tse__GetPTZPositionSearchResults(soap, p, "-tse:GetPTZPositionSearchResults", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __tse__GetPTZPositionSearchResults * SOAP_FMAC4 soap_get___tse__GetPTZPositionSearchResults(struct soap*, struct __tse__GetPTZPositionSearchResults *, const char*, const char*);
+
+inline int soap_read___tse__GetPTZPositionSearchResults(struct soap *soap, struct __tse__GetPTZPositionSearchResults *p)
+{
+	if (p)
+	{	::soap_default___tse__GetPTZPositionSearchResults(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___tse__GetPTZPositionSearchResults(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___tse__GetPTZPositionSearchResults(struct soap *soap, const char *URL, struct __tse__GetPTZPositionSearchResults *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___tse__GetPTZPositionSearchResults(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___tse__GetPTZPositionSearchResults(struct soap *soap, struct __tse__GetPTZPositionSearchResults *p)
+{
+	if (::soap_read___tse__GetPTZPositionSearchResults(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___tse__FindPTZPosition_DEFINED
+#define SOAP_TYPE___tse__FindPTZPosition_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___tse__FindPTZPosition(struct soap*, struct __tse__FindPTZPosition *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___tse__FindPTZPosition(struct soap*, const struct __tse__FindPTZPosition *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___tse__FindPTZPosition(struct soap*, const char*, int, const struct __tse__FindPTZPosition *, const char*);
+SOAP_FMAC3 struct __tse__FindPTZPosition * SOAP_FMAC4 soap_in___tse__FindPTZPosition(struct soap*, const char*, struct __tse__FindPTZPosition *, const char*);
+SOAP_FMAC1 struct __tse__FindPTZPosition * SOAP_FMAC2 soap_instantiate___tse__FindPTZPosition(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __tse__FindPTZPosition * soap_new___tse__FindPTZPosition(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___tse__FindPTZPosition(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __tse__FindPTZPosition * soap_new_req___tse__FindPTZPosition(
+	struct soap *soap)
+{
+	struct __tse__FindPTZPosition *_p = ::soap_new___tse__FindPTZPosition(soap);
+	if (_p)
+	{	::soap_default___tse__FindPTZPosition(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __tse__FindPTZPosition * soap_new_set___tse__FindPTZPosition(
+	struct soap *soap,
+	_tse__FindPTZPosition *tse__FindPTZPosition)
+{
+	struct __tse__FindPTZPosition *_p = ::soap_new___tse__FindPTZPosition(soap);
+	if (_p)
+	{	::soap_default___tse__FindPTZPosition(soap, _p);
+		_p->tse__FindPTZPosition = tse__FindPTZPosition;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___tse__FindPTZPosition(struct soap*, const struct __tse__FindPTZPosition *, const char*, const char*);
+
+inline int soap_write___tse__FindPTZPosition(struct soap *soap, struct __tse__FindPTZPosition const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___tse__FindPTZPosition(soap, p), 0) || ::soap_put___tse__FindPTZPosition(soap, p, "-tse:FindPTZPosition", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___tse__FindPTZPosition(struct soap *soap, const char *URL, struct __tse__FindPTZPosition const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__FindPTZPosition(soap, p), 0) || ::soap_put___tse__FindPTZPosition(soap, p, "-tse:FindPTZPosition", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___tse__FindPTZPosition(struct soap *soap, const char *URL, struct __tse__FindPTZPosition const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__FindPTZPosition(soap, p), 0) || ::soap_put___tse__FindPTZPosition(soap, p, "-tse:FindPTZPosition", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___tse__FindPTZPosition(struct soap *soap, const char *URL, struct __tse__FindPTZPosition const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__FindPTZPosition(soap, p), 0) || ::soap_put___tse__FindPTZPosition(soap, p, "-tse:FindPTZPosition", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __tse__FindPTZPosition * SOAP_FMAC4 soap_get___tse__FindPTZPosition(struct soap*, struct __tse__FindPTZPosition *, const char*, const char*);
+
+inline int soap_read___tse__FindPTZPosition(struct soap *soap, struct __tse__FindPTZPosition *p)
+{
+	if (p)
+	{	::soap_default___tse__FindPTZPosition(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___tse__FindPTZPosition(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___tse__FindPTZPosition(struct soap *soap, const char *URL, struct __tse__FindPTZPosition *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___tse__FindPTZPosition(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___tse__FindPTZPosition(struct soap *soap, struct __tse__FindPTZPosition *p)
+{
+	if (::soap_read___tse__FindPTZPosition(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___tse__GetEventSearchResults_DEFINED
+#define SOAP_TYPE___tse__GetEventSearchResults_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___tse__GetEventSearchResults(struct soap*, struct __tse__GetEventSearchResults *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___tse__GetEventSearchResults(struct soap*, const struct __tse__GetEventSearchResults *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___tse__GetEventSearchResults(struct soap*, const char*, int, const struct __tse__GetEventSearchResults *, const char*);
+SOAP_FMAC3 struct __tse__GetEventSearchResults * SOAP_FMAC4 soap_in___tse__GetEventSearchResults(struct soap*, const char*, struct __tse__GetEventSearchResults *, const char*);
+SOAP_FMAC1 struct __tse__GetEventSearchResults * SOAP_FMAC2 soap_instantiate___tse__GetEventSearchResults(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __tse__GetEventSearchResults * soap_new___tse__GetEventSearchResults(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___tse__GetEventSearchResults(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __tse__GetEventSearchResults * soap_new_req___tse__GetEventSearchResults(
+	struct soap *soap)
+{
+	struct __tse__GetEventSearchResults *_p = ::soap_new___tse__GetEventSearchResults(soap);
+	if (_p)
+	{	::soap_default___tse__GetEventSearchResults(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __tse__GetEventSearchResults * soap_new_set___tse__GetEventSearchResults(
+	struct soap *soap,
+	_tse__GetEventSearchResults *tse__GetEventSearchResults)
+{
+	struct __tse__GetEventSearchResults *_p = ::soap_new___tse__GetEventSearchResults(soap);
+	if (_p)
+	{	::soap_default___tse__GetEventSearchResults(soap, _p);
+		_p->tse__GetEventSearchResults = tse__GetEventSearchResults;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___tse__GetEventSearchResults(struct soap*, const struct __tse__GetEventSearchResults *, const char*, const char*);
+
+inline int soap_write___tse__GetEventSearchResults(struct soap *soap, struct __tse__GetEventSearchResults const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___tse__GetEventSearchResults(soap, p), 0) || ::soap_put___tse__GetEventSearchResults(soap, p, "-tse:GetEventSearchResults", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___tse__GetEventSearchResults(struct soap *soap, const char *URL, struct __tse__GetEventSearchResults const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__GetEventSearchResults(soap, p), 0) || ::soap_put___tse__GetEventSearchResults(soap, p, "-tse:GetEventSearchResults", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___tse__GetEventSearchResults(struct soap *soap, const char *URL, struct __tse__GetEventSearchResults const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__GetEventSearchResults(soap, p), 0) || ::soap_put___tse__GetEventSearchResults(soap, p, "-tse:GetEventSearchResults", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___tse__GetEventSearchResults(struct soap *soap, const char *URL, struct __tse__GetEventSearchResults const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__GetEventSearchResults(soap, p), 0) || ::soap_put___tse__GetEventSearchResults(soap, p, "-tse:GetEventSearchResults", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __tse__GetEventSearchResults * SOAP_FMAC4 soap_get___tse__GetEventSearchResults(struct soap*, struct __tse__GetEventSearchResults *, const char*, const char*);
+
+inline int soap_read___tse__GetEventSearchResults(struct soap *soap, struct __tse__GetEventSearchResults *p)
+{
+	if (p)
+	{	::soap_default___tse__GetEventSearchResults(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___tse__GetEventSearchResults(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___tse__GetEventSearchResults(struct soap *soap, const char *URL, struct __tse__GetEventSearchResults *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___tse__GetEventSearchResults(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___tse__GetEventSearchResults(struct soap *soap, struct __tse__GetEventSearchResults *p)
+{
+	if (::soap_read___tse__GetEventSearchResults(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___tse__FindEvents_DEFINED
+#define SOAP_TYPE___tse__FindEvents_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___tse__FindEvents(struct soap*, struct __tse__FindEvents *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___tse__FindEvents(struct soap*, const struct __tse__FindEvents *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___tse__FindEvents(struct soap*, const char*, int, const struct __tse__FindEvents *, const char*);
+SOAP_FMAC3 struct __tse__FindEvents * SOAP_FMAC4 soap_in___tse__FindEvents(struct soap*, const char*, struct __tse__FindEvents *, const char*);
+SOAP_FMAC1 struct __tse__FindEvents * SOAP_FMAC2 soap_instantiate___tse__FindEvents(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __tse__FindEvents * soap_new___tse__FindEvents(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___tse__FindEvents(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __tse__FindEvents * soap_new_req___tse__FindEvents(
+	struct soap *soap)
+{
+	struct __tse__FindEvents *_p = ::soap_new___tse__FindEvents(soap);
+	if (_p)
+	{	::soap_default___tse__FindEvents(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __tse__FindEvents * soap_new_set___tse__FindEvents(
+	struct soap *soap,
+	_tse__FindEvents *tse__FindEvents)
+{
+	struct __tse__FindEvents *_p = ::soap_new___tse__FindEvents(soap);
+	if (_p)
+	{	::soap_default___tse__FindEvents(soap, _p);
+		_p->tse__FindEvents = tse__FindEvents;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___tse__FindEvents(struct soap*, const struct __tse__FindEvents *, const char*, const char*);
+
+inline int soap_write___tse__FindEvents(struct soap *soap, struct __tse__FindEvents const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___tse__FindEvents(soap, p), 0) || ::soap_put___tse__FindEvents(soap, p, "-tse:FindEvents", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___tse__FindEvents(struct soap *soap, const char *URL, struct __tse__FindEvents const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__FindEvents(soap, p), 0) || ::soap_put___tse__FindEvents(soap, p, "-tse:FindEvents", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___tse__FindEvents(struct soap *soap, const char *URL, struct __tse__FindEvents const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__FindEvents(soap, p), 0) || ::soap_put___tse__FindEvents(soap, p, "-tse:FindEvents", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___tse__FindEvents(struct soap *soap, const char *URL, struct __tse__FindEvents const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__FindEvents(soap, p), 0) || ::soap_put___tse__FindEvents(soap, p, "-tse:FindEvents", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __tse__FindEvents * SOAP_FMAC4 soap_get___tse__FindEvents(struct soap*, struct __tse__FindEvents *, const char*, const char*);
+
+inline int soap_read___tse__FindEvents(struct soap *soap, struct __tse__FindEvents *p)
+{
+	if (p)
+	{	::soap_default___tse__FindEvents(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___tse__FindEvents(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___tse__FindEvents(struct soap *soap, const char *URL, struct __tse__FindEvents *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___tse__FindEvents(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___tse__FindEvents(struct soap *soap, struct __tse__FindEvents *p)
+{
+	if (::soap_read___tse__FindEvents(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___tse__GetRecordingSearchResults_DEFINED
+#define SOAP_TYPE___tse__GetRecordingSearchResults_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___tse__GetRecordingSearchResults(struct soap*, struct __tse__GetRecordingSearchResults *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___tse__GetRecordingSearchResults(struct soap*, const struct __tse__GetRecordingSearchResults *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___tse__GetRecordingSearchResults(struct soap*, const char*, int, const struct __tse__GetRecordingSearchResults *, const char*);
+SOAP_FMAC3 struct __tse__GetRecordingSearchResults * SOAP_FMAC4 soap_in___tse__GetRecordingSearchResults(struct soap*, const char*, struct __tse__GetRecordingSearchResults *, const char*);
+SOAP_FMAC1 struct __tse__GetRecordingSearchResults * SOAP_FMAC2 soap_instantiate___tse__GetRecordingSearchResults(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __tse__GetRecordingSearchResults * soap_new___tse__GetRecordingSearchResults(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___tse__GetRecordingSearchResults(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __tse__GetRecordingSearchResults * soap_new_req___tse__GetRecordingSearchResults(
+	struct soap *soap)
+{
+	struct __tse__GetRecordingSearchResults *_p = ::soap_new___tse__GetRecordingSearchResults(soap);
+	if (_p)
+	{	::soap_default___tse__GetRecordingSearchResults(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __tse__GetRecordingSearchResults * soap_new_set___tse__GetRecordingSearchResults(
+	struct soap *soap,
+	_tse__GetRecordingSearchResults *tse__GetRecordingSearchResults)
+{
+	struct __tse__GetRecordingSearchResults *_p = ::soap_new___tse__GetRecordingSearchResults(soap);
+	if (_p)
+	{	::soap_default___tse__GetRecordingSearchResults(soap, _p);
+		_p->tse__GetRecordingSearchResults = tse__GetRecordingSearchResults;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___tse__GetRecordingSearchResults(struct soap*, const struct __tse__GetRecordingSearchResults *, const char*, const char*);
+
+inline int soap_write___tse__GetRecordingSearchResults(struct soap *soap, struct __tse__GetRecordingSearchResults const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___tse__GetRecordingSearchResults(soap, p), 0) || ::soap_put___tse__GetRecordingSearchResults(soap, p, "-tse:GetRecordingSearchResults", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___tse__GetRecordingSearchResults(struct soap *soap, const char *URL, struct __tse__GetRecordingSearchResults const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__GetRecordingSearchResults(soap, p), 0) || ::soap_put___tse__GetRecordingSearchResults(soap, p, "-tse:GetRecordingSearchResults", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___tse__GetRecordingSearchResults(struct soap *soap, const char *URL, struct __tse__GetRecordingSearchResults const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__GetRecordingSearchResults(soap, p), 0) || ::soap_put___tse__GetRecordingSearchResults(soap, p, "-tse:GetRecordingSearchResults", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___tse__GetRecordingSearchResults(struct soap *soap, const char *URL, struct __tse__GetRecordingSearchResults const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__GetRecordingSearchResults(soap, p), 0) || ::soap_put___tse__GetRecordingSearchResults(soap, p, "-tse:GetRecordingSearchResults", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __tse__GetRecordingSearchResults * SOAP_FMAC4 soap_get___tse__GetRecordingSearchResults(struct soap*, struct __tse__GetRecordingSearchResults *, const char*, const char*);
+
+inline int soap_read___tse__GetRecordingSearchResults(struct soap *soap, struct __tse__GetRecordingSearchResults *p)
+{
+	if (p)
+	{	::soap_default___tse__GetRecordingSearchResults(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___tse__GetRecordingSearchResults(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___tse__GetRecordingSearchResults(struct soap *soap, const char *URL, struct __tse__GetRecordingSearchResults *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___tse__GetRecordingSearchResults(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___tse__GetRecordingSearchResults(struct soap *soap, struct __tse__GetRecordingSearchResults *p)
+{
+	if (::soap_read___tse__GetRecordingSearchResults(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___tse__FindRecordings_DEFINED
+#define SOAP_TYPE___tse__FindRecordings_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___tse__FindRecordings(struct soap*, struct __tse__FindRecordings *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___tse__FindRecordings(struct soap*, const struct __tse__FindRecordings *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___tse__FindRecordings(struct soap*, const char*, int, const struct __tse__FindRecordings *, const char*);
+SOAP_FMAC3 struct __tse__FindRecordings * SOAP_FMAC4 soap_in___tse__FindRecordings(struct soap*, const char*, struct __tse__FindRecordings *, const char*);
+SOAP_FMAC1 struct __tse__FindRecordings * SOAP_FMAC2 soap_instantiate___tse__FindRecordings(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __tse__FindRecordings * soap_new___tse__FindRecordings(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___tse__FindRecordings(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __tse__FindRecordings * soap_new_req___tse__FindRecordings(
+	struct soap *soap)
+{
+	struct __tse__FindRecordings *_p = ::soap_new___tse__FindRecordings(soap);
+	if (_p)
+	{	::soap_default___tse__FindRecordings(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __tse__FindRecordings * soap_new_set___tse__FindRecordings(
+	struct soap *soap,
+	_tse__FindRecordings *tse__FindRecordings)
+{
+	struct __tse__FindRecordings *_p = ::soap_new___tse__FindRecordings(soap);
+	if (_p)
+	{	::soap_default___tse__FindRecordings(soap, _p);
+		_p->tse__FindRecordings = tse__FindRecordings;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___tse__FindRecordings(struct soap*, const struct __tse__FindRecordings *, const char*, const char*);
+
+inline int soap_write___tse__FindRecordings(struct soap *soap, struct __tse__FindRecordings const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___tse__FindRecordings(soap, p), 0) || ::soap_put___tse__FindRecordings(soap, p, "-tse:FindRecordings", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___tse__FindRecordings(struct soap *soap, const char *URL, struct __tse__FindRecordings const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__FindRecordings(soap, p), 0) || ::soap_put___tse__FindRecordings(soap, p, "-tse:FindRecordings", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___tse__FindRecordings(struct soap *soap, const char *URL, struct __tse__FindRecordings const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__FindRecordings(soap, p), 0) || ::soap_put___tse__FindRecordings(soap, p, "-tse:FindRecordings", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___tse__FindRecordings(struct soap *soap, const char *URL, struct __tse__FindRecordings const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__FindRecordings(soap, p), 0) || ::soap_put___tse__FindRecordings(soap, p, "-tse:FindRecordings", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __tse__FindRecordings * SOAP_FMAC4 soap_get___tse__FindRecordings(struct soap*, struct __tse__FindRecordings *, const char*, const char*);
+
+inline int soap_read___tse__FindRecordings(struct soap *soap, struct __tse__FindRecordings *p)
+{
+	if (p)
+	{	::soap_default___tse__FindRecordings(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___tse__FindRecordings(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___tse__FindRecordings(struct soap *soap, const char *URL, struct __tse__FindRecordings *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___tse__FindRecordings(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___tse__FindRecordings(struct soap *soap, struct __tse__FindRecordings *p)
+{
+	if (::soap_read___tse__FindRecordings(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___tse__GetMediaAttributes_DEFINED
+#define SOAP_TYPE___tse__GetMediaAttributes_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___tse__GetMediaAttributes(struct soap*, struct __tse__GetMediaAttributes *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___tse__GetMediaAttributes(struct soap*, const struct __tse__GetMediaAttributes *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___tse__GetMediaAttributes(struct soap*, const char*, int, const struct __tse__GetMediaAttributes *, const char*);
+SOAP_FMAC3 struct __tse__GetMediaAttributes * SOAP_FMAC4 soap_in___tse__GetMediaAttributes(struct soap*, const char*, struct __tse__GetMediaAttributes *, const char*);
+SOAP_FMAC1 struct __tse__GetMediaAttributes * SOAP_FMAC2 soap_instantiate___tse__GetMediaAttributes(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __tse__GetMediaAttributes * soap_new___tse__GetMediaAttributes(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___tse__GetMediaAttributes(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __tse__GetMediaAttributes * soap_new_req___tse__GetMediaAttributes(
+	struct soap *soap)
+{
+	struct __tse__GetMediaAttributes *_p = ::soap_new___tse__GetMediaAttributes(soap);
+	if (_p)
+	{	::soap_default___tse__GetMediaAttributes(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __tse__GetMediaAttributes * soap_new_set___tse__GetMediaAttributes(
+	struct soap *soap,
+	_tse__GetMediaAttributes *tse__GetMediaAttributes)
+{
+	struct __tse__GetMediaAttributes *_p = ::soap_new___tse__GetMediaAttributes(soap);
+	if (_p)
+	{	::soap_default___tse__GetMediaAttributes(soap, _p);
+		_p->tse__GetMediaAttributes = tse__GetMediaAttributes;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___tse__GetMediaAttributes(struct soap*, const struct __tse__GetMediaAttributes *, const char*, const char*);
+
+inline int soap_write___tse__GetMediaAttributes(struct soap *soap, struct __tse__GetMediaAttributes const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___tse__GetMediaAttributes(soap, p), 0) || ::soap_put___tse__GetMediaAttributes(soap, p, "-tse:GetMediaAttributes", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___tse__GetMediaAttributes(struct soap *soap, const char *URL, struct __tse__GetMediaAttributes const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__GetMediaAttributes(soap, p), 0) || ::soap_put___tse__GetMediaAttributes(soap, p, "-tse:GetMediaAttributes", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___tse__GetMediaAttributes(struct soap *soap, const char *URL, struct __tse__GetMediaAttributes const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__GetMediaAttributes(soap, p), 0) || ::soap_put___tse__GetMediaAttributes(soap, p, "-tse:GetMediaAttributes", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___tse__GetMediaAttributes(struct soap *soap, const char *URL, struct __tse__GetMediaAttributes const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__GetMediaAttributes(soap, p), 0) || ::soap_put___tse__GetMediaAttributes(soap, p, "-tse:GetMediaAttributes", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __tse__GetMediaAttributes * SOAP_FMAC4 soap_get___tse__GetMediaAttributes(struct soap*, struct __tse__GetMediaAttributes *, const char*, const char*);
+
+inline int soap_read___tse__GetMediaAttributes(struct soap *soap, struct __tse__GetMediaAttributes *p)
+{
+	if (p)
+	{	::soap_default___tse__GetMediaAttributes(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___tse__GetMediaAttributes(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___tse__GetMediaAttributes(struct soap *soap, const char *URL, struct __tse__GetMediaAttributes *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___tse__GetMediaAttributes(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___tse__GetMediaAttributes(struct soap *soap, struct __tse__GetMediaAttributes *p)
+{
+	if (::soap_read___tse__GetMediaAttributes(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___tse__GetRecordingInformation_DEFINED
+#define SOAP_TYPE___tse__GetRecordingInformation_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___tse__GetRecordingInformation(struct soap*, struct __tse__GetRecordingInformation *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___tse__GetRecordingInformation(struct soap*, const struct __tse__GetRecordingInformation *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___tse__GetRecordingInformation(struct soap*, const char*, int, const struct __tse__GetRecordingInformation *, const char*);
+SOAP_FMAC3 struct __tse__GetRecordingInformation * SOAP_FMAC4 soap_in___tse__GetRecordingInformation(struct soap*, const char*, struct __tse__GetRecordingInformation *, const char*);
+SOAP_FMAC1 struct __tse__GetRecordingInformation * SOAP_FMAC2 soap_instantiate___tse__GetRecordingInformation(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __tse__GetRecordingInformation * soap_new___tse__GetRecordingInformation(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___tse__GetRecordingInformation(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __tse__GetRecordingInformation * soap_new_req___tse__GetRecordingInformation(
+	struct soap *soap)
+{
+	struct __tse__GetRecordingInformation *_p = ::soap_new___tse__GetRecordingInformation(soap);
+	if (_p)
+	{	::soap_default___tse__GetRecordingInformation(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __tse__GetRecordingInformation * soap_new_set___tse__GetRecordingInformation(
+	struct soap *soap,
+	_tse__GetRecordingInformation *tse__GetRecordingInformation)
+{
+	struct __tse__GetRecordingInformation *_p = ::soap_new___tse__GetRecordingInformation(soap);
+	if (_p)
+	{	::soap_default___tse__GetRecordingInformation(soap, _p);
+		_p->tse__GetRecordingInformation = tse__GetRecordingInformation;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___tse__GetRecordingInformation(struct soap*, const struct __tse__GetRecordingInformation *, const char*, const char*);
+
+inline int soap_write___tse__GetRecordingInformation(struct soap *soap, struct __tse__GetRecordingInformation const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___tse__GetRecordingInformation(soap, p), 0) || ::soap_put___tse__GetRecordingInformation(soap, p, "-tse:GetRecordingInformation", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___tse__GetRecordingInformation(struct soap *soap, const char *URL, struct __tse__GetRecordingInformation const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__GetRecordingInformation(soap, p), 0) || ::soap_put___tse__GetRecordingInformation(soap, p, "-tse:GetRecordingInformation", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___tse__GetRecordingInformation(struct soap *soap, const char *URL, struct __tse__GetRecordingInformation const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__GetRecordingInformation(soap, p), 0) || ::soap_put___tse__GetRecordingInformation(soap, p, "-tse:GetRecordingInformation", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___tse__GetRecordingInformation(struct soap *soap, const char *URL, struct __tse__GetRecordingInformation const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__GetRecordingInformation(soap, p), 0) || ::soap_put___tse__GetRecordingInformation(soap, p, "-tse:GetRecordingInformation", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __tse__GetRecordingInformation * SOAP_FMAC4 soap_get___tse__GetRecordingInformation(struct soap*, struct __tse__GetRecordingInformation *, const char*, const char*);
+
+inline int soap_read___tse__GetRecordingInformation(struct soap *soap, struct __tse__GetRecordingInformation *p)
+{
+	if (p)
+	{	::soap_default___tse__GetRecordingInformation(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___tse__GetRecordingInformation(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___tse__GetRecordingInformation(struct soap *soap, const char *URL, struct __tse__GetRecordingInformation *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___tse__GetRecordingInformation(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___tse__GetRecordingInformation(struct soap *soap, struct __tse__GetRecordingInformation *p)
+{
+	if (::soap_read___tse__GetRecordingInformation(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___tse__GetRecordingSummary_DEFINED
+#define SOAP_TYPE___tse__GetRecordingSummary_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___tse__GetRecordingSummary(struct soap*, struct __tse__GetRecordingSummary *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___tse__GetRecordingSummary(struct soap*, const struct __tse__GetRecordingSummary *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___tse__GetRecordingSummary(struct soap*, const char*, int, const struct __tse__GetRecordingSummary *, const char*);
+SOAP_FMAC3 struct __tse__GetRecordingSummary * SOAP_FMAC4 soap_in___tse__GetRecordingSummary(struct soap*, const char*, struct __tse__GetRecordingSummary *, const char*);
+SOAP_FMAC1 struct __tse__GetRecordingSummary * SOAP_FMAC2 soap_instantiate___tse__GetRecordingSummary(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __tse__GetRecordingSummary * soap_new___tse__GetRecordingSummary(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___tse__GetRecordingSummary(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __tse__GetRecordingSummary * soap_new_req___tse__GetRecordingSummary(
+	struct soap *soap)
+{
+	struct __tse__GetRecordingSummary *_p = ::soap_new___tse__GetRecordingSummary(soap);
+	if (_p)
+	{	::soap_default___tse__GetRecordingSummary(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __tse__GetRecordingSummary * soap_new_set___tse__GetRecordingSummary(
+	struct soap *soap,
+	_tse__GetRecordingSummary *tse__GetRecordingSummary)
+{
+	struct __tse__GetRecordingSummary *_p = ::soap_new___tse__GetRecordingSummary(soap);
+	if (_p)
+	{	::soap_default___tse__GetRecordingSummary(soap, _p);
+		_p->tse__GetRecordingSummary = tse__GetRecordingSummary;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___tse__GetRecordingSummary(struct soap*, const struct __tse__GetRecordingSummary *, const char*, const char*);
+
+inline int soap_write___tse__GetRecordingSummary(struct soap *soap, struct __tse__GetRecordingSummary const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___tse__GetRecordingSummary(soap, p), 0) || ::soap_put___tse__GetRecordingSummary(soap, p, "-tse:GetRecordingSummary", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___tse__GetRecordingSummary(struct soap *soap, const char *URL, struct __tse__GetRecordingSummary const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__GetRecordingSummary(soap, p), 0) || ::soap_put___tse__GetRecordingSummary(soap, p, "-tse:GetRecordingSummary", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___tse__GetRecordingSummary(struct soap *soap, const char *URL, struct __tse__GetRecordingSummary const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__GetRecordingSummary(soap, p), 0) || ::soap_put___tse__GetRecordingSummary(soap, p, "-tse:GetRecordingSummary", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___tse__GetRecordingSummary(struct soap *soap, const char *URL, struct __tse__GetRecordingSummary const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__GetRecordingSummary(soap, p), 0) || ::soap_put___tse__GetRecordingSummary(soap, p, "-tse:GetRecordingSummary", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __tse__GetRecordingSummary * SOAP_FMAC4 soap_get___tse__GetRecordingSummary(struct soap*, struct __tse__GetRecordingSummary *, const char*, const char*);
+
+inline int soap_read___tse__GetRecordingSummary(struct soap *soap, struct __tse__GetRecordingSummary *p)
+{
+	if (p)
+	{	::soap_default___tse__GetRecordingSummary(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___tse__GetRecordingSummary(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___tse__GetRecordingSummary(struct soap *soap, const char *URL, struct __tse__GetRecordingSummary *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___tse__GetRecordingSummary(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___tse__GetRecordingSummary(struct soap *soap, struct __tse__GetRecordingSummary *p)
+{
+	if (::soap_read___tse__GetRecordingSummary(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___tse__GetServiceCapabilities_DEFINED
+#define SOAP_TYPE___tse__GetServiceCapabilities_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___tse__GetServiceCapabilities(struct soap*, struct __tse__GetServiceCapabilities *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___tse__GetServiceCapabilities(struct soap*, const struct __tse__GetServiceCapabilities *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___tse__GetServiceCapabilities(struct soap*, const char*, int, const struct __tse__GetServiceCapabilities *, const char*);
+SOAP_FMAC3 struct __tse__GetServiceCapabilities * SOAP_FMAC4 soap_in___tse__GetServiceCapabilities(struct soap*, const char*, struct __tse__GetServiceCapabilities *, const char*);
+SOAP_FMAC1 struct __tse__GetServiceCapabilities * SOAP_FMAC2 soap_instantiate___tse__GetServiceCapabilities(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __tse__GetServiceCapabilities * soap_new___tse__GetServiceCapabilities(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___tse__GetServiceCapabilities(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __tse__GetServiceCapabilities * soap_new_req___tse__GetServiceCapabilities(
+	struct soap *soap)
+{
+	struct __tse__GetServiceCapabilities *_p = ::soap_new___tse__GetServiceCapabilities(soap);
+	if (_p)
+	{	::soap_default___tse__GetServiceCapabilities(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __tse__GetServiceCapabilities * soap_new_set___tse__GetServiceCapabilities(
+	struct soap *soap,
+	_tse__GetServiceCapabilities *tse__GetServiceCapabilities)
+{
+	struct __tse__GetServiceCapabilities *_p = ::soap_new___tse__GetServiceCapabilities(soap);
+	if (_p)
+	{	::soap_default___tse__GetServiceCapabilities(soap, _p);
+		_p->tse__GetServiceCapabilities = tse__GetServiceCapabilities;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___tse__GetServiceCapabilities(struct soap*, const struct __tse__GetServiceCapabilities *, const char*, const char*);
+
+inline int soap_write___tse__GetServiceCapabilities(struct soap *soap, struct __tse__GetServiceCapabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___tse__GetServiceCapabilities(soap, p), 0) || ::soap_put___tse__GetServiceCapabilities(soap, p, "-tse:GetServiceCapabilities", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___tse__GetServiceCapabilities(struct soap *soap, const char *URL, struct __tse__GetServiceCapabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__GetServiceCapabilities(soap, p), 0) || ::soap_put___tse__GetServiceCapabilities(soap, p, "-tse:GetServiceCapabilities", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___tse__GetServiceCapabilities(struct soap *soap, const char *URL, struct __tse__GetServiceCapabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__GetServiceCapabilities(soap, p), 0) || ::soap_put___tse__GetServiceCapabilities(soap, p, "-tse:GetServiceCapabilities", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___tse__GetServiceCapabilities(struct soap *soap, const char *URL, struct __tse__GetServiceCapabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___tse__GetServiceCapabilities(soap, p), 0) || ::soap_put___tse__GetServiceCapabilities(soap, p, "-tse:GetServiceCapabilities", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __tse__GetServiceCapabilities * SOAP_FMAC4 soap_get___tse__GetServiceCapabilities(struct soap*, struct __tse__GetServiceCapabilities *, const char*, const char*);
+
+inline int soap_read___tse__GetServiceCapabilities(struct soap *soap, struct __tse__GetServiceCapabilities *p)
+{
+	if (p)
+	{	::soap_default___tse__GetServiceCapabilities(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___tse__GetServiceCapabilities(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___tse__GetServiceCapabilities(struct soap *soap, const char *URL, struct __tse__GetServiceCapabilities *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___tse__GetServiceCapabilities(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___tse__GetServiceCapabilities(struct soap *soap, struct __tse__GetServiceCapabilities *p)
+{
+	if (::soap_read___tse__GetServiceCapabilities(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
 #ifndef SOAP_TYPE___trt__DeleteOSD_DEFINED
 #define SOAP_TYPE___trt__DeleteOSD_DEFINED
 SOAP_FMAC3 void SOAP_FMAC4 soap_default___trt__DeleteOSD(struct soap*, struct __trt__DeleteOSD *);
@@ -166880,6 +176457,2450 @@ inline int soap_GET___trt__GetServiceCapabilities(struct soap *soap, const char 
 inline int soap_POST_recv___trt__GetServiceCapabilities(struct soap *soap, struct __trt__GetServiceCapabilities *p)
 {
 	if (::soap_read___trt__GetServiceCapabilities(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___trp__SetReplayConfiguration_DEFINED
+#define SOAP_TYPE___trp__SetReplayConfiguration_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___trp__SetReplayConfiguration(struct soap*, struct __trp__SetReplayConfiguration *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___trp__SetReplayConfiguration(struct soap*, const struct __trp__SetReplayConfiguration *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___trp__SetReplayConfiguration(struct soap*, const char*, int, const struct __trp__SetReplayConfiguration *, const char*);
+SOAP_FMAC3 struct __trp__SetReplayConfiguration * SOAP_FMAC4 soap_in___trp__SetReplayConfiguration(struct soap*, const char*, struct __trp__SetReplayConfiguration *, const char*);
+SOAP_FMAC1 struct __trp__SetReplayConfiguration * SOAP_FMAC2 soap_instantiate___trp__SetReplayConfiguration(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __trp__SetReplayConfiguration * soap_new___trp__SetReplayConfiguration(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___trp__SetReplayConfiguration(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __trp__SetReplayConfiguration * soap_new_req___trp__SetReplayConfiguration(
+	struct soap *soap)
+{
+	struct __trp__SetReplayConfiguration *_p = ::soap_new___trp__SetReplayConfiguration(soap);
+	if (_p)
+	{	::soap_default___trp__SetReplayConfiguration(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __trp__SetReplayConfiguration * soap_new_set___trp__SetReplayConfiguration(
+	struct soap *soap,
+	_trp__SetReplayConfiguration *trp__SetReplayConfiguration)
+{
+	struct __trp__SetReplayConfiguration *_p = ::soap_new___trp__SetReplayConfiguration(soap);
+	if (_p)
+	{	::soap_default___trp__SetReplayConfiguration(soap, _p);
+		_p->trp__SetReplayConfiguration = trp__SetReplayConfiguration;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___trp__SetReplayConfiguration(struct soap*, const struct __trp__SetReplayConfiguration *, const char*, const char*);
+
+inline int soap_write___trp__SetReplayConfiguration(struct soap *soap, struct __trp__SetReplayConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___trp__SetReplayConfiguration(soap, p), 0) || ::soap_put___trp__SetReplayConfiguration(soap, p, "-trp:SetReplayConfiguration", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___trp__SetReplayConfiguration(struct soap *soap, const char *URL, struct __trp__SetReplayConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trp__SetReplayConfiguration(soap, p), 0) || ::soap_put___trp__SetReplayConfiguration(soap, p, "-trp:SetReplayConfiguration", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___trp__SetReplayConfiguration(struct soap *soap, const char *URL, struct __trp__SetReplayConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trp__SetReplayConfiguration(soap, p), 0) || ::soap_put___trp__SetReplayConfiguration(soap, p, "-trp:SetReplayConfiguration", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___trp__SetReplayConfiguration(struct soap *soap, const char *URL, struct __trp__SetReplayConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trp__SetReplayConfiguration(soap, p), 0) || ::soap_put___trp__SetReplayConfiguration(soap, p, "-trp:SetReplayConfiguration", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __trp__SetReplayConfiguration * SOAP_FMAC4 soap_get___trp__SetReplayConfiguration(struct soap*, struct __trp__SetReplayConfiguration *, const char*, const char*);
+
+inline int soap_read___trp__SetReplayConfiguration(struct soap *soap, struct __trp__SetReplayConfiguration *p)
+{
+	if (p)
+	{	::soap_default___trp__SetReplayConfiguration(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___trp__SetReplayConfiguration(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___trp__SetReplayConfiguration(struct soap *soap, const char *URL, struct __trp__SetReplayConfiguration *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___trp__SetReplayConfiguration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___trp__SetReplayConfiguration(struct soap *soap, struct __trp__SetReplayConfiguration *p)
+{
+	if (::soap_read___trp__SetReplayConfiguration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___trp__GetReplayConfiguration_DEFINED
+#define SOAP_TYPE___trp__GetReplayConfiguration_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___trp__GetReplayConfiguration(struct soap*, struct __trp__GetReplayConfiguration *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___trp__GetReplayConfiguration(struct soap*, const struct __trp__GetReplayConfiguration *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___trp__GetReplayConfiguration(struct soap*, const char*, int, const struct __trp__GetReplayConfiguration *, const char*);
+SOAP_FMAC3 struct __trp__GetReplayConfiguration * SOAP_FMAC4 soap_in___trp__GetReplayConfiguration(struct soap*, const char*, struct __trp__GetReplayConfiguration *, const char*);
+SOAP_FMAC1 struct __trp__GetReplayConfiguration * SOAP_FMAC2 soap_instantiate___trp__GetReplayConfiguration(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __trp__GetReplayConfiguration * soap_new___trp__GetReplayConfiguration(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___trp__GetReplayConfiguration(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __trp__GetReplayConfiguration * soap_new_req___trp__GetReplayConfiguration(
+	struct soap *soap)
+{
+	struct __trp__GetReplayConfiguration *_p = ::soap_new___trp__GetReplayConfiguration(soap);
+	if (_p)
+	{	::soap_default___trp__GetReplayConfiguration(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __trp__GetReplayConfiguration * soap_new_set___trp__GetReplayConfiguration(
+	struct soap *soap,
+	_trp__GetReplayConfiguration *trp__GetReplayConfiguration)
+{
+	struct __trp__GetReplayConfiguration *_p = ::soap_new___trp__GetReplayConfiguration(soap);
+	if (_p)
+	{	::soap_default___trp__GetReplayConfiguration(soap, _p);
+		_p->trp__GetReplayConfiguration = trp__GetReplayConfiguration;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___trp__GetReplayConfiguration(struct soap*, const struct __trp__GetReplayConfiguration *, const char*, const char*);
+
+inline int soap_write___trp__GetReplayConfiguration(struct soap *soap, struct __trp__GetReplayConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___trp__GetReplayConfiguration(soap, p), 0) || ::soap_put___trp__GetReplayConfiguration(soap, p, "-trp:GetReplayConfiguration", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___trp__GetReplayConfiguration(struct soap *soap, const char *URL, struct __trp__GetReplayConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trp__GetReplayConfiguration(soap, p), 0) || ::soap_put___trp__GetReplayConfiguration(soap, p, "-trp:GetReplayConfiguration", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___trp__GetReplayConfiguration(struct soap *soap, const char *URL, struct __trp__GetReplayConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trp__GetReplayConfiguration(soap, p), 0) || ::soap_put___trp__GetReplayConfiguration(soap, p, "-trp:GetReplayConfiguration", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___trp__GetReplayConfiguration(struct soap *soap, const char *URL, struct __trp__GetReplayConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trp__GetReplayConfiguration(soap, p), 0) || ::soap_put___trp__GetReplayConfiguration(soap, p, "-trp:GetReplayConfiguration", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __trp__GetReplayConfiguration * SOAP_FMAC4 soap_get___trp__GetReplayConfiguration(struct soap*, struct __trp__GetReplayConfiguration *, const char*, const char*);
+
+inline int soap_read___trp__GetReplayConfiguration(struct soap *soap, struct __trp__GetReplayConfiguration *p)
+{
+	if (p)
+	{	::soap_default___trp__GetReplayConfiguration(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___trp__GetReplayConfiguration(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___trp__GetReplayConfiguration(struct soap *soap, const char *URL, struct __trp__GetReplayConfiguration *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___trp__GetReplayConfiguration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___trp__GetReplayConfiguration(struct soap *soap, struct __trp__GetReplayConfiguration *p)
+{
+	if (::soap_read___trp__GetReplayConfiguration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___trp__GetReplayUri_DEFINED
+#define SOAP_TYPE___trp__GetReplayUri_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___trp__GetReplayUri(struct soap*, struct __trp__GetReplayUri *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___trp__GetReplayUri(struct soap*, const struct __trp__GetReplayUri *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___trp__GetReplayUri(struct soap*, const char*, int, const struct __trp__GetReplayUri *, const char*);
+SOAP_FMAC3 struct __trp__GetReplayUri * SOAP_FMAC4 soap_in___trp__GetReplayUri(struct soap*, const char*, struct __trp__GetReplayUri *, const char*);
+SOAP_FMAC1 struct __trp__GetReplayUri * SOAP_FMAC2 soap_instantiate___trp__GetReplayUri(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __trp__GetReplayUri * soap_new___trp__GetReplayUri(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___trp__GetReplayUri(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __trp__GetReplayUri * soap_new_req___trp__GetReplayUri(
+	struct soap *soap)
+{
+	struct __trp__GetReplayUri *_p = ::soap_new___trp__GetReplayUri(soap);
+	if (_p)
+	{	::soap_default___trp__GetReplayUri(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __trp__GetReplayUri * soap_new_set___trp__GetReplayUri(
+	struct soap *soap,
+	_trp__GetReplayUri *trp__GetReplayUri)
+{
+	struct __trp__GetReplayUri *_p = ::soap_new___trp__GetReplayUri(soap);
+	if (_p)
+	{	::soap_default___trp__GetReplayUri(soap, _p);
+		_p->trp__GetReplayUri = trp__GetReplayUri;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___trp__GetReplayUri(struct soap*, const struct __trp__GetReplayUri *, const char*, const char*);
+
+inline int soap_write___trp__GetReplayUri(struct soap *soap, struct __trp__GetReplayUri const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___trp__GetReplayUri(soap, p), 0) || ::soap_put___trp__GetReplayUri(soap, p, "-trp:GetReplayUri", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___trp__GetReplayUri(struct soap *soap, const char *URL, struct __trp__GetReplayUri const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trp__GetReplayUri(soap, p), 0) || ::soap_put___trp__GetReplayUri(soap, p, "-trp:GetReplayUri", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___trp__GetReplayUri(struct soap *soap, const char *URL, struct __trp__GetReplayUri const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trp__GetReplayUri(soap, p), 0) || ::soap_put___trp__GetReplayUri(soap, p, "-trp:GetReplayUri", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___trp__GetReplayUri(struct soap *soap, const char *URL, struct __trp__GetReplayUri const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trp__GetReplayUri(soap, p), 0) || ::soap_put___trp__GetReplayUri(soap, p, "-trp:GetReplayUri", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __trp__GetReplayUri * SOAP_FMAC4 soap_get___trp__GetReplayUri(struct soap*, struct __trp__GetReplayUri *, const char*, const char*);
+
+inline int soap_read___trp__GetReplayUri(struct soap *soap, struct __trp__GetReplayUri *p)
+{
+	if (p)
+	{	::soap_default___trp__GetReplayUri(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___trp__GetReplayUri(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___trp__GetReplayUri(struct soap *soap, const char *URL, struct __trp__GetReplayUri *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___trp__GetReplayUri(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___trp__GetReplayUri(struct soap *soap, struct __trp__GetReplayUri *p)
+{
+	if (::soap_read___trp__GetReplayUri(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___trp__GetServiceCapabilities_DEFINED
+#define SOAP_TYPE___trp__GetServiceCapabilities_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___trp__GetServiceCapabilities(struct soap*, struct __trp__GetServiceCapabilities *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___trp__GetServiceCapabilities(struct soap*, const struct __trp__GetServiceCapabilities *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___trp__GetServiceCapabilities(struct soap*, const char*, int, const struct __trp__GetServiceCapabilities *, const char*);
+SOAP_FMAC3 struct __trp__GetServiceCapabilities * SOAP_FMAC4 soap_in___trp__GetServiceCapabilities(struct soap*, const char*, struct __trp__GetServiceCapabilities *, const char*);
+SOAP_FMAC1 struct __trp__GetServiceCapabilities * SOAP_FMAC2 soap_instantiate___trp__GetServiceCapabilities(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __trp__GetServiceCapabilities * soap_new___trp__GetServiceCapabilities(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___trp__GetServiceCapabilities(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __trp__GetServiceCapabilities * soap_new_req___trp__GetServiceCapabilities(
+	struct soap *soap)
+{
+	struct __trp__GetServiceCapabilities *_p = ::soap_new___trp__GetServiceCapabilities(soap);
+	if (_p)
+	{	::soap_default___trp__GetServiceCapabilities(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __trp__GetServiceCapabilities * soap_new_set___trp__GetServiceCapabilities(
+	struct soap *soap,
+	_trp__GetServiceCapabilities *trp__GetServiceCapabilities)
+{
+	struct __trp__GetServiceCapabilities *_p = ::soap_new___trp__GetServiceCapabilities(soap);
+	if (_p)
+	{	::soap_default___trp__GetServiceCapabilities(soap, _p);
+		_p->trp__GetServiceCapabilities = trp__GetServiceCapabilities;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___trp__GetServiceCapabilities(struct soap*, const struct __trp__GetServiceCapabilities *, const char*, const char*);
+
+inline int soap_write___trp__GetServiceCapabilities(struct soap *soap, struct __trp__GetServiceCapabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___trp__GetServiceCapabilities(soap, p), 0) || ::soap_put___trp__GetServiceCapabilities(soap, p, "-trp:GetServiceCapabilities", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___trp__GetServiceCapabilities(struct soap *soap, const char *URL, struct __trp__GetServiceCapabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trp__GetServiceCapabilities(soap, p), 0) || ::soap_put___trp__GetServiceCapabilities(soap, p, "-trp:GetServiceCapabilities", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___trp__GetServiceCapabilities(struct soap *soap, const char *URL, struct __trp__GetServiceCapabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trp__GetServiceCapabilities(soap, p), 0) || ::soap_put___trp__GetServiceCapabilities(soap, p, "-trp:GetServiceCapabilities", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___trp__GetServiceCapabilities(struct soap *soap, const char *URL, struct __trp__GetServiceCapabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trp__GetServiceCapabilities(soap, p), 0) || ::soap_put___trp__GetServiceCapabilities(soap, p, "-trp:GetServiceCapabilities", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __trp__GetServiceCapabilities * SOAP_FMAC4 soap_get___trp__GetServiceCapabilities(struct soap*, struct __trp__GetServiceCapabilities *, const char*, const char*);
+
+inline int soap_read___trp__GetServiceCapabilities(struct soap *soap, struct __trp__GetServiceCapabilities *p)
+{
+	if (p)
+	{	::soap_default___trp__GetServiceCapabilities(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___trp__GetServiceCapabilities(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___trp__GetServiceCapabilities(struct soap *soap, const char *URL, struct __trp__GetServiceCapabilities *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___trp__GetServiceCapabilities(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___trp__GetServiceCapabilities(struct soap *soap, struct __trp__GetServiceCapabilities *p)
+{
+	if (::soap_read___trp__GetServiceCapabilities(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___trc__OverrideSegmentDuration_DEFINED
+#define SOAP_TYPE___trc__OverrideSegmentDuration_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___trc__OverrideSegmentDuration(struct soap*, struct __trc__OverrideSegmentDuration *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___trc__OverrideSegmentDuration(struct soap*, const struct __trc__OverrideSegmentDuration *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___trc__OverrideSegmentDuration(struct soap*, const char*, int, const struct __trc__OverrideSegmentDuration *, const char*);
+SOAP_FMAC3 struct __trc__OverrideSegmentDuration * SOAP_FMAC4 soap_in___trc__OverrideSegmentDuration(struct soap*, const char*, struct __trc__OverrideSegmentDuration *, const char*);
+SOAP_FMAC1 struct __trc__OverrideSegmentDuration * SOAP_FMAC2 soap_instantiate___trc__OverrideSegmentDuration(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __trc__OverrideSegmentDuration * soap_new___trc__OverrideSegmentDuration(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___trc__OverrideSegmentDuration(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __trc__OverrideSegmentDuration * soap_new_req___trc__OverrideSegmentDuration(
+	struct soap *soap)
+{
+	struct __trc__OverrideSegmentDuration *_p = ::soap_new___trc__OverrideSegmentDuration(soap);
+	if (_p)
+	{	::soap_default___trc__OverrideSegmentDuration(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __trc__OverrideSegmentDuration * soap_new_set___trc__OverrideSegmentDuration(
+	struct soap *soap,
+	_trc__OverrideSegmentDuration *trc__OverrideSegmentDuration)
+{
+	struct __trc__OverrideSegmentDuration *_p = ::soap_new___trc__OverrideSegmentDuration(soap);
+	if (_p)
+	{	::soap_default___trc__OverrideSegmentDuration(soap, _p);
+		_p->trc__OverrideSegmentDuration = trc__OverrideSegmentDuration;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___trc__OverrideSegmentDuration(struct soap*, const struct __trc__OverrideSegmentDuration *, const char*, const char*);
+
+inline int soap_write___trc__OverrideSegmentDuration(struct soap *soap, struct __trc__OverrideSegmentDuration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___trc__OverrideSegmentDuration(soap, p), 0) || ::soap_put___trc__OverrideSegmentDuration(soap, p, "-trc:OverrideSegmentDuration", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___trc__OverrideSegmentDuration(struct soap *soap, const char *URL, struct __trc__OverrideSegmentDuration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__OverrideSegmentDuration(soap, p), 0) || ::soap_put___trc__OverrideSegmentDuration(soap, p, "-trc:OverrideSegmentDuration", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___trc__OverrideSegmentDuration(struct soap *soap, const char *URL, struct __trc__OverrideSegmentDuration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__OverrideSegmentDuration(soap, p), 0) || ::soap_put___trc__OverrideSegmentDuration(soap, p, "-trc:OverrideSegmentDuration", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___trc__OverrideSegmentDuration(struct soap *soap, const char *URL, struct __trc__OverrideSegmentDuration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__OverrideSegmentDuration(soap, p), 0) || ::soap_put___trc__OverrideSegmentDuration(soap, p, "-trc:OverrideSegmentDuration", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __trc__OverrideSegmentDuration * SOAP_FMAC4 soap_get___trc__OverrideSegmentDuration(struct soap*, struct __trc__OverrideSegmentDuration *, const char*, const char*);
+
+inline int soap_read___trc__OverrideSegmentDuration(struct soap *soap, struct __trc__OverrideSegmentDuration *p)
+{
+	if (p)
+	{	::soap_default___trc__OverrideSegmentDuration(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___trc__OverrideSegmentDuration(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___trc__OverrideSegmentDuration(struct soap *soap, const char *URL, struct __trc__OverrideSegmentDuration *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___trc__OverrideSegmentDuration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___trc__OverrideSegmentDuration(struct soap *soap, struct __trc__OverrideSegmentDuration *p)
+{
+	if (::soap_read___trc__OverrideSegmentDuration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___trc__GetExportRecordedDataState_DEFINED
+#define SOAP_TYPE___trc__GetExportRecordedDataState_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___trc__GetExportRecordedDataState(struct soap*, struct __trc__GetExportRecordedDataState *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___trc__GetExportRecordedDataState(struct soap*, const struct __trc__GetExportRecordedDataState *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___trc__GetExportRecordedDataState(struct soap*, const char*, int, const struct __trc__GetExportRecordedDataState *, const char*);
+SOAP_FMAC3 struct __trc__GetExportRecordedDataState * SOAP_FMAC4 soap_in___trc__GetExportRecordedDataState(struct soap*, const char*, struct __trc__GetExportRecordedDataState *, const char*);
+SOAP_FMAC1 struct __trc__GetExportRecordedDataState * SOAP_FMAC2 soap_instantiate___trc__GetExportRecordedDataState(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __trc__GetExportRecordedDataState * soap_new___trc__GetExportRecordedDataState(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___trc__GetExportRecordedDataState(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __trc__GetExportRecordedDataState * soap_new_req___trc__GetExportRecordedDataState(
+	struct soap *soap)
+{
+	struct __trc__GetExportRecordedDataState *_p = ::soap_new___trc__GetExportRecordedDataState(soap);
+	if (_p)
+	{	::soap_default___trc__GetExportRecordedDataState(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __trc__GetExportRecordedDataState * soap_new_set___trc__GetExportRecordedDataState(
+	struct soap *soap,
+	_trc__GetExportRecordedDataState *trc__GetExportRecordedDataState)
+{
+	struct __trc__GetExportRecordedDataState *_p = ::soap_new___trc__GetExportRecordedDataState(soap);
+	if (_p)
+	{	::soap_default___trc__GetExportRecordedDataState(soap, _p);
+		_p->trc__GetExportRecordedDataState = trc__GetExportRecordedDataState;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___trc__GetExportRecordedDataState(struct soap*, const struct __trc__GetExportRecordedDataState *, const char*, const char*);
+
+inline int soap_write___trc__GetExportRecordedDataState(struct soap *soap, struct __trc__GetExportRecordedDataState const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___trc__GetExportRecordedDataState(soap, p), 0) || ::soap_put___trc__GetExportRecordedDataState(soap, p, "-trc:GetExportRecordedDataState", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___trc__GetExportRecordedDataState(struct soap *soap, const char *URL, struct __trc__GetExportRecordedDataState const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__GetExportRecordedDataState(soap, p), 0) || ::soap_put___trc__GetExportRecordedDataState(soap, p, "-trc:GetExportRecordedDataState", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___trc__GetExportRecordedDataState(struct soap *soap, const char *URL, struct __trc__GetExportRecordedDataState const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__GetExportRecordedDataState(soap, p), 0) || ::soap_put___trc__GetExportRecordedDataState(soap, p, "-trc:GetExportRecordedDataState", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___trc__GetExportRecordedDataState(struct soap *soap, const char *URL, struct __trc__GetExportRecordedDataState const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__GetExportRecordedDataState(soap, p), 0) || ::soap_put___trc__GetExportRecordedDataState(soap, p, "-trc:GetExportRecordedDataState", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __trc__GetExportRecordedDataState * SOAP_FMAC4 soap_get___trc__GetExportRecordedDataState(struct soap*, struct __trc__GetExportRecordedDataState *, const char*, const char*);
+
+inline int soap_read___trc__GetExportRecordedDataState(struct soap *soap, struct __trc__GetExportRecordedDataState *p)
+{
+	if (p)
+	{	::soap_default___trc__GetExportRecordedDataState(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___trc__GetExportRecordedDataState(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___trc__GetExportRecordedDataState(struct soap *soap, const char *URL, struct __trc__GetExportRecordedDataState *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___trc__GetExportRecordedDataState(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___trc__GetExportRecordedDataState(struct soap *soap, struct __trc__GetExportRecordedDataState *p)
+{
+	if (::soap_read___trc__GetExportRecordedDataState(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___trc__StopExportRecordedData_DEFINED
+#define SOAP_TYPE___trc__StopExportRecordedData_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___trc__StopExportRecordedData(struct soap*, struct __trc__StopExportRecordedData *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___trc__StopExportRecordedData(struct soap*, const struct __trc__StopExportRecordedData *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___trc__StopExportRecordedData(struct soap*, const char*, int, const struct __trc__StopExportRecordedData *, const char*);
+SOAP_FMAC3 struct __trc__StopExportRecordedData * SOAP_FMAC4 soap_in___trc__StopExportRecordedData(struct soap*, const char*, struct __trc__StopExportRecordedData *, const char*);
+SOAP_FMAC1 struct __trc__StopExportRecordedData * SOAP_FMAC2 soap_instantiate___trc__StopExportRecordedData(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __trc__StopExportRecordedData * soap_new___trc__StopExportRecordedData(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___trc__StopExportRecordedData(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __trc__StopExportRecordedData * soap_new_req___trc__StopExportRecordedData(
+	struct soap *soap)
+{
+	struct __trc__StopExportRecordedData *_p = ::soap_new___trc__StopExportRecordedData(soap);
+	if (_p)
+	{	::soap_default___trc__StopExportRecordedData(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __trc__StopExportRecordedData * soap_new_set___trc__StopExportRecordedData(
+	struct soap *soap,
+	_trc__StopExportRecordedData *trc__StopExportRecordedData)
+{
+	struct __trc__StopExportRecordedData *_p = ::soap_new___trc__StopExportRecordedData(soap);
+	if (_p)
+	{	::soap_default___trc__StopExportRecordedData(soap, _p);
+		_p->trc__StopExportRecordedData = trc__StopExportRecordedData;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___trc__StopExportRecordedData(struct soap*, const struct __trc__StopExportRecordedData *, const char*, const char*);
+
+inline int soap_write___trc__StopExportRecordedData(struct soap *soap, struct __trc__StopExportRecordedData const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___trc__StopExportRecordedData(soap, p), 0) || ::soap_put___trc__StopExportRecordedData(soap, p, "-trc:StopExportRecordedData", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___trc__StopExportRecordedData(struct soap *soap, const char *URL, struct __trc__StopExportRecordedData const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__StopExportRecordedData(soap, p), 0) || ::soap_put___trc__StopExportRecordedData(soap, p, "-trc:StopExportRecordedData", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___trc__StopExportRecordedData(struct soap *soap, const char *URL, struct __trc__StopExportRecordedData const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__StopExportRecordedData(soap, p), 0) || ::soap_put___trc__StopExportRecordedData(soap, p, "-trc:StopExportRecordedData", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___trc__StopExportRecordedData(struct soap *soap, const char *URL, struct __trc__StopExportRecordedData const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__StopExportRecordedData(soap, p), 0) || ::soap_put___trc__StopExportRecordedData(soap, p, "-trc:StopExportRecordedData", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __trc__StopExportRecordedData * SOAP_FMAC4 soap_get___trc__StopExportRecordedData(struct soap*, struct __trc__StopExportRecordedData *, const char*, const char*);
+
+inline int soap_read___trc__StopExportRecordedData(struct soap *soap, struct __trc__StopExportRecordedData *p)
+{
+	if (p)
+	{	::soap_default___trc__StopExportRecordedData(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___trc__StopExportRecordedData(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___trc__StopExportRecordedData(struct soap *soap, const char *URL, struct __trc__StopExportRecordedData *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___trc__StopExportRecordedData(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___trc__StopExportRecordedData(struct soap *soap, struct __trc__StopExportRecordedData *p)
+{
+	if (::soap_read___trc__StopExportRecordedData(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___trc__ExportRecordedData_DEFINED
+#define SOAP_TYPE___trc__ExportRecordedData_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___trc__ExportRecordedData(struct soap*, struct __trc__ExportRecordedData *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___trc__ExportRecordedData(struct soap*, const struct __trc__ExportRecordedData *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___trc__ExportRecordedData(struct soap*, const char*, int, const struct __trc__ExportRecordedData *, const char*);
+SOAP_FMAC3 struct __trc__ExportRecordedData * SOAP_FMAC4 soap_in___trc__ExportRecordedData(struct soap*, const char*, struct __trc__ExportRecordedData *, const char*);
+SOAP_FMAC1 struct __trc__ExportRecordedData * SOAP_FMAC2 soap_instantiate___trc__ExportRecordedData(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __trc__ExportRecordedData * soap_new___trc__ExportRecordedData(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___trc__ExportRecordedData(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __trc__ExportRecordedData * soap_new_req___trc__ExportRecordedData(
+	struct soap *soap)
+{
+	struct __trc__ExportRecordedData *_p = ::soap_new___trc__ExportRecordedData(soap);
+	if (_p)
+	{	::soap_default___trc__ExportRecordedData(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __trc__ExportRecordedData * soap_new_set___trc__ExportRecordedData(
+	struct soap *soap,
+	_trc__ExportRecordedData *trc__ExportRecordedData)
+{
+	struct __trc__ExportRecordedData *_p = ::soap_new___trc__ExportRecordedData(soap);
+	if (_p)
+	{	::soap_default___trc__ExportRecordedData(soap, _p);
+		_p->trc__ExportRecordedData = trc__ExportRecordedData;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___trc__ExportRecordedData(struct soap*, const struct __trc__ExportRecordedData *, const char*, const char*);
+
+inline int soap_write___trc__ExportRecordedData(struct soap *soap, struct __trc__ExportRecordedData const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___trc__ExportRecordedData(soap, p), 0) || ::soap_put___trc__ExportRecordedData(soap, p, "-trc:ExportRecordedData", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___trc__ExportRecordedData(struct soap *soap, const char *URL, struct __trc__ExportRecordedData const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__ExportRecordedData(soap, p), 0) || ::soap_put___trc__ExportRecordedData(soap, p, "-trc:ExportRecordedData", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___trc__ExportRecordedData(struct soap *soap, const char *URL, struct __trc__ExportRecordedData const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__ExportRecordedData(soap, p), 0) || ::soap_put___trc__ExportRecordedData(soap, p, "-trc:ExportRecordedData", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___trc__ExportRecordedData(struct soap *soap, const char *URL, struct __trc__ExportRecordedData const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__ExportRecordedData(soap, p), 0) || ::soap_put___trc__ExportRecordedData(soap, p, "-trc:ExportRecordedData", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __trc__ExportRecordedData * SOAP_FMAC4 soap_get___trc__ExportRecordedData(struct soap*, struct __trc__ExportRecordedData *, const char*, const char*);
+
+inline int soap_read___trc__ExportRecordedData(struct soap *soap, struct __trc__ExportRecordedData *p)
+{
+	if (p)
+	{	::soap_default___trc__ExportRecordedData(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___trc__ExportRecordedData(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___trc__ExportRecordedData(struct soap *soap, const char *URL, struct __trc__ExportRecordedData *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___trc__ExportRecordedData(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___trc__ExportRecordedData(struct soap *soap, struct __trc__ExportRecordedData *p)
+{
+	if (::soap_read___trc__ExportRecordedData(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___trc__GetRecordingJobState_DEFINED
+#define SOAP_TYPE___trc__GetRecordingJobState_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___trc__GetRecordingJobState(struct soap*, struct __trc__GetRecordingJobState *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___trc__GetRecordingJobState(struct soap*, const struct __trc__GetRecordingJobState *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___trc__GetRecordingJobState(struct soap*, const char*, int, const struct __trc__GetRecordingJobState *, const char*);
+SOAP_FMAC3 struct __trc__GetRecordingJobState * SOAP_FMAC4 soap_in___trc__GetRecordingJobState(struct soap*, const char*, struct __trc__GetRecordingJobState *, const char*);
+SOAP_FMAC1 struct __trc__GetRecordingJobState * SOAP_FMAC2 soap_instantiate___trc__GetRecordingJobState(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __trc__GetRecordingJobState * soap_new___trc__GetRecordingJobState(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___trc__GetRecordingJobState(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __trc__GetRecordingJobState * soap_new_req___trc__GetRecordingJobState(
+	struct soap *soap)
+{
+	struct __trc__GetRecordingJobState *_p = ::soap_new___trc__GetRecordingJobState(soap);
+	if (_p)
+	{	::soap_default___trc__GetRecordingJobState(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __trc__GetRecordingJobState * soap_new_set___trc__GetRecordingJobState(
+	struct soap *soap,
+	_trc__GetRecordingJobState *trc__GetRecordingJobState)
+{
+	struct __trc__GetRecordingJobState *_p = ::soap_new___trc__GetRecordingJobState(soap);
+	if (_p)
+	{	::soap_default___trc__GetRecordingJobState(soap, _p);
+		_p->trc__GetRecordingJobState = trc__GetRecordingJobState;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___trc__GetRecordingJobState(struct soap*, const struct __trc__GetRecordingJobState *, const char*, const char*);
+
+inline int soap_write___trc__GetRecordingJobState(struct soap *soap, struct __trc__GetRecordingJobState const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___trc__GetRecordingJobState(soap, p), 0) || ::soap_put___trc__GetRecordingJobState(soap, p, "-trc:GetRecordingJobState", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___trc__GetRecordingJobState(struct soap *soap, const char *URL, struct __trc__GetRecordingJobState const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__GetRecordingJobState(soap, p), 0) || ::soap_put___trc__GetRecordingJobState(soap, p, "-trc:GetRecordingJobState", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___trc__GetRecordingJobState(struct soap *soap, const char *URL, struct __trc__GetRecordingJobState const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__GetRecordingJobState(soap, p), 0) || ::soap_put___trc__GetRecordingJobState(soap, p, "-trc:GetRecordingJobState", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___trc__GetRecordingJobState(struct soap *soap, const char *URL, struct __trc__GetRecordingJobState const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__GetRecordingJobState(soap, p), 0) || ::soap_put___trc__GetRecordingJobState(soap, p, "-trc:GetRecordingJobState", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __trc__GetRecordingJobState * SOAP_FMAC4 soap_get___trc__GetRecordingJobState(struct soap*, struct __trc__GetRecordingJobState *, const char*, const char*);
+
+inline int soap_read___trc__GetRecordingJobState(struct soap *soap, struct __trc__GetRecordingJobState *p)
+{
+	if (p)
+	{	::soap_default___trc__GetRecordingJobState(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___trc__GetRecordingJobState(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___trc__GetRecordingJobState(struct soap *soap, const char *URL, struct __trc__GetRecordingJobState *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___trc__GetRecordingJobState(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___trc__GetRecordingJobState(struct soap *soap, struct __trc__GetRecordingJobState *p)
+{
+	if (::soap_read___trc__GetRecordingJobState(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___trc__SetRecordingJobMode_DEFINED
+#define SOAP_TYPE___trc__SetRecordingJobMode_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___trc__SetRecordingJobMode(struct soap*, struct __trc__SetRecordingJobMode *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___trc__SetRecordingJobMode(struct soap*, const struct __trc__SetRecordingJobMode *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___trc__SetRecordingJobMode(struct soap*, const char*, int, const struct __trc__SetRecordingJobMode *, const char*);
+SOAP_FMAC3 struct __trc__SetRecordingJobMode * SOAP_FMAC4 soap_in___trc__SetRecordingJobMode(struct soap*, const char*, struct __trc__SetRecordingJobMode *, const char*);
+SOAP_FMAC1 struct __trc__SetRecordingJobMode * SOAP_FMAC2 soap_instantiate___trc__SetRecordingJobMode(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __trc__SetRecordingJobMode * soap_new___trc__SetRecordingJobMode(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___trc__SetRecordingJobMode(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __trc__SetRecordingJobMode * soap_new_req___trc__SetRecordingJobMode(
+	struct soap *soap)
+{
+	struct __trc__SetRecordingJobMode *_p = ::soap_new___trc__SetRecordingJobMode(soap);
+	if (_p)
+	{	::soap_default___trc__SetRecordingJobMode(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __trc__SetRecordingJobMode * soap_new_set___trc__SetRecordingJobMode(
+	struct soap *soap,
+	_trc__SetRecordingJobMode *trc__SetRecordingJobMode)
+{
+	struct __trc__SetRecordingJobMode *_p = ::soap_new___trc__SetRecordingJobMode(soap);
+	if (_p)
+	{	::soap_default___trc__SetRecordingJobMode(soap, _p);
+		_p->trc__SetRecordingJobMode = trc__SetRecordingJobMode;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___trc__SetRecordingJobMode(struct soap*, const struct __trc__SetRecordingJobMode *, const char*, const char*);
+
+inline int soap_write___trc__SetRecordingJobMode(struct soap *soap, struct __trc__SetRecordingJobMode const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___trc__SetRecordingJobMode(soap, p), 0) || ::soap_put___trc__SetRecordingJobMode(soap, p, "-trc:SetRecordingJobMode", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___trc__SetRecordingJobMode(struct soap *soap, const char *URL, struct __trc__SetRecordingJobMode const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__SetRecordingJobMode(soap, p), 0) || ::soap_put___trc__SetRecordingJobMode(soap, p, "-trc:SetRecordingJobMode", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___trc__SetRecordingJobMode(struct soap *soap, const char *URL, struct __trc__SetRecordingJobMode const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__SetRecordingJobMode(soap, p), 0) || ::soap_put___trc__SetRecordingJobMode(soap, p, "-trc:SetRecordingJobMode", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___trc__SetRecordingJobMode(struct soap *soap, const char *URL, struct __trc__SetRecordingJobMode const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__SetRecordingJobMode(soap, p), 0) || ::soap_put___trc__SetRecordingJobMode(soap, p, "-trc:SetRecordingJobMode", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __trc__SetRecordingJobMode * SOAP_FMAC4 soap_get___trc__SetRecordingJobMode(struct soap*, struct __trc__SetRecordingJobMode *, const char*, const char*);
+
+inline int soap_read___trc__SetRecordingJobMode(struct soap *soap, struct __trc__SetRecordingJobMode *p)
+{
+	if (p)
+	{	::soap_default___trc__SetRecordingJobMode(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___trc__SetRecordingJobMode(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___trc__SetRecordingJobMode(struct soap *soap, const char *URL, struct __trc__SetRecordingJobMode *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___trc__SetRecordingJobMode(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___trc__SetRecordingJobMode(struct soap *soap, struct __trc__SetRecordingJobMode *p)
+{
+	if (::soap_read___trc__SetRecordingJobMode(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___trc__GetRecordingJobConfiguration_DEFINED
+#define SOAP_TYPE___trc__GetRecordingJobConfiguration_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___trc__GetRecordingJobConfiguration(struct soap*, struct __trc__GetRecordingJobConfiguration *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___trc__GetRecordingJobConfiguration(struct soap*, const struct __trc__GetRecordingJobConfiguration *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___trc__GetRecordingJobConfiguration(struct soap*, const char*, int, const struct __trc__GetRecordingJobConfiguration *, const char*);
+SOAP_FMAC3 struct __trc__GetRecordingJobConfiguration * SOAP_FMAC4 soap_in___trc__GetRecordingJobConfiguration(struct soap*, const char*, struct __trc__GetRecordingJobConfiguration *, const char*);
+SOAP_FMAC1 struct __trc__GetRecordingJobConfiguration * SOAP_FMAC2 soap_instantiate___trc__GetRecordingJobConfiguration(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __trc__GetRecordingJobConfiguration * soap_new___trc__GetRecordingJobConfiguration(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___trc__GetRecordingJobConfiguration(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __trc__GetRecordingJobConfiguration * soap_new_req___trc__GetRecordingJobConfiguration(
+	struct soap *soap)
+{
+	struct __trc__GetRecordingJobConfiguration *_p = ::soap_new___trc__GetRecordingJobConfiguration(soap);
+	if (_p)
+	{	::soap_default___trc__GetRecordingJobConfiguration(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __trc__GetRecordingJobConfiguration * soap_new_set___trc__GetRecordingJobConfiguration(
+	struct soap *soap,
+	_trc__GetRecordingJobConfiguration *trc__GetRecordingJobConfiguration)
+{
+	struct __trc__GetRecordingJobConfiguration *_p = ::soap_new___trc__GetRecordingJobConfiguration(soap);
+	if (_p)
+	{	::soap_default___trc__GetRecordingJobConfiguration(soap, _p);
+		_p->trc__GetRecordingJobConfiguration = trc__GetRecordingJobConfiguration;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___trc__GetRecordingJobConfiguration(struct soap*, const struct __trc__GetRecordingJobConfiguration *, const char*, const char*);
+
+inline int soap_write___trc__GetRecordingJobConfiguration(struct soap *soap, struct __trc__GetRecordingJobConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___trc__GetRecordingJobConfiguration(soap, p), 0) || ::soap_put___trc__GetRecordingJobConfiguration(soap, p, "-trc:GetRecordingJobConfiguration", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___trc__GetRecordingJobConfiguration(struct soap *soap, const char *URL, struct __trc__GetRecordingJobConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__GetRecordingJobConfiguration(soap, p), 0) || ::soap_put___trc__GetRecordingJobConfiguration(soap, p, "-trc:GetRecordingJobConfiguration", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___trc__GetRecordingJobConfiguration(struct soap *soap, const char *URL, struct __trc__GetRecordingJobConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__GetRecordingJobConfiguration(soap, p), 0) || ::soap_put___trc__GetRecordingJobConfiguration(soap, p, "-trc:GetRecordingJobConfiguration", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___trc__GetRecordingJobConfiguration(struct soap *soap, const char *URL, struct __trc__GetRecordingJobConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__GetRecordingJobConfiguration(soap, p), 0) || ::soap_put___trc__GetRecordingJobConfiguration(soap, p, "-trc:GetRecordingJobConfiguration", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __trc__GetRecordingJobConfiguration * SOAP_FMAC4 soap_get___trc__GetRecordingJobConfiguration(struct soap*, struct __trc__GetRecordingJobConfiguration *, const char*, const char*);
+
+inline int soap_read___trc__GetRecordingJobConfiguration(struct soap *soap, struct __trc__GetRecordingJobConfiguration *p)
+{
+	if (p)
+	{	::soap_default___trc__GetRecordingJobConfiguration(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___trc__GetRecordingJobConfiguration(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___trc__GetRecordingJobConfiguration(struct soap *soap, const char *URL, struct __trc__GetRecordingJobConfiguration *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___trc__GetRecordingJobConfiguration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___trc__GetRecordingJobConfiguration(struct soap *soap, struct __trc__GetRecordingJobConfiguration *p)
+{
+	if (::soap_read___trc__GetRecordingJobConfiguration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___trc__SetRecordingJobConfiguration_DEFINED
+#define SOAP_TYPE___trc__SetRecordingJobConfiguration_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___trc__SetRecordingJobConfiguration(struct soap*, struct __trc__SetRecordingJobConfiguration *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___trc__SetRecordingJobConfiguration(struct soap*, const struct __trc__SetRecordingJobConfiguration *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___trc__SetRecordingJobConfiguration(struct soap*, const char*, int, const struct __trc__SetRecordingJobConfiguration *, const char*);
+SOAP_FMAC3 struct __trc__SetRecordingJobConfiguration * SOAP_FMAC4 soap_in___trc__SetRecordingJobConfiguration(struct soap*, const char*, struct __trc__SetRecordingJobConfiguration *, const char*);
+SOAP_FMAC1 struct __trc__SetRecordingJobConfiguration * SOAP_FMAC2 soap_instantiate___trc__SetRecordingJobConfiguration(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __trc__SetRecordingJobConfiguration * soap_new___trc__SetRecordingJobConfiguration(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___trc__SetRecordingJobConfiguration(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __trc__SetRecordingJobConfiguration * soap_new_req___trc__SetRecordingJobConfiguration(
+	struct soap *soap)
+{
+	struct __trc__SetRecordingJobConfiguration *_p = ::soap_new___trc__SetRecordingJobConfiguration(soap);
+	if (_p)
+	{	::soap_default___trc__SetRecordingJobConfiguration(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __trc__SetRecordingJobConfiguration * soap_new_set___trc__SetRecordingJobConfiguration(
+	struct soap *soap,
+	_trc__SetRecordingJobConfiguration *trc__SetRecordingJobConfiguration)
+{
+	struct __trc__SetRecordingJobConfiguration *_p = ::soap_new___trc__SetRecordingJobConfiguration(soap);
+	if (_p)
+	{	::soap_default___trc__SetRecordingJobConfiguration(soap, _p);
+		_p->trc__SetRecordingJobConfiguration = trc__SetRecordingJobConfiguration;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___trc__SetRecordingJobConfiguration(struct soap*, const struct __trc__SetRecordingJobConfiguration *, const char*, const char*);
+
+inline int soap_write___trc__SetRecordingJobConfiguration(struct soap *soap, struct __trc__SetRecordingJobConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___trc__SetRecordingJobConfiguration(soap, p), 0) || ::soap_put___trc__SetRecordingJobConfiguration(soap, p, "-trc:SetRecordingJobConfiguration", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___trc__SetRecordingJobConfiguration(struct soap *soap, const char *URL, struct __trc__SetRecordingJobConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__SetRecordingJobConfiguration(soap, p), 0) || ::soap_put___trc__SetRecordingJobConfiguration(soap, p, "-trc:SetRecordingJobConfiguration", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___trc__SetRecordingJobConfiguration(struct soap *soap, const char *URL, struct __trc__SetRecordingJobConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__SetRecordingJobConfiguration(soap, p), 0) || ::soap_put___trc__SetRecordingJobConfiguration(soap, p, "-trc:SetRecordingJobConfiguration", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___trc__SetRecordingJobConfiguration(struct soap *soap, const char *URL, struct __trc__SetRecordingJobConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__SetRecordingJobConfiguration(soap, p), 0) || ::soap_put___trc__SetRecordingJobConfiguration(soap, p, "-trc:SetRecordingJobConfiguration", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __trc__SetRecordingJobConfiguration * SOAP_FMAC4 soap_get___trc__SetRecordingJobConfiguration(struct soap*, struct __trc__SetRecordingJobConfiguration *, const char*, const char*);
+
+inline int soap_read___trc__SetRecordingJobConfiguration(struct soap *soap, struct __trc__SetRecordingJobConfiguration *p)
+{
+	if (p)
+	{	::soap_default___trc__SetRecordingJobConfiguration(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___trc__SetRecordingJobConfiguration(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___trc__SetRecordingJobConfiguration(struct soap *soap, const char *URL, struct __trc__SetRecordingJobConfiguration *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___trc__SetRecordingJobConfiguration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___trc__SetRecordingJobConfiguration(struct soap *soap, struct __trc__SetRecordingJobConfiguration *p)
+{
+	if (::soap_read___trc__SetRecordingJobConfiguration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___trc__GetRecordingJobs_DEFINED
+#define SOAP_TYPE___trc__GetRecordingJobs_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___trc__GetRecordingJobs(struct soap*, struct __trc__GetRecordingJobs *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___trc__GetRecordingJobs(struct soap*, const struct __trc__GetRecordingJobs *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___trc__GetRecordingJobs(struct soap*, const char*, int, const struct __trc__GetRecordingJobs *, const char*);
+SOAP_FMAC3 struct __trc__GetRecordingJobs * SOAP_FMAC4 soap_in___trc__GetRecordingJobs(struct soap*, const char*, struct __trc__GetRecordingJobs *, const char*);
+SOAP_FMAC1 struct __trc__GetRecordingJobs * SOAP_FMAC2 soap_instantiate___trc__GetRecordingJobs(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __trc__GetRecordingJobs * soap_new___trc__GetRecordingJobs(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___trc__GetRecordingJobs(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __trc__GetRecordingJobs * soap_new_req___trc__GetRecordingJobs(
+	struct soap *soap)
+{
+	struct __trc__GetRecordingJobs *_p = ::soap_new___trc__GetRecordingJobs(soap);
+	if (_p)
+	{	::soap_default___trc__GetRecordingJobs(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __trc__GetRecordingJobs * soap_new_set___trc__GetRecordingJobs(
+	struct soap *soap,
+	_trc__GetRecordingJobs *trc__GetRecordingJobs)
+{
+	struct __trc__GetRecordingJobs *_p = ::soap_new___trc__GetRecordingJobs(soap);
+	if (_p)
+	{	::soap_default___trc__GetRecordingJobs(soap, _p);
+		_p->trc__GetRecordingJobs = trc__GetRecordingJobs;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___trc__GetRecordingJobs(struct soap*, const struct __trc__GetRecordingJobs *, const char*, const char*);
+
+inline int soap_write___trc__GetRecordingJobs(struct soap *soap, struct __trc__GetRecordingJobs const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___trc__GetRecordingJobs(soap, p), 0) || ::soap_put___trc__GetRecordingJobs(soap, p, "-trc:GetRecordingJobs", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___trc__GetRecordingJobs(struct soap *soap, const char *URL, struct __trc__GetRecordingJobs const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__GetRecordingJobs(soap, p), 0) || ::soap_put___trc__GetRecordingJobs(soap, p, "-trc:GetRecordingJobs", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___trc__GetRecordingJobs(struct soap *soap, const char *URL, struct __trc__GetRecordingJobs const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__GetRecordingJobs(soap, p), 0) || ::soap_put___trc__GetRecordingJobs(soap, p, "-trc:GetRecordingJobs", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___trc__GetRecordingJobs(struct soap *soap, const char *URL, struct __trc__GetRecordingJobs const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__GetRecordingJobs(soap, p), 0) || ::soap_put___trc__GetRecordingJobs(soap, p, "-trc:GetRecordingJobs", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __trc__GetRecordingJobs * SOAP_FMAC4 soap_get___trc__GetRecordingJobs(struct soap*, struct __trc__GetRecordingJobs *, const char*, const char*);
+
+inline int soap_read___trc__GetRecordingJobs(struct soap *soap, struct __trc__GetRecordingJobs *p)
+{
+	if (p)
+	{	::soap_default___trc__GetRecordingJobs(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___trc__GetRecordingJobs(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___trc__GetRecordingJobs(struct soap *soap, const char *URL, struct __trc__GetRecordingJobs *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___trc__GetRecordingJobs(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___trc__GetRecordingJobs(struct soap *soap, struct __trc__GetRecordingJobs *p)
+{
+	if (::soap_read___trc__GetRecordingJobs(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___trc__DeleteRecordingJob_DEFINED
+#define SOAP_TYPE___trc__DeleteRecordingJob_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___trc__DeleteRecordingJob(struct soap*, struct __trc__DeleteRecordingJob *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___trc__DeleteRecordingJob(struct soap*, const struct __trc__DeleteRecordingJob *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___trc__DeleteRecordingJob(struct soap*, const char*, int, const struct __trc__DeleteRecordingJob *, const char*);
+SOAP_FMAC3 struct __trc__DeleteRecordingJob * SOAP_FMAC4 soap_in___trc__DeleteRecordingJob(struct soap*, const char*, struct __trc__DeleteRecordingJob *, const char*);
+SOAP_FMAC1 struct __trc__DeleteRecordingJob * SOAP_FMAC2 soap_instantiate___trc__DeleteRecordingJob(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __trc__DeleteRecordingJob * soap_new___trc__DeleteRecordingJob(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___trc__DeleteRecordingJob(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __trc__DeleteRecordingJob * soap_new_req___trc__DeleteRecordingJob(
+	struct soap *soap)
+{
+	struct __trc__DeleteRecordingJob *_p = ::soap_new___trc__DeleteRecordingJob(soap);
+	if (_p)
+	{	::soap_default___trc__DeleteRecordingJob(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __trc__DeleteRecordingJob * soap_new_set___trc__DeleteRecordingJob(
+	struct soap *soap,
+	_trc__DeleteRecordingJob *trc__DeleteRecordingJob)
+{
+	struct __trc__DeleteRecordingJob *_p = ::soap_new___trc__DeleteRecordingJob(soap);
+	if (_p)
+	{	::soap_default___trc__DeleteRecordingJob(soap, _p);
+		_p->trc__DeleteRecordingJob = trc__DeleteRecordingJob;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___trc__DeleteRecordingJob(struct soap*, const struct __trc__DeleteRecordingJob *, const char*, const char*);
+
+inline int soap_write___trc__DeleteRecordingJob(struct soap *soap, struct __trc__DeleteRecordingJob const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___trc__DeleteRecordingJob(soap, p), 0) || ::soap_put___trc__DeleteRecordingJob(soap, p, "-trc:DeleteRecordingJob", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___trc__DeleteRecordingJob(struct soap *soap, const char *URL, struct __trc__DeleteRecordingJob const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__DeleteRecordingJob(soap, p), 0) || ::soap_put___trc__DeleteRecordingJob(soap, p, "-trc:DeleteRecordingJob", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___trc__DeleteRecordingJob(struct soap *soap, const char *URL, struct __trc__DeleteRecordingJob const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__DeleteRecordingJob(soap, p), 0) || ::soap_put___trc__DeleteRecordingJob(soap, p, "-trc:DeleteRecordingJob", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___trc__DeleteRecordingJob(struct soap *soap, const char *URL, struct __trc__DeleteRecordingJob const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__DeleteRecordingJob(soap, p), 0) || ::soap_put___trc__DeleteRecordingJob(soap, p, "-trc:DeleteRecordingJob", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __trc__DeleteRecordingJob * SOAP_FMAC4 soap_get___trc__DeleteRecordingJob(struct soap*, struct __trc__DeleteRecordingJob *, const char*, const char*);
+
+inline int soap_read___trc__DeleteRecordingJob(struct soap *soap, struct __trc__DeleteRecordingJob *p)
+{
+	if (p)
+	{	::soap_default___trc__DeleteRecordingJob(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___trc__DeleteRecordingJob(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___trc__DeleteRecordingJob(struct soap *soap, const char *URL, struct __trc__DeleteRecordingJob *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___trc__DeleteRecordingJob(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___trc__DeleteRecordingJob(struct soap *soap, struct __trc__DeleteRecordingJob *p)
+{
+	if (::soap_read___trc__DeleteRecordingJob(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___trc__CreateRecordingJob_DEFINED
+#define SOAP_TYPE___trc__CreateRecordingJob_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___trc__CreateRecordingJob(struct soap*, struct __trc__CreateRecordingJob *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___trc__CreateRecordingJob(struct soap*, const struct __trc__CreateRecordingJob *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___trc__CreateRecordingJob(struct soap*, const char*, int, const struct __trc__CreateRecordingJob *, const char*);
+SOAP_FMAC3 struct __trc__CreateRecordingJob * SOAP_FMAC4 soap_in___trc__CreateRecordingJob(struct soap*, const char*, struct __trc__CreateRecordingJob *, const char*);
+SOAP_FMAC1 struct __trc__CreateRecordingJob * SOAP_FMAC2 soap_instantiate___trc__CreateRecordingJob(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __trc__CreateRecordingJob * soap_new___trc__CreateRecordingJob(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___trc__CreateRecordingJob(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __trc__CreateRecordingJob * soap_new_req___trc__CreateRecordingJob(
+	struct soap *soap)
+{
+	struct __trc__CreateRecordingJob *_p = ::soap_new___trc__CreateRecordingJob(soap);
+	if (_p)
+	{	::soap_default___trc__CreateRecordingJob(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __trc__CreateRecordingJob * soap_new_set___trc__CreateRecordingJob(
+	struct soap *soap,
+	_trc__CreateRecordingJob *trc__CreateRecordingJob)
+{
+	struct __trc__CreateRecordingJob *_p = ::soap_new___trc__CreateRecordingJob(soap);
+	if (_p)
+	{	::soap_default___trc__CreateRecordingJob(soap, _p);
+		_p->trc__CreateRecordingJob = trc__CreateRecordingJob;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___trc__CreateRecordingJob(struct soap*, const struct __trc__CreateRecordingJob *, const char*, const char*);
+
+inline int soap_write___trc__CreateRecordingJob(struct soap *soap, struct __trc__CreateRecordingJob const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___trc__CreateRecordingJob(soap, p), 0) || ::soap_put___trc__CreateRecordingJob(soap, p, "-trc:CreateRecordingJob", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___trc__CreateRecordingJob(struct soap *soap, const char *URL, struct __trc__CreateRecordingJob const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__CreateRecordingJob(soap, p), 0) || ::soap_put___trc__CreateRecordingJob(soap, p, "-trc:CreateRecordingJob", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___trc__CreateRecordingJob(struct soap *soap, const char *URL, struct __trc__CreateRecordingJob const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__CreateRecordingJob(soap, p), 0) || ::soap_put___trc__CreateRecordingJob(soap, p, "-trc:CreateRecordingJob", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___trc__CreateRecordingJob(struct soap *soap, const char *URL, struct __trc__CreateRecordingJob const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__CreateRecordingJob(soap, p), 0) || ::soap_put___trc__CreateRecordingJob(soap, p, "-trc:CreateRecordingJob", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __trc__CreateRecordingJob * SOAP_FMAC4 soap_get___trc__CreateRecordingJob(struct soap*, struct __trc__CreateRecordingJob *, const char*, const char*);
+
+inline int soap_read___trc__CreateRecordingJob(struct soap *soap, struct __trc__CreateRecordingJob *p)
+{
+	if (p)
+	{	::soap_default___trc__CreateRecordingJob(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___trc__CreateRecordingJob(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___trc__CreateRecordingJob(struct soap *soap, const char *URL, struct __trc__CreateRecordingJob *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___trc__CreateRecordingJob(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___trc__CreateRecordingJob(struct soap *soap, struct __trc__CreateRecordingJob *p)
+{
+	if (::soap_read___trc__CreateRecordingJob(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___trc__SetTrackConfiguration_DEFINED
+#define SOAP_TYPE___trc__SetTrackConfiguration_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___trc__SetTrackConfiguration(struct soap*, struct __trc__SetTrackConfiguration *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___trc__SetTrackConfiguration(struct soap*, const struct __trc__SetTrackConfiguration *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___trc__SetTrackConfiguration(struct soap*, const char*, int, const struct __trc__SetTrackConfiguration *, const char*);
+SOAP_FMAC3 struct __trc__SetTrackConfiguration * SOAP_FMAC4 soap_in___trc__SetTrackConfiguration(struct soap*, const char*, struct __trc__SetTrackConfiguration *, const char*);
+SOAP_FMAC1 struct __trc__SetTrackConfiguration * SOAP_FMAC2 soap_instantiate___trc__SetTrackConfiguration(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __trc__SetTrackConfiguration * soap_new___trc__SetTrackConfiguration(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___trc__SetTrackConfiguration(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __trc__SetTrackConfiguration * soap_new_req___trc__SetTrackConfiguration(
+	struct soap *soap)
+{
+	struct __trc__SetTrackConfiguration *_p = ::soap_new___trc__SetTrackConfiguration(soap);
+	if (_p)
+	{	::soap_default___trc__SetTrackConfiguration(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __trc__SetTrackConfiguration * soap_new_set___trc__SetTrackConfiguration(
+	struct soap *soap,
+	_trc__SetTrackConfiguration *trc__SetTrackConfiguration)
+{
+	struct __trc__SetTrackConfiguration *_p = ::soap_new___trc__SetTrackConfiguration(soap);
+	if (_p)
+	{	::soap_default___trc__SetTrackConfiguration(soap, _p);
+		_p->trc__SetTrackConfiguration = trc__SetTrackConfiguration;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___trc__SetTrackConfiguration(struct soap*, const struct __trc__SetTrackConfiguration *, const char*, const char*);
+
+inline int soap_write___trc__SetTrackConfiguration(struct soap *soap, struct __trc__SetTrackConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___trc__SetTrackConfiguration(soap, p), 0) || ::soap_put___trc__SetTrackConfiguration(soap, p, "-trc:SetTrackConfiguration", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___trc__SetTrackConfiguration(struct soap *soap, const char *URL, struct __trc__SetTrackConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__SetTrackConfiguration(soap, p), 0) || ::soap_put___trc__SetTrackConfiguration(soap, p, "-trc:SetTrackConfiguration", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___trc__SetTrackConfiguration(struct soap *soap, const char *URL, struct __trc__SetTrackConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__SetTrackConfiguration(soap, p), 0) || ::soap_put___trc__SetTrackConfiguration(soap, p, "-trc:SetTrackConfiguration", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___trc__SetTrackConfiguration(struct soap *soap, const char *URL, struct __trc__SetTrackConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__SetTrackConfiguration(soap, p), 0) || ::soap_put___trc__SetTrackConfiguration(soap, p, "-trc:SetTrackConfiguration", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __trc__SetTrackConfiguration * SOAP_FMAC4 soap_get___trc__SetTrackConfiguration(struct soap*, struct __trc__SetTrackConfiguration *, const char*, const char*);
+
+inline int soap_read___trc__SetTrackConfiguration(struct soap *soap, struct __trc__SetTrackConfiguration *p)
+{
+	if (p)
+	{	::soap_default___trc__SetTrackConfiguration(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___trc__SetTrackConfiguration(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___trc__SetTrackConfiguration(struct soap *soap, const char *URL, struct __trc__SetTrackConfiguration *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___trc__SetTrackConfiguration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___trc__SetTrackConfiguration(struct soap *soap, struct __trc__SetTrackConfiguration *p)
+{
+	if (::soap_read___trc__SetTrackConfiguration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___trc__GetTrackConfiguration_DEFINED
+#define SOAP_TYPE___trc__GetTrackConfiguration_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___trc__GetTrackConfiguration(struct soap*, struct __trc__GetTrackConfiguration *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___trc__GetTrackConfiguration(struct soap*, const struct __trc__GetTrackConfiguration *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___trc__GetTrackConfiguration(struct soap*, const char*, int, const struct __trc__GetTrackConfiguration *, const char*);
+SOAP_FMAC3 struct __trc__GetTrackConfiguration * SOAP_FMAC4 soap_in___trc__GetTrackConfiguration(struct soap*, const char*, struct __trc__GetTrackConfiguration *, const char*);
+SOAP_FMAC1 struct __trc__GetTrackConfiguration * SOAP_FMAC2 soap_instantiate___trc__GetTrackConfiguration(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __trc__GetTrackConfiguration * soap_new___trc__GetTrackConfiguration(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___trc__GetTrackConfiguration(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __trc__GetTrackConfiguration * soap_new_req___trc__GetTrackConfiguration(
+	struct soap *soap)
+{
+	struct __trc__GetTrackConfiguration *_p = ::soap_new___trc__GetTrackConfiguration(soap);
+	if (_p)
+	{	::soap_default___trc__GetTrackConfiguration(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __trc__GetTrackConfiguration * soap_new_set___trc__GetTrackConfiguration(
+	struct soap *soap,
+	_trc__GetTrackConfiguration *trc__GetTrackConfiguration)
+{
+	struct __trc__GetTrackConfiguration *_p = ::soap_new___trc__GetTrackConfiguration(soap);
+	if (_p)
+	{	::soap_default___trc__GetTrackConfiguration(soap, _p);
+		_p->trc__GetTrackConfiguration = trc__GetTrackConfiguration;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___trc__GetTrackConfiguration(struct soap*, const struct __trc__GetTrackConfiguration *, const char*, const char*);
+
+inline int soap_write___trc__GetTrackConfiguration(struct soap *soap, struct __trc__GetTrackConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___trc__GetTrackConfiguration(soap, p), 0) || ::soap_put___trc__GetTrackConfiguration(soap, p, "-trc:GetTrackConfiguration", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___trc__GetTrackConfiguration(struct soap *soap, const char *URL, struct __trc__GetTrackConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__GetTrackConfiguration(soap, p), 0) || ::soap_put___trc__GetTrackConfiguration(soap, p, "-trc:GetTrackConfiguration", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___trc__GetTrackConfiguration(struct soap *soap, const char *URL, struct __trc__GetTrackConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__GetTrackConfiguration(soap, p), 0) || ::soap_put___trc__GetTrackConfiguration(soap, p, "-trc:GetTrackConfiguration", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___trc__GetTrackConfiguration(struct soap *soap, const char *URL, struct __trc__GetTrackConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__GetTrackConfiguration(soap, p), 0) || ::soap_put___trc__GetTrackConfiguration(soap, p, "-trc:GetTrackConfiguration", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __trc__GetTrackConfiguration * SOAP_FMAC4 soap_get___trc__GetTrackConfiguration(struct soap*, struct __trc__GetTrackConfiguration *, const char*, const char*);
+
+inline int soap_read___trc__GetTrackConfiguration(struct soap *soap, struct __trc__GetTrackConfiguration *p)
+{
+	if (p)
+	{	::soap_default___trc__GetTrackConfiguration(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___trc__GetTrackConfiguration(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___trc__GetTrackConfiguration(struct soap *soap, const char *URL, struct __trc__GetTrackConfiguration *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___trc__GetTrackConfiguration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___trc__GetTrackConfiguration(struct soap *soap, struct __trc__GetTrackConfiguration *p)
+{
+	if (::soap_read___trc__GetTrackConfiguration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___trc__DeleteTrack_DEFINED
+#define SOAP_TYPE___trc__DeleteTrack_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___trc__DeleteTrack(struct soap*, struct __trc__DeleteTrack *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___trc__DeleteTrack(struct soap*, const struct __trc__DeleteTrack *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___trc__DeleteTrack(struct soap*, const char*, int, const struct __trc__DeleteTrack *, const char*);
+SOAP_FMAC3 struct __trc__DeleteTrack * SOAP_FMAC4 soap_in___trc__DeleteTrack(struct soap*, const char*, struct __trc__DeleteTrack *, const char*);
+SOAP_FMAC1 struct __trc__DeleteTrack * SOAP_FMAC2 soap_instantiate___trc__DeleteTrack(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __trc__DeleteTrack * soap_new___trc__DeleteTrack(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___trc__DeleteTrack(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __trc__DeleteTrack * soap_new_req___trc__DeleteTrack(
+	struct soap *soap)
+{
+	struct __trc__DeleteTrack *_p = ::soap_new___trc__DeleteTrack(soap);
+	if (_p)
+	{	::soap_default___trc__DeleteTrack(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __trc__DeleteTrack * soap_new_set___trc__DeleteTrack(
+	struct soap *soap,
+	_trc__DeleteTrack *trc__DeleteTrack)
+{
+	struct __trc__DeleteTrack *_p = ::soap_new___trc__DeleteTrack(soap);
+	if (_p)
+	{	::soap_default___trc__DeleteTrack(soap, _p);
+		_p->trc__DeleteTrack = trc__DeleteTrack;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___trc__DeleteTrack(struct soap*, const struct __trc__DeleteTrack *, const char*, const char*);
+
+inline int soap_write___trc__DeleteTrack(struct soap *soap, struct __trc__DeleteTrack const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___trc__DeleteTrack(soap, p), 0) || ::soap_put___trc__DeleteTrack(soap, p, "-trc:DeleteTrack", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___trc__DeleteTrack(struct soap *soap, const char *URL, struct __trc__DeleteTrack const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__DeleteTrack(soap, p), 0) || ::soap_put___trc__DeleteTrack(soap, p, "-trc:DeleteTrack", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___trc__DeleteTrack(struct soap *soap, const char *URL, struct __trc__DeleteTrack const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__DeleteTrack(soap, p), 0) || ::soap_put___trc__DeleteTrack(soap, p, "-trc:DeleteTrack", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___trc__DeleteTrack(struct soap *soap, const char *URL, struct __trc__DeleteTrack const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__DeleteTrack(soap, p), 0) || ::soap_put___trc__DeleteTrack(soap, p, "-trc:DeleteTrack", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __trc__DeleteTrack * SOAP_FMAC4 soap_get___trc__DeleteTrack(struct soap*, struct __trc__DeleteTrack *, const char*, const char*);
+
+inline int soap_read___trc__DeleteTrack(struct soap *soap, struct __trc__DeleteTrack *p)
+{
+	if (p)
+	{	::soap_default___trc__DeleteTrack(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___trc__DeleteTrack(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___trc__DeleteTrack(struct soap *soap, const char *URL, struct __trc__DeleteTrack *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___trc__DeleteTrack(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___trc__DeleteTrack(struct soap *soap, struct __trc__DeleteTrack *p)
+{
+	if (::soap_read___trc__DeleteTrack(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___trc__CreateTrack_DEFINED
+#define SOAP_TYPE___trc__CreateTrack_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___trc__CreateTrack(struct soap*, struct __trc__CreateTrack *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___trc__CreateTrack(struct soap*, const struct __trc__CreateTrack *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___trc__CreateTrack(struct soap*, const char*, int, const struct __trc__CreateTrack *, const char*);
+SOAP_FMAC3 struct __trc__CreateTrack * SOAP_FMAC4 soap_in___trc__CreateTrack(struct soap*, const char*, struct __trc__CreateTrack *, const char*);
+SOAP_FMAC1 struct __trc__CreateTrack * SOAP_FMAC2 soap_instantiate___trc__CreateTrack(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __trc__CreateTrack * soap_new___trc__CreateTrack(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___trc__CreateTrack(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __trc__CreateTrack * soap_new_req___trc__CreateTrack(
+	struct soap *soap)
+{
+	struct __trc__CreateTrack *_p = ::soap_new___trc__CreateTrack(soap);
+	if (_p)
+	{	::soap_default___trc__CreateTrack(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __trc__CreateTrack * soap_new_set___trc__CreateTrack(
+	struct soap *soap,
+	_trc__CreateTrack *trc__CreateTrack)
+{
+	struct __trc__CreateTrack *_p = ::soap_new___trc__CreateTrack(soap);
+	if (_p)
+	{	::soap_default___trc__CreateTrack(soap, _p);
+		_p->trc__CreateTrack = trc__CreateTrack;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___trc__CreateTrack(struct soap*, const struct __trc__CreateTrack *, const char*, const char*);
+
+inline int soap_write___trc__CreateTrack(struct soap *soap, struct __trc__CreateTrack const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___trc__CreateTrack(soap, p), 0) || ::soap_put___trc__CreateTrack(soap, p, "-trc:CreateTrack", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___trc__CreateTrack(struct soap *soap, const char *URL, struct __trc__CreateTrack const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__CreateTrack(soap, p), 0) || ::soap_put___trc__CreateTrack(soap, p, "-trc:CreateTrack", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___trc__CreateTrack(struct soap *soap, const char *URL, struct __trc__CreateTrack const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__CreateTrack(soap, p), 0) || ::soap_put___trc__CreateTrack(soap, p, "-trc:CreateTrack", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___trc__CreateTrack(struct soap *soap, const char *URL, struct __trc__CreateTrack const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__CreateTrack(soap, p), 0) || ::soap_put___trc__CreateTrack(soap, p, "-trc:CreateTrack", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __trc__CreateTrack * SOAP_FMAC4 soap_get___trc__CreateTrack(struct soap*, struct __trc__CreateTrack *, const char*, const char*);
+
+inline int soap_read___trc__CreateTrack(struct soap *soap, struct __trc__CreateTrack *p)
+{
+	if (p)
+	{	::soap_default___trc__CreateTrack(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___trc__CreateTrack(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___trc__CreateTrack(struct soap *soap, const char *URL, struct __trc__CreateTrack *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___trc__CreateTrack(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___trc__CreateTrack(struct soap *soap, struct __trc__CreateTrack *p)
+{
+	if (::soap_read___trc__CreateTrack(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___trc__GetRecordingOptions_DEFINED
+#define SOAP_TYPE___trc__GetRecordingOptions_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___trc__GetRecordingOptions(struct soap*, struct __trc__GetRecordingOptions *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___trc__GetRecordingOptions(struct soap*, const struct __trc__GetRecordingOptions *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___trc__GetRecordingOptions(struct soap*, const char*, int, const struct __trc__GetRecordingOptions *, const char*);
+SOAP_FMAC3 struct __trc__GetRecordingOptions * SOAP_FMAC4 soap_in___trc__GetRecordingOptions(struct soap*, const char*, struct __trc__GetRecordingOptions *, const char*);
+SOAP_FMAC1 struct __trc__GetRecordingOptions * SOAP_FMAC2 soap_instantiate___trc__GetRecordingOptions(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __trc__GetRecordingOptions * soap_new___trc__GetRecordingOptions(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___trc__GetRecordingOptions(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __trc__GetRecordingOptions * soap_new_req___trc__GetRecordingOptions(
+	struct soap *soap)
+{
+	struct __trc__GetRecordingOptions *_p = ::soap_new___trc__GetRecordingOptions(soap);
+	if (_p)
+	{	::soap_default___trc__GetRecordingOptions(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __trc__GetRecordingOptions * soap_new_set___trc__GetRecordingOptions(
+	struct soap *soap,
+	_trc__GetRecordingOptions *trc__GetRecordingOptions)
+{
+	struct __trc__GetRecordingOptions *_p = ::soap_new___trc__GetRecordingOptions(soap);
+	if (_p)
+	{	::soap_default___trc__GetRecordingOptions(soap, _p);
+		_p->trc__GetRecordingOptions = trc__GetRecordingOptions;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___trc__GetRecordingOptions(struct soap*, const struct __trc__GetRecordingOptions *, const char*, const char*);
+
+inline int soap_write___trc__GetRecordingOptions(struct soap *soap, struct __trc__GetRecordingOptions const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___trc__GetRecordingOptions(soap, p), 0) || ::soap_put___trc__GetRecordingOptions(soap, p, "-trc:GetRecordingOptions", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___trc__GetRecordingOptions(struct soap *soap, const char *URL, struct __trc__GetRecordingOptions const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__GetRecordingOptions(soap, p), 0) || ::soap_put___trc__GetRecordingOptions(soap, p, "-trc:GetRecordingOptions", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___trc__GetRecordingOptions(struct soap *soap, const char *URL, struct __trc__GetRecordingOptions const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__GetRecordingOptions(soap, p), 0) || ::soap_put___trc__GetRecordingOptions(soap, p, "-trc:GetRecordingOptions", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___trc__GetRecordingOptions(struct soap *soap, const char *URL, struct __trc__GetRecordingOptions const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__GetRecordingOptions(soap, p), 0) || ::soap_put___trc__GetRecordingOptions(soap, p, "-trc:GetRecordingOptions", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __trc__GetRecordingOptions * SOAP_FMAC4 soap_get___trc__GetRecordingOptions(struct soap*, struct __trc__GetRecordingOptions *, const char*, const char*);
+
+inline int soap_read___trc__GetRecordingOptions(struct soap *soap, struct __trc__GetRecordingOptions *p)
+{
+	if (p)
+	{	::soap_default___trc__GetRecordingOptions(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___trc__GetRecordingOptions(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___trc__GetRecordingOptions(struct soap *soap, const char *URL, struct __trc__GetRecordingOptions *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___trc__GetRecordingOptions(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___trc__GetRecordingOptions(struct soap *soap, struct __trc__GetRecordingOptions *p)
+{
+	if (::soap_read___trc__GetRecordingOptions(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___trc__GetRecordingConfiguration_DEFINED
+#define SOAP_TYPE___trc__GetRecordingConfiguration_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___trc__GetRecordingConfiguration(struct soap*, struct __trc__GetRecordingConfiguration *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___trc__GetRecordingConfiguration(struct soap*, const struct __trc__GetRecordingConfiguration *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___trc__GetRecordingConfiguration(struct soap*, const char*, int, const struct __trc__GetRecordingConfiguration *, const char*);
+SOAP_FMAC3 struct __trc__GetRecordingConfiguration * SOAP_FMAC4 soap_in___trc__GetRecordingConfiguration(struct soap*, const char*, struct __trc__GetRecordingConfiguration *, const char*);
+SOAP_FMAC1 struct __trc__GetRecordingConfiguration * SOAP_FMAC2 soap_instantiate___trc__GetRecordingConfiguration(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __trc__GetRecordingConfiguration * soap_new___trc__GetRecordingConfiguration(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___trc__GetRecordingConfiguration(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __trc__GetRecordingConfiguration * soap_new_req___trc__GetRecordingConfiguration(
+	struct soap *soap)
+{
+	struct __trc__GetRecordingConfiguration *_p = ::soap_new___trc__GetRecordingConfiguration(soap);
+	if (_p)
+	{	::soap_default___trc__GetRecordingConfiguration(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __trc__GetRecordingConfiguration * soap_new_set___trc__GetRecordingConfiguration(
+	struct soap *soap,
+	_trc__GetRecordingConfiguration *trc__GetRecordingConfiguration)
+{
+	struct __trc__GetRecordingConfiguration *_p = ::soap_new___trc__GetRecordingConfiguration(soap);
+	if (_p)
+	{	::soap_default___trc__GetRecordingConfiguration(soap, _p);
+		_p->trc__GetRecordingConfiguration = trc__GetRecordingConfiguration;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___trc__GetRecordingConfiguration(struct soap*, const struct __trc__GetRecordingConfiguration *, const char*, const char*);
+
+inline int soap_write___trc__GetRecordingConfiguration(struct soap *soap, struct __trc__GetRecordingConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___trc__GetRecordingConfiguration(soap, p), 0) || ::soap_put___trc__GetRecordingConfiguration(soap, p, "-trc:GetRecordingConfiguration", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___trc__GetRecordingConfiguration(struct soap *soap, const char *URL, struct __trc__GetRecordingConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__GetRecordingConfiguration(soap, p), 0) || ::soap_put___trc__GetRecordingConfiguration(soap, p, "-trc:GetRecordingConfiguration", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___trc__GetRecordingConfiguration(struct soap *soap, const char *URL, struct __trc__GetRecordingConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__GetRecordingConfiguration(soap, p), 0) || ::soap_put___trc__GetRecordingConfiguration(soap, p, "-trc:GetRecordingConfiguration", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___trc__GetRecordingConfiguration(struct soap *soap, const char *URL, struct __trc__GetRecordingConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__GetRecordingConfiguration(soap, p), 0) || ::soap_put___trc__GetRecordingConfiguration(soap, p, "-trc:GetRecordingConfiguration", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __trc__GetRecordingConfiguration * SOAP_FMAC4 soap_get___trc__GetRecordingConfiguration(struct soap*, struct __trc__GetRecordingConfiguration *, const char*, const char*);
+
+inline int soap_read___trc__GetRecordingConfiguration(struct soap *soap, struct __trc__GetRecordingConfiguration *p)
+{
+	if (p)
+	{	::soap_default___trc__GetRecordingConfiguration(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___trc__GetRecordingConfiguration(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___trc__GetRecordingConfiguration(struct soap *soap, const char *URL, struct __trc__GetRecordingConfiguration *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___trc__GetRecordingConfiguration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___trc__GetRecordingConfiguration(struct soap *soap, struct __trc__GetRecordingConfiguration *p)
+{
+	if (::soap_read___trc__GetRecordingConfiguration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___trc__SetRecordingConfiguration_DEFINED
+#define SOAP_TYPE___trc__SetRecordingConfiguration_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___trc__SetRecordingConfiguration(struct soap*, struct __trc__SetRecordingConfiguration *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___trc__SetRecordingConfiguration(struct soap*, const struct __trc__SetRecordingConfiguration *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___trc__SetRecordingConfiguration(struct soap*, const char*, int, const struct __trc__SetRecordingConfiguration *, const char*);
+SOAP_FMAC3 struct __trc__SetRecordingConfiguration * SOAP_FMAC4 soap_in___trc__SetRecordingConfiguration(struct soap*, const char*, struct __trc__SetRecordingConfiguration *, const char*);
+SOAP_FMAC1 struct __trc__SetRecordingConfiguration * SOAP_FMAC2 soap_instantiate___trc__SetRecordingConfiguration(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __trc__SetRecordingConfiguration * soap_new___trc__SetRecordingConfiguration(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___trc__SetRecordingConfiguration(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __trc__SetRecordingConfiguration * soap_new_req___trc__SetRecordingConfiguration(
+	struct soap *soap)
+{
+	struct __trc__SetRecordingConfiguration *_p = ::soap_new___trc__SetRecordingConfiguration(soap);
+	if (_p)
+	{	::soap_default___trc__SetRecordingConfiguration(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __trc__SetRecordingConfiguration * soap_new_set___trc__SetRecordingConfiguration(
+	struct soap *soap,
+	_trc__SetRecordingConfiguration *trc__SetRecordingConfiguration)
+{
+	struct __trc__SetRecordingConfiguration *_p = ::soap_new___trc__SetRecordingConfiguration(soap);
+	if (_p)
+	{	::soap_default___trc__SetRecordingConfiguration(soap, _p);
+		_p->trc__SetRecordingConfiguration = trc__SetRecordingConfiguration;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___trc__SetRecordingConfiguration(struct soap*, const struct __trc__SetRecordingConfiguration *, const char*, const char*);
+
+inline int soap_write___trc__SetRecordingConfiguration(struct soap *soap, struct __trc__SetRecordingConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___trc__SetRecordingConfiguration(soap, p), 0) || ::soap_put___trc__SetRecordingConfiguration(soap, p, "-trc:SetRecordingConfiguration", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___trc__SetRecordingConfiguration(struct soap *soap, const char *URL, struct __trc__SetRecordingConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__SetRecordingConfiguration(soap, p), 0) || ::soap_put___trc__SetRecordingConfiguration(soap, p, "-trc:SetRecordingConfiguration", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___trc__SetRecordingConfiguration(struct soap *soap, const char *URL, struct __trc__SetRecordingConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__SetRecordingConfiguration(soap, p), 0) || ::soap_put___trc__SetRecordingConfiguration(soap, p, "-trc:SetRecordingConfiguration", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___trc__SetRecordingConfiguration(struct soap *soap, const char *URL, struct __trc__SetRecordingConfiguration const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__SetRecordingConfiguration(soap, p), 0) || ::soap_put___trc__SetRecordingConfiguration(soap, p, "-trc:SetRecordingConfiguration", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __trc__SetRecordingConfiguration * SOAP_FMAC4 soap_get___trc__SetRecordingConfiguration(struct soap*, struct __trc__SetRecordingConfiguration *, const char*, const char*);
+
+inline int soap_read___trc__SetRecordingConfiguration(struct soap *soap, struct __trc__SetRecordingConfiguration *p)
+{
+	if (p)
+	{	::soap_default___trc__SetRecordingConfiguration(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___trc__SetRecordingConfiguration(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___trc__SetRecordingConfiguration(struct soap *soap, const char *URL, struct __trc__SetRecordingConfiguration *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___trc__SetRecordingConfiguration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___trc__SetRecordingConfiguration(struct soap *soap, struct __trc__SetRecordingConfiguration *p)
+{
+	if (::soap_read___trc__SetRecordingConfiguration(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___trc__GetRecordings_DEFINED
+#define SOAP_TYPE___trc__GetRecordings_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___trc__GetRecordings(struct soap*, struct __trc__GetRecordings *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___trc__GetRecordings(struct soap*, const struct __trc__GetRecordings *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___trc__GetRecordings(struct soap*, const char*, int, const struct __trc__GetRecordings *, const char*);
+SOAP_FMAC3 struct __trc__GetRecordings * SOAP_FMAC4 soap_in___trc__GetRecordings(struct soap*, const char*, struct __trc__GetRecordings *, const char*);
+SOAP_FMAC1 struct __trc__GetRecordings * SOAP_FMAC2 soap_instantiate___trc__GetRecordings(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __trc__GetRecordings * soap_new___trc__GetRecordings(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___trc__GetRecordings(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __trc__GetRecordings * soap_new_req___trc__GetRecordings(
+	struct soap *soap)
+{
+	struct __trc__GetRecordings *_p = ::soap_new___trc__GetRecordings(soap);
+	if (_p)
+	{	::soap_default___trc__GetRecordings(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __trc__GetRecordings * soap_new_set___trc__GetRecordings(
+	struct soap *soap,
+	_trc__GetRecordings *trc__GetRecordings)
+{
+	struct __trc__GetRecordings *_p = ::soap_new___trc__GetRecordings(soap);
+	if (_p)
+	{	::soap_default___trc__GetRecordings(soap, _p);
+		_p->trc__GetRecordings = trc__GetRecordings;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___trc__GetRecordings(struct soap*, const struct __trc__GetRecordings *, const char*, const char*);
+
+inline int soap_write___trc__GetRecordings(struct soap *soap, struct __trc__GetRecordings const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___trc__GetRecordings(soap, p), 0) || ::soap_put___trc__GetRecordings(soap, p, "-trc:GetRecordings", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___trc__GetRecordings(struct soap *soap, const char *URL, struct __trc__GetRecordings const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__GetRecordings(soap, p), 0) || ::soap_put___trc__GetRecordings(soap, p, "-trc:GetRecordings", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___trc__GetRecordings(struct soap *soap, const char *URL, struct __trc__GetRecordings const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__GetRecordings(soap, p), 0) || ::soap_put___trc__GetRecordings(soap, p, "-trc:GetRecordings", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___trc__GetRecordings(struct soap *soap, const char *URL, struct __trc__GetRecordings const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__GetRecordings(soap, p), 0) || ::soap_put___trc__GetRecordings(soap, p, "-trc:GetRecordings", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __trc__GetRecordings * SOAP_FMAC4 soap_get___trc__GetRecordings(struct soap*, struct __trc__GetRecordings *, const char*, const char*);
+
+inline int soap_read___trc__GetRecordings(struct soap *soap, struct __trc__GetRecordings *p)
+{
+	if (p)
+	{	::soap_default___trc__GetRecordings(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___trc__GetRecordings(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___trc__GetRecordings(struct soap *soap, const char *URL, struct __trc__GetRecordings *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___trc__GetRecordings(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___trc__GetRecordings(struct soap *soap, struct __trc__GetRecordings *p)
+{
+	if (::soap_read___trc__GetRecordings(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___trc__DeleteRecording_DEFINED
+#define SOAP_TYPE___trc__DeleteRecording_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___trc__DeleteRecording(struct soap*, struct __trc__DeleteRecording *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___trc__DeleteRecording(struct soap*, const struct __trc__DeleteRecording *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___trc__DeleteRecording(struct soap*, const char*, int, const struct __trc__DeleteRecording *, const char*);
+SOAP_FMAC3 struct __trc__DeleteRecording * SOAP_FMAC4 soap_in___trc__DeleteRecording(struct soap*, const char*, struct __trc__DeleteRecording *, const char*);
+SOAP_FMAC1 struct __trc__DeleteRecording * SOAP_FMAC2 soap_instantiate___trc__DeleteRecording(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __trc__DeleteRecording * soap_new___trc__DeleteRecording(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___trc__DeleteRecording(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __trc__DeleteRecording * soap_new_req___trc__DeleteRecording(
+	struct soap *soap)
+{
+	struct __trc__DeleteRecording *_p = ::soap_new___trc__DeleteRecording(soap);
+	if (_p)
+	{	::soap_default___trc__DeleteRecording(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __trc__DeleteRecording * soap_new_set___trc__DeleteRecording(
+	struct soap *soap,
+	_trc__DeleteRecording *trc__DeleteRecording)
+{
+	struct __trc__DeleteRecording *_p = ::soap_new___trc__DeleteRecording(soap);
+	if (_p)
+	{	::soap_default___trc__DeleteRecording(soap, _p);
+		_p->trc__DeleteRecording = trc__DeleteRecording;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___trc__DeleteRecording(struct soap*, const struct __trc__DeleteRecording *, const char*, const char*);
+
+inline int soap_write___trc__DeleteRecording(struct soap *soap, struct __trc__DeleteRecording const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___trc__DeleteRecording(soap, p), 0) || ::soap_put___trc__DeleteRecording(soap, p, "-trc:DeleteRecording", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___trc__DeleteRecording(struct soap *soap, const char *URL, struct __trc__DeleteRecording const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__DeleteRecording(soap, p), 0) || ::soap_put___trc__DeleteRecording(soap, p, "-trc:DeleteRecording", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___trc__DeleteRecording(struct soap *soap, const char *URL, struct __trc__DeleteRecording const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__DeleteRecording(soap, p), 0) || ::soap_put___trc__DeleteRecording(soap, p, "-trc:DeleteRecording", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___trc__DeleteRecording(struct soap *soap, const char *URL, struct __trc__DeleteRecording const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__DeleteRecording(soap, p), 0) || ::soap_put___trc__DeleteRecording(soap, p, "-trc:DeleteRecording", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __trc__DeleteRecording * SOAP_FMAC4 soap_get___trc__DeleteRecording(struct soap*, struct __trc__DeleteRecording *, const char*, const char*);
+
+inline int soap_read___trc__DeleteRecording(struct soap *soap, struct __trc__DeleteRecording *p)
+{
+	if (p)
+	{	::soap_default___trc__DeleteRecording(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___trc__DeleteRecording(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___trc__DeleteRecording(struct soap *soap, const char *URL, struct __trc__DeleteRecording *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___trc__DeleteRecording(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___trc__DeleteRecording(struct soap *soap, struct __trc__DeleteRecording *p)
+{
+	if (::soap_read___trc__DeleteRecording(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___trc__CreateRecording_DEFINED
+#define SOAP_TYPE___trc__CreateRecording_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___trc__CreateRecording(struct soap*, struct __trc__CreateRecording *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___trc__CreateRecording(struct soap*, const struct __trc__CreateRecording *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___trc__CreateRecording(struct soap*, const char*, int, const struct __trc__CreateRecording *, const char*);
+SOAP_FMAC3 struct __trc__CreateRecording * SOAP_FMAC4 soap_in___trc__CreateRecording(struct soap*, const char*, struct __trc__CreateRecording *, const char*);
+SOAP_FMAC1 struct __trc__CreateRecording * SOAP_FMAC2 soap_instantiate___trc__CreateRecording(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __trc__CreateRecording * soap_new___trc__CreateRecording(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___trc__CreateRecording(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __trc__CreateRecording * soap_new_req___trc__CreateRecording(
+	struct soap *soap)
+{
+	struct __trc__CreateRecording *_p = ::soap_new___trc__CreateRecording(soap);
+	if (_p)
+	{	::soap_default___trc__CreateRecording(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __trc__CreateRecording * soap_new_set___trc__CreateRecording(
+	struct soap *soap,
+	_trc__CreateRecording *trc__CreateRecording)
+{
+	struct __trc__CreateRecording *_p = ::soap_new___trc__CreateRecording(soap);
+	if (_p)
+	{	::soap_default___trc__CreateRecording(soap, _p);
+		_p->trc__CreateRecording = trc__CreateRecording;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___trc__CreateRecording(struct soap*, const struct __trc__CreateRecording *, const char*, const char*);
+
+inline int soap_write___trc__CreateRecording(struct soap *soap, struct __trc__CreateRecording const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___trc__CreateRecording(soap, p), 0) || ::soap_put___trc__CreateRecording(soap, p, "-trc:CreateRecording", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___trc__CreateRecording(struct soap *soap, const char *URL, struct __trc__CreateRecording const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__CreateRecording(soap, p), 0) || ::soap_put___trc__CreateRecording(soap, p, "-trc:CreateRecording", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___trc__CreateRecording(struct soap *soap, const char *URL, struct __trc__CreateRecording const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__CreateRecording(soap, p), 0) || ::soap_put___trc__CreateRecording(soap, p, "-trc:CreateRecording", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___trc__CreateRecording(struct soap *soap, const char *URL, struct __trc__CreateRecording const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__CreateRecording(soap, p), 0) || ::soap_put___trc__CreateRecording(soap, p, "-trc:CreateRecording", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __trc__CreateRecording * SOAP_FMAC4 soap_get___trc__CreateRecording(struct soap*, struct __trc__CreateRecording *, const char*, const char*);
+
+inline int soap_read___trc__CreateRecording(struct soap *soap, struct __trc__CreateRecording *p)
+{
+	if (p)
+	{	::soap_default___trc__CreateRecording(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___trc__CreateRecording(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___trc__CreateRecording(struct soap *soap, const char *URL, struct __trc__CreateRecording *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___trc__CreateRecording(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___trc__CreateRecording(struct soap *soap, struct __trc__CreateRecording *p)
+{
+	if (::soap_read___trc__CreateRecording(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+#endif
+
+#ifndef SOAP_TYPE___trc__GetServiceCapabilities_DEFINED
+#define SOAP_TYPE___trc__GetServiceCapabilities_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___trc__GetServiceCapabilities(struct soap*, struct __trc__GetServiceCapabilities *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___trc__GetServiceCapabilities(struct soap*, const struct __trc__GetServiceCapabilities *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___trc__GetServiceCapabilities(struct soap*, const char*, int, const struct __trc__GetServiceCapabilities *, const char*);
+SOAP_FMAC3 struct __trc__GetServiceCapabilities * SOAP_FMAC4 soap_in___trc__GetServiceCapabilities(struct soap*, const char*, struct __trc__GetServiceCapabilities *, const char*);
+SOAP_FMAC1 struct __trc__GetServiceCapabilities * SOAP_FMAC2 soap_instantiate___trc__GetServiceCapabilities(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __trc__GetServiceCapabilities * soap_new___trc__GetServiceCapabilities(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___trc__GetServiceCapabilities(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __trc__GetServiceCapabilities * soap_new_req___trc__GetServiceCapabilities(
+	struct soap *soap)
+{
+	struct __trc__GetServiceCapabilities *_p = ::soap_new___trc__GetServiceCapabilities(soap);
+	if (_p)
+	{	::soap_default___trc__GetServiceCapabilities(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __trc__GetServiceCapabilities * soap_new_set___trc__GetServiceCapabilities(
+	struct soap *soap,
+	_trc__GetServiceCapabilities *trc__GetServiceCapabilities)
+{
+	struct __trc__GetServiceCapabilities *_p = ::soap_new___trc__GetServiceCapabilities(soap);
+	if (_p)
+	{	::soap_default___trc__GetServiceCapabilities(soap, _p);
+		_p->trc__GetServiceCapabilities = trc__GetServiceCapabilities;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___trc__GetServiceCapabilities(struct soap*, const struct __trc__GetServiceCapabilities *, const char*, const char*);
+
+inline int soap_write___trc__GetServiceCapabilities(struct soap *soap, struct __trc__GetServiceCapabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_begin_send(soap) || (::soap_serialize___trc__GetServiceCapabilities(soap, p), 0) || ::soap_put___trc__GetServiceCapabilities(soap, p, "-trc:GetServiceCapabilities", "") || soap_end_send(soap))
+			return soap->error;
+	return SOAP_OK;
+}
+
+inline int soap_PUT___trc__GetServiceCapabilities(struct soap *soap, const char *URL, struct __trc__GetServiceCapabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PUT(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__GetServiceCapabilities(soap, p), 0) || ::soap_put___trc__GetServiceCapabilities(soap, p, "-trc:GetServiceCapabilities", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_PATCH___trc__GetServiceCapabilities(struct soap *soap, const char *URL, struct __trc__GetServiceCapabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_PATCH(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__GetServiceCapabilities(soap, p), 0) || ::soap_put___trc__GetServiceCapabilities(soap, p, "-trc:GetServiceCapabilities", "") || soap_end_send(soap) || soap_recv_empty_response(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+
+inline int soap_POST_send___trc__GetServiceCapabilities(struct soap *soap, const char *URL, struct __trc__GetServiceCapabilities const*p)
+{
+	soap_free_temp(soap);
+	if (soap_POST(soap, URL, NULL, "text/xml; charset=utf-8") || (::soap_serialize___trc__GetServiceCapabilities(soap, p), 0) || ::soap_put___trc__GetServiceCapabilities(soap, p, "-trc:GetServiceCapabilities", "") || soap_end_send(soap))
+		return soap_closesock(soap);
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __trc__GetServiceCapabilities * SOAP_FMAC4 soap_get___trc__GetServiceCapabilities(struct soap*, struct __trc__GetServiceCapabilities *, const char*, const char*);
+
+inline int soap_read___trc__GetServiceCapabilities(struct soap *soap, struct __trc__GetServiceCapabilities *p)
+{
+	if (p)
+	{	::soap_default___trc__GetServiceCapabilities(soap, p);
+		if (soap_begin_recv(soap) || ::soap_get___trc__GetServiceCapabilities(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+
+inline int soap_GET___trc__GetServiceCapabilities(struct soap *soap, const char *URL, struct __trc__GetServiceCapabilities *p)
+{
+	if (soap_GET(soap, URL, NULL) || ::soap_read___trc__GetServiceCapabilities(soap, p))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
+
+inline int soap_POST_recv___trc__GetServiceCapabilities(struct soap *soap, struct __trc__GetServiceCapabilities *p)
+{
+	if (::soap_read___trc__GetServiceCapabilities(soap, p))
 		return soap_closesock(soap);
 	return soap_closesock(soap);
 }
@@ -214645,6 +226666,132 @@ SOAP_FMAC3 int SOAP_FMAC4 soap_out__wsc__union_DerivedKeyTokenType(struct soap*,
 SOAP_FMAC3 union _wsc__union_DerivedKeyTokenType * SOAP_FMAC4 soap_in__wsc__union_DerivedKeyTokenType(struct soap*, int*, union _wsc__union_DerivedKeyTokenType *);
 #endif
 
+#ifndef SOAP_TYPE_PointerTo_tse__GetMetadataSearchResults_DEFINED
+#define SOAP_TYPE_PointerTo_tse__GetMetadataSearchResults_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_tse__GetMetadataSearchResults(struct soap*, _tse__GetMetadataSearchResults *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_tse__GetMetadataSearchResults(struct soap*, const char *, int, _tse__GetMetadataSearchResults *const*, const char *);
+SOAP_FMAC3 _tse__GetMetadataSearchResults ** SOAP_FMAC4 soap_in_PointerTo_tse__GetMetadataSearchResults(struct soap*, const char*, _tse__GetMetadataSearchResults **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_tse__GetMetadataSearchResults(struct soap*, _tse__GetMetadataSearchResults *const*, const char*, const char*);
+SOAP_FMAC3 _tse__GetMetadataSearchResults ** SOAP_FMAC4 soap_get_PointerTo_tse__GetMetadataSearchResults(struct soap*, _tse__GetMetadataSearchResults **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_tse__FindMetadata_DEFINED
+#define SOAP_TYPE_PointerTo_tse__FindMetadata_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_tse__FindMetadata(struct soap*, _tse__FindMetadata *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_tse__FindMetadata(struct soap*, const char *, int, _tse__FindMetadata *const*, const char *);
+SOAP_FMAC3 _tse__FindMetadata ** SOAP_FMAC4 soap_in_PointerTo_tse__FindMetadata(struct soap*, const char*, _tse__FindMetadata **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_tse__FindMetadata(struct soap*, _tse__FindMetadata *const*, const char*, const char*);
+SOAP_FMAC3 _tse__FindMetadata ** SOAP_FMAC4 soap_get_PointerTo_tse__FindMetadata(struct soap*, _tse__FindMetadata **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_tse__EndSearch_DEFINED
+#define SOAP_TYPE_PointerTo_tse__EndSearch_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_tse__EndSearch(struct soap*, _tse__EndSearch *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_tse__EndSearch(struct soap*, const char *, int, _tse__EndSearch *const*, const char *);
+SOAP_FMAC3 _tse__EndSearch ** SOAP_FMAC4 soap_in_PointerTo_tse__EndSearch(struct soap*, const char*, _tse__EndSearch **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_tse__EndSearch(struct soap*, _tse__EndSearch *const*, const char*, const char*);
+SOAP_FMAC3 _tse__EndSearch ** SOAP_FMAC4 soap_get_PointerTo_tse__EndSearch(struct soap*, _tse__EndSearch **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_tse__GetSearchState_DEFINED
+#define SOAP_TYPE_PointerTo_tse__GetSearchState_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_tse__GetSearchState(struct soap*, _tse__GetSearchState *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_tse__GetSearchState(struct soap*, const char *, int, _tse__GetSearchState *const*, const char *);
+SOAP_FMAC3 _tse__GetSearchState ** SOAP_FMAC4 soap_in_PointerTo_tse__GetSearchState(struct soap*, const char*, _tse__GetSearchState **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_tse__GetSearchState(struct soap*, _tse__GetSearchState *const*, const char*, const char*);
+SOAP_FMAC3 _tse__GetSearchState ** SOAP_FMAC4 soap_get_PointerTo_tse__GetSearchState(struct soap*, _tse__GetSearchState **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_tse__GetPTZPositionSearchResults_DEFINED
+#define SOAP_TYPE_PointerTo_tse__GetPTZPositionSearchResults_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_tse__GetPTZPositionSearchResults(struct soap*, _tse__GetPTZPositionSearchResults *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_tse__GetPTZPositionSearchResults(struct soap*, const char *, int, _tse__GetPTZPositionSearchResults *const*, const char *);
+SOAP_FMAC3 _tse__GetPTZPositionSearchResults ** SOAP_FMAC4 soap_in_PointerTo_tse__GetPTZPositionSearchResults(struct soap*, const char*, _tse__GetPTZPositionSearchResults **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_tse__GetPTZPositionSearchResults(struct soap*, _tse__GetPTZPositionSearchResults *const*, const char*, const char*);
+SOAP_FMAC3 _tse__GetPTZPositionSearchResults ** SOAP_FMAC4 soap_get_PointerTo_tse__GetPTZPositionSearchResults(struct soap*, _tse__GetPTZPositionSearchResults **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_tse__FindPTZPosition_DEFINED
+#define SOAP_TYPE_PointerTo_tse__FindPTZPosition_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_tse__FindPTZPosition(struct soap*, _tse__FindPTZPosition *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_tse__FindPTZPosition(struct soap*, const char *, int, _tse__FindPTZPosition *const*, const char *);
+SOAP_FMAC3 _tse__FindPTZPosition ** SOAP_FMAC4 soap_in_PointerTo_tse__FindPTZPosition(struct soap*, const char*, _tse__FindPTZPosition **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_tse__FindPTZPosition(struct soap*, _tse__FindPTZPosition *const*, const char*, const char*);
+SOAP_FMAC3 _tse__FindPTZPosition ** SOAP_FMAC4 soap_get_PointerTo_tse__FindPTZPosition(struct soap*, _tse__FindPTZPosition **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_tse__GetEventSearchResults_DEFINED
+#define SOAP_TYPE_PointerTo_tse__GetEventSearchResults_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_tse__GetEventSearchResults(struct soap*, _tse__GetEventSearchResults *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_tse__GetEventSearchResults(struct soap*, const char *, int, _tse__GetEventSearchResults *const*, const char *);
+SOAP_FMAC3 _tse__GetEventSearchResults ** SOAP_FMAC4 soap_in_PointerTo_tse__GetEventSearchResults(struct soap*, const char*, _tse__GetEventSearchResults **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_tse__GetEventSearchResults(struct soap*, _tse__GetEventSearchResults *const*, const char*, const char*);
+SOAP_FMAC3 _tse__GetEventSearchResults ** SOAP_FMAC4 soap_get_PointerTo_tse__GetEventSearchResults(struct soap*, _tse__GetEventSearchResults **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_tse__FindEvents_DEFINED
+#define SOAP_TYPE_PointerTo_tse__FindEvents_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_tse__FindEvents(struct soap*, _tse__FindEvents *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_tse__FindEvents(struct soap*, const char *, int, _tse__FindEvents *const*, const char *);
+SOAP_FMAC3 _tse__FindEvents ** SOAP_FMAC4 soap_in_PointerTo_tse__FindEvents(struct soap*, const char*, _tse__FindEvents **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_tse__FindEvents(struct soap*, _tse__FindEvents *const*, const char*, const char*);
+SOAP_FMAC3 _tse__FindEvents ** SOAP_FMAC4 soap_get_PointerTo_tse__FindEvents(struct soap*, _tse__FindEvents **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_tse__GetRecordingSearchResults_DEFINED
+#define SOAP_TYPE_PointerTo_tse__GetRecordingSearchResults_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_tse__GetRecordingSearchResults(struct soap*, _tse__GetRecordingSearchResults *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_tse__GetRecordingSearchResults(struct soap*, const char *, int, _tse__GetRecordingSearchResults *const*, const char *);
+SOAP_FMAC3 _tse__GetRecordingSearchResults ** SOAP_FMAC4 soap_in_PointerTo_tse__GetRecordingSearchResults(struct soap*, const char*, _tse__GetRecordingSearchResults **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_tse__GetRecordingSearchResults(struct soap*, _tse__GetRecordingSearchResults *const*, const char*, const char*);
+SOAP_FMAC3 _tse__GetRecordingSearchResults ** SOAP_FMAC4 soap_get_PointerTo_tse__GetRecordingSearchResults(struct soap*, _tse__GetRecordingSearchResults **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_tse__FindRecordings_DEFINED
+#define SOAP_TYPE_PointerTo_tse__FindRecordings_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_tse__FindRecordings(struct soap*, _tse__FindRecordings *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_tse__FindRecordings(struct soap*, const char *, int, _tse__FindRecordings *const*, const char *);
+SOAP_FMAC3 _tse__FindRecordings ** SOAP_FMAC4 soap_in_PointerTo_tse__FindRecordings(struct soap*, const char*, _tse__FindRecordings **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_tse__FindRecordings(struct soap*, _tse__FindRecordings *const*, const char*, const char*);
+SOAP_FMAC3 _tse__FindRecordings ** SOAP_FMAC4 soap_get_PointerTo_tse__FindRecordings(struct soap*, _tse__FindRecordings **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_tse__GetMediaAttributes_DEFINED
+#define SOAP_TYPE_PointerTo_tse__GetMediaAttributes_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_tse__GetMediaAttributes(struct soap*, _tse__GetMediaAttributes *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_tse__GetMediaAttributes(struct soap*, const char *, int, _tse__GetMediaAttributes *const*, const char *);
+SOAP_FMAC3 _tse__GetMediaAttributes ** SOAP_FMAC4 soap_in_PointerTo_tse__GetMediaAttributes(struct soap*, const char*, _tse__GetMediaAttributes **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_tse__GetMediaAttributes(struct soap*, _tse__GetMediaAttributes *const*, const char*, const char*);
+SOAP_FMAC3 _tse__GetMediaAttributes ** SOAP_FMAC4 soap_get_PointerTo_tse__GetMediaAttributes(struct soap*, _tse__GetMediaAttributes **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_tse__GetRecordingInformation_DEFINED
+#define SOAP_TYPE_PointerTo_tse__GetRecordingInformation_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_tse__GetRecordingInformation(struct soap*, _tse__GetRecordingInformation *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_tse__GetRecordingInformation(struct soap*, const char *, int, _tse__GetRecordingInformation *const*, const char *);
+SOAP_FMAC3 _tse__GetRecordingInformation ** SOAP_FMAC4 soap_in_PointerTo_tse__GetRecordingInformation(struct soap*, const char*, _tse__GetRecordingInformation **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_tse__GetRecordingInformation(struct soap*, _tse__GetRecordingInformation *const*, const char*, const char*);
+SOAP_FMAC3 _tse__GetRecordingInformation ** SOAP_FMAC4 soap_get_PointerTo_tse__GetRecordingInformation(struct soap*, _tse__GetRecordingInformation **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_tse__GetRecordingSummary_DEFINED
+#define SOAP_TYPE_PointerTo_tse__GetRecordingSummary_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_tse__GetRecordingSummary(struct soap*, _tse__GetRecordingSummary *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_tse__GetRecordingSummary(struct soap*, const char *, int, _tse__GetRecordingSummary *const*, const char *);
+SOAP_FMAC3 _tse__GetRecordingSummary ** SOAP_FMAC4 soap_in_PointerTo_tse__GetRecordingSummary(struct soap*, const char*, _tse__GetRecordingSummary **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_tse__GetRecordingSummary(struct soap*, _tse__GetRecordingSummary *const*, const char*, const char*);
+SOAP_FMAC3 _tse__GetRecordingSummary ** SOAP_FMAC4 soap_get_PointerTo_tse__GetRecordingSummary(struct soap*, _tse__GetRecordingSummary **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_tse__GetServiceCapabilities_DEFINED
+#define SOAP_TYPE_PointerTo_tse__GetServiceCapabilities_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_tse__GetServiceCapabilities(struct soap*, _tse__GetServiceCapabilities *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_tse__GetServiceCapabilities(struct soap*, const char *, int, _tse__GetServiceCapabilities *const*, const char *);
+SOAP_FMAC3 _tse__GetServiceCapabilities ** SOAP_FMAC4 soap_in_PointerTo_tse__GetServiceCapabilities(struct soap*, const char*, _tse__GetServiceCapabilities **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_tse__GetServiceCapabilities(struct soap*, _tse__GetServiceCapabilities *const*, const char*, const char*);
+SOAP_FMAC3 _tse__GetServiceCapabilities ** SOAP_FMAC4 soap_get_PointerTo_tse__GetServiceCapabilities(struct soap*, _tse__GetServiceCapabilities **, const char*, const char*);
+#endif
+
 #ifndef SOAP_TYPE_PointerTo_trt__DeleteOSD_DEFINED
 #define SOAP_TYPE_PointerTo_trt__DeleteOSD_DEFINED
 SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_trt__DeleteOSD(struct soap*, _trt__DeleteOSD *const*);
@@ -215354,6 +227501,240 @@ SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_trt__GetServiceCapabilities(struct 
 SOAP_FMAC3 _trt__GetServiceCapabilities ** SOAP_FMAC4 soap_in_PointerTo_trt__GetServiceCapabilities(struct soap*, const char*, _trt__GetServiceCapabilities **, const char*);
 SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_trt__GetServiceCapabilities(struct soap*, _trt__GetServiceCapabilities *const*, const char*, const char*);
 SOAP_FMAC3 _trt__GetServiceCapabilities ** SOAP_FMAC4 soap_get_PointerTo_trt__GetServiceCapabilities(struct soap*, _trt__GetServiceCapabilities **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_trp__SetReplayConfiguration_DEFINED
+#define SOAP_TYPE_PointerTo_trp__SetReplayConfiguration_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_trp__SetReplayConfiguration(struct soap*, _trp__SetReplayConfiguration *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_trp__SetReplayConfiguration(struct soap*, const char *, int, _trp__SetReplayConfiguration *const*, const char *);
+SOAP_FMAC3 _trp__SetReplayConfiguration ** SOAP_FMAC4 soap_in_PointerTo_trp__SetReplayConfiguration(struct soap*, const char*, _trp__SetReplayConfiguration **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_trp__SetReplayConfiguration(struct soap*, _trp__SetReplayConfiguration *const*, const char*, const char*);
+SOAP_FMAC3 _trp__SetReplayConfiguration ** SOAP_FMAC4 soap_get_PointerTo_trp__SetReplayConfiguration(struct soap*, _trp__SetReplayConfiguration **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_trp__GetReplayConfiguration_DEFINED
+#define SOAP_TYPE_PointerTo_trp__GetReplayConfiguration_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_trp__GetReplayConfiguration(struct soap*, _trp__GetReplayConfiguration *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_trp__GetReplayConfiguration(struct soap*, const char *, int, _trp__GetReplayConfiguration *const*, const char *);
+SOAP_FMAC3 _trp__GetReplayConfiguration ** SOAP_FMAC4 soap_in_PointerTo_trp__GetReplayConfiguration(struct soap*, const char*, _trp__GetReplayConfiguration **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_trp__GetReplayConfiguration(struct soap*, _trp__GetReplayConfiguration *const*, const char*, const char*);
+SOAP_FMAC3 _trp__GetReplayConfiguration ** SOAP_FMAC4 soap_get_PointerTo_trp__GetReplayConfiguration(struct soap*, _trp__GetReplayConfiguration **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_trp__GetReplayUri_DEFINED
+#define SOAP_TYPE_PointerTo_trp__GetReplayUri_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_trp__GetReplayUri(struct soap*, _trp__GetReplayUri *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_trp__GetReplayUri(struct soap*, const char *, int, _trp__GetReplayUri *const*, const char *);
+SOAP_FMAC3 _trp__GetReplayUri ** SOAP_FMAC4 soap_in_PointerTo_trp__GetReplayUri(struct soap*, const char*, _trp__GetReplayUri **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_trp__GetReplayUri(struct soap*, _trp__GetReplayUri *const*, const char*, const char*);
+SOAP_FMAC3 _trp__GetReplayUri ** SOAP_FMAC4 soap_get_PointerTo_trp__GetReplayUri(struct soap*, _trp__GetReplayUri **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_trp__GetServiceCapabilities_DEFINED
+#define SOAP_TYPE_PointerTo_trp__GetServiceCapabilities_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_trp__GetServiceCapabilities(struct soap*, _trp__GetServiceCapabilities *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_trp__GetServiceCapabilities(struct soap*, const char *, int, _trp__GetServiceCapabilities *const*, const char *);
+SOAP_FMAC3 _trp__GetServiceCapabilities ** SOAP_FMAC4 soap_in_PointerTo_trp__GetServiceCapabilities(struct soap*, const char*, _trp__GetServiceCapabilities **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_trp__GetServiceCapabilities(struct soap*, _trp__GetServiceCapabilities *const*, const char*, const char*);
+SOAP_FMAC3 _trp__GetServiceCapabilities ** SOAP_FMAC4 soap_get_PointerTo_trp__GetServiceCapabilities(struct soap*, _trp__GetServiceCapabilities **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_trc__OverrideSegmentDuration_DEFINED
+#define SOAP_TYPE_PointerTo_trc__OverrideSegmentDuration_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_trc__OverrideSegmentDuration(struct soap*, _trc__OverrideSegmentDuration *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_trc__OverrideSegmentDuration(struct soap*, const char *, int, _trc__OverrideSegmentDuration *const*, const char *);
+SOAP_FMAC3 _trc__OverrideSegmentDuration ** SOAP_FMAC4 soap_in_PointerTo_trc__OverrideSegmentDuration(struct soap*, const char*, _trc__OverrideSegmentDuration **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_trc__OverrideSegmentDuration(struct soap*, _trc__OverrideSegmentDuration *const*, const char*, const char*);
+SOAP_FMAC3 _trc__OverrideSegmentDuration ** SOAP_FMAC4 soap_get_PointerTo_trc__OverrideSegmentDuration(struct soap*, _trc__OverrideSegmentDuration **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_trc__GetExportRecordedDataState_DEFINED
+#define SOAP_TYPE_PointerTo_trc__GetExportRecordedDataState_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_trc__GetExportRecordedDataState(struct soap*, _trc__GetExportRecordedDataState *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_trc__GetExportRecordedDataState(struct soap*, const char *, int, _trc__GetExportRecordedDataState *const*, const char *);
+SOAP_FMAC3 _trc__GetExportRecordedDataState ** SOAP_FMAC4 soap_in_PointerTo_trc__GetExportRecordedDataState(struct soap*, const char*, _trc__GetExportRecordedDataState **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_trc__GetExportRecordedDataState(struct soap*, _trc__GetExportRecordedDataState *const*, const char*, const char*);
+SOAP_FMAC3 _trc__GetExportRecordedDataState ** SOAP_FMAC4 soap_get_PointerTo_trc__GetExportRecordedDataState(struct soap*, _trc__GetExportRecordedDataState **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_trc__StopExportRecordedData_DEFINED
+#define SOAP_TYPE_PointerTo_trc__StopExportRecordedData_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_trc__StopExportRecordedData(struct soap*, _trc__StopExportRecordedData *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_trc__StopExportRecordedData(struct soap*, const char *, int, _trc__StopExportRecordedData *const*, const char *);
+SOAP_FMAC3 _trc__StopExportRecordedData ** SOAP_FMAC4 soap_in_PointerTo_trc__StopExportRecordedData(struct soap*, const char*, _trc__StopExportRecordedData **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_trc__StopExportRecordedData(struct soap*, _trc__StopExportRecordedData *const*, const char*, const char*);
+SOAP_FMAC3 _trc__StopExportRecordedData ** SOAP_FMAC4 soap_get_PointerTo_trc__StopExportRecordedData(struct soap*, _trc__StopExportRecordedData **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_trc__ExportRecordedData_DEFINED
+#define SOAP_TYPE_PointerTo_trc__ExportRecordedData_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_trc__ExportRecordedData(struct soap*, _trc__ExportRecordedData *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_trc__ExportRecordedData(struct soap*, const char *, int, _trc__ExportRecordedData *const*, const char *);
+SOAP_FMAC3 _trc__ExportRecordedData ** SOAP_FMAC4 soap_in_PointerTo_trc__ExportRecordedData(struct soap*, const char*, _trc__ExportRecordedData **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_trc__ExportRecordedData(struct soap*, _trc__ExportRecordedData *const*, const char*, const char*);
+SOAP_FMAC3 _trc__ExportRecordedData ** SOAP_FMAC4 soap_get_PointerTo_trc__ExportRecordedData(struct soap*, _trc__ExportRecordedData **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_trc__GetRecordingJobState_DEFINED
+#define SOAP_TYPE_PointerTo_trc__GetRecordingJobState_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_trc__GetRecordingJobState(struct soap*, _trc__GetRecordingJobState *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_trc__GetRecordingJobState(struct soap*, const char *, int, _trc__GetRecordingJobState *const*, const char *);
+SOAP_FMAC3 _trc__GetRecordingJobState ** SOAP_FMAC4 soap_in_PointerTo_trc__GetRecordingJobState(struct soap*, const char*, _trc__GetRecordingJobState **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_trc__GetRecordingJobState(struct soap*, _trc__GetRecordingJobState *const*, const char*, const char*);
+SOAP_FMAC3 _trc__GetRecordingJobState ** SOAP_FMAC4 soap_get_PointerTo_trc__GetRecordingJobState(struct soap*, _trc__GetRecordingJobState **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_trc__SetRecordingJobMode_DEFINED
+#define SOAP_TYPE_PointerTo_trc__SetRecordingJobMode_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_trc__SetRecordingJobMode(struct soap*, _trc__SetRecordingJobMode *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_trc__SetRecordingJobMode(struct soap*, const char *, int, _trc__SetRecordingJobMode *const*, const char *);
+SOAP_FMAC3 _trc__SetRecordingJobMode ** SOAP_FMAC4 soap_in_PointerTo_trc__SetRecordingJobMode(struct soap*, const char*, _trc__SetRecordingJobMode **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_trc__SetRecordingJobMode(struct soap*, _trc__SetRecordingJobMode *const*, const char*, const char*);
+SOAP_FMAC3 _trc__SetRecordingJobMode ** SOAP_FMAC4 soap_get_PointerTo_trc__SetRecordingJobMode(struct soap*, _trc__SetRecordingJobMode **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_trc__GetRecordingJobConfiguration_DEFINED
+#define SOAP_TYPE_PointerTo_trc__GetRecordingJobConfiguration_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_trc__GetRecordingJobConfiguration(struct soap*, _trc__GetRecordingJobConfiguration *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_trc__GetRecordingJobConfiguration(struct soap*, const char *, int, _trc__GetRecordingJobConfiguration *const*, const char *);
+SOAP_FMAC3 _trc__GetRecordingJobConfiguration ** SOAP_FMAC4 soap_in_PointerTo_trc__GetRecordingJobConfiguration(struct soap*, const char*, _trc__GetRecordingJobConfiguration **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_trc__GetRecordingJobConfiguration(struct soap*, _trc__GetRecordingJobConfiguration *const*, const char*, const char*);
+SOAP_FMAC3 _trc__GetRecordingJobConfiguration ** SOAP_FMAC4 soap_get_PointerTo_trc__GetRecordingJobConfiguration(struct soap*, _trc__GetRecordingJobConfiguration **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_trc__SetRecordingJobConfiguration_DEFINED
+#define SOAP_TYPE_PointerTo_trc__SetRecordingJobConfiguration_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_trc__SetRecordingJobConfiguration(struct soap*, _trc__SetRecordingJobConfiguration *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_trc__SetRecordingJobConfiguration(struct soap*, const char *, int, _trc__SetRecordingJobConfiguration *const*, const char *);
+SOAP_FMAC3 _trc__SetRecordingJobConfiguration ** SOAP_FMAC4 soap_in_PointerTo_trc__SetRecordingJobConfiguration(struct soap*, const char*, _trc__SetRecordingJobConfiguration **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_trc__SetRecordingJobConfiguration(struct soap*, _trc__SetRecordingJobConfiguration *const*, const char*, const char*);
+SOAP_FMAC3 _trc__SetRecordingJobConfiguration ** SOAP_FMAC4 soap_get_PointerTo_trc__SetRecordingJobConfiguration(struct soap*, _trc__SetRecordingJobConfiguration **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_trc__GetRecordingJobs_DEFINED
+#define SOAP_TYPE_PointerTo_trc__GetRecordingJobs_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_trc__GetRecordingJobs(struct soap*, _trc__GetRecordingJobs *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_trc__GetRecordingJobs(struct soap*, const char *, int, _trc__GetRecordingJobs *const*, const char *);
+SOAP_FMAC3 _trc__GetRecordingJobs ** SOAP_FMAC4 soap_in_PointerTo_trc__GetRecordingJobs(struct soap*, const char*, _trc__GetRecordingJobs **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_trc__GetRecordingJobs(struct soap*, _trc__GetRecordingJobs *const*, const char*, const char*);
+SOAP_FMAC3 _trc__GetRecordingJobs ** SOAP_FMAC4 soap_get_PointerTo_trc__GetRecordingJobs(struct soap*, _trc__GetRecordingJobs **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_trc__DeleteRecordingJob_DEFINED
+#define SOAP_TYPE_PointerTo_trc__DeleteRecordingJob_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_trc__DeleteRecordingJob(struct soap*, _trc__DeleteRecordingJob *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_trc__DeleteRecordingJob(struct soap*, const char *, int, _trc__DeleteRecordingJob *const*, const char *);
+SOAP_FMAC3 _trc__DeleteRecordingJob ** SOAP_FMAC4 soap_in_PointerTo_trc__DeleteRecordingJob(struct soap*, const char*, _trc__DeleteRecordingJob **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_trc__DeleteRecordingJob(struct soap*, _trc__DeleteRecordingJob *const*, const char*, const char*);
+SOAP_FMAC3 _trc__DeleteRecordingJob ** SOAP_FMAC4 soap_get_PointerTo_trc__DeleteRecordingJob(struct soap*, _trc__DeleteRecordingJob **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_trc__CreateRecordingJob_DEFINED
+#define SOAP_TYPE_PointerTo_trc__CreateRecordingJob_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_trc__CreateRecordingJob(struct soap*, _trc__CreateRecordingJob *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_trc__CreateRecordingJob(struct soap*, const char *, int, _trc__CreateRecordingJob *const*, const char *);
+SOAP_FMAC3 _trc__CreateRecordingJob ** SOAP_FMAC4 soap_in_PointerTo_trc__CreateRecordingJob(struct soap*, const char*, _trc__CreateRecordingJob **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_trc__CreateRecordingJob(struct soap*, _trc__CreateRecordingJob *const*, const char*, const char*);
+SOAP_FMAC3 _trc__CreateRecordingJob ** SOAP_FMAC4 soap_get_PointerTo_trc__CreateRecordingJob(struct soap*, _trc__CreateRecordingJob **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_trc__SetTrackConfiguration_DEFINED
+#define SOAP_TYPE_PointerTo_trc__SetTrackConfiguration_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_trc__SetTrackConfiguration(struct soap*, _trc__SetTrackConfiguration *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_trc__SetTrackConfiguration(struct soap*, const char *, int, _trc__SetTrackConfiguration *const*, const char *);
+SOAP_FMAC3 _trc__SetTrackConfiguration ** SOAP_FMAC4 soap_in_PointerTo_trc__SetTrackConfiguration(struct soap*, const char*, _trc__SetTrackConfiguration **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_trc__SetTrackConfiguration(struct soap*, _trc__SetTrackConfiguration *const*, const char*, const char*);
+SOAP_FMAC3 _trc__SetTrackConfiguration ** SOAP_FMAC4 soap_get_PointerTo_trc__SetTrackConfiguration(struct soap*, _trc__SetTrackConfiguration **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_trc__GetTrackConfiguration_DEFINED
+#define SOAP_TYPE_PointerTo_trc__GetTrackConfiguration_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_trc__GetTrackConfiguration(struct soap*, _trc__GetTrackConfiguration *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_trc__GetTrackConfiguration(struct soap*, const char *, int, _trc__GetTrackConfiguration *const*, const char *);
+SOAP_FMAC3 _trc__GetTrackConfiguration ** SOAP_FMAC4 soap_in_PointerTo_trc__GetTrackConfiguration(struct soap*, const char*, _trc__GetTrackConfiguration **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_trc__GetTrackConfiguration(struct soap*, _trc__GetTrackConfiguration *const*, const char*, const char*);
+SOAP_FMAC3 _trc__GetTrackConfiguration ** SOAP_FMAC4 soap_get_PointerTo_trc__GetTrackConfiguration(struct soap*, _trc__GetTrackConfiguration **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_trc__DeleteTrack_DEFINED
+#define SOAP_TYPE_PointerTo_trc__DeleteTrack_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_trc__DeleteTrack(struct soap*, _trc__DeleteTrack *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_trc__DeleteTrack(struct soap*, const char *, int, _trc__DeleteTrack *const*, const char *);
+SOAP_FMAC3 _trc__DeleteTrack ** SOAP_FMAC4 soap_in_PointerTo_trc__DeleteTrack(struct soap*, const char*, _trc__DeleteTrack **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_trc__DeleteTrack(struct soap*, _trc__DeleteTrack *const*, const char*, const char*);
+SOAP_FMAC3 _trc__DeleteTrack ** SOAP_FMAC4 soap_get_PointerTo_trc__DeleteTrack(struct soap*, _trc__DeleteTrack **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_trc__CreateTrack_DEFINED
+#define SOAP_TYPE_PointerTo_trc__CreateTrack_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_trc__CreateTrack(struct soap*, _trc__CreateTrack *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_trc__CreateTrack(struct soap*, const char *, int, _trc__CreateTrack *const*, const char *);
+SOAP_FMAC3 _trc__CreateTrack ** SOAP_FMAC4 soap_in_PointerTo_trc__CreateTrack(struct soap*, const char*, _trc__CreateTrack **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_trc__CreateTrack(struct soap*, _trc__CreateTrack *const*, const char*, const char*);
+SOAP_FMAC3 _trc__CreateTrack ** SOAP_FMAC4 soap_get_PointerTo_trc__CreateTrack(struct soap*, _trc__CreateTrack **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_trc__GetRecordingOptions_DEFINED
+#define SOAP_TYPE_PointerTo_trc__GetRecordingOptions_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_trc__GetRecordingOptions(struct soap*, _trc__GetRecordingOptions *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_trc__GetRecordingOptions(struct soap*, const char *, int, _trc__GetRecordingOptions *const*, const char *);
+SOAP_FMAC3 _trc__GetRecordingOptions ** SOAP_FMAC4 soap_in_PointerTo_trc__GetRecordingOptions(struct soap*, const char*, _trc__GetRecordingOptions **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_trc__GetRecordingOptions(struct soap*, _trc__GetRecordingOptions *const*, const char*, const char*);
+SOAP_FMAC3 _trc__GetRecordingOptions ** SOAP_FMAC4 soap_get_PointerTo_trc__GetRecordingOptions(struct soap*, _trc__GetRecordingOptions **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_trc__GetRecordingConfiguration_DEFINED
+#define SOAP_TYPE_PointerTo_trc__GetRecordingConfiguration_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_trc__GetRecordingConfiguration(struct soap*, _trc__GetRecordingConfiguration *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_trc__GetRecordingConfiguration(struct soap*, const char *, int, _trc__GetRecordingConfiguration *const*, const char *);
+SOAP_FMAC3 _trc__GetRecordingConfiguration ** SOAP_FMAC4 soap_in_PointerTo_trc__GetRecordingConfiguration(struct soap*, const char*, _trc__GetRecordingConfiguration **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_trc__GetRecordingConfiguration(struct soap*, _trc__GetRecordingConfiguration *const*, const char*, const char*);
+SOAP_FMAC3 _trc__GetRecordingConfiguration ** SOAP_FMAC4 soap_get_PointerTo_trc__GetRecordingConfiguration(struct soap*, _trc__GetRecordingConfiguration **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_trc__SetRecordingConfiguration_DEFINED
+#define SOAP_TYPE_PointerTo_trc__SetRecordingConfiguration_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_trc__SetRecordingConfiguration(struct soap*, _trc__SetRecordingConfiguration *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_trc__SetRecordingConfiguration(struct soap*, const char *, int, _trc__SetRecordingConfiguration *const*, const char *);
+SOAP_FMAC3 _trc__SetRecordingConfiguration ** SOAP_FMAC4 soap_in_PointerTo_trc__SetRecordingConfiguration(struct soap*, const char*, _trc__SetRecordingConfiguration **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_trc__SetRecordingConfiguration(struct soap*, _trc__SetRecordingConfiguration *const*, const char*, const char*);
+SOAP_FMAC3 _trc__SetRecordingConfiguration ** SOAP_FMAC4 soap_get_PointerTo_trc__SetRecordingConfiguration(struct soap*, _trc__SetRecordingConfiguration **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_trc__GetRecordings_DEFINED
+#define SOAP_TYPE_PointerTo_trc__GetRecordings_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_trc__GetRecordings(struct soap*, _trc__GetRecordings *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_trc__GetRecordings(struct soap*, const char *, int, _trc__GetRecordings *const*, const char *);
+SOAP_FMAC3 _trc__GetRecordings ** SOAP_FMAC4 soap_in_PointerTo_trc__GetRecordings(struct soap*, const char*, _trc__GetRecordings **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_trc__GetRecordings(struct soap*, _trc__GetRecordings *const*, const char*, const char*);
+SOAP_FMAC3 _trc__GetRecordings ** SOAP_FMAC4 soap_get_PointerTo_trc__GetRecordings(struct soap*, _trc__GetRecordings **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_trc__DeleteRecording_DEFINED
+#define SOAP_TYPE_PointerTo_trc__DeleteRecording_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_trc__DeleteRecording(struct soap*, _trc__DeleteRecording *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_trc__DeleteRecording(struct soap*, const char *, int, _trc__DeleteRecording *const*, const char *);
+SOAP_FMAC3 _trc__DeleteRecording ** SOAP_FMAC4 soap_in_PointerTo_trc__DeleteRecording(struct soap*, const char*, _trc__DeleteRecording **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_trc__DeleteRecording(struct soap*, _trc__DeleteRecording *const*, const char*, const char*);
+SOAP_FMAC3 _trc__DeleteRecording ** SOAP_FMAC4 soap_get_PointerTo_trc__DeleteRecording(struct soap*, _trc__DeleteRecording **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_trc__CreateRecording_DEFINED
+#define SOAP_TYPE_PointerTo_trc__CreateRecording_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_trc__CreateRecording(struct soap*, _trc__CreateRecording *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_trc__CreateRecording(struct soap*, const char *, int, _trc__CreateRecording *const*, const char *);
+SOAP_FMAC3 _trc__CreateRecording ** SOAP_FMAC4 soap_in_PointerTo_trc__CreateRecording(struct soap*, const char*, _trc__CreateRecording **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_trc__CreateRecording(struct soap*, _trc__CreateRecording *const*, const char*, const char*);
+SOAP_FMAC3 _trc__CreateRecording ** SOAP_FMAC4 soap_get_PointerTo_trc__CreateRecording(struct soap*, _trc__CreateRecording **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_trc__GetServiceCapabilities_DEFINED
+#define SOAP_TYPE_PointerTo_trc__GetServiceCapabilities_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_trc__GetServiceCapabilities(struct soap*, _trc__GetServiceCapabilities *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_trc__GetServiceCapabilities(struct soap*, const char *, int, _trc__GetServiceCapabilities *const*, const char *);
+SOAP_FMAC3 _trc__GetServiceCapabilities ** SOAP_FMAC4 soap_in_PointerTo_trc__GetServiceCapabilities(struct soap*, const char*, _trc__GetServiceCapabilities **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_trc__GetServiceCapabilities(struct soap*, _trc__GetServiceCapabilities *const*, const char*, const char*);
+SOAP_FMAC3 _trc__GetServiceCapabilities ** SOAP_FMAC4 soap_get_PointerTo_trc__GetServiceCapabilities(struct soap*, _trc__GetServiceCapabilities **, const char*, const char*);
 #endif
 
 #ifndef SOAP_TYPE_PointerTo_tptz__MoveAndStartTracking_DEFINED
@@ -218549,6 +230930,213 @@ SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTott__ImagingSettings(struct soap*, co
 SOAP_FMAC3 tt__ImagingSettings ** SOAP_FMAC4 soap_in_PointerTott__ImagingSettings(struct soap*, const char*, tt__ImagingSettings **, const char*);
 SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTott__ImagingSettings(struct soap*, tt__ImagingSettings *const*, const char*, const char*);
 SOAP_FMAC3 tt__ImagingSettings ** SOAP_FMAC4 soap_get_PointerTott__ImagingSettings(struct soap*, tt__ImagingSettings **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTott__FindMetadataResultList_DEFINED
+#define SOAP_TYPE_PointerTott__FindMetadataResultList_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTott__FindMetadataResultList(struct soap*, tt__FindMetadataResultList *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTott__FindMetadataResultList(struct soap*, const char *, int, tt__FindMetadataResultList *const*, const char *);
+SOAP_FMAC3 tt__FindMetadataResultList ** SOAP_FMAC4 soap_in_PointerTott__FindMetadataResultList(struct soap*, const char*, tt__FindMetadataResultList **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTott__FindMetadataResultList(struct soap*, tt__FindMetadataResultList *const*, const char*, const char*);
+SOAP_FMAC3 tt__FindMetadataResultList ** SOAP_FMAC4 soap_get_PointerTott__FindMetadataResultList(struct soap*, tt__FindMetadataResultList **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTott__MetadataFilter_DEFINED
+#define SOAP_TYPE_PointerTott__MetadataFilter_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTott__MetadataFilter(struct soap*, tt__MetadataFilter *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTott__MetadataFilter(struct soap*, const char *, int, tt__MetadataFilter *const*, const char *);
+SOAP_FMAC3 tt__MetadataFilter ** SOAP_FMAC4 soap_in_PointerTott__MetadataFilter(struct soap*, const char*, tt__MetadataFilter **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTott__MetadataFilter(struct soap*, tt__MetadataFilter *const*, const char*, const char*);
+SOAP_FMAC3 tt__MetadataFilter ** SOAP_FMAC4 soap_get_PointerTott__MetadataFilter(struct soap*, tt__MetadataFilter **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTott__FindPTZPositionResultList_DEFINED
+#define SOAP_TYPE_PointerTott__FindPTZPositionResultList_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTott__FindPTZPositionResultList(struct soap*, tt__FindPTZPositionResultList *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTott__FindPTZPositionResultList(struct soap*, const char *, int, tt__FindPTZPositionResultList *const*, const char *);
+SOAP_FMAC3 tt__FindPTZPositionResultList ** SOAP_FMAC4 soap_in_PointerTott__FindPTZPositionResultList(struct soap*, const char*, tt__FindPTZPositionResultList **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTott__FindPTZPositionResultList(struct soap*, tt__FindPTZPositionResultList *const*, const char*, const char*);
+SOAP_FMAC3 tt__FindPTZPositionResultList ** SOAP_FMAC4 soap_get_PointerTott__FindPTZPositionResultList(struct soap*, tt__FindPTZPositionResultList **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTott__PTZPositionFilter_DEFINED
+#define SOAP_TYPE_PointerTott__PTZPositionFilter_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTott__PTZPositionFilter(struct soap*, tt__PTZPositionFilter *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTott__PTZPositionFilter(struct soap*, const char *, int, tt__PTZPositionFilter *const*, const char *);
+SOAP_FMAC3 tt__PTZPositionFilter ** SOAP_FMAC4 soap_in_PointerTott__PTZPositionFilter(struct soap*, const char*, tt__PTZPositionFilter **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTott__PTZPositionFilter(struct soap*, tt__PTZPositionFilter *const*, const char*, const char*);
+SOAP_FMAC3 tt__PTZPositionFilter ** SOAP_FMAC4 soap_get_PointerTott__PTZPositionFilter(struct soap*, tt__PTZPositionFilter **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTott__FindEventResultList_DEFINED
+#define SOAP_TYPE_PointerTott__FindEventResultList_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTott__FindEventResultList(struct soap*, tt__FindEventResultList *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTott__FindEventResultList(struct soap*, const char *, int, tt__FindEventResultList *const*, const char *);
+SOAP_FMAC3 tt__FindEventResultList ** SOAP_FMAC4 soap_in_PointerTott__FindEventResultList(struct soap*, const char*, tt__FindEventResultList **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTott__FindEventResultList(struct soap*, tt__FindEventResultList *const*, const char*, const char*);
+SOAP_FMAC3 tt__FindEventResultList ** SOAP_FMAC4 soap_get_PointerTott__FindEventResultList(struct soap*, tt__FindEventResultList **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTott__EventFilter_DEFINED
+#define SOAP_TYPE_PointerTott__EventFilter_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTott__EventFilter(struct soap*, tt__EventFilter *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTott__EventFilter(struct soap*, const char *, int, tt__EventFilter *const*, const char *);
+SOAP_FMAC3 tt__EventFilter ** SOAP_FMAC4 soap_in_PointerTott__EventFilter(struct soap*, const char*, tt__EventFilter **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTott__EventFilter(struct soap*, tt__EventFilter *const*, const char*, const char*);
+SOAP_FMAC3 tt__EventFilter ** SOAP_FMAC4 soap_get_PointerTott__EventFilter(struct soap*, tt__EventFilter **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTott__FindRecordingResultList_DEFINED
+#define SOAP_TYPE_PointerTott__FindRecordingResultList_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTott__FindRecordingResultList(struct soap*, tt__FindRecordingResultList *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTott__FindRecordingResultList(struct soap*, const char *, int, tt__FindRecordingResultList *const*, const char *);
+SOAP_FMAC3 tt__FindRecordingResultList ** SOAP_FMAC4 soap_in_PointerTott__FindRecordingResultList(struct soap*, const char*, tt__FindRecordingResultList **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTott__FindRecordingResultList(struct soap*, tt__FindRecordingResultList *const*, const char*, const char*);
+SOAP_FMAC3 tt__FindRecordingResultList ** SOAP_FMAC4 soap_get_PointerTott__FindRecordingResultList(struct soap*, tt__FindRecordingResultList **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTott__MediaAttributes_DEFINED
+#define SOAP_TYPE_PointerTott__MediaAttributes_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTott__MediaAttributes(struct soap*, tt__MediaAttributes *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTott__MediaAttributes(struct soap*, const char *, int, tt__MediaAttributes *const*, const char *);
+SOAP_FMAC3 tt__MediaAttributes ** SOAP_FMAC4 soap_in_PointerTott__MediaAttributes(struct soap*, const char*, tt__MediaAttributes **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTott__MediaAttributes(struct soap*, tt__MediaAttributes *const*, const char*, const char*);
+SOAP_FMAC3 tt__MediaAttributes ** SOAP_FMAC4 soap_get_PointerTott__MediaAttributes(struct soap*, tt__MediaAttributes **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTott__RecordingSummary_DEFINED
+#define SOAP_TYPE_PointerTott__RecordingSummary_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTott__RecordingSummary(struct soap*, tt__RecordingSummary *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTott__RecordingSummary(struct soap*, const char *, int, tt__RecordingSummary *const*, const char *);
+SOAP_FMAC3 tt__RecordingSummary ** SOAP_FMAC4 soap_in_PointerTott__RecordingSummary(struct soap*, const char*, tt__RecordingSummary **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTott__RecordingSummary(struct soap*, tt__RecordingSummary *const*, const char*, const char*);
+SOAP_FMAC3 tt__RecordingSummary ** SOAP_FMAC4 soap_get_PointerTott__RecordingSummary(struct soap*, tt__RecordingSummary **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTotse__Capabilities_DEFINED
+#define SOAP_TYPE_PointerTotse__Capabilities_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTotse__Capabilities(struct soap*, tse__Capabilities *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTotse__Capabilities(struct soap*, const char *, int, tse__Capabilities *const*, const char *);
+SOAP_FMAC3 tse__Capabilities ** SOAP_FMAC4 soap_in_PointerTotse__Capabilities(struct soap*, const char*, tse__Capabilities **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTotse__Capabilities(struct soap*, tse__Capabilities *const*, const char*, const char*);
+SOAP_FMAC3 tse__Capabilities ** SOAP_FMAC4 soap_get_PointerTotse__Capabilities(struct soap*, tse__Capabilities **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTott__ReplayConfiguration_DEFINED
+#define SOAP_TYPE_PointerTott__ReplayConfiguration_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTott__ReplayConfiguration(struct soap*, tt__ReplayConfiguration *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTott__ReplayConfiguration(struct soap*, const char *, int, tt__ReplayConfiguration *const*, const char *);
+SOAP_FMAC3 tt__ReplayConfiguration ** SOAP_FMAC4 soap_in_PointerTott__ReplayConfiguration(struct soap*, const char*, tt__ReplayConfiguration **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTott__ReplayConfiguration(struct soap*, tt__ReplayConfiguration *const*, const char*, const char*);
+SOAP_FMAC3 tt__ReplayConfiguration ** SOAP_FMAC4 soap_get_PointerTott__ReplayConfiguration(struct soap*, tt__ReplayConfiguration **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTotrp__Capabilities_DEFINED
+#define SOAP_TYPE_PointerTotrp__Capabilities_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTotrp__Capabilities(struct soap*, trp__Capabilities *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTotrp__Capabilities(struct soap*, const char *, int, trp__Capabilities *const*, const char *);
+SOAP_FMAC3 trp__Capabilities ** SOAP_FMAC4 soap_in_PointerTotrp__Capabilities(struct soap*, const char*, trp__Capabilities **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTotrp__Capabilities(struct soap*, trp__Capabilities *const*, const char*, const char*);
+SOAP_FMAC3 trp__Capabilities ** SOAP_FMAC4 soap_get_PointerTotrp__Capabilities(struct soap*, trp__Capabilities **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTott__ArrayOfFileProgress_DEFINED
+#define SOAP_TYPE_PointerTott__ArrayOfFileProgress_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTott__ArrayOfFileProgress(struct soap*, tt__ArrayOfFileProgress *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTott__ArrayOfFileProgress(struct soap*, const char *, int, tt__ArrayOfFileProgress *const*, const char *);
+SOAP_FMAC3 tt__ArrayOfFileProgress ** SOAP_FMAC4 soap_in_PointerTott__ArrayOfFileProgress(struct soap*, const char*, tt__ArrayOfFileProgress **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTott__ArrayOfFileProgress(struct soap*, tt__ArrayOfFileProgress *const*, const char*, const char*);
+SOAP_FMAC3 tt__ArrayOfFileProgress ** SOAP_FMAC4 soap_get_PointerTott__ArrayOfFileProgress(struct soap*, tt__ArrayOfFileProgress **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_trc__ExportRecordedDataResponse_Extension_DEFINED
+#define SOAP_TYPE_PointerTo_trc__ExportRecordedDataResponse_Extension_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_trc__ExportRecordedDataResponse_Extension(struct soap*, _trc__ExportRecordedDataResponse_Extension *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_trc__ExportRecordedDataResponse_Extension(struct soap*, const char *, int, _trc__ExportRecordedDataResponse_Extension *const*, const char *);
+SOAP_FMAC3 _trc__ExportRecordedDataResponse_Extension ** SOAP_FMAC4 soap_in_PointerTo_trc__ExportRecordedDataResponse_Extension(struct soap*, const char*, _trc__ExportRecordedDataResponse_Extension **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_trc__ExportRecordedDataResponse_Extension(struct soap*, _trc__ExportRecordedDataResponse_Extension *const*, const char*, const char*);
+SOAP_FMAC3 _trc__ExportRecordedDataResponse_Extension ** SOAP_FMAC4 soap_get_PointerTo_trc__ExportRecordedDataResponse_Extension(struct soap*, _trc__ExportRecordedDataResponse_Extension **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTott__StorageReferencePath_DEFINED
+#define SOAP_TYPE_PointerTott__StorageReferencePath_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTott__StorageReferencePath(struct soap*, tt__StorageReferencePath *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTott__StorageReferencePath(struct soap*, const char *, int, tt__StorageReferencePath *const*, const char *);
+SOAP_FMAC3 tt__StorageReferencePath ** SOAP_FMAC4 soap_in_PointerTott__StorageReferencePath(struct soap*, const char*, tt__StorageReferencePath **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTott__StorageReferencePath(struct soap*, tt__StorageReferencePath *const*, const char*, const char*);
+SOAP_FMAC3 tt__StorageReferencePath ** SOAP_FMAC4 soap_get_PointerTott__StorageReferencePath(struct soap*, tt__StorageReferencePath **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTott__SearchScope_DEFINED
+#define SOAP_TYPE_PointerTott__SearchScope_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTott__SearchScope(struct soap*, tt__SearchScope *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTott__SearchScope(struct soap*, const char *, int, tt__SearchScope *const*, const char *);
+SOAP_FMAC3 tt__SearchScope ** SOAP_FMAC4 soap_in_PointerTott__SearchScope(struct soap*, const char*, tt__SearchScope **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTott__SearchScope(struct soap*, tt__SearchScope *const*, const char*, const char*);
+SOAP_FMAC3 tt__SearchScope ** SOAP_FMAC4 soap_get_PointerTott__SearchScope(struct soap*, tt__SearchScope **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTotrc__RecordingOptions_DEFINED
+#define SOAP_TYPE_PointerTotrc__RecordingOptions_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTotrc__RecordingOptions(struct soap*, trc__RecordingOptions *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTotrc__RecordingOptions(struct soap*, const char *, int, trc__RecordingOptions *const*, const char *);
+SOAP_FMAC3 trc__RecordingOptions ** SOAP_FMAC4 soap_in_PointerTotrc__RecordingOptions(struct soap*, const char*, trc__RecordingOptions **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTotrc__RecordingOptions(struct soap*, trc__RecordingOptions *const*, const char*, const char*);
+SOAP_FMAC3 trc__RecordingOptions ** SOAP_FMAC4 soap_get_PointerTotrc__RecordingOptions(struct soap*, trc__RecordingOptions **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTott__RecordingJobStateInformation_DEFINED
+#define SOAP_TYPE_PointerTott__RecordingJobStateInformation_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTott__RecordingJobStateInformation(struct soap*, tt__RecordingJobStateInformation *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTott__RecordingJobStateInformation(struct soap*, const char *, int, tt__RecordingJobStateInformation *const*, const char *);
+SOAP_FMAC3 tt__RecordingJobStateInformation ** SOAP_FMAC4 soap_in_PointerTott__RecordingJobStateInformation(struct soap*, const char*, tt__RecordingJobStateInformation **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTott__RecordingJobStateInformation(struct soap*, tt__RecordingJobStateInformation *const*, const char*, const char*);
+SOAP_FMAC3 tt__RecordingJobStateInformation ** SOAP_FMAC4 soap_get_PointerTott__RecordingJobStateInformation(struct soap*, tt__RecordingJobStateInformation **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTott__GetRecordingJobsResponseItem_DEFINED
+#define SOAP_TYPE_PointerTott__GetRecordingJobsResponseItem_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTott__GetRecordingJobsResponseItem(struct soap*, tt__GetRecordingJobsResponseItem *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTott__GetRecordingJobsResponseItem(struct soap*, const char *, int, tt__GetRecordingJobsResponseItem *const*, const char *);
+SOAP_FMAC3 tt__GetRecordingJobsResponseItem ** SOAP_FMAC4 soap_in_PointerTott__GetRecordingJobsResponseItem(struct soap*, const char*, tt__GetRecordingJobsResponseItem **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTott__GetRecordingJobsResponseItem(struct soap*, tt__GetRecordingJobsResponseItem *const*, const char*, const char*);
+SOAP_FMAC3 tt__GetRecordingJobsResponseItem ** SOAP_FMAC4 soap_get_PointerTott__GetRecordingJobsResponseItem(struct soap*, tt__GetRecordingJobsResponseItem **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTott__GetRecordingsResponseItem_DEFINED
+#define SOAP_TYPE_PointerTott__GetRecordingsResponseItem_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTott__GetRecordingsResponseItem(struct soap*, tt__GetRecordingsResponseItem *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTott__GetRecordingsResponseItem(struct soap*, const char *, int, tt__GetRecordingsResponseItem *const*, const char *);
+SOAP_FMAC3 tt__GetRecordingsResponseItem ** SOAP_FMAC4 soap_in_PointerTott__GetRecordingsResponseItem(struct soap*, const char*, tt__GetRecordingsResponseItem **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTott__GetRecordingsResponseItem(struct soap*, tt__GetRecordingsResponseItem *const*, const char*, const char*);
+SOAP_FMAC3 tt__GetRecordingsResponseItem ** SOAP_FMAC4 soap_get_PointerTott__GetRecordingsResponseItem(struct soap*, tt__GetRecordingsResponseItem **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTotrc__Capabilities_DEFINED
+#define SOAP_TYPE_PointerTotrc__Capabilities_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTotrc__Capabilities(struct soap*, trc__Capabilities *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTotrc__Capabilities(struct soap*, const char *, int, trc__Capabilities *const*, const char *);
+SOAP_FMAC3 trc__Capabilities ** SOAP_FMAC4 soap_in_PointerTotrc__Capabilities(struct soap*, const char*, trc__Capabilities **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTotrc__Capabilities(struct soap*, trc__Capabilities *const*, const char*, const char*);
+SOAP_FMAC3 trc__Capabilities ** SOAP_FMAC4 soap_get_PointerTotrc__Capabilities(struct soap*, trc__Capabilities **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTotrc__TrackOptions_DEFINED
+#define SOAP_TYPE_PointerTotrc__TrackOptions_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTotrc__TrackOptions(struct soap*, trc__TrackOptions *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTotrc__TrackOptions(struct soap*, const char *, int, trc__TrackOptions *const*, const char *);
+SOAP_FMAC3 trc__TrackOptions ** SOAP_FMAC4 soap_in_PointerTotrc__TrackOptions(struct soap*, const char*, trc__TrackOptions **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTotrc__TrackOptions(struct soap*, trc__TrackOptions *const*, const char*, const char*);
+SOAP_FMAC3 trc__TrackOptions ** SOAP_FMAC4 soap_get_PointerTotrc__TrackOptions(struct soap*, trc__TrackOptions **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTotrc__JobOptions_DEFINED
+#define SOAP_TYPE_PointerTotrc__JobOptions_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTotrc__JobOptions(struct soap*, trc__JobOptions *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTotrc__JobOptions(struct soap*, const char *, int, trc__JobOptions *const*, const char *);
+SOAP_FMAC3 trc__JobOptions ** SOAP_FMAC4 soap_in_PointerTotrc__JobOptions(struct soap*, const char*, trc__JobOptions **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTotrc__JobOptions(struct soap*, trc__JobOptions *const*, const char*, const char*);
+SOAP_FMAC3 trc__JobOptions ** SOAP_FMAC4 soap_get_PointerTotrc__JobOptions(struct soap*, trc__JobOptions **, const char*, const char*);
 #endif
 
 #ifndef SOAP_TYPE_PointerTott__PTZPresetTourOptions_DEFINED
@@ -226442,6 +239030,48 @@ SOAP_FMAC1 std::vector<std::string>  * SOAP_FMAC2 soap_instantiate_std__vectorTe
 inline std::vector<std::string>  * soap_new_std__vectorTemplateOfxsd__QName(struct soap *soap, int n = -1)
 {
 	return soap_instantiate_std__vectorTemplateOfxsd__QName(soap, n, NULL, NULL, NULL);
+}
+#endif
+
+#ifndef SOAP_TYPE_std__vectorTemplateOfPointerTott__MediaAttributes_DEFINED
+#define SOAP_TYPE_std__vectorTemplateOfPointerTott__MediaAttributes_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_std__vectorTemplateOfPointerTott__MediaAttributes(struct soap*, std::vector<tt__MediaAttributes *> *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_std__vectorTemplateOfPointerTott__MediaAttributes(struct soap*, const std::vector<tt__MediaAttributes *> *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_std__vectorTemplateOfPointerTott__MediaAttributes(struct soap*, const char*, int, const std::vector<tt__MediaAttributes *> *, const char*);
+SOAP_FMAC3 std::vector<tt__MediaAttributes *> * SOAP_FMAC4 soap_in_std__vectorTemplateOfPointerTott__MediaAttributes(struct soap*, const char*, std::vector<tt__MediaAttributes *> *, const char*);
+SOAP_FMAC1 std::vector<tt__MediaAttributes *>  * SOAP_FMAC2 soap_instantiate_std__vectorTemplateOfPointerTott__MediaAttributes(struct soap*, int, const char*, const char*, size_t*);
+
+inline std::vector<tt__MediaAttributes *>  * soap_new_std__vectorTemplateOfPointerTott__MediaAttributes(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_std__vectorTemplateOfPointerTott__MediaAttributes(soap, n, NULL, NULL, NULL);
+}
+#endif
+
+#ifndef SOAP_TYPE_std__vectorTemplateOfPointerTott__GetRecordingJobsResponseItem_DEFINED
+#define SOAP_TYPE_std__vectorTemplateOfPointerTott__GetRecordingJobsResponseItem_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_std__vectorTemplateOfPointerTott__GetRecordingJobsResponseItem(struct soap*, std::vector<tt__GetRecordingJobsResponseItem *> *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_std__vectorTemplateOfPointerTott__GetRecordingJobsResponseItem(struct soap*, const std::vector<tt__GetRecordingJobsResponseItem *> *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_std__vectorTemplateOfPointerTott__GetRecordingJobsResponseItem(struct soap*, const char*, int, const std::vector<tt__GetRecordingJobsResponseItem *> *, const char*);
+SOAP_FMAC3 std::vector<tt__GetRecordingJobsResponseItem *> * SOAP_FMAC4 soap_in_std__vectorTemplateOfPointerTott__GetRecordingJobsResponseItem(struct soap*, const char*, std::vector<tt__GetRecordingJobsResponseItem *> *, const char*);
+SOAP_FMAC1 std::vector<tt__GetRecordingJobsResponseItem *>  * SOAP_FMAC2 soap_instantiate_std__vectorTemplateOfPointerTott__GetRecordingJobsResponseItem(struct soap*, int, const char*, const char*, size_t*);
+
+inline std::vector<tt__GetRecordingJobsResponseItem *>  * soap_new_std__vectorTemplateOfPointerTott__GetRecordingJobsResponseItem(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_std__vectorTemplateOfPointerTott__GetRecordingJobsResponseItem(soap, n, NULL, NULL, NULL);
+}
+#endif
+
+#ifndef SOAP_TYPE_std__vectorTemplateOfPointerTott__GetRecordingsResponseItem_DEFINED
+#define SOAP_TYPE_std__vectorTemplateOfPointerTott__GetRecordingsResponseItem_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_std__vectorTemplateOfPointerTott__GetRecordingsResponseItem(struct soap*, std::vector<tt__GetRecordingsResponseItem *> *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_std__vectorTemplateOfPointerTott__GetRecordingsResponseItem(struct soap*, const std::vector<tt__GetRecordingsResponseItem *> *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_std__vectorTemplateOfPointerTott__GetRecordingsResponseItem(struct soap*, const char*, int, const std::vector<tt__GetRecordingsResponseItem *> *, const char*);
+SOAP_FMAC3 std::vector<tt__GetRecordingsResponseItem *> * SOAP_FMAC4 soap_in_std__vectorTemplateOfPointerTott__GetRecordingsResponseItem(struct soap*, const char*, std::vector<tt__GetRecordingsResponseItem *> *, const char*);
+SOAP_FMAC1 std::vector<tt__GetRecordingsResponseItem *>  * SOAP_FMAC2 soap_instantiate_std__vectorTemplateOfPointerTott__GetRecordingsResponseItem(struct soap*, int, const char*, const char*, size_t*);
+
+inline std::vector<tt__GetRecordingsResponseItem *>  * soap_new_std__vectorTemplateOfPointerTott__GetRecordingsResponseItem(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_std__vectorTemplateOfPointerTott__GetRecordingsResponseItem(soap, n, NULL, NULL, NULL);
 }
 #endif
 
